@@ -1,57 +1,111 @@
 <!DOCTYPE html>
-<html lang="fi"> 
-
+<html lang="fi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ 
 <title>Kielipalvelu</title>
-
+ 
 <style>
-
+ 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+ 
 body{
 font-family: Arial, sans-serif;
-max-width:1000px;
-margin:auto;
-padding:20px;
+background:#f4f7fb;
+}
+ 
+.hero{
+background:linear-gradient(135deg,#005bbb,#0099ff);
+color:white;
 text-align:center;
+padding:80px 20px;
 }
  
-h1{
-color:#005bbb;
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
 }
  
-p{
-color:#555;
+.hero p{
+font-size:20px;
+}
+ 
+.search-box{
+max-width:900px;
+margin:-40px auto 40px;
+background:white;
+border-radius:15px;
+padding:30px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+ 
+.filters{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 }
  
 select{
-padding:10px;
-margin:10px;
+padding:12px;
+min-width:220px;
+border:1px solid #ddd;
+border-radius:8px;
 font-size:16px;
 }
  
 button{
-padding:10px 20px;
+padding:12px 25px;
 background:#005bbb;
 color:white;
 border:none;
-border-radius:5px;
+border-radius:8px;
 cursor:pointer;
+font-size:16px;
+}
+ 
+button:hover{
+background:#004799;
+}
+ 
+.section{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+ 
+.section h2{
+text-align:center;
+margin-bottom:30px;
 }
  
 .categories{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-margin-top:40px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
  
-.category{
-border:1px solid #ddd;
-border-radius:10px;
-padding:20px;
-background:#f8f8f8;
+.card{
+background:white;
+border-radius:12px;
+padding:25px;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+transition:0.2s;
+}
+ 
+.card:hover{
+transform:translateY(-5px);
+}
+ 
+.icon{
+font-size:40px;
+margin-bottom:10px;
 }
  
 </style>
@@ -60,11 +114,19 @@ background:#f8f8f8;
  
 <body>
  
+<div class="hero">
+ 
 <h1>🌍 Kielipalvelu</h1>
  
 <p>
-Löydä omalla kielelläsi palvelevia yrityksiä ympäri maailmaa.
+Löydä omalla kielelläsi palvelevat ammattilaiset kaikkialta maailmasta.
 </p>
+ 
+</div>
+ 
+<div class="search-box">
+ 
+<div class="filters">
  
 <select>
 <option>Valitse kieli</option>
@@ -82,38 +144,74 @@ Löydä omalla kielelläsi palvelevia yrityksiä ympäri maailmaa.
 <option>Kiinteistönvälittäjä</option>
 </select>
  
-<br><br>
+<select>
+<option>Valitse maa</option>
+<option>Espanja</option>
+<option>Ruotsi</option>
+<option>Saksa</option>
+<option>Thaimaa</option>
+</select>
  
-<button>Etsi palveluja</button>
+<button>Hae palveluita</button>
+ 
+</div>
+ 
+</div>
+ 
+<div class="section">
+ 
+<h2>Suositut kategoriat</h2>
  
 <div class="categories">
  
-<div class="category">
-🦷 Hammaslääkärit
+<div class="card">
+<div class="icon">🦷</div>
+Hammaslääkärit
 </div>
  
-<div class="category">
-⚖️ Lakipalvelut
+<div class="card">
+<div class="icon">⚖️</div>
+Lakipalvelut
 </div>
  
-<div class="category">
-🩺 Lääkärit
+<div class="card">
+<div class="icon">🩺</div>
+Lääkäripalvelut
 </div>
  
-<div class="category">
-🏠 Kiinteistönvälittäjät
+<div class="card">
+<div class="icon">🏠</div>
+Kiinteistönvälittäjät
 </div>
  
-<div class="category">
-💼 Tilitoimistot
+<div class="card">
+<div class="icon">💼</div>
+Tilitoimistot
 </div>
  
-<div class="category">
-🔧 Muut palvelut
+<div class="card">
+<div class="icon">🔧</div>
+Muut palvelut
+</div>
+ 
 </div>
  
 </div>
  
 </body>
+</html>
+</div>
+196
  
+197
+</div>
+198
+ 
+199
+</div>
+200
+ 
+201
+</body>
+202
 </html>
