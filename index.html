@@ -1,19 +1,119 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="fi"> 
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kielipalveluhaku</title>
+<title>Kielipalvelu</title>
 
+<style>
+
+body{
+font-family: Arial, sans-serif;
+max-width:1000px;
+margin:auto;
+padding:20px;
+text-align:center;
+}
+ 
+h1{
+color:#005bbb;
+}
+ 
+p{
+color:#555;
+}
+ 
+select{
+padding:10px;
+margin:10px;
+font-size:16px;
+}
+ 
+button{
+padding:10px 20px;
+background:#005bbb;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+ 
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+margin-top:40px;
+}
+ 
+.category{
+border:1px solid #ddd;
+border-radius:10px;
+padding:20px;
+background:#f8f8f8;
+}
+ 
+</style>
+ 
 </head>
-
+ 
 <body>
-
-<h1>Tervetuloa Kielipalveluhakuun</h1>
-
-<p>Täältä löydät eri kielillä palvelevia yrityksiä ympäri maailmaa.</p>
-
+ 
+<h1>🌍 Kielipalvelu</h1>
+ 
+<p>
+Löydä omalla kielelläsi palvelevia yrityksiä ympäri maailmaa.
+</p>
+ 
+<select>
+<option>Valitse kieli</option>
+<option>Suomi</option>
+<option>Ruotsi</option>
+<option>Englanti</option>
+<option>Saksa</option>
+</select>
+ 
+<select>
+<option>Valitse palvelu</option>
+<option>Hammaslääkäri</option>
+<option>Lääkäri</option>
+<option>Lakimies</option>
+<option>Kiinteistönvälittäjä</option>
+</select>
+ 
+<br><br>
+ 
+<button>Etsi palveluja</button>
+ 
+<div class="categories">
+ 
+<div class="category">
+🦷 Hammaslääkärit
+</div>
+ 
+<div class="category">
+⚖️ Lakipalvelut
+</div>
+ 
+<div class="category">
+🩺 Lääkärit
+</div>
+ 
+<div class="category">
+🏠 Kiinteistönvälittäjät
+</div>
+ 
+<div class="category">
+💼 Tilitoimistot
+</div>
+ 
+<div class="category">
+🔧 Muut palvelut
+</div>
+ 
+</div>
+ 
 </body>
-
+ 
 </html>
