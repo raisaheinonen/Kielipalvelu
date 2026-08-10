@@ -6,7 +6,10 @@
 
 <title>Kielipalvelu</title>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"0;
+<style>
+
+body {
+    margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f7fb;
 }
@@ -86,13 +89,6 @@ button {
     padding: 20px;
 }
 
-#map {
-    height: 500px;
-    max-width: 1000px;
-    margin: 20px auto;
-    border-radius: 12px;
-}
-
 </style>
 </head>
 
@@ -136,8 +132,6 @@ button {
 
 <div id="results"></div>
 
-<div id="map"></div>
-
 <div class="categories">
 
     <div class="card">
@@ -162,8 +156,6 @@ button {
 
 </div>
 
-unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 <script>
 
 const services = [
@@ -176,9 +168,7 @@ country:"Espanja",
 city:"Malaga",
 website:"www.hammaslaakari-malaga.com",
 phone:"+34 123 456 789",
-premium:true,
-lat:36.7213,
-lng:-4.4214
+premium:true
 },
 
 {
@@ -187,9 +177,7 @@ language:"Suomi",
 service:"Hammaslääkäri",
 country:"Espanja",
 city:"Fuengirola",
-premium:false,
-lat:36.5390,
-lng:-4.6247
+premium:false
 },
 
 {
@@ -198,9 +186,7 @@ language:"Ruotsi",
 service:"Lakimies",
 country:"Espanja",
 city:"Marbella",
-premium:false,
-lat:36.5101,
-lng:-4.8856
+premium:false
 },
 
 {
@@ -209,21 +195,10 @@ language:"Englanti",
 service:"Lääkäri",
 country:"Espanja",
 city:"Alicante",
-premium:false,
-lat:38.3452,
-lng:-0.4810
+premium:false
 }
 
 ];
-
-const map = L.map('map').setView([36.7, -4.6], 7);
-
-L.tileLayer(
-'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-{
-attribution:'© OpenStreetMap'
-}
-).addTo(map);
 
 function searchServices() {
 
@@ -237,12 +212,6 @@ const country =
 document.getElementById("country").value;
 
 let html = "<h2>Tulokset</h2>";
-
-map.eachLayer(function(layer){
-    if(layer instanceof L.Marker){
-        map.removeLayer(layer);
-    }
-});
 
 services.forEach(item => {
 
@@ -271,10 +240,6 @@ ${item.premium ? `
 
 </div>
 `;
-
-L.marker([item.lat,item.lng])
-.addTo(map)
-.bindPopup(item.name);
 
 }
 
