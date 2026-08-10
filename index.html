@@ -262,4 +262,29 @@ ${item.name}
 
 <p>Kieli: ${item.language}</p>
 <p>Maa: ${item.country}</p>
-<p>Kaupunki: ${item.
+<p>Kaupunki: ${item.city}</p>
+
+${item.premium ? `
+<p>📞 ${item.phone}</p>
+<p>🌐 ${item.website}</p>
+` : ''}
+
+</div>
+`;
+
+L.marker([item.lat,item.lng])
+.addTo(map)
+.bindPopup(item.name);
+
+}
+
+});
+
+document.getElementById("results").innerHTML = html;
+
+}
+
+</script>
+
+</body>
+</html>
