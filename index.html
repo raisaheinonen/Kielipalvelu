@@ -92,6 +92,7 @@
             <option>Ruotsi</option>
             <option>Englanti</option>
             <option>Saksa</option>
+            <option>Espanja</option>
         </select>
 
         <select id="service">
@@ -100,6 +101,13 @@
             <option>Lääkäri</option>
             <option>Lakimies</option>
         </select>
+
+        <select id="country">
+    <option>Espanja</option>
+    <option>Ruotsi</option>
+    <option>Saksa</option>
+    <option>Thaimaa</option>
+</select>
 
         <button onclick="searchServices()">
 Hae palveluita
@@ -153,8 +161,9 @@ const services = [
 {
 name:"Suomalainen Hammaslääkäri Malaga",
 language:"Suomi",
-service:"Hammaslääkäri"
-},
+service:"Hammaslääkäri",
+country:"Espanja"
+}
 
 {
 name:"Nordic Dentist Fuengirola",
