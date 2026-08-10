@@ -156,6 +156,8 @@ language:"Suomi",
 service:"Hammaslääkäri",
 country:"Espanja",
 city:"Malaga",
+website:"www.hammaslaakari-malaga.com",
+phone:"+34 123 456 789",
 premium:true
 },
 
@@ -164,6 +166,7 @@ name:"Nordic Dentist Fuengirola",
 language:"Suomi",
 service:"Hammaslääkäri",
 country:"Espanja",
+city:"Fuengirola",
 premium:false
 },
 
@@ -212,8 +215,16 @@ html += `
 ${item.premium ? "⭐ PREMIUM - " : ""}
 ${item.name}
 </h3>
+
 <p>Kieli: ${item.language}</p>
 <p>Maa: ${item.country}</p>
+<p>Kaupunki: ${item.city || "-"}</p>
+
+${item.premium ? `
+<p>📞 ${item.phone}</p>
+<p>🌐 ${item.website}</p>
+` : ""}
+
 </div>
 `;
 
