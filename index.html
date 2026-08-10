@@ -156,14 +156,14 @@ language:"Suomi",
 service:"Hammaslääkäri",
 country:"Espanja",
 city:"Malaga",
-premium: true
-}
+premium:true
+},
 
 {
 name:"Nordic Dentist Fuengirola",
 language:"Suomi",
 service:"Hammaslääkäri",
-country:"Espanja"
+country:"Espanja",
 premium:false
 },
 
@@ -171,14 +171,16 @@ premium:false
 name:"Ruotsalainen Lakipalvelu Marbella",
 language:"Ruotsi",
 service:"Lakimies",
-country:"Espanja"
+country:"Espanja",
+premium:false
 },
 
 {
 name:"English Doctor Alicante",
 language:"Englanti",
 service:"Lääkäri",
-country:"Espanja"
+country:"Espanja",
+premium:false
 }
 
 ];
@@ -206,7 +208,10 @@ item.country === country
 
 html += `
 <div class="card">
-<h3>${item.name}</h3>
+<h3>
+${item.premium ? "⭐ PREMIUM - " : ""}
+${item.name}
+</h3>
 <p>Kieli: ${item.language}</p>
 <p>Maa: ${item.country}</p>
 </div>
