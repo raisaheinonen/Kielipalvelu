@@ -70,6 +70,10 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
+        .premium {
+    border: 3px solid gold;
+}
+        
         .icon {
             font-size: 40px;
             margin-bottom: 10px;
@@ -125,7 +129,8 @@ padding:20px;
     
     <div class="categories">
 
-        <div class="card">
+        <div class="card ${item.premium ? 'premium' : ''}">
+            
             <div class="icon">🦷</div>
             Hammaslääkärit
         </div>
@@ -218,7 +223,7 @@ ${item.name}
 
 <p>Kieli: ${item.language}</p>
 <p>Maa: ${item.country}</p>
-<p>Kaupunki: ${item.city || "-"}</p>
+<p>Kaupunki: ${item.city}</p>
 
 ${item.premium ? `
 <p>📞 ${item.phone}</p>
