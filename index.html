@@ -73,12 +73,22 @@
         .premium {
     border: 3px solid gold;
 }
+
+#map {
+    height: 500px;
+    max-width: 1000px;
+    margin: 20px auto;
+    border-radius: 12px;
+}
         
         .icon {
             font-size: 40px;
             margin-bottom: 10px;
         }
     </style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1
+        
 </head>
 
 <body>
@@ -126,6 +136,9 @@ margin:20px auto;
 padding:20px;
 ">
 </div>
+    <div id="map"></div>
+
+  <div id="map"></div>
     
     <div class="categories">
 
@@ -252,7 +265,7 @@ ${item.premium ? `
 document.getElementById("results").innerHTML = html;
 
 }
-    
+<script src="https://unpkg.com/leaft/leaflet.js</script>    
 </script>
 
 </body>
