@@ -1,77 +1,89 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kielipalvelu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fb;
-        }
+<title>Kielipalvelu</title>
 
-        .hero {
-            background: #005bbb;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+}
 
-        .hero h1 {
-            margin: 0;
-            font-size: 48px;
-        }
+.hero {
+    background: #005bbb;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
 
-        .hero p {
-            font-size: 20px;
-        }
+.hero h1 {
+    margin: 0;
+    font-size: 48px;
+}
 
-        .search-box {
-            background: white;
-            max-width: 900px;
-            margin: -30px auto 30px;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            text-align: center;
-        }
+.hero p {
+    font-size: 20px;
+}
 
-        select,
-        button {
-            padding: 12px;
-            margin: 8px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
+.search-box {
+    background: white;
+    max-width: 900px;
+    margin: -30px auto 30px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+}
 
-        button {
-            background: #005bbb;
-            color: white;
-            border: none;
-        }
+select,
+button {
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
 
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 15px;
-        }
+button {
+    background: #005bbb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
 
-        .premium {
+.premium {
     border: 3px solid gold;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+#results {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
 #map {
@@ -80,89 +92,78 @@
     margin: 20px auto;
     border-radius: 12px;
 }
-        
-        .icon {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-    </style>
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1
-        
+</style>
 </head>
 
 <body>
 
-    <div class="hero">
-        <h1>🌍 Kielipalvelu</h1>
-        <p>Löydä palveluita omalla kielelläsi kaikkialta maailmasta</p>
-    </div>
-
-    <div class="search-box">
-
-        <select id="language">
-            <option>Valitse kieli</option>
-            <option>Suomi</option>
-            <option>Ruotsi</option>
-            <option>Englanti</option>
-            <option>Saksa</option>
-            <option>Espanja</option>
-        </select>
-
-        <select id="service">
-            <option>Valitse palvelu</option>
-            <option>Hammaslääkäri</option>
-            <option>Lääkäri</option>
-            <option>Lakimies</option>
-        </select>
-
-        <select id="country">
-    <option>Espanja</option>
-    <option>Ruotsi</option>
-    <option>Saksa</option>
-    <option>Thaimaa</option>
-</select>
-
-        <button onclick="searchServices()">
-Hae palveluita
-</button>
-
-    </div>
-
-    <div id="results"
-style="
-max-width:900px;
-margin:20px auto;
-padding:20px;
-">
+<div class="hero">
+    <h1>🌍 Kielipalvelu</h1>
+    <p>Löydä palveluita omalla kielelläsi kaikkialta maailmasta</p>
 </div>
-    <div id="map"></div>
 
-  <div id="map"></div>
-    
-    <div class="categories">
+<div class="search-box">
 
-        <div class="card">            
-            <div class="icon">🦷</div>
-            Hammaslääkärit
-        </div>
+    <select id="language">
+        <option>Valitse kieli</option>
+        <option>Suomi</option>
+        <option>Ruotsi</option>
+        <option>Englanti</option>
+        <option>Saksa</option>
+        <option>Espanja</option>
+    </select>
 
-        <div class="card">
-            <div class="icon">⚖️</div>
-            Lakipalvelut
-        </div>
+    <select id="service">
+        <option>Valitse palvelu</option>
+        <option>Hammaslääkäri</option>
+        <option>Lääkäri</option>
+        <option>Lakimies</option>
+    </select>
 
-        <div class="card">
-            <div class="icon">🩺</div>
-            Lääkäripalvelut
-        </div>
+    <select id="country">
+        <option>Espanja</option>
+        <option>Ruotsi</option>
+        <option>Saksa</option>
+        <option>Thaimaa</option>
+    </select>
 
-        <div class="card">
-            <div class="icon">🏠</div>
-            Kiinteistönvälittäjät
-        </div>
+    <button onclick="searchServices()">
+        Hae palveluita
+    </button>
 
+</div>
+
+<div id="results"></div>
+
+<div id="map"></div>
+
+<div class="categories">
+
+    <div class="card">
+        <div class="icon">🦷</div>
+        Hammaslääkärit
     </div>
+
+    <div class="card">
+        <div class="icon">⚖️</div>
+        Lakipalvelut
+    </div>
+
+    <div class="card">
+        <div class="icon">🩺</div>
+        Lääkäripalvelut
+    </div>
+
+    <div class="card">
+        <div class="icon">🏠</div>
+        Kiinteistönvälittäjät
+    </div>
+
+</div>
+
+unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <script>
 
 const services = [
@@ -176,7 +177,6 @@ city:"Malaga",
 website:"www.hammaslaakari-malaga.com",
 phone:"+34 123 456 789",
 premium:true,
-    
 lat:36.7213,
 lng:-4.4214
 },
@@ -188,7 +188,6 @@ service:"Hammaslääkäri",
 country:"Espanja",
 city:"Fuengirola",
 premium:false,
-    
 lat:36.5390,
 lng:-4.6247
 },
@@ -198,8 +197,8 @@ name:"Ruotsalainen Lakipalvelu Marbella",
 language:"Ruotsi",
 service:"Lakimies",
 country:"Espanja",
+city:"Marbella",
 premium:false,
-
 lat:36.5101,
 lng:-4.8856
 },
@@ -209,13 +208,22 @@ name:"English Doctor Alicante",
 language:"Englanti",
 service:"Lääkäri",
 country:"Espanja",
+city:"Alicante",
 premium:false,
-
 lat:38.3452,
 lng:-0.4810
 }
 
 ];
+
+const map = L.map('map').setView([36.7, -4.6], 7);
+
+L.tileLayer(
+'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+attribution:'© OpenStreetMap'
+}
+).addTo(map);
 
 function searchServices() {
 
@@ -230,6 +238,12 @@ document.getElementById("country").value;
 
 let html = "<h2>Tulokset</h2>";
 
+map.eachLayer(function(layer){
+    if(layer instanceof L.Marker){
+        map.removeLayer(layer);
+    }
+});
+
 services.forEach(item => {
 
 if(
@@ -240,33 +254,12 @@ item.country === country
 
 html += `
 <div class="card ${item.premium ? 'premium' : ''}">
+
 <h3>
-${item.premium ? "⭐ PREMIUM - " : ""}
+${item.premium ? '⭐ PREMIUM - ' : ''}
 ${item.name}
 </h3>
 
 <p>Kieli: ${item.language}</p>
 <p>Maa: ${item.country}</p>
-<p>Kaupunki: ${item.city}</p>
-
-${item.premium ? `
-<p>📞 ${item.phone}</p>
-<p>🌐 ${item.website}</p>
-` : ""}
-
-</div>
-`;
-``
-    
-}
-
-});
-
-document.getElementById("results").innerHTML = html;
-
-}
-<script src="https://unpkg.com/leaft/leaflet.js</script>    
-</script>
-
-</body>
-</html>
+<p>Kaupunki: ${item.
