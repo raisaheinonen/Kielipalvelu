@@ -115,6 +115,14 @@ padding:20px;
 ">
 </div>
 
+<div id="results"
+style="
+max-width:900px;
+margin:20px auto;
+padding:20px;
+">
+</div>
+    
     <div class="categories">
 
         <div class="card">
@@ -168,9 +176,35 @@ service:"Lääkäri"
 
 ];
 
-    function searchServices() {
+function searchServices() {
 
-alert("Haku toimii!");
+const language =
+document.getElementById("language").value;
+
+const service =
+document.getElementById("service").value;
+
+let html = "<h2>Tulokset</h2>";
+
+services.forEach(item => {
+
+if(
+item.language === language &&
+item.service === service
+){
+
+html += `
+<div class="card">
+<h3>${item.name}</h3>
+<p>Kieli: ${item.language}</p>
+</div>
+`;
+
+}
+
+});
+
+document.getElementById("results").innerHTML = html;
 
 }
     
