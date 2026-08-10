@@ -158,29 +158,34 @@ padding:20px;
 
 const services = [
 
+const services = [
+
 {
 name:"Suomalainen Hammaslääkäri Malaga",
 language:"Suomi",
 service:"Hammaslääkäri",
 country:"Espanja"
-}
+},
 
 {
 name:"Nordic Dentist Fuengirola",
 language:"Suomi",
-service:"Hammaslääkäri"
+service:"Hammaslääkäri",
+country:"Espanja"
 },
 
 {
 name:"Ruotsalainen Lakipalvelu Marbella",
 language:"Ruotsi",
-service:"Lakimies"
+service:"Lakimies",
+country:"Espanja"
 },
 
 {
 name:"English Doctor Alicante",
 language:"Englanti",
-service:"Lääkäri"
+service:"Lääkäri",
+country:"Espanja"
 }
 
 ];
@@ -193,19 +198,24 @@ document.getElementById("language").value;
 const service =
 document.getElementById("service").value;
 
+const country =
+document.getElementById("country").value;
+
 let html = "<h2>Tulokset</h2>";
 
 services.forEach(item => {
 
 if(
 item.language === language &&
-item.service === service
-){
+item.service === service &&
+item.country === country
+)
 
 html += `
 <div class="card">
 <h3>${item.name}</h3>
 <p>Kieli: ${item.language}</p>
+<p>Maa: ${item.country}</p>
 </div>
 `;
 
