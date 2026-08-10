@@ -129,8 +129,7 @@ padding:20px;
     
     <div class="categories">
 
-        <div class="card ${item.premium ? 'premium' : ''}">
-            
+        <div class="card">            
             <div class="icon">🦷</div>
             Hammaslääkärit
         </div>
@@ -215,11 +214,12 @@ item.country === country
 ){
 
 html += `
-<div class="card">
+<div class="card ${item.premium ? 'premium' : ''}">
 <h3>
 ${item.premium ? "⭐ PREMIUM - " : ""}
 ${item.name}
 </h3>
+``
 
 <p>Kieli: ${item.language}</p>
 <p>Maa: ${item.country}</p>
