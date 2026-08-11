@@ -9,21 +9,22 @@
 body{
     margin:0;
     font-family:Arial,sans-serif;
+    background:#f4f7fb;
 }
 
 .container{
     display:flex;
-    height:100vh;
+    min-height:100vh;
 }
 
 .results{
     width:40%;
     padding:20px;
-    background:white;
+    background:#f4f7fb;
     overflow-y:auto;
 }
 
-    .result-card{
+.result-card{
     background:white;
     border-radius:12px;
     padding:20px;
@@ -39,12 +40,13 @@ body{
 .map{
     width:60%;
     background:#e8eef7;
+    border-left:1px solid #ddd;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:24px;
-    border-left:1px solid #ddd;
 }
+
 </style>
 </head>
 
@@ -53,6 +55,7 @@ body{
 <div class="container">
 
 <div class="results">
+
 <h2>Hakutulokset</h2>
 
 <p>2 palvelua löytyi</p>
@@ -79,14 +82,20 @@ body{
 
 </div>
 
+</div>
+
 <div class="map">
-    <div>
-        🗺️ Kartta
-        <br><br>
-        📍 Malaga
-        <br>
-        📍 Fuengirola
-    </div>
+<div>
+🗺️ Kartta
+
+<br><br>
+
+📍 Malaga
+
+<br>
+
+📍 Fuengirola
+</div>
 </div>
 
 </div>
