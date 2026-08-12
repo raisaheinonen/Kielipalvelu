@@ -107,7 +107,7 @@ Näytä kaikki kartalla
 
 <p id="result-count"></p>
 
-<div class="result-card premium">
+<div class="result-card premium" id="card-malaga">
 
 <img
 src="https://via.placeholder.com/120x60"
@@ -136,7 +136,7 @@ Näytä kartalla
 
 </div>
 
-<div class="result-card">
+<div class="result-card" id="card-fuengirola">
 
 <h2>Nordic Dentist Fuengirola</h2>
 
@@ -154,7 +154,7 @@ Näytä kartalla
 
 </div>
 
-<div class="result-card">
+<div class="result-card" id="card-marbella">
 
 <h2>Ruotsalainen Lakipalvelu Marbella</h2>
 
@@ -173,7 +173,7 @@ Näytä kartalla
 </div>
 
 
-<div class="result-card">
+<div class="result-card" id="card-alicante">
 
 <h2>English Doctor Alicante</h2>
 
@@ -248,6 +248,36 @@ country === "Espanja"
 
 document.getElementById("result-count").textContent =
 count + " yritystä löytyi";
+
+document.getElementById("card-malaga").style.display = "none";
+document.getElementById("card-fuengirola").style.display = "none";
+document.getElementById("card-marbella").style.display = "none";
+document.getElementById("card-alicante").style.display = "none";
+
+if(
+language === "Suomi" &&
+service === "Hammaslääkäri" &&
+country === "Espanja"
+){
+    document.getElementById("card-malaga").style.display = "block";
+    document.getElementById("card-fuengirola").style.display = "block";
+}
+
+if(
+language === "Ruotsi" &&
+service === "Lakimies" &&
+country === "Espanja"
+){
+    document.getElementById("card-marbella").style.display = "block";
+}
+
+if(
+language === "Englanti" &&
+service === "Lääkäri" &&
+country === "Espanja"
+){
+    document.getElementById("card-alicante").style.display = "block";
+}
 
 L.tileLayer(
 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
