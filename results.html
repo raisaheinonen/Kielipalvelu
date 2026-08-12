@@ -281,11 +281,16 @@ document
 
 });
 
-<button class="show-map-btn" id="show-all">
-Näytä kaikki kartalla
-</button>
+document
+.getElementById('show-all')
+.addEventListener('click', function(){
 
-
+    map.fitBounds(group.getBounds(), {
+        padding:[30,30]
+    });
+    
+    });
+    
 </script>
 
 </body>
