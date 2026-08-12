@@ -116,8 +116,10 @@ style="margin-bottom:15px;">
 
 <p>🌐 www.hammaslaakari-malaga.com</p>
 
-<button class="show-map-btn">Näytä kartalla</button>
-`
+<button class="show-map-btn" id="show-malaga">
+Näytä kartalla
+</button>
+``
 
 
 </div>
@@ -227,6 +229,14 @@ const group = L.featureGroup(markers);
 
 map.fitBounds(group.getBounds(), {
     padding:[30,30]
+});
+
+document
+.getElementById('show-malaga')
+.addEventListener('click', function(){
+
+    map.setView([36.7213, -4.4214], 14);
+
 });
 
 </script>
