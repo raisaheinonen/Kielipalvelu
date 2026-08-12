@@ -216,9 +216,6 @@ const country = params.get('country');
 
 const services = [
 
-console.log(services);
-console.log(services.length);
-
 {
     id:"malaga",
     name:"Suomalainen Hammaslääkäri Malaga",
@@ -274,10 +271,23 @@ console.log(services.length);
 }
 
 ];
+
+console.log(services);
+console.log(services.length);
     
 console.log(language);
 console.log(service);
 console.log(country);
+
+const matchingServices = services.filter(item =>
+
+item.language === language &&
+item.service === service &&
+item.country === country
+
+);
+
+console.log(matchingServices);
 
 document.getElementById("search-info").textContent =
 `${service} • ${country} • ${language}`;
