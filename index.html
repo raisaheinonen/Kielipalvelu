@@ -113,7 +113,7 @@
     <option>Thaimaa</option>
 </select>
 
-<button onclick="window.location.href='results.html'">Hae palveluita</button>
+<button onclick="goToResults()">Hae palveluita</button>
 
 
 </div>
@@ -202,6 +202,22 @@ lng:-0.4810
 }
 
 ];
+
+function goToResults(){
+
+const language =
+document.getElementById("language").value;
+
+const service =
+document.getElementById("service").value;
+
+const country =
+document.getElementById("country").value;
+
+window.location.href =
+`results.html?language=${language}&service=${service}&country=${country}`;
+
+}
 
 function searchServices() {
 
