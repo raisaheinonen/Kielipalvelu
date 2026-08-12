@@ -289,6 +289,12 @@ L.tileLayer(
 
 const markers = [];
 
+if(
+language === "Suomi" &&
+service === "Hammaslääkäri" &&
+country === "Espanja"
+){
+
 markers.push(
     L.marker([36.7213, -4.4214])
     .addTo(map)
@@ -301,11 +307,27 @@ markers.push(
     .bindPopup('Nordic Dentist Fuengirola')
 );
 
+}
+
+if(
+language === "Ruotsi" &&
+service === "Lakimies" &&
+country === "Espanja"
+){
+
 markers.push(
     L.marker([36.5101, -4.8856])
     .addTo(map)
     .bindPopup('Ruotsalainen Lakipalvelu Marbella')
 );
+
+}
+
+if(
+language === "Englanti" &&
+service === "Lääkäri" &&
+country === "Espanja"
+){
 
 markers.push(
     L.marker([38.3452, -0.4810])
@@ -313,12 +335,17 @@ markers.push(
     .bindPopup('English Doctor Alicante')
 );
 
+}
+
 const group = L.featureGroup(markers);
 
-map.fitBounds(group.getBounds(), {
-    padding:[30,30]
+if(markers.length > 0){
 
-});
+    map.fitBounds(group.getBounds(), {
+        padding:[30,30]
+    });
+
+}
     
 document
 .getElementById('show-malaga')
