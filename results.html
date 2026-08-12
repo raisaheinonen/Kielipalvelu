@@ -295,17 +295,19 @@ service === "Hammaslääkäri" &&
 country === "Espanja"
 ){
 
-markers.push(
-    L.marker([36.7213, -4.4214])
-    .addTo(map)
-    .bindPopup('⭐ Suomalainen Hammaslääkäri Malaga')
-);
+const malagaMarker =
+L.marker([36.7213, -4.4214])
+.addTo(map)
+.bindPopup('⭐ Suomalainen Hammaslääkäri Malaga');
 
-markers.push(
-    L.marker([36.5390, -4.6247])
-    .addTo(map)
-    .bindPopup('Nordic Dentist Fuengirola')
-);
+markers.push(malagaMarker);
+
+const fuengirolaMarker =
+L.marker([36.5390, -4.6247])
+.addTo(map)
+.bindPopup('Nordic Dentist Fuengirola');
+
+markers.push(fuengirolaMarker);
 
 }
 
@@ -315,11 +317,12 @@ service === "Lakimies" &&
 country === "Espanja"
 ){
 
-markers.push(
-    L.marker([36.5101, -4.8856])
-    .addTo(map)
-    .bindPopup('Ruotsalainen Lakipalvelu Marbella')
-);
+const marbellaMarker =
+L.marker([36.5101, -4.8856])
+.addTo(map)
+.bindPopup('Ruotsalainen Lakipalvelu Marbella');
+
+markers.push(marbellaMarker);
 
 }
 
@@ -329,11 +332,12 @@ service === "Lääkäri" &&
 country === "Espanja"
 ){
 
-markers.push(
-    L.marker([38.3452, -0.4810])
-    .addTo(map)
-    .bindPopup('English Doctor Alicante')
-);
+const alicanteMarker =
+L.marker([38.3452, -0.4810])
+.addTo(map)
+.bindPopup('English Doctor Alicante');
+
+markers.push(alicanteMarker);
 
 }
 
