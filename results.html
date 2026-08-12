@@ -240,15 +240,9 @@ const group = L.featureGroup(markers);
 
 map.fitBounds(group.getBounds(), {
     padding:[30,30]
-});
-
-document
-.getElementById('show-malaga')
-.addEventListener('click', function(){
-
-    map.setView([36.7213, -4.4214], 17);
 
 });
+    
 document
 .getElementById('show-malaga')
 .addEventListener('click', function(){
