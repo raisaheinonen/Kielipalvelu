@@ -136,8 +136,9 @@ Näytä kartalla
 Yhteystiedot näkyvät vain premium-yrityksille.
 </p>
 
-<button class="show-map-btn">Näytä kartalla</button>
-`
+<button class="show-map-btn" id="show-fuengirola">
+Näytä kartalla
+</button>
 
 </div>
 
@@ -153,8 +154,9 @@ Yhteystiedot näkyvät vain premium-yrityksille.
 Yhteystiedot näkyvät vain premium-yrityksille.
 </p>
 
-<button class="show-map-btn">Näytä kartalla</button>
-`
+<button class="show-map-btn" id="show-marbella">
+Näytä kartalla
+</button>
 
 </div>
 
@@ -171,8 +173,9 @@ Yhteystiedot näkyvät vain premium-yrityksille.
 Yhteystiedot näkyvät vain premium-yrityksille.
 </p>
 
-<button class="show-map-btn">🗺️ Näytä kartalla</button>
-`
+<button class="show-map-btn" id="show-alicante">
+Näytä kartalla
+</button>
 
 </div>
 
@@ -236,6 +239,29 @@ document
 .addEventListener('click', function(){
 
     map.setView([36.7213, -4.4214], 17);
+
+});
+document
+.getElementById('show-malaga')
+.addEventListener('click', function(){
+
+    map.setView([36.7213, -4.4214], 17);
+
+});
+
+    document
+.getElementById('show-marbella')
+.addEventListener('click', function(){
+
+    map.setView([36.5101, -4.8856], 17);
+
+});
+
+document
+.getElementById('show-alicante')
+.addEventListener('click', function(){
+
+    map.setView([38.3452, -0.4810], 17);
 
 });
 
