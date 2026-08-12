@@ -214,6 +214,64 @@ const language = params.get('language');
 const service = params.get('service');
 const country = params.get('country');
 
+const services = [
+
+{
+    id:"malaga",
+    name:"Suomalainen Hammaslääkäri Malaga",
+    language:"Suomi",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Malaga",
+    address:"Calle Larios 15",
+    phone:"+34 123 456 789",
+    website:"www.hammaslaakari-malaga.com",
+    premium:true,
+    lat:36.7213,
+    lng:-4.4214
+},
+
+{
+    id:"fuengirola",
+    name:"Nordic Dentist Fuengirola",
+    language:"Suomi",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Paseo Marítimo Rey de España 55",
+    premium:false,
+    lat:36.5390,
+    lng:-4.6247
+},
+
+{
+    id:"marbella",
+    name:"Ruotsalainen Lakipalvelu Marbella",
+    language:"Ruotsi",
+    service:"Lakimies",
+    country:"Espanja",
+    city:"Marbella",
+    address:"Avenida Ricardo Soriano 12",
+    premium:false,
+    lat:36.5101,
+    lng:-4.8856
+},
+
+{
+    id:"alicante",
+    name:"English Doctor Alicante",
+    language:"Englanti",
+    service:"Lääkäri",
+    country:"Espanja",
+    city:"Alicante",
+    address:"Avenida Alfonso X El Sabio 25",
+    premium:false,
+    lat:38.3452,
+    lng:-0.4810
+}
+
+];
+    
 console.log(language);
 console.log(service);
 console.log(country);
