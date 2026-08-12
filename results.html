@@ -121,5 +121,34 @@ style="margin-bottom:15px;">
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
+<script>
+
+const map = L.map('map').setView([36.65, -4.65], 8);
+
+L.tileLayer(
+'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+{
+    attribution: '&copy; OpenStreetMap'
+}
+).addTo(map);
+
+L.marker([36.7213, -4.4214])
+.addTo(map)
+.bindPopup('Malaga');
+
+L.marker([36.5390, -4.6247])
+.addTo(map)
+.bindPopup('Fuengirola');
+
+L.marker([36.5101, -4.8856])
+.addTo(map)
+.bindPopup('Marbella');
+
+L.marker([38.3452, -0.4810])
+.addTo(map)
+.bindPopup('Alicante');
+
+</script>
+
 </body>
 </html>
