@@ -105,7 +105,7 @@ Näytä kaikki kartalla
 <strong id="search-info"></strong>
 </p>
 
-<p>4 yritystä löytyi</p>
+<p id="result-count"></p>
 
 <div class="result-card premium">
 
@@ -219,6 +219,35 @@ console.log(country);
 
 document.getElementById("search-info").textContent =
 `${service} • ${country} • ${language}`;
+
+let count = 0;
+
+if(
+language === "Suomi" &&
+service === "Hammaslääkäri" &&
+country === "Espanja"
+){
+    count = 2;
+}
+
+if(
+language === "Ruotsi" &&
+service === "Lakimies" &&
+country === "Espanja"
+){
+    count = 1;
+}
+
+if(
+language === "Englanti" &&
+service === "Lääkäri" &&
+country === "Espanja"
+){
+    count = 1;
+}
+
+document.getElementById("result-count").textContent =
+count + " yritystä löytyi";
 
 L.tileLayer(
 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
