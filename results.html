@@ -101,7 +101,9 @@ body{
 Näytä kaikki kartalla
 </button>
 
-<p><strong>Hammaslääkärit • Espanja • Suomi</strong></p>
+<p>
+<strong id="search-info"></strong>
+</p>
 
 <p>4 yritystä löytyi</p>
 
@@ -214,7 +216,9 @@ const country = params.get('country');
 console.log(language);
 console.log(service);
 console.log(country);
-``
+
+document.getElementById("search-info").textContent =
+`${service} • ${country} • ${language}`;
 
 L.tileLayer(
 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
