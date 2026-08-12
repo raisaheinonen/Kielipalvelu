@@ -205,6 +205,17 @@ Näytä kartalla
 
 const map = L.map('map').setView([36.65, -4.65], 8);
 
+const params = new URLSearchParams(window.location.search);
+
+const language = params.get('language');
+const service = params.get('service');
+const country = params.get('country');
+
+console.log(language);
+console.log(service);
+console.log(country);
+``
+
 L.tileLayer(
 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
 {
