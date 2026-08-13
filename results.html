@@ -230,7 +230,15 @@ item.country === country
 
 );
 
-matchingServices.sort((a, b) => b.premium - a.premium);
+matchingServices.sort((a, b) => {
+
+if(a.premium !== b.premium){
+    return b.premium - a.premium;
+}
+
+return a.city.localeCompare(b.city);
+
+});
 
 let html = "";
 
@@ -252,6 +260,15 @@ ${item.name}
 ${item.premium ? `
 <p>📞 ${item.phone}</p>
 <p>🌐 ${item.website}</p>
+<p>
+https://${item.website}"
+target="_blank"
+class="show-map-btn"
+style="text-decoration:none;display:inline-block;">
+Avaa verkkosivu
+</a>
+</p>
+
 ` : `
 <p style="color:#777;">
 Yhteystiedot näkyvät vain premium-yrityksille.
