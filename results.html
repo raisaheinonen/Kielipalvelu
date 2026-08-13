@@ -141,7 +141,7 @@ const services = [
     country:"Espanja",
     city:"Malaga",
     address:"Calle Larios 15",
-    description:"Suomenkielisiä hammashoitopalveluja Malagan alueella."
+    description:"Suomenkielisiä hammashoitopalveluja Malagan alueella.",
     phone:"+34 123 456 789",
     website:"www.hammaslaakari-malaga.com",
     premium:true,
@@ -158,7 +158,7 @@ const services = [
     country:"Espanja",
     city:"Fuengirola",
     address:"Paseo Marítimo Rey de España 55",
-    description:"Pohjoismainen hammaslääkäriasema Fuengirolassa."
+    description:"Pohjoismainen hammaslääkäriasema Fuengirolassa.",
     premium:false,
     lat:36.5390,
     lng:-4.6247
@@ -172,7 +172,7 @@ const services = [
     country:"Espanja",
     city:"Marbella",
     address:"Avenida Ricardo Soriano 12",
-    description:"Ruotsinkielisiä lakipalveluja Marbellan alueella."
+    description:"Ruotsinkielisiä lakipalveluja Marbellan alueella.",
     premium:false,
     lat:36.5101,
     lng:-4.8856
@@ -186,7 +186,7 @@ const services = [
     country:"Espanja",
     city:"Alicante",
     address:"Avenida Alfonso X El Sabio 25",
-    description:"Englanninkielinen lääkäripalvelu Alicantessa."
+    description:"Englanninkielinen lääkäripalvelu Alicantessa.",
     premium:false,
     lat:38.3452,
     lng:-0.4810
@@ -200,7 +200,7 @@ const services = [
     country:"Espanja",
     city:"Torremolinos",
     address:"Calle San Miguel 10",
-    description:"Suomenkielistä fysioterapiaa Costa del Solilla."
+    description:"Suomenkielistä fysioterapiaa Costa del Solilla.",
     premium:false,
     lat:36.6218,
     lng:-4.4998
@@ -258,8 +258,10 @@ ${item.premium && item.logo ? `
 <img
 src="${item.logo}"
 alt="Logo"
-style="max-width:120px;margin-bottom
-<h2>
+style="max-width:120px;margin-bottom:15px;">
+` : ""}
+
+<h2
 ${item.premium ? "⭐ PREMIUM<br>" : ""}
 ${item.name}
 </h2>
