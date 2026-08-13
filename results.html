@@ -325,23 +325,10 @@ console.log(matchingServices);
 document.getElementById("search-info").textContent =
 `${service} • ${country} • ${language}`;
 
-let count = 0;
+const count = matchingServices.length;
 
-if(
-language === "Suomi" &&
-service === "Hammaslääkäri" &&
-country === "Espanja"
-){
-    count = 2;
-}
-
-if(
-language === "Ruotsi" &&
-service === "Lakimies" &&
-country === "Espanja"
-){
-    count = 1;
-}
+document.getElementById("result-count").textContent =
+count + " yritystä löytyi";
 
 if(
 language === "Englanti" &&
