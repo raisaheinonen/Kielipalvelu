@@ -287,6 +287,26 @@ item.country === country
 
 );
 
+let html = "";
+
+matchingServices.forEach(item => {
+
+html += `
+<div class="result-card">
+
+<h2>${item.name}</h2>
+
+<p>📍 ${item.city}, ${item.country}</p>
+
+<p>🏢 ${item.address}</p>
+
+</div>
+`;
+
+});
+
+document.getElementById("dynamic-results").innerHTML = html;
+
 console.log(matchingServices);
 
 document.getElementById("search-info").textContent =
