@@ -144,6 +144,7 @@ const services = [
     phone:"+34 123 456 789",
     website:"www.hammaslaakari-malaga.com",
     premium:true,
+    logo:"https://via.placeholder.com/120x60"
     lat:36.7213,
     lng:-4.4214
 },
@@ -247,6 +248,12 @@ matchingServices.forEach(item => {
 html += `
 <div class="result-card ${item.premium ? 'premium' : ''}" style="display:block;">
 
+
+${item.premium && item.logo ? `
+<img
+src="${item.logo}"
+alt="Logo"
+style="max-width:120px;margin-bottom
 <h2>
 ${item.premium ? "⭐ PREMIUM<br>" : ""}
 ${item.name}
