@@ -243,7 +243,10 @@ Yhteystiedot näkyvät vain premium-yrityksille.
 </p>
 `}
 
-<button class="show-map-btn">
+<button
+class="show-map-btn"
+data-lat="${item.lat}"
+data-lng="${item.lng}">
 Näytä kartalla
 </button>
 
@@ -253,6 +256,24 @@ Näytä kartalla
 });
 
 document.getElementById("dynamic-results").innerHTML = html;
+
+document
+.querySelectorAll(".show-map-btn")
+.forEach(button => {
+
+button.addEventListener("click", function(){
+
+const lat =
+parseFloat(this.dataset.lat);
+
+const lng =
+parseFloat(this.dataset.lng);
+
+map.setView([lat, lng], 13);
+
+});
+
+});
 
 console.log(matchingServices);
 
