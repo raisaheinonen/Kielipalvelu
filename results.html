@@ -277,9 +277,13 @@ ${item.name}
 
 ${item.premium ? `
 <p>📞 ${item.phone}</p>
+
 <p>
-🌐 https://${item.website}
-${item.website}
+<a
+href="https://${item.website}"
+target="_blank"
+style="text-decoration:none;">
+🌐 ${item.website}
 </a>
 </p>
 
