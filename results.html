@@ -247,47 +247,6 @@ const count = matchingServices.length;
 document.getElementById("result-count").textContent =
 count + " yritystä löytyi";
 
-if(
-language === "Englanti" &&
-service === "Lääkäri" &&
-country === "Espanja"
-){
-    count = 1;
-}
-
-document.getElementById("result-count").textContent =
-count + " yritystä löytyi";
-
-document.getElementById("card-malaga").style.display = "none";
-document.getElementById("card-fuengirola").style.display = "none";
-document.getElementById("card-marbella").style.display = "none";
-document.getElementById("card-alicante").style.display = "none";
-
-if(
-language === "Suomi" &&
-service === "Hammaslääkäri" &&
-country === "Espanja"
-){
-    document.getElementById("card-malaga").style.display = "block";
-    document.getElementById("card-fuengirola").style.display = "block";
-}
-
-if(
-language === "Ruotsi" &&
-service === "Lakimies" &&
-country === "Espanja"
-){
-    document.getElementById("card-marbella").style.display = "block";
-}
-
-if(
-language === "Englanti" &&
-service === "Lääkäri" &&
-country === "Espanja"
-){
-    document.getElementById("card-alicante").style.display = "block";
-}
-
 L.tileLayer(
 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
 {
