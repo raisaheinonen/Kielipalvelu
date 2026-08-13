@@ -252,7 +252,17 @@ let html = "";
 matchingServices.forEach(item => {
 
 html += `
+
 <div class="result-card ${item.premium ? 'premium' : ''}" style="display:block;">
+
+${item.premium && item.logo ? `
+<img
+src="${item.logo}"
+alt="Logo"
+
+style="max-width:120px;margin-bottom:15px;">
+`
+` : ""}
 
 <h2>
 ${item.premium ? "⭐ PREMIUM<br>" : ""}
