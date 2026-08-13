@@ -222,9 +222,13 @@ let html = "";
 matchingServices.forEach(item => {
 
 html += `
-<div class="result-card" style="display:block;">
+<div class="result-card ${item.premium ? 'premium' : ''}" style="display:block;">
 
-<h2>${item.name}</h2>
+<h2>
+${item.premium ? "⭐ PREMIUM<br>" : ""}
+${item.name}
+</h2>
+
 
 <p>📍 ${item.city}, ${item.country}</p>
 
