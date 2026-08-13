@@ -234,6 +234,16 @@ ${item.name}
 
 <p>🏢 ${item.address}</p>
 
+${item.premium ? `
+<p>📞 ${item.phone}</p>
+<p>🌐 ${item.website}</p>
+` : `
+<p style="color:#777;">
+Yhteystiedot näkyvät vain premium-yrityksille.
+</p>
+`}
+``
+
 </div>
 `;
 
