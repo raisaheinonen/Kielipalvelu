@@ -230,6 +230,8 @@ item.country === country
 
 );
 
+matchingServices.sort((a, b) => b.premium - a.premium);
+
 let html = "";
 
 matchingServices.forEach(item => {
