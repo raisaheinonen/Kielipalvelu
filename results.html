@@ -145,7 +145,7 @@ const services = [
     phone:"+34 123 456 789",
     website:"www.hammaslaakari-malaga.com",
     premium:true,
-    logo:"https://via.placeholder.com/120x60"
+    logo:"https://via.placeholder.com/120x60",
     lat:36.7213,
     lng:-4.4214
 },
@@ -269,7 +269,8 @@ ${item.premium ? `
 <p>📞 ${item.phone}</p>
 <p>🌐 ${item.website}</p>
 <p>
-https://${item.website}"
+<a
+href="https://${item.website}"
 target="_blank"
 class="show-map-btn"
 style="text-decoration:none;display:inline-block;">
