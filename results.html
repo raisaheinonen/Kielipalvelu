@@ -300,7 +300,13 @@ const marker =
 L.marker([item.lat, item.lng])
 .addTo(map)
 .bindPopup(
-`${item.premium ? '⭐ ' : ''}${item.name}`
+`
+<b>${item.premium ? '⭐ ' : ''}${item.name}</b>
+<br>
+${item.city}, ${item.country}
+<br>
+${item.address}
+`
 );
 
 markers.push(marker);
