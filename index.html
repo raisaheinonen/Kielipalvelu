@@ -81,14 +81,55 @@
             font-size: 40px;
             margin-bottom: 10px;
         }
+
+.language-selector{
+    text-align:right;
+    margin-bottom:20px;
+}
+
+#site-language{
+    background:white;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    padding:8px 12px;
+    font-size:14px;
+}
+            
     </style>
 </head>
 
 <body>
 
     <div class="hero">
-        <h1>🌍 Kielipalvelu</h1>
-        <p>Löydä palveluita omalla kielelläsi kaikkialta maailmasta</p>
+        <div class="language-selector">
+
+<select id="site-language">
+
+<option value="fi">🇫🇮 Suomi</option>
+<option value="en">🇬🇧 English</option>
+<option value="sv">🇸🇪 Svenska</option>
+<option value="no">🇳🇴 Norsk</option>
+<option value="da">🇩🇰 Dansk</option>
+<option value="de">🇩🇪 Deutsch</option>
+<option value="fr">🇫🇷 Français</option>
+<option value="it">🇮🇹 Italiano</option>
+<option value="es">🇪🇸 Español</option>
+<option value="pt">🇵🇹 Português</option>
+<option value="nl">🇳🇱 Nederlands</option>
+<option value="is">🇮🇸 Íslenska</option>
+<option value="et">🇪🇪 Eesti</option>
+<option value="lv">🇱🇻 Latviešu</option>
+<option value="lt">🇱🇹 Lietuvių</option>
+<option value="pl">🇵🇱 Polski</option>
+<option value="tr">🇹🇷 Türkçe</option>
+
+</select>
+
+</div>
+        <h1 id="main-title">🌍 Kielipalvelu</h1>
+        <p id="hero-text">
+Löydä palveluita omalla kielelläsi kaikkialta maailmasta
+</p>
     </div>
 
     <div class="search-box">
