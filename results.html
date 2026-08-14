@@ -26,6 +26,7 @@ body{
 
 .result-card{
     display:none;
+    position:relative;
     background:white;
     border-radius:12px;
     padding:15px;
@@ -36,6 +37,18 @@ body{
 .premium{
     border:3px solid gold;
     background:#fffdf2;
+}
+
+.premium-badge{
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#fbbf24;
+    color:#0f172a;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:bold;
 }
 
 .topbar{
@@ -256,6 +269,12 @@ html += `
 
 <div class="result-card ${item.premium ? 'premium' : ''}" style="display:block;">
 
+${item.premium ? `
+<div class="premium-badge">
+⭐ PREMIUM
+</div>
+` : ""}
+
 ${item.premium && item.logo ? `
 <img
 src="${item.logo}"
@@ -265,7 +284,6 @@ style="max-width:120px;margin-bottom:15px;">
 ` : ""}
 
 <h2>
-${item.premium ? "⭐ PREMIUM<br>" : ""}
 ${item.name}
 </h2>
 
