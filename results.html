@@ -375,10 +375,27 @@ const count = matchingServices.length;
 
 if(count === 0){
 
+let noResultsTitle = "Ei hakutuloksia";
+let noResultsText = "Tällä hakuehdolla ei löytynyt vielä yrityksiä.";
+let noResultsHelp = "Kokeile toista kieltä, palvelua tai maata.";
+
+if(language === "Englanti"){
+    noResultsTitle = "No results";
+    noResultsText = "No companies were found with these search criteria.";
+    noResultsHelp = "Try another language, service or country.";
+}
+
+if(language === "Ruotsi"){
+    noResultsTitle = "Inga resultat";
+    noResultsText = "Inga företag hittades med dessa sökkriterier.";
+    noResultsHelp = "Prova ett annat språk, en annan tjänst eller ett annat land.";
+}
+
 document.getElementById("dynamic-results").innerHTML = `
 <div class="result-card" style="display:block;">
-<h2>Ei hakutuloksia</h2>
-<p>Tällä hakuehdolla ei löytynyt vielä yrityksiä.</p>
+<h2>${noResultsTitle}</h2>
+<p>${noResultsText}</p>
+<p>${noResultsHelp}</p>
 </div>
 `;
 
