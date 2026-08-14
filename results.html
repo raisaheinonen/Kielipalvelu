@@ -80,6 +80,14 @@ h2{
 .show-map-btn:hover{
     background:#334155;
 }
+
+#result-count{
+    background:white;
+    padding:10px 15px;
+    border-radius:12px;
+    display:inline-block;
+    font-weight:bold;
+}
     
 .map{
     width:60%;
@@ -363,6 +371,17 @@ document.getElementById("search-info").textContent =
 `${service} • ${country} • ${language}`;
 
 const count = matchingServices.length;
+
+if(count === 0){
+
+document.getElementById("dynamic-results").innerHTML = `
+<div class="result-card" style="display:block;">
+<h2>Ei hakutuloksia</h2>
+<p>Tällä hakuehdolla ei löytynyt vielä yrityksiä.</p>
+</div>
+`;
+
+}
 
 document.getElementById("result-count").textContent =
 count + " yritystä löytyi";
