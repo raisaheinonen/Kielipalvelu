@@ -158,6 +158,23 @@ const params = new URLSearchParams(window.location.search);
 const language = params.get('language');
 const service = params.get('service');
 const country = params.get('country');
+const siteLanguage = params.get('lang') || 'fi';
+
+const translations = {
+
+fi:{
+found:"yritystä löytyi"
+},
+
+en:{
+found:"companies found"
+},
+
+sv:{
+found:"företag hittades"
+}
+
+};
 
 const services = [
 
@@ -402,7 +419,7 @@ document.getElementById("dynamic-results").innerHTML = `
 }
 
 document.getElementById("result-count").textContent =
-count + " yritystä löytyi";
+count + " " + translations[siteLanguage].found;
 
 L.tileLayer(
 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
