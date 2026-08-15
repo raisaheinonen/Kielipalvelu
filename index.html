@@ -168,7 +168,7 @@ Löydä palveluita omalla kielelläsi kaikkialta maailmasta
     <div class="search-box">
 
         <select id="language">
-            <option>Valitse kieli</option>
+            <option id="select-language">Valitse kieli</option>
             <option>Suomi</option>
             <option>Ruotsi</option>
             <option>Englanti</option>
@@ -177,7 +177,7 @@ Löydä palveluita omalla kielelläsi kaikkialta maailmasta
         </select>
 
         <select id="service">
-            <option>Valitse palvelu</option>
+            <option id="select-service">Valitse palvelu</option>
             <option>Hammaslääkäri</option>
             <option>Lääkäri</option>
             <option>Lakimies</option>
@@ -233,27 +233,32 @@ padding:20px;
 
 <div class="search-box">
 
-<h2>Lisää yrityksesi</h2>
+<h2 id="add-company-title">
+Lisää yritys
+</h2>
 
 <p>
 Onko yrityksesi valmis tavoittamaan omalla kielellä palveluja etsivät asiakkaat?
 </p>
 
-<button>
+<button id="add-company-btn">
 Lisää yritys
 </button>
+
 
 </div>
 
 <div class="search-box">
 
-<h2>Ehdota yritystä</h2>
+<h2 id="suggest-company-title">
+Ehdota yritystä
+</h2>
 
 <p>
 Tiedätkö yrityksen, joka puuttuu palvelusta?
 </p>
 
-<button>
+<button id="suggest-company-btn">
 Ehdota yritystä
 </button>
 
