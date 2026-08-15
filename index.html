@@ -199,6 +199,25 @@ padding:20px;
     </div>
 <script>
 
+const translations = {
+
+fi:{
+title:"🌍 Kielipalvelu",
+hero:"Löydä palveluita omalla kielelläsi kaikkialta maailmasta"
+},
+
+en:{
+title:"🌍 Language Services",
+hero:"Find services in your own language anywhere in the world"
+},
+
+sv:{
+title:"🌍 Språktjänster",
+hero:"Hitta tjänster på ditt eget språk över hela världen"
+}
+
+};
+    
 const services = [
 
 {
@@ -314,6 +333,26 @@ ${item.premium ? `
 document.getElementById("results").innerHTML = html;
 
 }
+
+}
+
+document
+.getElementById("site-language")
+.addEventListener("change", function(){
+
+const lang = this.value;
+
+if(translations[lang]){
+
+document.getElementById("main-title").textContent =
+translations[lang].title;
+
+document.getElementById("hero-text").textContent =
+translations[lang].hero;
+
+}
+
+});
     
 </script>
 
