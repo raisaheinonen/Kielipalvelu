@@ -391,11 +391,11 @@ document.getElementById("service").value;
 const country =
 document.getElementById("country").value;
 
-window.location.href =
-`results.html?language=${language}&service=${service}&country=${country}&lang=${siteLanguage}`;
-
 const siteLanguage =
 document.getElementById("site-language").value;
+
+window.location.href =
+`results.html?language=${language}&service=${service}&country=${country}&lang=${siteLanguage}`;
 
 }
 
@@ -475,6 +475,24 @@ translations[lang].suggestCompany;
 
 document.getElementById("suggest-company-btn").textContent =
 translations[lang].suggestCompany;
+
+document.getElementById("select-language").textContent =
+translations[lang].selectLanguage;
+
+document.getElementById("select-service").textContent =
+translations[lang].selectService;
+
+document.getElementById("dentists-title").textContent =
+translations[lang].dentists;
+
+document.getElementById("legal-title").textContent =
+translations[lang].legal;
+
+document.getElementById("medical-title").textContent =
+translations[lang].medical;
+
+document.getElementById("realestate-title").textContent =
+translations[lang].realestate;
 
 }
 
