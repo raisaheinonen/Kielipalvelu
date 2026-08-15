@@ -273,20 +273,29 @@ const translations = {
 fi:{
 title:"🌍 Kielipalvelu",
 hero:"Löydä palveluita omalla kielelläsi kaikkialta maailmasta",
-search:"Hae palveluita"
+search:"Hae palveluita",
+
+addCompany:"Lisää yritys",
+suggestCompany:"Ehdota yritystä"
 },
 
 en:{
 title:"🌍 Language Services",
 hero:"Find services in your own language anywhere in the world",
-search:"Search services"
+search:"Search services",
+
+addCompany:"Add company",
+suggestCompany:"Suggest company"
 },
 
 sv:{
 title:"🌍 Språktjänster",
 hero:"Hitta tjänster på ditt eget språk över hela världen",
-search:"Sök tjänster"
-}
+search:"Sök tjänster",
+
+addCompany:"Lägg till företag",
+suggestCompany:"Föreslå företag"
+},
 
 };
     
@@ -422,6 +431,18 @@ translations[lang].hero;
 
 document.getElementById("search-btn").textContent =
 translations[lang].search;
+
+document.getElementById("add-company-title").textContent =
+translations[lang].addCompany;
+
+document.getElementById("add-company-btn").textContent =
+translations[lang].addCompany;
+
+document.getElementById("suggest-company-title").textContent =
+translations[lang].suggestCompany;
+
+document.getElementById("suggest-company-btn").textContent =
+translations[lang].suggestCompany;
 
 }
 
