@@ -363,7 +363,10 @@ const country =
 document.getElementById("country").value;
 
 window.location.href =
-`results.html?language=${language}&service=${service}&country=${country}`;
+`results.html?language=${language}&service=${service}&country=${country}&lang=${siteLanguage}`;
+
+const siteLanguage =
+document.getElementById("site-language").value;
 
 }
 
