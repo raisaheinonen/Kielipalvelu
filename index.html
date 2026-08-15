@@ -175,12 +175,14 @@ Löydä palveluita omalla kielelläsi kaikkialta maailmasta
 
         <select id="language">
             <option id="select-language">Valitse kieli</option>
-            <option>Suomi</option>
-            <option>Ruotsi</option>
-            <option>Englanti</option>
-            <option>Saksa</option>
-            <option>Espanja</option>
-        </select>
+
+        <option id="lang-finnish">Suomi</option>
+        <option id="lang-swedish">Ruotsi</option>
+        <option id="lang-english">Englanti</option>
+        <option id="lang-german">Saksa</option>
+        <option id="lang-spanish">Espanja</option>
+
+</select>
 
         <select id="service">
             <option id="select-service">Valitse palvelu</option>
@@ -386,6 +388,12 @@ jewelry:"Korukaupat",
 
 addCompanyText:"Onko yrityksesi valmis tavoittamaan omalla kielellä palveluja etsivät asiakkaat?",
 suggestCompanyText:"Tiedätkö yrityksen, joka puuttuu palvelusta?"
+
+finnish:"Suomi",
+swedish:"Ruotsi",
+english:"Englanti",
+german:"Saksa",
+spanish:"Espanja"
 },
 
 en:{
@@ -413,6 +421,12 @@ jewelry:"Jewelry Stores",
 
 addCompanyText:"Is your company ready to reach customers looking for services in their own language?",
 suggestCompanyText:"Do you know a company that is missing from the directory?"
+
+finnish:"Finnish",
+swedish:"Swedish",
+english:"English",
+german:"German",
+spanish:"Spanish"
 },
 
 sv:{
@@ -440,6 +454,12 @@ jewelry:"Smyckesbutiker",
 
 addCompanyText:"Är ditt företag redo att nå kunder som söker tjänster på sitt eget språk?",
 suggestCompanyText:"Känner du till ett företag som saknas i katalogen?"
+
+finnish:"Finska",
+swedish:"Svenska",
+english:"Engelska",
+german:"Tyska",
+spanish:"Spanska"
 },
 
 };
@@ -636,6 +656,21 @@ translations[lang].addCompanyText;
 
 document.getElementById("suggest-company-text").textContent =
 translations[lang].suggestCompanyText;
+
+document.getElementById("lang-finnish").textContent =
+translations[lang].finnish;
+
+document.getElementById("lang-swedish").textContent =
+translations[lang].swedish;
+
+document.getElementById("lang-english").textContent =
+translations[lang].english;
+
+document.getElementById("lang-german").textContent =
+translations[lang].german;
+
+document.getElementById("lang-spanish").textContent =
+translations[lang].spanish;
 
 }
 
