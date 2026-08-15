@@ -168,7 +168,9 @@ Löydä palveluita omalla kielelläsi kaikkialta maailmasta
     <option>Thaimaa</option>
 </select>
 
-<button onclick="goToResults()">Hae palveluita</button>
+<button id="search-btn" onclick="goToResults()">
+Hae palveluita
+</button>
 
 
 </div>
@@ -210,17 +212,20 @@ const translations = {
 
 fi:{
 title:"🌍 Kielipalvelu",
-hero:"Löydä palveluita omalla kielelläsi kaikkialta maailmasta"
+hero:"Löydä palveluita omalla kielelläsi kaikkialta maailmasta",
+search:"Hae palveluita"
 },
 
 en:{
 title:"🌍 Language Services",
-hero:"Find services in your own language anywhere in the world"
+hero:"Find services in your own language anywhere in the world",
+search:"Search services"
 },
 
 sv:{
 title:"🌍 Språktjänster",
-hero:"Hitta tjänster på ditt eget språk över hela världen"
+hero:"Hitta tjänster på ditt eget språk över hela världen",
+search:"Sök tjänster"
 }
 
 };
@@ -354,6 +359,9 @@ translations[lang].title;
 
 document.getElementById("hero-text").textContent =
 translations[lang].hero;
+
+document.getElementById("search-btn").textContent =
+translations[lang].search;
 
 }
 
