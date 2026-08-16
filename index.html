@@ -89,9 +89,9 @@
 }
 
         .card:hover{
-    transform:translateY(-3px);
+        transform:translateY(-3px);
+        cursor:pointer;
 }
-
         .premium {
             border: 3px solid gold;
 }
@@ -212,10 +212,12 @@ Löydä palveluita omalla kielelläsi kaikkialta maailmasta
 
 
    <select id="country">
-    <option>Espanja</option>
-    <option>Ruotsi</option>
-    <option>Saksa</option>
-    <option>Thaimaa</option>
+
+        <option id="country-spain">Espanja</option>
+        <option id="country-sweden">Ruotsi</option>
+        <option id="country-germany">Saksa</option>
+        <option id="country-thailand">Thaimaa</option>
+
 </select>
 
 <button id="search-btn" onclick="goToResults()">
@@ -425,6 +427,11 @@ swedish:"Ruotsi",
 english:"Englanti",
 german:"Saksa",
 spanish:"Espanja"
+
+countrySpain:"Espanja",
+countrySweden:"Ruotsi",
+countryGermany:"Saksa",
+countryThailand:"Thaimaa",
 },
 
 en:{
@@ -468,6 +475,11 @@ swedish:"Swedish",
 english:"English",
 german:"German",
 spanish:"Spanish"
+
+countrySpain:"Spain",
+countrySweden:"Sweden",
+countryGermany:"Germany",
+countryThailand:"Thailand",
 },
 
 sv:{
@@ -511,6 +523,11 @@ swedish:"Svenska",
 english:"Engelska",
 german:"Tyska",
 spanish:"Spanska"
+
+countrySpain:"Spanien",
+countrySweden:"Sverige",
+countryGermany:"Tyskland",
+countryThailand:"Thailand",
 },
 
 };
@@ -752,6 +769,20 @@ translations[lang].german;
 
 document.getElementById("lang-spanish").textContent =
 translations[lang].spanish;
+
+document.getElementById("country-spain").textContent =
+translations[lang].countrySpain;
+
+document.getElementById("country-sweden").textContent =
+translations[lang].countrySweden;
+
+document.getElementById("country-germany").textContent =
+translations[lang].countryGermany;
+
+document.getElementById("country-thailand").textContent =
+translations[lang].countryThailand;
+
+}
 
 }
 
