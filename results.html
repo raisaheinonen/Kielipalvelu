@@ -160,13 +160,10 @@ const service = params.get('service');
 const country = params.get('country');
 const siteLanguage = params.get('lang') || 'fi';
 
-document.getElementById("results-title").textContent =
-translations[siteLanguage].results;
 
-document.getElementById("show-all").textContent =
-translations[siteLanguage].showAll;
 
 const translations = {
+
 
 fi:{
 found:"yritystä löytyi",
@@ -192,6 +189,7 @@ navigate:"Navigate",
 premiumContacts:"Contact details are visible only for premium companies.",
 premium:"Premium",
 noResultsTitle:"No results",
+noResultsTitle:"No results",
 noResultsText:"No companies were found with these search criteria.",
 noResultsHelp:"Try another language, service or country.",
 },
@@ -208,9 +206,15 @@ premium:"Premium",
 noResultsTitle:"Inga resultat",
 noResultsText:"Inga företag hittades med dessa sökkriterier.",
 noResultsHelp:"Prova ett annat språk, en annan tjänst eller ett annat land.",
-},
+}
 
 };
+
+    document.getElementById("results-title").textContent =
+translations[siteLanguage].results;
+
+document.getElementById("show-all").textContent =
+translations[siteLanguage].showAll;
 
 const services = [
 
