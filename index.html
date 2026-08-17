@@ -239,20 +239,21 @@ padding:20px;
     
     <div class="categories">
 
-    <div class="card">
-        <div class="icon">🦷</div>
-        <span id="dentists-title">Hammaslääkärit</span>
-    </div>
+    <div class="card" onclick="openCategory('Hammaslääkäri')">
+    <div class="icon">🦷</div>
+    <span id="dentists-title">Hammaslääkärit</span>
+</div>
 
-    <div class="card">
-        <div class="icon">⚖️</div>
-        <span id="legal-title">Lakipalvelut</span>
-    </div>
+    <div class="card" onclick="openCategory('Lakimies')">
+    <div class="icon">⚖️</div>
+    <span id="legal-title">Lakipalvelut</span>
+</div>
 
-    <div class="card">
-        <div class="icon">🩺</div>
-        <span id="medical-title">Lääkäripalvelut</span>
-    </div>
+
+    <div class="card" onclick="openCategory('Lääkäri')">
+    <div class="icon">🩺</div>
+    <span id="medical-title">Lääkäripalvelut</span>
+</div>
 
     <div class="card">
         <div class="icon">🏠</div>
@@ -601,6 +602,22 @@ document.getElementById("language").value;
 
 const service =
 document.getElementById("service").value;
+
+const country =
+document.getElementById("country").value;
+
+const siteLanguage =
+document.getElementById("site-language").value;
+
+window.location.href =
+`results.html?language=${language}&service=${service}&country=${country}&lang=${siteLanguage}`;
+
+}
+
+function openCategory(service){
+
+const language =
+document.getElementById("language").value;
 
 const country =
 document.getElementById("country").value;
