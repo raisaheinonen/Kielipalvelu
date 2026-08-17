@@ -144,8 +144,8 @@
 
 <select id="site-language">
 
-<option value="fi">🇫🇮 Suomi</option>
 <option value="en">🇬🇧 English</option>
+<option value="fi">🇫🇮 Suomi</option>
 <option value="sv">🇸🇪 Svenska</option>
 <option value="no">🇳🇴 Norsk</option>
 <option value="da">🇩🇰 Dansk</option>
@@ -165,16 +165,16 @@
 </select> 
 
 </div>
-        <h1 id="main-title">🌍 Kielipalvelu</h1>
+        <h1 id="main-title">🌍 Language Services</h1>
         <p id="hero-text">
-Löydä palveluita omalla kielelläsi kaikkialta maailmasta
+Find services in your own language anywhere in the world
 </p>
     </div>
 
     <div class="search-box">
 
         <select id="language">
-            <option id="select-language">Valitse kieli</option>
+            <option id="select-language">Select language</option>
 
         <option id="lang-finnish">Suomi</option>
         <option id="lang-swedish">Ruotsi</option>
@@ -185,7 +185,7 @@ Löydä palveluita omalla kielelläsi kaikkialta maailmasta
 </select>
 
         <select id="service">
-            <option id="select-service">Valitse palvelu</option>
+            <option id="select-service">Select service</option>
             
             <option id="service-dentist">Hammaslääkäri</option> 
             <option id="service-doctor">Lääkäri</option>
@@ -213,15 +213,15 @@ Löydä palveluita omalla kielelläsi kaikkialta maailmasta
 
    <select id="country">
 
-        <option id="country-spain">Espanja</option>
-        <option id="country-sweden">Ruotsi</option>
-        <option id="country-germany">Saksa</option>
-        <option id="country-thailand">Thaimaa</option>
+        <option id="country-spain">Spain</option>
+        <option id="country-sweden">Sweden</option>
+        <option id="country-germany">Germany</option>
+        <option id="country-thailand">Thailand</option>
 
 </select>
 
 <button id="search-btn" onclick="goToResults()">
-Hae palveluita
+Search services
 </button>
 
 
@@ -844,6 +844,9 @@ translations[lang].countryGermany;
 
 document.getElementById("country-thailand").textContent =
 translations[lang].countryThailand;
+
+document.getElementById("site-language").value = "en";
+document.getElementById("site-language").dispatchEvent(new Event("change"));
 
 }
 
