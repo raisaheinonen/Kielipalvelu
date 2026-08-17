@@ -189,7 +189,6 @@ navigate:"Navigate",
 premiumContacts:"Contact details are visible only for premium companies.",
 premium:"Premium",
 noResultsTitle:"No results",
-noResultsTitle:"No results",
 noResultsText:"No companies were found with these search criteria.",
 noResultsHelp:"Try another language, service or country.",
 },
@@ -216,7 +215,11 @@ translations[siteLanguage].results;
 document.getElementById("show-all").textContent =
 translations[siteLanguage].showAll;
 
+    console.log("Translations OK");
+
 const services = [
+
+    console.log("Services OK");
 
 {
     id:"malaga",
@@ -333,6 +336,8 @@ return a.city.localeCompare(b.city);
 });
 
 let html = "";
+
+    console.log("Before results rendering");
 
 matchingServices.forEach(item => {
 
