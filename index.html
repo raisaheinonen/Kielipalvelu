@@ -174,7 +174,9 @@ Find services in your own language anywhere in the world
     <div class="search-box">
 
         <select id="language">
-            <option id="select-language">Select language</option>
+            <option value="" id="select-language">
+            Select language
+            </option>
 
         <option value="Suomi" id="lang-finnish">Suomi</option>
         <option value="Ruotsi" id="lang-swedish">Ruotsi</option>
@@ -185,7 +187,9 @@ Find services in your own language anywhere in the world
 </select>
 
         <select id="service">
-            <option id="select-service">Select service</option>
+            <option value="" id="select-service">
+            Select service
+            </option>
             
             <option value="Hammaslääkäri" id="service-dentist">Hammaslääkäri</option>
             <option value="Lääkäri" id="service-doctor">Lääkäri</option>
@@ -213,7 +217,9 @@ Find services in your own language anywhere in the world
 
    <select id="country">
 
-       <option id="select-country">Select country</option>
+       <option value="" id="select-country">
+        Select country
+        </option>
 
         <option value="Espanja" id="country-spain">Spain</option>
 <option value="Ruotsi" id="country-sweden">Sweden</option>
@@ -612,6 +618,12 @@ document.getElementById("site-language").value;
 console.log("Language:", language);
 console.log("Service:", service);
 console.log("Country:", country);
+
+    alert(
+`Language=${language}
+Service=${service}
+Country=${country}`
+);
 
 window.location.href =
 `results.html?language=${language}&service=${service}&country=${country}&lang=${siteLanguage}`;
