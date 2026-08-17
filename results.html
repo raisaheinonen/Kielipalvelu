@@ -176,6 +176,10 @@ website:"Verkkosivut",
 showMap:"Näytä kartalla",
 navigate:"Navigoi kohteeseen",
 premiumContacts:"Yhteystiedot näkyvät vain premium-yrityksille."
+premium:"Premium",
+noResultsTitle:"Ei hakutuloksia",
+noResultsText:"Tällä hakuehdolla ei löytynyt vielä yrityksiä.",
+noResultsHelp:"Kokeile toista kieltä, palvelua tai maata.",
 },
 
 en:{
@@ -186,6 +190,10 @@ website:"Website",
 showMap:"Show on map",
 navigate:"Navigate",
 premiumContacts:"Contact details are visible only for premium companies."
+premium:"Premium"
+noResultsTitle:"No results",
+noResultsText:"No companies were found with these search criteria.",
+noResultsHelp:"Try another language, service or country.",
 },
 
 sv:{
@@ -196,6 +204,10 @@ website:"Webbplats",
 showMap:"Visa på karta",
 navigate:"Navigera",
 premiumContacts:"Kontaktuppgifter visas endast för premiumföretag."
+premium:"Premium"
+noResultsTitle:"Inga resultat",
+noResultsText:"Inga företag hittades med dessa sökkriterier.",
+noResultsHelp:"Prova ett annat språk, en annan tjänst eller ett annat land.",
 },
 
 };
@@ -324,9 +336,8 @@ html += `
 
 <div class="result-card ${item.premium ? 'premium' : ''}" style="display:block;">
 
-${item.premium ? `
 <div class="premium-badge">
-⭐ Premium
+⭐ ${translations[siteLanguage].premium}
 </div>
 ` : ""}
 
@@ -416,9 +427,14 @@ const count = matchingServices.length;
 
 if(count === 0){
 
-let noResultsTitle = "Ei hakutuloksia";
-let noResultsText = "Tällä hakuehdolla ei löytynyt vielä yrityksiä.";
-let noResultsHelp = "Kokeile toista kieltä, palvelua tai maata.";
+const noResultsTitle =
+translations[siteLanguage].noResultsTitle;
+
+const noResultsText =
+translations[siteLanguage].noResultsText;
+
+const noResultsHelp =
+translations[siteLanguage].noResultsHelp;
 
 if(siteLanguage === "en"){
     noResultsTitle = "No results";
