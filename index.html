@@ -609,6 +609,11 @@ document.getElementById("country").value;
 const siteLanguage =
 document.getElementById("site-language").value;
 
+console.log("Language:", language);
+console.log("Service:", service);
+console.log("Country:", country);
+`
+
 window.location.href =
 `results.html?language=${language}&service=${service}&country=${country}&lang=${siteLanguage}`;
 
