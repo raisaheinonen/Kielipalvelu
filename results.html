@@ -436,18 +436,6 @@ translations[siteLanguage].noResultsText;
 const noResultsHelp =
 translations[siteLanguage].noResultsHelp;
 
-if(siteLanguage === "en"){
-    noResultsTitle = "No results";
-    noResultsText = "No companies were found with these search criteria.";
-    noResultsHelp = "Try another language, service or country.";
-}
-
-if(siteLanguage === "sv"){
-    noResultsTitle = "Inga resultat";
-    noResultsText = "Inga företag hittades med dessa sökkriterier.";
-    noResultsHelp = "Prova ett annat språk, en annan tjänst eller ett annat land.";
-}
-
 document.getElementById("dynamic-results").innerHTML = `
 <div class="result-card" style="display:block;">
 <h2>${noResultsTitle}</h2>
