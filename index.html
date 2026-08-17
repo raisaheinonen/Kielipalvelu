@@ -213,6 +213,8 @@ Find services in your own language anywhere in the world
 
    <select id="country">
 
+       <option id="select-country">Select country</option>
+
         <option id="country-spain">Spain</option>
         <option id="country-sweden">Sweden</option>
         <option id="country-germany">Germany</option>
@@ -432,6 +434,8 @@ countrySpain:"Espanja",
 countrySweden:"Ruotsi",
 countryGermany:"Saksa",
 countryThailand:"Thaimaa",
+
+selectCountry:"Valitse maa",
 },
 
 en:{
@@ -480,6 +484,9 @@ countrySpain:"Spain",
 countrySweden:"Sweden",
 countryGermany:"Germany",
 countryThailand:"Thailand",
+
+selectCountry:"Select country",
+    
 },
 
 sv:{
@@ -528,6 +535,9 @@ countrySpain:"Spanien",
 countrySweden:"Sverige",
 countryGermany:"Tyskland",
 countryThailand:"Thailand",
+
+selectCountry:"Välj land",
+    
 },
 
 };
@@ -844,6 +854,9 @@ translations[lang].countryGermany;
 
 document.getElementById("country-thailand").textContent =
 translations[lang].countryThailand;
+
+document.getElementById("select-country").innerText =
+translations[lang].selectCountry;
 
 }
 
