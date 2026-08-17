@@ -122,7 +122,7 @@ h2{
 
 <div class="results">
 
-<h2>Hakutulokset</h2>
+<h2 id="results-title">Hakutulokset</h2>
 
 <p>
 <strong id="search-info"></strong>
@@ -160,19 +160,43 @@ const service = params.get('service');
 const country = params.get('country');
 const siteLanguage = params.get('lang') || 'fi';
 
+document.getElementById("results-title").textContent =
+translations[siteLanguage].results;
+
+document.getElementById("show-all").textContent =
+translations[siteLanguage].showAll;
+
 const translations = {
 
 fi:{
-found:"yritystä löytyi"
+found:"yritystä löytyi",
+results:"Hakutulokset",
+showAll:"Näytä kaikki kartalla",
+website:"Verkkosivut",
+showMap:"Näytä kartalla",
+navigate:"Navigoi kohteeseen",
+premiumContacts:"Yhteystiedot näkyvät vain premium-yrityksille."
 },
 
 en:{
-found:"companies found"
+found:"companies found",
+results:"Results",
+showAll:"Show all on map",
+website:"Website",
+showMap:"Show on map",
+navigate:"Navigate",
+premiumContacts:"Contact details are visible only for premium companies."
 },
 
 sv:{
-found:"företag hittades"
-}
+found:"företag hittades",
+results:"Resultat",
+showAll:"Visa alla på kartan",
+website:"Webbplats",
+showMap:"Visa på karta",
+navigate:"Navigera",
+premiumContacts:"Kontaktuppgifter visas endast för premiumföretag."
+},
 
 };
 
@@ -333,13 +357,13 @@ ${item.premium ? `
 href="https://${item.website}"
 target="_blank"
 style="text-decoration:none;color:#005bbb;">
-Verkkosivut
+${translations[siteLanguage].website}
 </a>
 </p>
 
 ` : `
 <p style="color:#777;">
-Yhteystiedot näkyvät vain premium-yrityksille.
+${translations[siteLanguage].premiumContacts}
 </p>
 `}
 
@@ -347,7 +371,7 @@ Yhteystiedot näkyvät vain premium-yrityksille.
 class="show-map-btn"
 data-lat="${item.lat}"
 data-lng="${item.lng}">
-Näytä kartalla
+${translations[siteLanguage].showMap}
 </button>
 
 <a
@@ -355,7 +379,7 @@ href="https://www.google.com/maps/dir/?
 target="_blank"
 class="show-map-btn"
 style="margin-left:10px;text-decoration:none;display:inline-block;">
-Navigoi kohteeseen
+${translations[siteLanguage].navigate}
 </a>
 
 </div>
@@ -396,13 +420,13 @@ let noResultsTitle = "Ei hakutuloksia";
 let noResultsText = "Tällä hakuehdolla ei löytynyt vielä yrityksiä.";
 let noResultsHelp = "Kokeile toista kieltä, palvelua tai maata.";
 
-if(language === "Englanti"){
+if(siteLanguage === "en"){
     noResultsTitle = "No results";
     noResultsText = "No companies were found with these search criteria.";
     noResultsHelp = "Try another language, service or country.";
 }
 
-if(language === "Ruotsi"){
+if(siteLanguage === "sv"){
     noResultsTitle = "Inga resultat";
     noResultsText = "Inga företag hittades med dessa sökkriterier.";
     noResultsHelp = "Prova ett annat språk, en annan tjänst eller ett annat land.";
