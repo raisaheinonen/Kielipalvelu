@@ -113,7 +113,8 @@ h2{
 <body>
 
 <div class="topbar">
-    <a href="index.html" style="color:#0f172a;text-decoration:none;">
+    <a id="topbar-title"
+    "color:#0f172a;text-decoration:none;">
         🌍 Kielipalvelu
     </a>
 </div>
@@ -168,6 +169,7 @@ const translations = {
 fi:{
 found:"yritystä löytyi",
 results:"Hakutulokset",
+siteName:"🌍 Kielipalvelu",
 showAll:"Näytä kaikki kartalla",
 website:"Verkkosivut",
 showMap:"Näytä kartalla",
@@ -182,6 +184,7 @@ noResultsHelp:"Kokeile toista kieltä, palvelua tai maata.",
 en:{
 found:"companies found",
 results:"Results",
+siteName:"🌍 Language Services",
 showAll:"Show all on map",
 website:"Website",
 showMap:"Show on map",
@@ -196,6 +199,7 @@ noResultsHelp:"Try another language, service or country.",
 sv:{
 found:"företag hittades",
 results:"Resultat",
+siteName:"🌍 Språktjänster",
 showAll:"Visa alla på kartan",
 website:"Webbplats",
 showMap:"Visa på karta",
@@ -214,6 +218,9 @@ translations[siteLanguage].results;
 
 document.getElementById("show-all").textContent =
 translations[siteLanguage].showAll;
+
+document.getElementById("topbar-title").textContent =
+translations[siteLanguage].siteName;
 
     console.log("Translations OK");
 
