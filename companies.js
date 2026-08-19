@@ -95,21 +95,6 @@ const services = [
 },
 
     {
-    id:"spkoti-costa-del-sol-fi",
-    name:"Sp-Koti Costa del Sol",
-    language:"Suomi",
-    service:"Kiinteistönvälittäjä",
-    country:"Espanja",
-    city:"Fuengirola",
-    address:"Avenida de las Gaviotas 3",
-    description:"Suomalaisomisteinen kiinteistönvälitystoimisto Costa del Solilla.",
-    website:"www.spkoti.es",
-    premium:false,
-    lat:36.5580,
-    lng:-4.6115
-},
-
-    {
     id:"prius-abogados-fi",
     name:"Prius Abogados",
     language:"Suomi",
@@ -197,7 +182,7 @@ const services = [
     premium:false,
     lat:36.5390,
     lng:-4.6240
-},
+}
 
 
 ];
