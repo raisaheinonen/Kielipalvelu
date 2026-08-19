@@ -1,4 +1,4 @@
-const services = [
+const companies = [
 
 {
     id:"sinervo",
