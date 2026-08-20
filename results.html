@@ -266,7 +266,11 @@ matchingServices.forEach(item => {
 
 html += `
 
-<div class="result-card ${item.premium ? 'premium' : ''}" style="display:block;">
+<div
+class="result-card ${item.premium ? 'premium' : ''}"
+data-lat="${item.lat}"
+data-lng="${item.lng}"
+style="display:block;">
 
 ${item.premium ? `
 <div class="premium-badge">
