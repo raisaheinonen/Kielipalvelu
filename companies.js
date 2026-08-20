@@ -71,6 +71,7 @@ const companies = [
     address:"Calle Margarita Salas, Fuengirola",
     description:"Perheyritys, joka tarjoaa asuntojen myyntiä ja vuokrausta Costa del Solilla.",
     website:"www.higueronhomes.com",
+    logo:"images/higueron-homes-logo.png",
     premium:true,
     lat:36.573609,
     lng:-4.595682
@@ -88,6 +89,7 @@ const companies = [
     address:"Calle Margarita Salas, Fuengirola",
     description:"Family-owned company offering property sales and rentals on the Costa del Sol.",
     website:"www.higueronhomes.com",
+    logo:"images/higueron-homes-logo.png",
     premium:true,
     lat:36.573609,
     lng:-4.595682
