@@ -333,6 +333,31 @@ ${translations[siteLanguage].navigate}
 
 document.getElementById("dynamic-results").innerHTML = html;
 
+function updateVisibleResults(){
+
+    const bounds = map.getBounds();
+
+    document
+        .querySelectorAll(".result-card")
+        .forEach(card => {
+
+            const lat = parseFloat(card.dataset.lat);
+            const lng = parseFloat(card.dataset.lng);
+
+            if(bounds.contains([lat,lng])){
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+}
+
 document
 .querySelectorAll(".show-map-btn")
 .forEach(button => {
