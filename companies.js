@@ -184,6 +184,21 @@ const companies = [
     premium:false,
     lat:36.5390,
     lng:-4.6240
+},
+
+    {
+    id:"lawbird-legal-en",
+    name:"Lawbird Legal Services",
+    language:"Englanti",
+    service:"Lakimies",
+    country:"Espanja",
+    city:"Marbella",
+    address:"Marbella",
+    description:"Lakipalveluja ja kiinteistöjuridiikkaa Espanjassa kansainvälisille asiakkaille.",
+    website:"www.lawbird.com",
+    premium:false,
+    lat:36.5100,
+    lng:-4.8850
 }
 
 
