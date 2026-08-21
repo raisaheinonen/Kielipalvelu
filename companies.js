@@ -193,7 +193,7 @@ const companies = [
     service:"Lakimies",
     country:"Espanja",
     city:"Marbella",
-    address:"Marbella",
+    address:"Ricardo Soriano 19 - 4",
     description:"Lakipalveluja ja kiinteistöjuridiikkaa Espanjassa kansainvälisille asiakkaille.",
     website:"www.lawbird.com",
     premium:false,
