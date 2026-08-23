@@ -187,6 +187,66 @@ const companies = [
 },
 
     {
+    id:"spkoti-costa-del-sol-en",
+    name:"Sp-Koti Costa del Sol",
+    language:"Englanti",
+    service:"Kiinteistönvälittäjä",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida de las Gaviotas 3",
+    description:"Real estate agency on the Costa del Sol serving international clients.",
+    website:"www.spkoti.es",
+    premium:false,
+    lat:36.5580,
+    lng:-4.6115
+},
+
+    {
+    id:"spkoti-costa-del-sol-sv",
+    name:"Sp-Koti Costa del Sol",
+    language:"Ruotsi",
+    service:"Kiinteistönvälittäjä",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida de las Gaviotas 3",
+    description:"Fastighetsförmedling på Costa del Sol.",
+    website:"www.spkoti.es",
+    premium:false,
+    lat:36.5580,
+    lng:-4.6115
+},
+
+    {
+    id:"spkoti-costa-del-sol-de",
+    name:"Sp-Koti Costa del Sol",
+    language:"Saksa",
+    service:"Kiinteistönvälittäjä",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida de las Gaviotas 3",
+    description:"Immobilienvermittlung an der Costa del Sol.",
+    website:"www.spkoti.es",
+    premium:false,
+    lat:36.5580,
+    lng:-4.6115
+},
+
+    {
+    id:"spkoti-costa-del-sol-it",
+    name:"Sp-Koti Costa del Sol",
+    language:"Italia",
+    service:"Kiinteistönvälittäjä",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida de las Gaviotas 3",
+    description:"Servizi immobiliari sulla Costa del Sol.",
+    website:"www.spkoti.es",
+    premium:false,
+    lat:36.5580,
+    lng:-4.6115
+},
+
+    {
     id:"asunto-del-sol-fi",
     name:"Asunto del Sol",
     language:"Suomi",
