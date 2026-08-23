@@ -112,6 +112,21 @@ const companies = [
 },
 
     {
+    id:"prius-abogados-en",
+    name:"Prius Abogados",
+    language:"Englanti",
+    service:"Lakimies",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida Jesús Santos Rein 2",
+    description:"Legal and tax services in Spain for international clients.",
+    website:"www.priusabogados.es",
+    premium:false,
+    lat:36.5395,
+    lng:-4.6237
+},
+
+    {
     id:"laakso-law-fi",
     name:"Laakso Law",
     language:"Suomi",
