@@ -18,7 +18,7 @@ const companies = [
     {
     id:"noruega",
     name:"Clinica Dental Noruega",
-    language:"Suomi",
+    language:"Ruotsi",
     service:"Hammaslääkäri",
     country:"Espanja",
     city:"Fuengirola",
