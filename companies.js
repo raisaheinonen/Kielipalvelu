@@ -262,6 +262,21 @@ const companies = [
 },
 
     {
+    id:"asunto-del-sol-en",
+    name:"Asunto del Sol",
+    language:"Englanti",
+    service:"Kiinteistönvälittäjä",
+    country:"Espanja",
+    city:"Marbella",
+    address:"Costa del Sol",
+    description:"Real estate agency on the Costa del Sol serving international clients.",
+    website:"www.asuntodelsol.com",
+    premium:false,
+    lat:36.5100,
+    lng:-4.8800
+},
+
+    {
     id:"palm-homes-fi",
     name:"Palm Homes",
     language:"Suomi",
