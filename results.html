@@ -25,25 +25,26 @@ body{
 }
 
     .search-summary{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin-bottom:20px;
+    display:flex;
+    gap:15px;
+    padding:15px 20px;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
 }
 
 .summary-box{
-    background:white;
+    background:#f8fafc;
+    padding:12px 18px;
     border-radius:16px;
-    padding:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    min-width:180px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 .summary-label{
-    color:#64748b;
     font-size:12px;
-    text-transform:uppercase;
-    margin-bottom:6px;
+    color:#64748b;
     font-weight:bold;
+    margin-bottom:5px;
 }
 
 .result-card{
@@ -194,14 +195,34 @@ h2{
 
     
 </div>
+
+    <div class="search-summary">
+
+    <div class="summary-box">
+        <div class="summary-label">🌍 MAA</div>
+        <div id="summary-country"></div>
+    </div>
+
+    <div class="summary-box">
+        <div class="summary-label">🦷 PALVELU</div>
+        <div id="summary-service"></div>
+    </div>
+
+    <div class="summary-box">
+        <div class="summary-label">🗣️ KIELI</div>
+        <div id="summary-language"></div>
+    </div>
+
+    <div class="summary-box">
+        <div class="summary-label">✅ TULOKSET</div>
+        <div id="summary-count"></div>
+    </div>
+
+</div>
     
 <div class="container">
 
 <div class="results">
-
-<h2 id="results-title">Hakutulokset</h2>
-
-<p id="result-count"></p>
 
 <div class="results-actions">
 
