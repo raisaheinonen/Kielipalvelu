@@ -200,7 +200,9 @@ const service = params.get('service');
 const country = params.get('country');
 const siteLanguage = params.get('lang') || 'fi';
 
-
+document.getElementById("summary-country").textContent = country;
+document.getElementById("summary-service").textContent = service;
+document.getElementById("summary-language").textContent = language;
 
 const translations = {
 
