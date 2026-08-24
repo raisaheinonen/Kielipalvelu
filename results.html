@@ -23,6 +23,27 @@ body{
     background:#f4f7fb;
     overflow-y:auto;
 }
+    .search-summary{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.summary-box{
+    background:white;
+    border-radius:16px;
+    padding:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.summary-label{
+    color:#64748b;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-bottom:6px;
+    font-weight:bold;
+}
 
 .result-card{
     display:none;
@@ -126,9 +147,24 @@ h2{
 
 <h2 id="results-title">Hakutulokset</h2>
 
-<p>
-<strong id="search-info"></strong>
-</p>
+<div class="search-summary">
+
+    <div class="summary-box">
+        <div class="summary-label">🌍 Maa</div>
+        <div id="summary-country"></div>
+    </div>
+
+    <div class="summary-box">
+        <div class="summary-label">🦷 Palvelu</div>
+        <div id="summary-service"></div>
+    </div>
+
+    <div class="summary-box">
+        <div class="summary-label">🗣️ Kieli</div>
+        <div id="summary-language"></div>
+    </div>
+
+</div>
 
 <p id="result-count"></p>
 
@@ -382,8 +418,14 @@ map.setView([lat, lng], 13);
 
 console.log(matchingServices);
 
-document.getElementById("search-info").textContent =
-`${service} • ${country} • ${language}`;
+document.getElementById("summary-country").textContent =
+country;
+
+document.getElementById("summary-service").textContent =
+service;
+
+document.getElementById("summary-language").textContent =
+language;
 
 const count = matchingServices.length;
 
