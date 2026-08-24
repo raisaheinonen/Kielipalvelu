@@ -62,6 +62,23 @@ body{
     height:fit-content;
 }
 
+    .search-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.search-tag{
+    background:white;
+    border:1px solid #d1d5db;
+    border-radius:999px;
+    padding:10px 16px;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
 .premium{
     border:3px solid gold;
     background:#fffdf2;
@@ -154,22 +171,15 @@ h2{
 
 <h2 id="results-title">Hakutulokset</h2>
 
-<div class="search-summary">
+<div class="search-tags">
 
-    <div class="summary-box">
-        <div class="summary-label">🌍 Maa</div>
-        <div id="summary-country"></div>
-    </div>
+    <span class="search-tag" id="summary-country"></span>
 
-    <div class="summary-box">
-        <div class="summary-label">🦷 Palvelu</div>
-        <div id="summary-service"></div>
-    </div>
+    <span class="search-tag" id="summary-service"></span>
 
-    <div class="summary-box">
-        <div class="summary-label">🗣️ Kieli</div>
-        <div id="summary-language"></div>
-    </div>
+    <span class="search-tag" id="summary-language"></span>
+
+</div>
 
 </div>
 
@@ -207,9 +217,14 @@ const service = params.get('service');
 const country = params.get('country');
 const siteLanguage = params.get('lang') || 'fi';
 
-document.getElementById("summary-country").textContent = country;
-document.getElementById("summary-service").textContent = service;
-document.getElementById("summary-language").textContent = language;
+document.getElementById("summary-country").textContent =
+"🌍 " + country;
+
+document.getElementById("summary-service").textContent =
+"🏠 " + service;
+
+document.getElementById("summary-language").textContent =
+"🗣️ " + language;
 
 const translations = {
 
