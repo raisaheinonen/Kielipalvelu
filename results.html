@@ -149,6 +149,15 @@ h2{
     height:calc(100vh - 68px);
 }
 
+    .results-actions{
+    margin:15px 0 20px 0;
+}
+
+#show-all{
+    width:auto;
+}
+
+
 </style>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -185,9 +194,13 @@ h2{
 
 <p id="result-count"></p>
 
+<div class="results-actions">
+
 <button class="show-map-btn" id="show-all">
 Näytä kaikki kartalla
 </button>
+
+</div>
 
 <div id="dynamic-results"></div>
 
