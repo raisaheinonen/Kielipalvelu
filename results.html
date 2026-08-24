@@ -111,6 +111,23 @@ h2{
     border-bottom:1px solid #e5e7eb;
 }
 
+    .topbar-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+    padding:12px 20px;
+    background:white;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.topbar-filters span{
+    background:#f8fafc;
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:600;
+}
+
 .show-map-btn{
     background:#475569;
     color:white;
@@ -173,6 +190,21 @@ h2{
        style="color:#0f172a;text-decoration:none;">
         🌍 Kielipalvelu
     </a>
+
+    <div class="topbar-filters">
+
+    <span id="summary-country"></span>
+
+    <span id="summary-service"></span>
+
+    <span id="summary-language"></span>
+
+    <span id="summary-count"></span>
+
+    <button class="show-map-btn" id="show-all">
+        📍 Näytä kaikki kartalla
+    </button>
+
     
 </div>
 
@@ -182,32 +214,7 @@ h2{
 
 <div class="results">
 
-    <div class="search-summary">
-
-    <div class="summary-box">
-        <div class="summary-label">🌍 MAA</div>
-        <div id="summary-country"></div>
-    </div>
-
-    <div class="summary-box">
-        <div class="summary-label">🦷 PALVELU</div>
-        <div id="summary-service"></div>
-    </div>
-
-    <div class="summary-box">
-        <div class="summary-label">🗣️ KIELI</div>
-        <div id="summary-language"></div>
-    </div>
-
-    <div class="summary-box">
-        <div class="summary-label">✅ TULOKSET</div>
-        <div id="summary-count"></div>
-    </div>
-
-  </div>
-
-<div class="results-actions">
-
+    
 <button class="show-map-btn" id="show-all">
 Näytä kaikki kartalla
 </button>
