@@ -472,7 +472,40 @@ const companies = [
     premium:false,
     lat:27.762608,
     lng:-15.566282
-}
+},
+
+    {
+    id:"sisma-fi",
+    name:"Servicios Sanitarios SISMA",
+    language:"Suomi",
+    service:"Lääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida Finlandia 19",
+    description:"24/7 lääkäripalvelut, kotikäynnit, ambulanssit ja sairaankuljetukset Costa del Solilla.",
+    website:"www.servicios-sisma.com",
+    phone:"+34 624 62 86 00",
+    premium:false,
+    lat:36.5657,
+    lng:-4.6113
+},
+
+    {
+    id:"sisma-en",
+    name:"Servicios Sanitarios SISMA",
+    language:"Englanti",
+    service:"Lääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida Finlandia 19",
+    description:"24/7 medical care, home visits, ambulances and medical transportation on the Costa del Sol.",
+    website:"www.servicios-sisma.com",
+    phone:"+34 624 62 86 00",
+    premium:false,
+    lat:36.5657,
+    lng:-4.6113
+},
+
 
 
 ];
