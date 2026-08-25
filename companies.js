@@ -304,6 +304,37 @@ const companies = [
     premium:false,
     lat:36.5100,
     lng:-4.8850
+},
+
+    {
+    id:"costaklinikka-fi",
+    name:"Costaklinikka",
+    language:"Suomi",
+    service:"Lääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida Nuestro Padre Jesus Cautivo 11",
+    description:"Suomalainen lääkärikeskus Fuengirolassa.",
+    website:"www.costaklinikka.com",
+    phone:"+358 50 5581199",
+    premium:false,
+    lat:36.5534,
+    lng:-4.6151
+},
+
+    {
+    id:"costadoctor-en",
+    name:"CostaDoctor",
+    language:"Englanti",
+    service:"Lääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avenida Nuestro Padre Jesus Cautivo 11",
+    description:"English-speaking medical clinic in Fuengirola providing healthcare services for international patients.",
+    website:"www.costadoctor.com",
+    premium:false,
+    lat:36.5534,
+    lng:-4.6151
 }
 
 
