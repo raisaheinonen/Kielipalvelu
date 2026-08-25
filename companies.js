@@ -489,7 +489,23 @@ const companies = [
     premium:false,
     lat:36.5657,
     lng:-4.6113
-}
+},
+
+    {
+    id:"interlaki-fi",
+    name:"InterLaki España Finlandia",
+    language:"Suomi",
+    service:"Lakimies",
+    country:"Espanja",
+    city:"Málaga",
+    address:"Calle Linaje 4, 7A",
+    description:"Suomen ja Espanjan lakiasioihin erikoistunut lakitoimisto. Palvelua suomalaisille yksityishenkilöille ja yrityksille.",
+    website:"www.interlaki.es",
+    phone:"+34 640 710 320",
+    premium:false,
+    lat:36.7179,
+    lng:-4.4250
+},
 
 
 
