@@ -504,7 +504,7 @@ const companies = [
     premium:false,
     lat:36.5657,
     lng:-4.6113
-},
+}
 
 
 
