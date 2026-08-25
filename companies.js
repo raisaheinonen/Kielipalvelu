@@ -335,7 +335,37 @@ const companies = [
     premium:false,
     lat:36.5534,
     lng:-4.6151
-}
+},
+
+    {
+    id:"borja-alcoholado-fi",
+    name:"Clínica Dental Borja Alcoholado",
+    language:"Suomi",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Av. Nuestro Padre Jesús Cautivo 35",
+    description:"Hammaslääkäriasema Los Bolichesissa. Palvelua suomeksi, englanniksi ja espanjaksi.",
+    website:"www.clinicadentalborjaalcoholado.com",
+    premium:false,
+    lat:36.549,
+    lng:-4.617
+},
+
+    {
+    id:"borja-alcoholado-en",
+    name:"Clínica Dental Borja Alcoholado",
+    language:"Englanti",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Av. Nuestro Padre Jesús Cautivo 35",
+    description:"Dental clinic in Los Boliches. Service available in English, Finnish and Spanish.",
+    website:"www.clinicadentalborjaalcoholado.com",
+    premium:false,
+    lat:36.549,
+    lng:-4.617
+},
 
 
 ];
