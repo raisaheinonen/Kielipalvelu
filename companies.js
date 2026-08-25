@@ -503,8 +503,8 @@ const companies = [
     website:"www.interlaki.es",
     phone:"+34 640 710 320",
     premium:false,
-    lat:36.7179,
-    lng:-4.4250
+    lat:36.716033,
+    lng:-4.425240
 },
 
 
