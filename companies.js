@@ -16,7 +16,7 @@ const companies = [
 },
 
     {
-    id:"noruega",
+    id:"noruega-fi",
     name:"Clinica Dental Noruega",
     language:"Suomi",
     service:"Hammaslääkäri",
@@ -53,21 +53,6 @@ const companies = [
     city:"Fuengirola",
     address:"Avda. Clemente Diaz Ruiz 4",
     description:"Dental services for international clients on the Costa del Sol.",
-    website:"www.clinicadentalnoruega.com",
-    premium:false,
-    lat:36.541,
-    lng:-4.623
-},
-
-    {
-    id:"noruega-fi",
-    name:"Clinica Dental Noruega",
-    language:"Suomi",
-    service:"Hammaslääkäri",
-    country:"Espanja",
-    city:"Fuengirola",
-    address:"Avda. Clemente Diaz Ruiz 4",
-    description:"Hammashoitopalveluja pohjoismaisille asiakkaille Aurinkorannikolla.",
     website:"www.clinicadentalnoruega.com",
     premium:false,
     lat:36.541,
