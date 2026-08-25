@@ -454,8 +454,8 @@ const companies = [
     website:"www.suomiklinikka.com",
     phone:"+34 928 77 72 60",
     premium:false,
-    lat:27.7567,
-    lng:-15.5787
+    lat:27.762608,
+    lng:-15.566282
 },
 
     {
@@ -470,8 +470,8 @@ const companies = [
     website:"www.suomiklinikka.com",
     phone:"+34 928 77 72 60",
     premium:false,
-    lat:27.7567,
-    lng:-15.5787
+    lat:27.762608,
+    lng:-15.566282
 }
 
 
