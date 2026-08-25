@@ -18,7 +18,7 @@ const companies = [
     {
     id:"noruega",
     name:"Clinica Dental Noruega",
-    language:"Ruotsi",
+    language:"Suomi",
     service:"Hammaslääkäri",
     country:"Espanja",
     city:"Fuengirola",
@@ -29,6 +29,81 @@ const companies = [
     lat:36.541,
     lng:-4.623
 },
+    {
+    id:"noruega-sv",
+    name:"Clinica Dental Noruega",
+    language:"Ruotsi",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avda. Clemente Diaz Ruiz 4",
+    description:"Svensk tandklinik i Fuengirola.",
+    website:"www.clinicadentalnoruega.com",
+    premium:false,
+    lat:36.541,
+    lng:-4.623
+},
+
+    {
+    id:"noruega-en",
+    name:"Clinica Dental Noruega",
+    language:"Englanti",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avda. Clemente Diaz Ruiz 4",
+    description:"Dental services for international clients on the Costa del Sol.",
+    website:"www.clinicadentalnoruega.com",
+    premium:false,
+    lat:36.541,
+    lng:-4.623
+},
+
+    {
+    id:"noruega-fi",
+    name:"Clinica Dental Noruega",
+    language:"Suomi",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avda. Clemente Diaz Ruiz 4",
+    description:"Hammashoitopalveluja pohjoismaisille asiakkaille Aurinkorannikolla.",
+    website:"www.clinicadentalnoruega.com",
+    premium:false,
+    lat:36.541,
+    lng:-4.623
+},
+
+    {
+    id:"noruega-no",
+    name:"Clinica Dental Noruega",
+    language:"Norja",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avda. Clemente Diaz Ruiz 4",
+    description:"Tannhelsetjenester for nordiske kunder på Costa del Sol.",
+    website:"www.clinicadentalnoruega.com",
+    premium:false,
+    lat:36.541,
+    lng:-4.623
+},
+
+    {
+    id:"noruega-da",
+    name:"Clinica Dental Noruega",
+    language:"Tanska",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Avda. Clemente Diaz Ruiz 4",
+    description:"Tandlægeservice for nordiske kunder på Costa del Sol.",
+    website:"www.clinicadentalnoruega.com",
+    premium:false,
+    lat:36.541,
+    lng:-4.623
+},
+
 
 {
     id:"dentalcer",
