@@ -442,5 +442,37 @@ const companies = [
     lng:-4.617
 },
 
+    {
+    id:"suomiklinikka-fi",
+    name:"Suomiklinikka",
+    language:"Suomi",
+    service:"Lääkäri",
+    country:"Espanja",
+    city:"Playa del Inglés",
+    address:"Hotel Jardín del Atlantico, Calle San Cristóbal de la Laguna",
+    description:"Suomalainen lääkärikeskus Playa del Inglésissä. Vastaanotolla palvellaan suomeksi.",
+    website:"www.suomiklinikka.com",
+    phone:"+34 928 77 72 60",
+    premium:false,
+    lat:27.756,
+    lng:-15.572
+},
+
+    {
+    id:"suomiklinikka-fi",
+    name:"Suomiklinikka",
+    language:"Suomi",
+    service:"Hammaslääkäri",
+    country:"Espanja",
+    city:"Playa del Inglés",
+    address:"Hotel Jardín del Atlantico, Calle San Cristóbal de la Laguna",
+    description:"Suomalainen lääkärikeskus Playa del Inglésissä. Vastaanotolla palvellaan suomeksi ja samoista tiloista löytyvät myös hammaslääkäripalvelut.",
+    website:"www.suomiklinikka.com",
+    phone:"+34 928 77 72 60",
+    premium:false,
+    lat:27.756,
+    lng:-15.572
+}
+
 
 ];
