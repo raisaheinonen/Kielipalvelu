@@ -459,7 +459,7 @@ const companies = [
 },
 
     {
-    id:"suomiklinikka-fi",
+    id:"suomiklinikka-dental-fi",
     name:"Suomiklinikka",
     language:"Suomi",
     service:"Hammaslääkäri",
