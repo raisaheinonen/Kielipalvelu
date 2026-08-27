@@ -507,6 +507,22 @@ const companies = [
     lng:-4.425240
 },
 
+    {
+    id:"finnvilla-fi",
+    name:"Finnvilla",
+    language:"Suomi",
+    service:"Kiinteistönvälittäjä",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"C. Miguel de Cervantes, 19",
+    description:"Suomalainen kiinteistönvälitys Costa del Solilla. Apua asunnon ostoon, myyntiin ja vuokraukseen.",
+    website:"www.finnvilla.com",
+    premium:false,
+    lat:36.5516,
+    lng:-4.6158
+}
+
+
 
 
 ];
