@@ -520,6 +520,21 @@ const companies = [
     premium:false,
     lat:36.5516,
     lng:-4.6158
+},
+
+    {
+    id:"jaris-rentals-fi",
+    name:"Jari's Rentals",
+    language:"Suomi",
+    service:"Autovuokraamo",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Calle Santa Rosa 20, Local 3",
+    description:"Suomalainen autovuokraamo Costa del Solilla. Autojen vuokrausta suomalaisella palvelulla.",
+    website:"www.jarisrentals.com",
+    premium:false,
+    lat:36.554092,
+    lng:-4.615484
 }
 
 
