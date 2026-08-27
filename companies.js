@@ -552,6 +552,22 @@ const companies = [
     lng:-4.606222
 },
 
+    {
+    id:"personal-trainer-riina-fi",
+    name:"Personal Trainer Riina",
+    language:"Suomi",
+    service:"Personal Trainer",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Fuengirola",
+    description:"Suomenkielinen personal trainer Aurinkorannikolla.",
+    website:"",
+    instagram:"https://www.instagram.com/personaltrainerriina/",
+    premium:false,
+    lat:36.5390,
+    lng:-4.6240
+},
+
 
 
 
