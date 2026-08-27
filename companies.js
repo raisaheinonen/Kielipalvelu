@@ -568,6 +568,20 @@ const companies = [
     lng:-4.6240
 },
 
+    {
+    id:"with-marjo-fi",
+    name:"With Marjo",
+    language:"Suomi",
+    service:"Personal Trainer",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Fuengirola",
+    description:"Suomenkielinen personal trainer ja hyvinvointivalmentaja Costa del Solilla.",
+    website:"www.withmarjo.fi",
+    premium:false,
+    lat:36.5391,
+    lng:-4.6241
+}
 
 
 
