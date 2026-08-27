@@ -535,7 +535,22 @@ const companies = [
     premium:false,
     lat:36.554092,
     lng:-4.615484
-}
+},
+
+    {
+    id:"jeti-costa-fi",
+    name:"Jeti Costa",
+    language:"Suomi",
+    service:"Autovuokraamo",
+    country:"Espanja",
+    city:"Fuengirola",
+    address:"Calle Ricardo Zamora",
+    description:"Suomenkielinen autonvuokraus Costa del Solilla.",
+    website:"www.jeticosta.com",
+    premium:false,
+    lat:36.563216,
+    lng:-4.606222
+},
 
 
 
