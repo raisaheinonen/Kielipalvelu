@@ -93,14 +93,32 @@ Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
 </select>
 
 <label>Palvelukielet *</label>
-<input type="text"
-placeholder="Esim. Suomi, Englanti, Espanja">
+
+<div>
+<input type="checkbox" value="Suomi"> Suomi<br>
+<input type="checkbox" value="Ruotsi"> Ruotsi<br>
+<input type="checkbox" value="Norja"> Norja<br>
+<input type="checkbox" value="Tanska"> Tanska<br>
+<input type="checkbox" value="Englanti"> Englanti<br>
+<input type="checkbox" value="Saksa"> Saksa<br>
+<input type="checkbox" value="Espanja"> Espanja<br>
+<input type="checkbox" value="Portugali"> Portugali<br>
+<input type="checkbox" value="Kreikka"> Kreikka<br>
+<input type="checkbox" value="Italia"> Italia<br>
+<input type="checkbox" value="Ranska"> Ranska<br>
+</div>
 
 <label>Google Maps -linkki tai koordinaatit *</label>
 <input type="text" required>
 
 <label>Yrityksen kuvaus *</label>
 <textarea rows="6" required></textarea>
+
+<label>Yrityksen logo</label>
+<input type="file" accept="image/*">
+
+<label>Yrityksen kuva</label>
+<input type="file" accept="image/*">
 
 <button type="submit">
 Lähetä yritys
