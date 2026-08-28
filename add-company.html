@@ -1,12 +1,112 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <title>Lisää yritys</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lisää yritys</title>
+
+<style>
+body{
+    max-width:800px;
+    margin:40px auto;
+    padding:20px;
+    font-family:Arial,sans-serif;
+}
+
+h1{
+    color:#0f172a;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 20px;
+    background:#475569;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#334155;
+}
+</style>
 </head>
+
 <body>
 
-<h1>Lisää yritys</h1>
+<h1>➕ Lisää yritys hakemistoon</h1>
+
+<p>
+Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
+</p>
+
+<form>
+
+<label>Yrityksen nimi *</label>
+<input type="text" required>
+
+<label>Maa *</label>
+<input type="text" required>
+
+<label>Kaupunki *</label>
+<input type="text" required>
+
+<label>Osoite *</label>
+<input type="text" required>
+
+<label>Verkkosivu *</label>
+<input type="url" required>
+
+<label>Sähköposti *</label>
+<input type="email" required>
+
+<label>Puhelinnumero</label>
+<input type="text">
+
+<label>Palvelu *</label>
+<select required>
+    <option value="">Valitse palvelu</option>
+    <option>Lääkäri</option>
+    <option>Hammaslääkäri</option>
+    <option>Lakimies</option>
+    <option>Kiinteistönvälittäjä</option>
+    <option>Autovuokraus</option>
+    <option>Muu</option>
+</select>
+
+<label>Palvelukielet *</label>
+<input type="text"
+placeholder="Esim. Suomi, Englanti, Espanja">
+
+<label>Google Maps -linkki tai koordinaatit *</label>
+<input type="text" required>
+
+<label>Yrityksen kuvaus *</label>
+<textarea rows="6" required></textarea>
+
+<button type="submit">
+Lähetä yritys
+</button>
+
+</form>
 
 </body>
 </html>
