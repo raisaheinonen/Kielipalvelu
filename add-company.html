@@ -58,31 +58,31 @@ button:hover{
 Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
 </p>
 
-<form>
+<form id="company-form">
 
 <label>Yrityksen nimi *</label>
-<input type="text" required>
+<input type="text" name="companyName" required>
 
 <label>Maa *</label>
-<input type="text" required>
+<input type="text" name="country" required>
 
 <label>Kaupunki *</label>
-<input type="text" required>
+<input type="text" name="city" required>
 
 <label>Osoite *</label>
-<input type="text" required>
+<input type="text" name="address" required>
 
 <label>Verkkosivu *</label>
-<input type="url" required>
+<input type="url" name="website" required>
 
 <label>Sähköposti *</label>
-<input type="email" required>
+<input type="email" name="email" required>
 
 <label>Puhelinnumero</label>
-<input type="text">
+<input type="text" name="phone">
 
 <label>Palvelu *</label>
-<select required>
+<select name="service" required>
     <option value="">Valitse palvelu</option>
     <option>Lääkäri</option>
     <option>Hammaslääkäri</option>
@@ -109,16 +109,16 @@ Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
 </div>
 
 <label>Google Maps -linkki tai koordinaatit *</label>
-<input type="text" required>
+<input type="text" name="location" required>
 
 <label>Yrityksen kuvaus *</label>
-<textarea rows="6" required></textarea>
+<textarea name="description" rows="6" required></textarea>
 
 <label>Yrityksen logo</label>
-<input type="file" accept="image/*">
+<input type="file" name="logo" accept="image/*">
 
 <label>Yrityksen kuva</label>
-<input type="file" accept="image/*">
+<input type="file" name="companyImage" accept="image/*">
 
 <button type="submit">
 Lähetä yritys
