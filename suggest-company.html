@@ -4,37 +4,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ehdota yritystä</title>
+
+<style>
+body{
+    max-width:800px;
+    margin:40px auto;
+    padding:20px;
+    font-family:Arial,sans-serif;
+}
+
+h1{
+    color:#0f172a;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 20px;
+    background:#475569;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#334155;
+}
+</style>
 </head>
+
 <body>
 
 <h1>Ehdota yritystä</h1>
 
 <p>
-Tiedätkö yrityksen, joka tarjoaa palvelua omalla kielelläsi?
-Lähetä meille yrityksen tiedot, niin tarkistamme ne ennen julkaisua.
+Tiedätkö yrityksen, joka puuttuu hakemistosta?
+Lähetä meille vinkki.
 </p>
 
 <form>
 
-<label>Yrityksen nimi *</label><br>
-<input type="text" required><br><br>
+<label>Yrityksen nimi *</label>
+<input type="text" required>
 
-<label>Palvelu *</label><br>
-<input type="text" required><br><br>
+<label>Verkkosivu</label>
+<input type="url">
 
-<label>Maa *</label><br>
-<input type="text" required><br><br>
+<label>Maa</label>
+<input type="text">
 
-<label>Yrityksen verkkosivu</label><br>
-<input type="url"><br><br>
+<label>Palvelu</label>
+<input type="text">
 
-<label>Yhteyshenkilön sähköposti</label><br>
-<input type="email"><br><br>
+<label>Lisätiedot</label>
+<textarea rows="6"></textarea>
 
-<label>Lisätiedot</label><br>
-<textarea rows="5"></textarea><br><br>
+<label>Oma sähköposti</label>
+<input type="email">
 
-<button type="submit">Lähetä ehdotus</button>
+<button type="submit">
+Lähetä ehdotus
+</button>
 
 </form>
 
