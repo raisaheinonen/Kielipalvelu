@@ -177,7 +177,7 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 <input type="text" name="phone">
 
 <label>Palvelu *</label>
-<select name="service" required>
+<select id="service" name="service" required>
     <option value="">Valitse palvelu</option>
 
     <option>Lääkäri</option>
@@ -205,8 +205,22 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 
     <option>IT-palvelu</option>
     <option>Kielikoulu</option>
-    <option>Muu palvelu</option>
+    <option value="Muu">Muu</option>
 </select>
+
+<div id="otherServiceContainer" style="display:none;">
+
+    <label style="font-weight:normal;">
+        Jos valitsit "Muu", kirjoita palvelu:
+    </label>
+
+    <input type="text"
+           id="otherService"
+           name="otherService"
+           placeholder="Esim. Vakuutuspalvelu">
+
+</div>
+`
 
 <label>Palvelukielet *</label>
 
@@ -265,6 +279,20 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
     Ranska
 </label>
 </div>
+
+<label>
+    <input type="checkbox" id="otherLanguageCheckbox">
+    Muu kieli
+</label>
+
+<div id="otherLanguageContainer" style="display:none;">
+
+    <input type="text"
+           name="otherLanguage"
+           placeholder="Kirjoita kieli">
+
+</div>
+
 
 <label>Yrityksen kuvaus *</label>
 <textarea name="description" rows="6" required></textarea>
@@ -342,6 +370,46 @@ if (noWebsiteCheckbox && websiteField) {
 
 }
 
+    const serviceSelect =
+document.getElementById("service");
+
+const otherServiceContainer =
+document.getElementById("otherServiceContainer");
+
+if (serviceSelect && otherServiceContainer) {
+
+    serviceSelect.addEventListener("change", function () {
+
+        if (this.value === "Muu") {
+            otherServiceContainer.style.display = "block";
+        } else {
+            otherServiceContainer.style.display = "none";
+        }
+
+    });
+
+}
+
+const otherLanguageCheckbox =
+document.getElementById("otherLanguageCheckbox");
+
+const otherLanguageContainer =
+document.getElementById("otherLanguageContainer");
+
+if (otherLanguageCheckbox && otherLanguageContainer) {
+
+    otherLanguageCheckbox.addEventListener("change", function () {
+
+        if (this.checked) {
+            otherLanguageContainer.style.display = "block";
+        } else {
+            otherLanguageContainer.style.display = "none";
+        }
+
+    });
+
+}
+
 </script>
 
 <script>
@@ -380,6 +448,8 @@ countrySelect.addEventListener("change", function(){
 
 
 </script>
+
+
 
 </body>
 </html>
