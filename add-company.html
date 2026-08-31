@@ -119,7 +119,8 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 
 
 <label>Google Maps -linkki (suositeltu)</label>
-<input type="url" name="mapsLink" required>
+<input type="url" name="mapsLink">
+
 
 <label>Koordinaatit (jos tiedossa)</label>
 <input type="text" name="coordinates">
@@ -288,6 +289,25 @@ if (noAddressCheckbox && addressField) {
 
 const noWebsiteCheckbox = document.getElementById("noWebsite");
 const websiteField = document.getElementById("website");
+
+const noAddressCheckbox =
+document.getElementById("noPublicAddress");
+
+const addressField =
+document.getElementById("address");
+
+noAddressCheckbox.addEventListener("change", function () {
+
+    if (this.checked) {
+        addressField.required = false;
+        addressField.disabled = true;
+        addressField.value = "";
+    } else {
+        addressField.required = true;
+        addressField.disabled = false;
+    }
+
+});
 
 if (noWebsiteCheckbox && websiteField) {
 
