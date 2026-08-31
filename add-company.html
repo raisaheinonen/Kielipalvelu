@@ -110,7 +110,7 @@ Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
 placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 
 <label>Osoite *</label>
-<input type="text" name="address" id="address">
+<input type="text" name="address" id="address" required>
 
 <label class="checkbox-row">
     <input type="checkbox" id="noAddress" name="noPublicAddress">
@@ -265,8 +265,11 @@ Kiitos! Yritysilmoitus vastaanotettu.
 
 <script>
 
-const noAddressCheckbox = document.getElementById("noAddress");
-const addressField = document.getElementById("address");
+const noAddressCheckbox =
+document.getElementById("noAddress");
+
+const addressField =
+document.getElementById("address");
 
 if (noAddressCheckbox && addressField) {
 
@@ -287,27 +290,11 @@ if (noAddressCheckbox && addressField) {
 
 }
 
-const noWebsiteCheckbox = document.getElementById("noWebsite");
-const websiteField = document.getElementById("website");
+const noWebsiteCheckbox =
+document.getElementById("noWebsite");
 
-const noAddressCheckbox =
-document.getElementById("noPublicAddress");
-
-const addressField =
-document.getElementById("address");
-
-noAddressCheckbox.addEventListener("change", function () {
-
-    if (this.checked) {
-        addressField.required = false;
-        addressField.disabled = true;
-        addressField.value = "";
-    } else {
-        addressField.required = true;
-        addressField.disabled = false;
-    }
-
-});
+const websiteField =
+document.getElementById("website");
 
 if (noWebsiteCheckbox && websiteField) {
 
