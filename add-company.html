@@ -44,6 +44,15 @@ button{
     cursor:pointer;
 }
 
+.checkbox-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+    margin-bottom:24px;
+    font-weight:normal;
+}
+
 button:hover{
     background:#334155;
 }
@@ -103,10 +112,11 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 <label>Osoite *</label>
 <input type="text" name="address" required>
 
-<label>
-    <input type="checkbox" id="noAddress">
+<label class="checkbox-row">
+    <input type="checkbox" name="noPublicAddress">
     Yrityksellä ei ole julkista osoitetta
 </label>
+
 
 <label>Google Maps -linkki (suositeltu)</label>
 <input type="url" name="mapsLink" required>
