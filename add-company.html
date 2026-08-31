@@ -86,7 +86,7 @@ Saat sähköpostiisi vahvistuksen, kun yritys on käsitelty ja lisätty hakemist
 
 <label>Maa *</label>
 
-<select name="country" required>
+<select name="country" id="country" required>
     <option value="">Valitse maa</option>
 
     <option>Espanja</option>
@@ -111,12 +111,21 @@ Saat sähköpostiisi vahvistuksen, kun yritys on käsitelty ja lisätty hakemist
     <option>Kanada</option>
     <option>Australia</option>
 
-    <option>Muu</option>
+    <option value="other">Muu</option>
+    
+</select>
 
-    <div id="other-country-container" style="display:none;">
+<div id="other-country-container" style="display:none;">
+
+    <label>Muu maa *</label>
+
+    <input type="text"
+           id="otherCountry"
+           name="otherCountry"
+           placeholder="Kirjoita maa">
 
 </div>
-</select>
+   
 
 <label>Kaupunki *</label>
 <input type="text" name="city" required>
@@ -346,6 +355,25 @@ document
     .style.display = "block";
 
 });
+
+<script>
+
+const countrySelect =
+document.getElementById("country");
+
+const otherCountryContainer =
+document.getElementById("other-country-container");
+
+countrySelect.addEventListener("change", function(){
+
+    if(this.value === "other"){
+        otherCountryContainer.style.display = "block";
+    } else {
+        otherCountryContainer.style.display = "none";
+    }
+
+});
+
 
 </script>
 
