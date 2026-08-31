@@ -113,7 +113,7 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 <input type="text" name="address" id="address" required>
 
 <label class="checkbox-row">
-    <input type="checkbox" name="noPublicAddress">
+    <input type="checkbox" id="noPublicAddress" name="noPublicAddress">
     Yrityksellä ei ole julkista osoitetta
 </label>
 
@@ -125,10 +125,10 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 <input type="text" name="coordinates">
 
 <label>Verkkosivu</label>
-<input type="url" name="website">
+<input type="url" id="website" name="website">
 
 <label style="font-weight:normal;">
-    <input type="checkbox" name="noWebsite">
+    <input type="checkbox" id="noWebsite" name="noWebsite">
     Yrityksellä ei ole verkkosivua
 </label>
 
@@ -282,6 +282,37 @@ noAddressCheckbox.addEventListener("change", function () {
     }
 
 });
+
+<script>
+
+const noPublicAddress = document.getElementById("noPublicAddress");
+const address = document.getElementById("address");
+
+noPublicAddress.addEventListener("change", function(){
+
+    address.disabled = this.checked;
+
+    if(this.checked){
+        address.style.backgroundColor = "#e5e7eb";
+    } else {
+        address.style.backgroundColor = "";
+    }
+});
+
+const noWebsite = document.getElementById("noWebsite");
+const website = document.getElementById("website");
+
+noWebsite.addEventListener("change", function(){
+
+    website.disabled = this.checked;
+
+    if(this.checked){
+        website.style.backgroundColor = "#e5e7eb";
+    } else {
+        website.style.backgroundColor = "";
+    }
+});
+
 
 </script>
 
