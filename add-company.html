@@ -110,7 +110,7 @@ Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
 placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 
 <label>Osoite *</label>
-<input type="text" name="address" required>
+<input type="text" name="address" id="address" required>
 
 <label class="checkbox-row">
     <input type="checkbox" name="noPublicAddress">
@@ -261,6 +261,29 @@ Lähetä yritys
 <p id="success-message" style="display:none;color:green;">
 Kiitos! Yritysilmoitus vastaanotettu.
 </p>
+
+<script>
+
+const noAddressCheckbox =
+document.getElementById("noAddress");
+
+const addressField =
+document.getElementById("address");
+
+noAddressCheckbox.addEventListener("change", function () {
+
+    if (this.checked) {
+        addressField.required = false;
+        addressField.disabled = true;
+        addressField.value = "";
+    } else {
+        addressField.required = true;
+        addressField.disabled = false;
+    }
+
+});
+
+</script>
 
 
 </body>
