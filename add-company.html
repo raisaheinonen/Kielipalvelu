@@ -271,8 +271,10 @@ Lähetä yritys
 
 </form>
 
-<p id="success-message" style="display:none;color:green;">
+<p id="success-message" style="display:none;color:green;font-weight:bold;">
 Kiitos! Yritysilmoitus vastaanotettu.
+
+Tarkistamme tiedot ennen julkaisua. Otamme yhteyttä tarvittaessa sähköpostitse.
 </p>
 
 <script>
@@ -324,6 +326,22 @@ if (noWebsiteCheckbox && websiteField) {
     });
 
 }
+
+</script>
+
+<script>
+
+document
+.getElementById("company-form")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    document
+    .getElementById("success-message")
+    .style.display = "block";
+
+});
 
 </script>
 
