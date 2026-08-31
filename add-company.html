@@ -96,6 +96,12 @@ Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
 <label>Kaupunki *</label>
 <input type="text" name="city" required>
 
+<label>Google Maps -linkki *</label>
+<input type="url" name="mapsLink" required>
+
+<label>Koordinaatit (jos tiedossa)</label>
+<input type="text" name="coordinates">
+
 <label>Osoite *</label>
 <input type="text" name="address" required>
 
@@ -170,6 +176,11 @@ Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
 
 <label>Yrityksen kuva</label>
 <input type="file" name="companyImage" accept="image/*">
+
+<label>
+<input type="checkbox" name="noWebsite">
+Yrityksellä ei ole verkkosivua
+</label>
 
 <button type="submit">
 Lähetä yritys
