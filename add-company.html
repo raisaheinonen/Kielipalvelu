@@ -110,10 +110,10 @@ Täytä alla olevat tiedot. Tarkistamme tiedot ennen julkaisua.
 placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 
 <label>Osoite *</label>
-<input type="text" name="address" id="address" required>
+<input type="text" name="address" id="address">
 
 <label class="checkbox-row">
-    <input type="checkbox" id="noPublicAddress" name="noPublicAddress">
+    <input type="checkbox" id="noAddress" name="noPublicAddress">
     Yrityksellä ei ole julkista osoitetta
 </label>
 
@@ -264,58 +264,49 @@ Kiitos! Yritysilmoitus vastaanotettu.
 
 <script>
 
-const noAddressCheckbox =
-document.getElementById("noAddress");
+const noAddressCheckbox = document.getElementById("noPublicAddress");
+const addressField = document.getElementById("address");
 
-const addressField =
-document.getElementById("address");
+if (noAddressCheckbox && addressField) {
 
-noAddressCheckbox.addEventListener("change", function () {
+    noAddressCheckbox.addEventListener("change", function () {
 
-    if (this.checked) {
-        addressField.required = false;
-        addressField.disabled = true;
-        addressField.value = "";
-    } else {
-        addressField.required = true;
-        addressField.disabled = false;
-    }
+        if (this.checked) {
+            addressField.required = false;
+            addressField.disabled = true;
+            addressField.value = "";
+            addressField.style.backgroundColor = "#e5e7eb";
+        } else {
+            addressField.required = true;
+            addressField.disabled = false;
+            addressField.style.backgroundColor = "";
+        }
 
-});
+    });
 
-<script>
+}
 
-const noPublicAddress = document.getElementById("noPublicAddress");
-const address = document.getElementById("address");
+const noWebsiteCheckbox = document.getElementById("noWebsite");
+const websiteField = document.getElementById("website");
 
-noPublicAddress.addEventListener("change", function(){
+if (noWebsiteCheckbox && websiteField) {
 
-    address.disabled = this.checked;
+    noWebsiteCheckbox.addEventListener("change", function () {
 
-    if(this.checked){
-        address.style.backgroundColor = "#e5e7eb";
-    } else {
-        address.style.backgroundColor = "";
-    }
-});
+        if (this.checked) {
+            websiteField.disabled = true;
+            websiteField.value = "";
+            websiteField.style.backgroundColor = "#e5e7eb";
+        } else {
+            websiteField.disabled = false;
+            websiteField.style.backgroundColor = "";
+        }
 
-const noWebsite = document.getElementById("noWebsite");
-const website = document.getElementById("website");
+    });
 
-noWebsite.addEventListener("change", function(){
-
-    website.disabled = this.checked;
-
-    if(this.checked){
-        website.style.backgroundColor = "#e5e7eb";
-    } else {
-        website.style.backgroundColor = "";
-    }
-});
-
+}
 
 </script>
-
 
 </body>
 </html>
