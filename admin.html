@@ -67,13 +67,29 @@ fetch("pending-companies.json")
     <p><strong>Sähköposti:</strong> ${company.email}</p>
     <p><strong>Tila:</strong> ${company.status}</p>
 
-    <button class="approve-btn">Hyväksy</button>
-    <button class="reject-btn">Hylkää</button>
-`;
+container.appendChild(card);
 
-        container.appendChild(card);
+const approveBtn =
+card.querySelector(".approve-btn");
 
-    });
+const rejectBtn =
+card.querySelector(".reject-btn");
+
+approveBtn.addEventListener("click", () => {
+
+    company.status = "approved";
+
+    renderCompanies();
+
+});
+
+rejectBtn.addEventListener("click", () => {
+
+    company.status = "rejected";
+
+    renderCompanies();
+
+});
 
 });
 
