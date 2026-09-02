@@ -70,6 +70,18 @@ fetch("pending-companies.json")
 
 <p><strong>Sähköposti:</strong> ${company.email}</p>
 
+<p><strong>Toiminta-alue:</strong> ${company.serviceArea || "-"}</p>
+
+<p><strong>Puhelin:</strong> ${company.phone || "-"}</p>
+
+<p><strong>Verkkosivu:</strong> ${company.website || "-"}</p>
+
+<p><strong>Instagram:</strong> ${company.instagram || "-"}</p>
+
+<p><strong>Facebook:</strong> ${company.facebook || "-"}</p>
+
+<p><strong>Kuvaus:</strong> ${company.description || "-"}</p>
+
 <p><strong>Tila:</strong> ${company.status}</p>
 
 <button class="approve-btn">Hyväksy</button>
