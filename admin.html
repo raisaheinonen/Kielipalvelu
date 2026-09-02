@@ -15,10 +15,43 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
 </p>
 
 <div id="pending-companies">
-
-<p>Ei odottavia yrityksiä.</p>
-
 </div>
+
+<script>
+
+fetch("pending-companies.json")
+.then(response => response.json())
+.then(companies => {
+
+    const container =
+    document.getElementById("pending-companies");
+
+    companies.forEach(company => {
+
+        const card =
+        document.createElement("div");
+
+        card.style.border = "1px solid #ccc";
+        card.style.padding = "15px";
+        card.style.marginBottom = "15px";
+        card.style.borderRadius = "8px";
+
+        card.innerHTML = `
+            <h3>${company.companyName}</h3>
+            <p><strong>Maa:</strong> ${company.country}</p>
+            <p><strong>Kaupunki:</strong> ${company.city}</p>
+            <p><strong>Palvelu:</strong> ${company.service}</p>
+            <p><strong>Sähköposti:</strong> ${company.email}</p>
+            <p><strong>Tila:</strong> ${company.status}</p>
+        `;
+
+        container.appendChild(card);
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
