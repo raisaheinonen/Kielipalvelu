@@ -217,6 +217,19 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
     <input type="text"
            id="otherService"
            name="otherService"
+           placeholder="Esim. Hieroja, Joogaohjaaja tai Vakuutuspalvelu">
+
+</div>
+
+<div id="otherServiceContainer" style="display:none;">
+
+    <label style="font-weight:normal;">
+        Jos valitsit "Muu", kirjoita palvelu:
+    </label>
+
+    <input type="text"
+           id="otherService"
+           name="otherService"
            placeholder="Esim. Vakuutuspalvelu">
 
 </div>
@@ -445,6 +458,26 @@ countrySelect.addEventListener("change", function(){
     }
 
 });
+
+const serviceSelect =
+document.getElementById("service");
+
+const otherServiceContainer =
+document.getElementById("otherServiceContainer");
+
+if (serviceSelect && otherServiceContainer) {
+
+    serviceSelect.addEventListener("change", function(){
+
+        if(this.value === "Muu"){
+            otherServiceContainer.style.display = "block";
+        } else {
+            otherServiceContainer.style.display = "none";
+        }
+
+    });
+
+}
 
 
 </script>
