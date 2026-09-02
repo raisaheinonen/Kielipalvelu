@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "companyName": "Esimerkki Oy",
+    "country": "Espanja",
+    "city": "Fuengirola",
+    "service": "Autovuokraamot",
+    "status": "pending"
+  }
+]
