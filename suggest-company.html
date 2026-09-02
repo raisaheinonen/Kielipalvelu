@@ -58,31 +58,87 @@ Tiedätkö yrityksen, joka puuttuu hakemistosta?
 Lähetä meille vinkki.
 </p>
 
-<form>
+<form id="suggest-form">
 
 <label>Yrityksen nimi *</label>
-<input type="text" required>
+<input type="text" name="companyName" required>
 
 <label>Verkkosivu</label>
-<input type="url">
+<input type="url"
+       name="website"
+       placeholder="Esim. https://www.yritys.fi">
+``
 
-<label>Maa</label>
-<input type="text">
+<label>Maa *</label>
 
-<label>Palvelu</label>
-<input type="text">
+<select name="country" required>
+    <option value="">Valitse maa</option>
+    <option>Espanja</option>
+    <option>Ruotsi</option>
+    <option>Saksa</option>
+    <option>Thaimaa</option>
+    <option>Portugali</option>
+    <option>Kreikka</option>
+    <option>Kypros</option>
+    <option>Viro</option>
+    <option value="other">Muu</option>
+</select>
+
+
+<label>Palvelu *</label>
+<input type="text"
+       name="service"
+       placeholder="Esim. Hammaslääkäri"
+       required>
+
 
 <label>Lisätiedot</label>
-<textarea rows="6"></textarea>
+<textarea
+    name="notes"
+    rows="6"
+    placeholder="Kerro miksi ehdotat yritystä tai anna lisätietoja.">
+</textarea>
 
 <label>Oma sähköposti</label>
-<input type="email">
+<input type="email"
+       name="email"
+       placeholder="Esim. oma.sahkoposti@esimerkki.fi">
+
+<label style="font-weight:normal;">
+    <input type="checkbox" required>
+    Vakuutan tietojen olevan parhaan tietoni mukaan oikein.
+</label>
 
 <button type="submit">
 Lähetä ehdotus
 </button>
 
+<p id="success-message"
+   style="display:none;color:green;font-weight:bold;">
+
+Kiitos! Yritysehdotus vastaanotettu.
+
+Tarkistamme tiedot ennen mahdollista julkaisua.
+
+</p>
+
 </form>
+
+<script>
+
+document
+.getElementById("suggest-form")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    document
+    .getElementById("success-message")
+    .style.display = "block";
+
+});
+
+</script>
 
 </body>
 </html>
