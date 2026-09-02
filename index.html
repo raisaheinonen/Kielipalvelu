@@ -243,6 +243,19 @@ Find services in your own language anywhere in the world
             <option value="Muut palvelut" id="service-other">Muut palvelut</option>
         </select>
 
+        <div id="otherServiceContainer" style="display:none;">
+
+    <label style="font-weight:normal;">
+        Jos valitsit "Muu", kirjoita palvelu:
+    </label>
+
+    <input type="text"
+           id="otherService"
+           name="otherService"
+           placeholder="Esim. Hieroja">
+
+</div>
+
 
    <select id="country">
 
@@ -918,6 +931,30 @@ translations[lang].selectCountry;
 document.getElementById("site-language").value = "en";
 document.getElementById("site-language").dispatchEvent(new Event("change"));
     
+</script>
+
+<script>
+
+const countrySelect =
+document.getElementById("country");
+
+const otherCountryContainer =
+document.getElementById("other-country-container");
+
+if (countrySelect && otherCountryContainer) {
+
+    countrySelect.addEventListener("change", function(){
+
+        if(this.value === "other"){
+            otherCountryContainer.style.display = "block";
+        } else {
+            otherCountryContainer.style.display = "none";
+        }
+
+    });
+
+}
+
 </script>
 
 </body>
