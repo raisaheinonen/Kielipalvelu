@@ -60,14 +60,22 @@ fetch("pending-companies.json")
         card.style.borderRadius = "8px";
 
        card.innerHTML = `
-    <h3>${company.companyName}</h3>
-    <p><strong>Maa:</strong> ${company.country}</p>
-    <p><strong>Kaupunki:</strong> ${company.city}</p>
-    <p><strong>Palvelu:</strong> ${company.service}</p>
-    <p><strong>Sähköposti:</strong> ${company.email}</p>
-    <p><strong>Tila:</strong> ${company.status}</p>
+<h3>${company.companyName}</h3>
 
-container.appendChild(card);
+<p><strong>Maa:</strong> ${company.country}</p>
+
+<p><strong>Kaupunki:</strong> ${company.city}</p>
+
+<p><strong>Palvelu:</strong> ${company.service}</p>
+
+<p><strong>Sähköposti:</strong> ${company.email}</p>
+
+<p><strong>Tila:</strong> ${company.status}</p>
+
+<button class="approve-btn">Hyväksy</button>
+
+<button class="reject-btn">Hylkää</button>
+`;
 
 const approveBtn =
 card.querySelector(".approve-btn");
@@ -75,21 +83,6 @@ card.querySelector(".approve-btn");
 const rejectBtn =
 card.querySelector(".reject-btn");
 
-approveBtn.addEventListener("click", () => {
-
-    company.status = "approved";
-
-    renderCompanies();
-
-});
-
-rejectBtn.addEventListener("click", () => {
-
-    company.status = "rejected";
-
-    renderCompanies();
-
-});
 
 });
 
