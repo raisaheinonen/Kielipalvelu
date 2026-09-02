@@ -1,9 +1,10 @@
 [
   {
-    "companyName": "Esimerkki Oy",
+    "companyName": "Testiyritys Oy",
     "country": "Espanja",
     "city": "Fuengirola",
     "service": "Autovuokraamot",
+    "email": "info@testiyritys.fi",
     "status": "pending"
   }
 ]
