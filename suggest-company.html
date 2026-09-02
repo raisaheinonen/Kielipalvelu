@@ -24,7 +24,7 @@ label{
     font-weight:bold;
 }
 
-input,
+input:not([type="checkbox"]),
 textarea{
     width:100%;
     padding:10px;
@@ -32,6 +32,7 @@ textarea{
     border-radius:8px;
     box-sizing:border-box;
 }
+
 
 button{
     margin-top:20px;
@@ -46,6 +47,14 @@ button{
 button:hover{
     background:#334155;
 }
+
+.checkbox-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:normal;
+}
+    
 </style>
 </head>
 
@@ -67,7 +76,6 @@ Lähetä meille vinkki.
 <input type="url"
        name="website"
        placeholder="Esim. https://www.yritys.fi">
-``
 
 <label>Maa *</label>
 
@@ -104,7 +112,7 @@ Lähetä meille vinkki.
        name="email"
        placeholder="Esim. oma.sahkoposti@esimerkki.fi">
 
-<label style="font-weight:normal;">
+<label class="checkbox-row">
     <input type="checkbox" required>
     Vakuutan tietojen olevan parhaan tietoni mukaan oikein.
 </label>
