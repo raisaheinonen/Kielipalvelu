@@ -103,6 +103,11 @@ approveBtn.addEventListener("click", function(){
     card.querySelector("p:last-of-type").innerHTML =
     "<strong>Tila:</strong> hyväksytty";
 
+    setTimeout(function(){
+        card.remove();
+    }, 1000);
+
+
 });
 
 rejectBtn.addEventListener("click", function(){
@@ -112,7 +117,12 @@ rejectBtn.addEventListener("click", function(){
     card.querySelector("p:last-of-type").innerHTML =
     "<strong>Tila:</strong> hylätty";
 
+    setTimeout(function(){
+        card.remove();
+    }, 1000);
+
 });
+``
 
         container.appendChild(card);
 
