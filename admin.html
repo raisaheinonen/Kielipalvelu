@@ -70,7 +70,7 @@ fetch("pending-companies.json")
 
 <p><strong>Sähköposti:</strong> ${company.email}</p>
 
-<p><strong>Toiminta-alue:</strong> ${company.serviceArea || "-"}</p>
+<p><strong>Toiminta-alue:</strong> ${company.serviceArea || "-"}</p> 
 
 <p><strong>Puhelin:</strong> ${company.phone || "-"}</p>
 
@@ -88,6 +88,27 @@ fetch("pending-companies.json")
 
 <button class="reject-btn">Hylkää</button>
 `;
+
+        const rejectButton =
+card.querySelector(".reject-btn");
+
+rejectButton.addEventListener("click", function(){
+
+    card.remove();
+
+});
+
+        const approveButton =
+card.querySelector(".approve-btn");
+
+approveButton.addEventListener("click", function(){
+
+    card.style.border = "2px solid green";
+
+    card.querySelector("p:last-of-type").innerHTML =
+    "<strong>Tila:</strong> hyväksytty";
+
+});
 
     const approveBtn =
     card.querySelector(".approve-btn");
