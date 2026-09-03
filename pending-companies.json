@@ -7,4 +7,17 @@
     "email": "info@testiyritys.fi",
     "status": "pending"
   }
+
+  ]
+
+  [
+  {
+    "companyName": "Testiyritys Oy_2",
+    "country": "Espanja",
+    "city": "Fuengirola",
+    "service": "Autovuokraamot",
+    "email": "test@test.fi",
+    "status": "pending"
+  }
 ]
+
