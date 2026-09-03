@@ -425,8 +425,6 @@ if (otherLanguageCheckbox && otherLanguageContainer) {
 
 }
 
-</script>
-
 <script>
 
 document
@@ -434,6 +432,30 @@ document
 .addEventListener("submit", function(event){
 
     event.preventDefault();
+
+    const company = {
+
+        companyName:
+        document.querySelector('[name="companyName"]').value,
+
+        country:
+        document.querySelector('[name="country"]').value,
+
+        city:
+        document.querySelector('[name="city"]').value,
+
+        service:
+        document.querySelector('[name="service"]').value,
+
+        email:
+        document.querySelector('[name="email"]').value,
+
+        status:
+        "pending"
+
+    };
+
+    console.log(company);
 
     document
     .getElementById("success-message")
