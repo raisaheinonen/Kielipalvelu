@@ -82,7 +82,9 @@ fetch("pending-companies.json")
 
 <p><strong>Kuvaus:</strong> ${company.description || "-"}</p>
 
-<p><strong>Tila:</strong> ${company.status}</p>
+<p class="status-row">
+    <strong>Tila:</strong> ${company.status}
+</p>
 
 <button class="approve-btn">Hyväksy</button>
 
@@ -100,13 +102,13 @@ approveBtn.addEventListener("click", function(){
 
     card.style.border = "2px solid green";
 
-    card.querySelector("p:last-of-type").innerHTML =
+    const statusRow =
+    card.querySelector(".status-row");
+
+    statusRow.innerHTML =
     "<strong>Tila:</strong> hyväksytty";
 
-    setTimeout(function(){
-        card.remove();
-    }, 1000);
-
+    statusRow.style.color = "green";
 
 });
 
@@ -114,15 +116,15 @@ rejectBtn.addEventListener("click", function(){
 
     card.style.border = "2px solid red";
 
-    card.querySelector("p:last-of-type").innerHTML =
+    const statusRow =
+    card.querySelector(".status-row");
+
+    statusRow.innerHTML =
     "<strong>Tila:</strong> hylätty";
 
-    setTimeout(function(){
-        card.remove();
-    }, 1000);
+    statusRow.style.color = "red";
 
 });
-``
 
         container.appendChild(card);
 
