@@ -186,7 +186,7 @@ approveBtn.addEventListener("click", function(){
 
     card.style.border = "2px solid green";
 
-    card.querySelector("p:last-of-type").innerHTML =
+   card.querySelector(".status-row").innerHTML =
     "<strong>Tila:</strong> hyväksytty";
 
     approveBtn.disabled = true;
@@ -201,11 +201,6 @@ approvedCount;
 document.getElementById("pending-count").textContent =
 pendingCount;
 
-setTimeout(function(){
-
-    card.remove();
-
-}, 1000);
 
 });
 
@@ -213,7 +208,7 @@ rejectBtn.addEventListener("click", function(){
 
     card.style.border = "2px solid red";
 
-    card.querySelector("p:last-of-type").innerHTML =
+  card.querySelector(".status-row").innerHTML =
     "<strong>Tila:</strong> hylätty";
 
     approveBtn.disabled = true;
@@ -230,12 +225,6 @@ pendingCount;
 
 document.getElementById("pending-count").textContent =
 pendingCount;
-
-setTimeout(function(){
-
-    card.remove();
-
-}, 1000);
 
 });
 
