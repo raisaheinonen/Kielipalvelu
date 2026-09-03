@@ -26,6 +26,49 @@
     cursor:pointer;
 }
 
+    <style>
+
+body{
+    max-width:1000px;
+    margin:40px auto;
+    padding:20px;
+    font-family:Arial,sans-serif;
+    background:#f8fafc;
+}
+
+h1{
+    color:#0f172a;
+}
+
+.company-card{
+    background:white;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.approve-btn{
+    background:#16a34a;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-right:10px;
+}
+
+.reject-btn{
+    background:#dc2626;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+</style>
+
 </style>
 </head>
 
@@ -74,10 +117,7 @@ pendingCount;
     const card =
     document.createElement("div");
 
-    card.style.border = "1px solid #ccc";
-    card.style.padding = "15px";
-    card.style.marginBottom = "15px";
-    card.style.borderRadius = "8px";
+    card.classList.add("company-card");
 
     card.innerHTML = `
 <h3>${company.companyName}</h3>
