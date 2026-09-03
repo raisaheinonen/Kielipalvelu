@@ -480,19 +480,6 @@ countrySelect.addEventListener("change", function(){
 
 });
 
-const otherServiceContainer =
-document.getElementById("otherServiceContainer");
-
-if (serviceSelect && otherServiceContainer) {
-
-    serviceSelect.addEventListener("change", function(){
-
-        if(this.value === "Muu"){
-            otherServiceContainer.style.display = "block";
-        } else {
-            otherServiceContainer.style.display = "none";
-        }
-
     });
 
 }
