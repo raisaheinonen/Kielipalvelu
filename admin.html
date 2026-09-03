@@ -37,6 +37,19 @@
 Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
 </p>
 
+    <div id="stats">
+
+    <p><strong>Odottaa käsittelyä:</strong>
+    <span id="pending-count">0</span></p>
+
+    <p><strong>Hyväksytty:</strong>
+    <span id="approved-count">0</span></p>
+
+    <p><strong>Hylätty:</strong>
+    <span id="rejected-count">0</span></p>
+
+</div>
+
 <div id="pending-companies">
 </div>
 
@@ -48,6 +61,13 @@ fetch("pending-companies.json")
 
     const container =
     document.getElementById("pending-companies");
+
+let pendingCount = companies.length;
+let approvedCount = 0;
+let rejectedCount = 0;
+
+document.getElementById("pending-count").textContent =
+pendingCount;
 
     companies.forEach(company => {
 
@@ -108,6 +128,15 @@ approveBtn.addEventListener("click", function(){
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
 
+approvedCount++;
+pendingCount--;
+
+document.getElementById("approved-count").textContent =
+approvedCount;
+
+document.getElementById("pending-count").textContent =
+pendingCount;
+
 });
 
 rejectBtn.addEventListener("click", function(){
@@ -119,6 +148,15 @@ rejectBtn.addEventListener("click", function(){
 
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
+
+rejectedCount++;
+pendingCount--;
+
+document.getElementById("rejected-count").textContent =
+rejectedCount;
+
+document.getElementById("pending-count").textContent =
+pendingCount;
 
 });
 
