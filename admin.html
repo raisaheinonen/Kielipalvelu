@@ -98,10 +98,13 @@ rejectButton.addEventListener("click", function(){
 
 });
 
-        const approveButton =
+       const approveBtn =
 card.querySelector(".approve-btn");
 
-approveButton.addEventListener("click", function(){
+const rejectBtn =
+card.querySelector(".reject-btn");
+
+approveBtn.addEventListener("click", function(){
 
     card.style.border = "2px solid green";
 
@@ -110,15 +113,14 @@ approveButton.addEventListener("click", function(){
 
 });
 
-    const approveBtn =
-    card.querySelector(".approve-btn");
+rejectBtn.addEventListener("click", function(){
 
-    const rejectBtn =
-    card.querySelector(".reject-btn");
+    card.style.border = "2px solid red";
 
-    container.appendChild(card);
+    card.querySelector("p:last-of-type").innerHTML =
+    "<strong>Tila:</strong> hylätty";
 
-    });
+});
 
 });
 
