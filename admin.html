@@ -102,13 +102,11 @@ approveBtn.addEventListener("click", function(){
 
     card.style.border = "2px solid green";
 
-    const statusRow =
-    card.querySelector(".status-row");
-
-    statusRow.innerHTML =
+    card.querySelector("p:last-of-type").innerHTML =
     "<strong>Tila:</strong> hyväksytty";
 
-    statusRow.style.color = "green";
+    approveBtn.disabled = true;
+    rejectBtn.disabled = true;
 
 });
 
@@ -116,13 +114,11 @@ rejectBtn.addEventListener("click", function(){
 
     card.style.border = "2px solid red";
 
-    const statusRow =
-    card.querySelector(".status-row");
-
-    statusRow.innerHTML =
+    card.querySelector("p:last-of-type").innerHTML =
     "<strong>Tila:</strong> hylätty";
 
-    statusRow.style.color = "red";
+    approveBtn.disabled = true;
+    rejectBtn.disabled = true;
 
 });
 
