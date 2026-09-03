@@ -93,15 +93,17 @@ h1{
         <span id="pending-count">0</span>
     </p>
 
-    <p>
-        Hyväksytty:
-        <span id="approved-count">0</span>
-    </p>
+</div>
 
-    <p>
-        Hylätty:
-        <span id="rejected-count">0</span>
-    </p>
+ <p>
+    Hyväksytty:
+    <span id="approved-count">0</span>
+</p>
+
+<p>
+    Hylätty:
+    <span id="rejected-count">0</span>
+</p>
 
 
 </div>
@@ -199,6 +201,12 @@ approvedCount;
 document.getElementById("pending-count").textContent =
 pendingCount;
 
+setTimeout(function(){
+
+    card.remove();
+
+}, 1000);
+
 });
 
 rejectBtn.addEventListener("click", function(){
@@ -219,6 +227,15 @@ rejectedCount;
 
 document.getElementById("pending-count").textContent =
 pendingCount;
+
+document.getElementById("pending-count").textContent =
+pendingCount;
+
+setTimeout(function(){
+
+    card.remove();
+
+}, 1000);
 
 });
 
