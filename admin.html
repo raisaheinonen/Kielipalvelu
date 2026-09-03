@@ -67,6 +67,14 @@ h1{
     cursor:pointer;
 }
 
+    #stats-box{
+    background:white;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
 </style>
 
 </style>
@@ -76,21 +84,33 @@ h1{
 
 <h1>Yritysten hyväksyntä</h1>
 
+<div id="stats-box">
+
+    <h3>Yhteenveto</h3>
+
+    <p>
+        Odottaa hyväksyntää:
+        <span id="pending-count">0</span>
+    </p>
+
+    <p>
+        Hyväksytty:
+        <span id="approved-count">0</span>
+    </p>
+
+    <p>
+        Hylätty:
+        <span id="rejected-count">0</span>
+    </p>
+
+
+</div>
+
 <p>
 Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
 </p>
 
-    <div id="stats">
-
-    <p><strong>Odottaa käsittelyä:</strong>
-    <span id="pending-count">0</span></p>
-
-    <p><strong>Hyväksytty:</strong>
-    <span id="approved-count">0</span></p>
-
-    <p><strong>Hylätty:</strong>
-    <span id="rejected-count">0</span></p>
-
+   
 </div>
 
 <div id="pending-companies">
@@ -111,6 +131,8 @@ let rejectedCount = 0;
 
 document.getElementById("pending-count").textContent =
 pendingCount;
+
+  
 
     companies.forEach(company => {
 
