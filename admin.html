@@ -84,8 +84,6 @@ h1{
 }
 
 </style>
-
-</style>
 </head>
 
 <body>
@@ -226,34 +224,9 @@ pendingCount;
 
 });
 
-rejectBtn.addEventListener("click", function(){
+container.appendChild(card);
 
-    card.style.border = "2px solid red";
-
-  card.querySelector(".status-row").innerHTML =
-    "<strong>Tila:</strong> hylätty";
-
-    approveBtn.disabled = true;
-    rejectBtn.disabled = true;
-
-rejectedCount++;
-pendingCount--;
-
-document.getElementById("rejected-count").textContent =
-rejectedCount;
-
-document.getElementById("pending-count").textContent =
-pendingCount;
-
-document.getElementById("pending-count").textContent =
-pendingCount;
-
-});
-
-
-    container.appendChild(card);
-
-});
+}); // companies.forEach päättyy
 
 searchInput.addEventListener("input", function(){
 
@@ -270,9 +243,11 @@ searchInput.addEventListener("input", function(){
             card.style.display = "none";
         }
 
-        });
-
     });
+
+});
+
+}); 
 
 </script>
 
