@@ -5,7 +5,8 @@
     "city": "Fuengirola",
     "service": "Autovuokraamot",
     "email": "info@testiyritys.fi",
-    "status": "pending"
+    "status": "pending",
+    "submittedAt": "2026-09-07 09:00"
   },
   {
     "companyName": "Testiyritys Oy_2",
@@ -13,16 +14,7 @@
     "city": "Fuengirola",
     "service": "Autovuokraamot",
     "email": "test@test.fi",
-    "status": "pending"
-  },
-
-  {
-  "companyName": "Vanhempi yritys",
-  "submittedAt": "2026-09-07T09:00:00"
-},
-
-  {
-  "companyName": "Uudempi yritys",
-  "submittedAt": "2026-09-07T11:00:00"
-}
+    "status": "pending",
+    "submittedAt": "2026-09-07 11:00"
+  }
 ]
