@@ -177,6 +177,10 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
     Hylätyt (<span id="rejected-filter-count">0</span>)
 </button>
 
+<button id="country-spain">Espanja</button>
+<button id="country-sweden">Ruotsi</button>
+<button id="country-germany">Saksa</button>
+
 </div>
 
 <div id="pending-companies"></div>
@@ -238,6 +242,9 @@ pendingCount;
 
         card.dataset.status =
 company.status;
+
+    card.dataset.country =
+company.country;
 
         if(company.status !== "pending"){
     card.style.display = "none";
@@ -435,6 +442,24 @@ container.appendChild(card);
     .forEach(card => {
 
         if(card.dataset.status === "hylätty"){
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+    document
+.getElementById("country-spain")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        if(card.dataset.country === "Espanja"){
             card.style.display = "";
         } else {
             card.style.display = "none";
