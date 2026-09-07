@@ -346,6 +346,24 @@ searchInput.addEventListener("input", function(){
 
     });
 
+    document
+.getElementById("show-rejected")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        if(card.dataset.status === "hylätty"){
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
     const totalCount =
     document.querySelectorAll(".company-card").length;
 
