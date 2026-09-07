@@ -474,7 +474,7 @@ document
     description:
     document.querySelector('[name="description"]').value,
 
-    languages:
+languages:
 Array.from(
     document.querySelectorAll(
         'input[name="languages"]:checked'
@@ -482,6 +482,9 @@ Array.from(
 )
 .map(language => language.value)
 .join(", "),
+
+otherLanguage:
+document.querySelector('[name="otherLanguage"]').value,
 
 };
 
