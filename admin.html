@@ -329,6 +329,8 @@ searchInput.addEventListener("input", function(){
 
 });
 
+searchInput.addEventListener("input", function(){
+
     const value =
     this.value.toLowerCase();
 
@@ -346,6 +348,14 @@ searchInput.addEventListener("input", function(){
         }
 
     });
+
+    const totalCount =
+    document.querySelectorAll(".company-card").length;
+
+    document.getElementById("search-results").textContent =
+    `Näytetään ${visibleCount} / ${totalCount} yritystä`;
+
+});
 
     const totalCount =
     document.querySelectorAll(".company-card").length;
