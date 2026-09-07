@@ -142,20 +142,20 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
     <div id="filters">
 
     <button id="show-all">
-        Kaikki
-    </button>
+    Kaikki (<span id="all-count">0</span>)
+</button>
 
-    <button id="show-pending">
-        Odottaa
-    </button>
+<button id="show-pending">
+    Odottaa (<span id="pending-filter-count">0</span>)
+</button>
 
-    <button id="show-approved">
-        Hyväksytyt
-    </button>
+<button id="show-approved">
+    Hyväksytyt (<span id="approved-filter-count">0</span>)
+</button>
 
-    <button id="show-rejected">
-        Hylätyt
-    </button>
+<button id="show-rejected">
+    Hylätyt (<span id="rejected-filter-count">0</span>)
+</button>
 
 </div>
 
@@ -177,6 +177,18 @@ document.getElementById("search");
 let pendingCount = companies.length;
 let approvedCount = 0;
 let rejectedCount = 0;
+
+document.getElementById("all-count").textContent =
+companies.length;
+
+document.getElementById("pending-filter-count").textContent =
+pendingCount;
+
+document.getElementById("approved-filter-count").textContent =
+approvedCount;
+
+document.getElementById("rejected-filter-count").textContent =
+rejectedCount;
 
 document.getElementById("search-results").textContent =
 `Näytetään ${companies.length} / ${companies.length} yritystä`;
@@ -272,6 +284,12 @@ approveBtn.addEventListener("click", function(){
     approvedCount++;
     pendingCount--;
 
+    document.getElementById("approved-filter-count").textContent =
+approvedCount;
+
+document.getElementById("pending-filter-count").textContent =
+pendingCount;
+
     document.getElementById("approved-count").textContent =
     approvedCount;
 
@@ -295,6 +313,12 @@ rejectBtn.addEventListener("click", function(){
 
     rejectedCount++;
     pendingCount--;
+
+    document.getElementById("rejected-filter-count").textContent =
+rejectedCount;
+
+document.getElementById("pending-filter-count").textContent =
+pendingCount;
 
     document.getElementById("rejected-count").textContent =
     rejectedCount;
