@@ -206,20 +206,22 @@ approveBtn.addEventListener("click", function(){
 
     card.style.border = "2px solid green";
 
-   card.querySelector(".status-row").innerHTML =
+    card.querySelector(".status-row").innerHTML =
     "<strong>Tila:</strong> hyväksytty";
 
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
 
-approvedCount++;
-pendingCount--;
+    approvedCount++;
+    pendingCount--;
 
-document.getElementById("approved-count").textContent =
-approvedCount;
+    document.getElementById("approved-count").textContent =
+    approvedCount;
 
-document.getElementById("pending-count").textContent =
-pendingCount;
+    document.getElementById("pending-count").textContent =
+    pendingCount;
+
+});
 
 rejectBtn.addEventListener("click", function(){
 
