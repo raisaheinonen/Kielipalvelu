@@ -277,29 +277,12 @@ countryFilters.appendChild(allCountriesButton);
 
     button.addEventListener("click", function(){
 
-    selectedService = service;
+    selectedCountry = country;
 
     applyFilters();
 
 });
 
-        document
-        .querySelectorAll(".company-card")
-        .forEach(card => {
-
-            if(
-                card.dataset.search.includes(
-                    country.toLowerCase()
-                )
-            ){
-                card.style.display = "";
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-    });
 
         const allServicesButton =
 document.createElement("button");
