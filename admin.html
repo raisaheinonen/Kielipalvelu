@@ -215,6 +215,26 @@ const countries =
     )
 )].sort();
 
+    const allCountriesButton =
+document.createElement("button");
+
+allCountriesButton.textContent =
+`Kaikki maat (${companies.length})`;
+
+allCountriesButton.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display = "";
+
+    });
+
+});
+
+countryFilters.appendChild(allCountriesButton);
+
     countries.forEach(country => {
 
     const button =
