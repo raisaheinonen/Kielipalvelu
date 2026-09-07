@@ -496,7 +496,9 @@ emailSubject:
 `Uusi yritysilmoitus - ${
 document.querySelector('[name="companyName"]').value
 } (${
-document.querySelector('[name="country"]').value
+document.querySelector('[name="country"]').value === "other"
+? document.querySelector('[name="otherCountry"]').value
+: document.querySelector('[name="country"]').value
 })`
 
 };
