@@ -209,6 +209,11 @@ company.status;
     card.innerHTML = `
 <h3>${company.companyName}</h3>
 
+<p>
+<strong>Lähetetty:</strong>
+${company.submittedAt || "-"}
+</p>
+
 <p><strong>Maa:</strong> ${company.country}</p>
 
 <p><strong>Kaupunki:</strong> ${company.city}</p>
