@@ -221,6 +221,27 @@ approvedCount;
 document.getElementById("pending-count").textContent =
 pendingCount;
 
+rejectBtn.addEventListener("click", function(){
+
+    card.style.border = "2px solid red";
+
+    card.querySelector(".status-row").innerHTML =
+    "<strong>Tila:</strong> hylätty";
+
+    approveBtn.disabled = true;
+    rejectBtn.disabled = true;
+
+    rejectedCount++;
+    pendingCount--;
+
+    document.getElementById("rejected-count").textContent =
+    rejectedCount;
+
+    document.getElementById("pending-count").textContent =
+    pendingCount;
+
+});
+
 
 });
 
