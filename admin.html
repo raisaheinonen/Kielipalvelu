@@ -312,6 +312,43 @@ serviceFilters.appendChild(allServicesButton);
     countryFilters.appendChild(button);
 
 });
+
+    services.forEach(service => {
+
+    const button =
+    document.createElement("button");
+
+    const count =
+    companies.filter(
+        company => company.service === service
+    ).length;
+
+    button.textContent =
+    `${service} (${count})`;
+
+    button.addEventListener("click", function(){
+
+        document
+        .querySelectorAll(".company-card")
+        .forEach(card => {
+
+            if(
+                card.dataset.search.includes(
+                    service.toLowerCase()
+                )
+            ){
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+    serviceFilters.appendChild(button);
+
+});
     
 const searchInput =
 document.getElementById("search");
