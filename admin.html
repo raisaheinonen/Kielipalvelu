@@ -91,6 +91,14 @@ h1{
     cursor:pointer;
 }
 
+    .details-btn{
+    margin-bottom:10px;
+    padding:8px 14px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -233,6 +241,12 @@ company.status;
 ${company.submittedAt || "-"}
 </p>
 
+<button class="details-btn">
+    Näytä tiedot
+</button>
+
+<div class="details-section" style="display:none;">
+
 <p><strong>Maa:</strong> ${company.country}</p>
 
 <p><strong>Kaupunki:</strong> ${company.city}</p>
@@ -253,6 +267,8 @@ ${company.submittedAt || "-"}
 
 <p><strong>Kuvaus:</strong> ${company.description || "-"}</p>
 
+</div>
+
 <p class="status-row">
     <strong>Tila:</strong> ${company.status}
 </p>
@@ -268,6 +284,28 @@ card.querySelector(".approve-btn");
 
 const rejectBtn =
 card.querySelector(".reject-btn");
+
+    const detailsBtn =
+card.querySelector(".details-btn");
+
+const detailsSection =
+card.querySelector(".details-section");
+
+    detailsBtn.addEventListener("click", function(){
+
+    if(detailsSection.style.display === "none"){
+
+        detailsSection.style.display = "block";
+        detailsBtn.textContent = "Piilota tiedot";
+
+    } else {
+
+        detailsSection.style.display = "none";
+        detailsBtn.textContent = "Näytä tiedot";
+
+    }
+
+});
 
 approveBtn.addEventListener("click", function(){
 
