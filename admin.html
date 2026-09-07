@@ -213,6 +213,9 @@ fetch("pending-companies.json")
 .then(response => response.json())
 .then(companies => {
 
+     let selectedCountry = "";
+let selectedService = "";
+
     const container =
     document.getElementById("pending-companies");
 
@@ -236,7 +239,7 @@ const countries =
     )
 )].sort();
 
-    const allCountriesButton =
+const allCountriesButton =
 document.createElement("button");
 
 allCountriesButton.textContent =
@@ -255,8 +258,6 @@ allCountriesButton.addEventListener("click", function(){
     .forEach(card => {
 
         card.style.display = "";
-
-    });
 
 });
 
@@ -345,8 +346,7 @@ let pendingCount = companies.length;
 let approvedCount = 0;
 let rejectedCount = 0;
 
-    let selectedCountry = "";
-let selectedService = "";
+   
 
 
 document.getElementById("all-count").textContent =
@@ -628,23 +628,7 @@ container.appendChild(card);
 
 });
 
-    document
-.getElementById("country-spain")
-.addEventListener("click", function(){
-
-    document
-    .querySelectorAll(".company-card")
-    .forEach(card => {
-
-        if(card.dataset.country === "Espanja"){
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
-        }
-
-    });
-
-});
+   
 
 searchInput.addEventListener("input", function(){
 
