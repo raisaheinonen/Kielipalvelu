@@ -484,6 +484,7 @@ languages:
 Array.from(
     document.querySelectorAll(
         'input[name="languages"]:checked'
+    )
 )
 .map(language => language.value)
 .join(", "),
