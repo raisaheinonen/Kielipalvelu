@@ -179,6 +179,9 @@ pendingCount;
  ${company.city}
  ${company.service}`.toLowerCase();
 
+        card.dataset.status =
+company.status;
+
     card.classList.add("company-card");
 
     card.innerHTML = `
@@ -227,6 +230,8 @@ approveBtn.addEventListener("click", function(){
     card.querySelector(".status-row").innerHTML =
     "<strong>Tila:</strong> hyväksytty";
 
+    card.dataset.status = "hyväksytty";
+
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
 
@@ -248,6 +253,9 @@ rejectBtn.addEventListener("click", function(){
     card.querySelector(".status-row").innerHTML =
     "<strong>Tila:</strong> hylätty";
 
+    card.dataset.status = "hylätty";
+
+
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
 
@@ -268,6 +276,38 @@ container.appendChild(card);
 }); 
 
 searchInput.addEventListener("input", function(){
+
+    document
+.getElementById("show-all")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display = "";
+
+    });
+
+});
+
+    document
+.getElementById("show-approved")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        if(card.dataset.status === "hyväksytty"){
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
 
     const value =
     this.value.toLowerCase();
