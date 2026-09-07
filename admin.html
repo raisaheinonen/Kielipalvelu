@@ -184,6 +184,13 @@ document.getElementById("search-results").textContent =
 document.getElementById("pending-count").textContent =
 pendingCount;
 
+    companies.sort((a, b) => {
+
+    return new Date(b.submittedAt) -
+           new Date(a.submittedAt);
+
+});
+
   
 
     companies.forEach(company => {
