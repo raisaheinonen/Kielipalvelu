@@ -492,6 +492,13 @@ Array.from(
 otherLanguage:
 document.querySelector('[name="otherLanguage"]').value,
 
+emailSubject:
+`Uusi yritysilmoitus - ${
+document.querySelector('[name="companyName"]').value
+} (${
+document.querySelector('[name="country"]').value
+})`
+
 };
 
     emailjs.send(
