@@ -83,6 +83,16 @@ h1{
     border-radius:8px;
 }
 
+    #filters{
+    margin-bottom:20px;
+}
+
+#filters button{
+    margin-right:10px;
+    padding:8px 14px;
+    cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -127,6 +137,10 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
     placeholder="Hae yritystä, maata tai palvelua..."
     >
 
+    <p id="search-results">
+    Näytetään 0 / 0 yritystä
+</p>
+
 <div id="pending-companies"></div>
 
 <script>
@@ -145,6 +159,9 @@ document.getElementById("search");
 let pendingCount = companies.length;
 let approvedCount = 0;
 let rejectedCount = 0;
+
+document.getElementById("search-results").textContent =
+`Näytetään ${companies.length} / ${companies.length} yritystä`;
 
 document.getElementById("pending-count").textContent =
 pendingCount;
@@ -255,17 +272,26 @@ searchInput.addEventListener("input", function(){
     const value =
     this.value.toLowerCase();
 
+    let visibleCount = 0;
+
     document
     .querySelectorAll(".company-card")
     .forEach(card => {
 
         if(card.dataset.search.includes(value)){
             card.style.display = "";
+            visibleCount++;
         } else {
             card.style.display = "none";
         }
 
     });
+
+    const totalCount =
+    document.querySelectorAll(".company-card").length;
+
+    document.getElementById("search-results").textContent =
+    `Näytetään ${visibleCount} / ${totalCount} yritystä`;
 
 });
 
