@@ -202,6 +202,27 @@ let pendingCount = companies.length;
 let approvedCount = 0;
 let rejectedCount = 0;
 
+    const spainCount =
+companies.filter(company =>
+company.country === "Espanja").length;
+
+const swedenCount =
+companies.filter(company =>
+company.country === "Ruotsi").length;
+
+const germanyCount =
+companies.filter(company =>
+company.country === "Saksa").length;
+
+    document.getElementById("country-spain").textContent =
+`Espanja (${spainCount})`;
+
+document.getElementById("country-sweden").textContent =
+`Ruotsi (${swedenCount})`;
+
+document.getElementById("country-germany").textContent =
+`Saksa (${germanyCount})`;
+
 document.getElementById("all-count").textContent =
 companies.length;
 
