@@ -109,6 +109,16 @@ h1{
 .hylätty{
     border-left:6px solid #dc2626;
 }
+    .edit-btn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-left:10px;
+}
+
 
 </style>
 </head>
@@ -289,6 +299,8 @@ ${company.submittedAt || "-"}
 <button class="approve-btn">Hyväksy</button>
 
 <button class="reject-btn">Hylkää</button>
+
+<button class="edit-btn">Muokkaa</button>
 `;
 
 
@@ -298,11 +310,16 @@ card.querySelector(".approve-btn");
 const rejectBtn =
 card.querySelector(".reject-btn");
 
+    const editBtn =
+card.querySelector(".edit-btn");
+
     const detailsBtn =
 card.querySelector(".details-btn");
 
 const detailsSection =
 card.querySelector(".details-section");
+
+
 
     detailsBtn.addEventListener("click", function(){
 
@@ -315,6 +332,25 @@ card.querySelector(".details-section");
 
         detailsSection.style.display = "none";
         detailsBtn.textContent = "Näytä tiedot";
+
+    }
+
+});
+
+        editBtn.addEventListener("click", function(){
+
+    const newName =
+    prompt(
+        "Yrityksen nimi:",
+        company.companyName
+    );
+
+    if(newName){
+
+        company.companyName = newName;
+
+        card.querySelector("h3").textContent =
+        newName;
 
     }
 
