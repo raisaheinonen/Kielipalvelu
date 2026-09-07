@@ -474,6 +474,15 @@ document
     description:
     document.querySelector('[name="description"]').value
 
+    languages:
+Array.from(
+    document.querySelectorAll(
+        'input[name="languages"]:checked'
+    )
+)
+.map(language => language.value)
+.join(", "),
+
 };
 
     emailjs.send(
