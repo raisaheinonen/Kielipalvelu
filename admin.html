@@ -627,27 +627,6 @@ container.appendChild(card);
 
    
 
-    document
-.getElementById("country-germany")
-.addEventListener("click", function(){
-
-    document
-    .querySelectorAll(".company-card")
-    .forEach(card => {
-
-        if(card.dataset.search.includes("saksa")){
-            card.style.display = "";
-        } else {
-            card.style.display = "none";
-        }
-
-    });
-
-});
-``
-
-
-
         document
 .getElementById("show-rejected")
 .addEventListener("click", function(){
