@@ -123,6 +123,15 @@ h1{
     cursor:pointer;
 }
 
+    #service-filters{
+    margin-bottom:20px;
+}
+
+#service-filters button{
+    margin-right:10px;
+    margin-bottom:10px;
+}
+
 
 </style>
 </head>
@@ -194,6 +203,8 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
 
     <div id="country-filters"></div>
 
+    <div id="service-filters"></div>
+
 <div id="pending-companies"></div>
 
 <script>
@@ -208,10 +219,20 @@ fetch("pending-companies.json")
     const countryFilters =
 document.getElementById("country-filters");
 
+const serviceFilters =
+document.getElementById("service-filters");
+
 const countries =
 [...new Set(
     companies.map(
         company => company.country
+    )
+)].sort();
+
+    const services =
+[...new Set(
+    companies.map(
+        company => company.service
     )
 )].sort();
 
@@ -267,6 +288,26 @@ countryFilters.appendChild(allCountriesButton);
         });
 
     });
+
+        const allServicesButton =
+document.createElement("button");
+
+allServicesButton.textContent =
+`Kaikki palvelut (${companies.length})`;
+
+allServicesButton.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display = "";
+
+    });
+
+});
+
+serviceFilters.appendChild(allServicesButton);
 
     countryFilters.appendChild(button);
 
@@ -406,6 +447,43 @@ card.querySelector(".details-section");
         detailsBtn.textContent = "Näytä tiedot";
 
     }
+
+});
+
+        services.forEach(service => {
+
+    const button =
+    document.createElement("button");
+
+    const count =
+    companies.filter(
+        company => company.service === service
+    ).length;
+
+    button.textContent =
+    `${service} (${count})`;
+
+    button.addEventListener("click", function(){
+
+        document
+        .querySelectorAll(".company-card")
+        .forEach(card => {
+
+            if(
+                card.dataset.search.includes(
+                    service.toLowerCase()
+                )
+            ){
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+    serviceFilters.appendChild(button);
 
 });
 
