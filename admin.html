@@ -244,6 +244,12 @@ allCountriesButton.textContent =
 
 allCountriesButton.addEventListener("click", function(){
 
+    selectedCountry = "";
+
+    applyFilters();
+
+});
+
     document
     .querySelectorAll(".company-card")
     .forEach(card => {
@@ -271,6 +277,12 @@ countryFilters.appendChild(allCountriesButton);
 
     button.addEventListener("click", function(){
 
+    selectedService = service;
+
+    applyFilters();
+
+});
+
         document
         .querySelectorAll(".company-card")
         .forEach(card => {
@@ -297,13 +309,11 @@ allServicesButton.textContent =
 
 allServicesButton.addEventListener("click", function(){
 
-    document
-    .querySelectorAll(".company-card")
-    .forEach(card => {
+    selectedService = "";
 
-        card.style.display = "";
+    applyFilters();
 
-    });
+});
 
 });
 
@@ -358,6 +368,9 @@ let pendingCount = companies.length;
 let approvedCount = 0;
 let rejectedCount = 0;
 
+    let selectedCountry = "";
+let selectedService = "";
+
 
 document.getElementById("all-count").textContent =
 companies.length;
@@ -383,6 +396,34 @@ pendingCount;
            new Date(a.submittedAt);
 
 });
+
+    function applyFilters(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        const countryMatch =
+        !selectedCountry ||
+        card.dataset.search.includes(
+            selectedCountry.toLowerCase()
+        );
+
+        const serviceMatch =
+        !selectedService ||
+        card.dataset.search.includes(
+            selectedService.toLowerCase()
+        );
+
+        if(countryMatch && serviceMatch){
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+}
 
   
 
