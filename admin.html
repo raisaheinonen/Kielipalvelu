@@ -200,6 +200,10 @@ pendingCount;
         card.dataset.status =
 company.status;
 
+        if(company.status !== "pending"){
+    card.style.display = "none";
+}
+
     card.classList.add("company-card");
 
     card.innerHTML = `
@@ -369,8 +373,14 @@ searchInput.addEventListener("input", function(){
     const totalCount =
     document.querySelectorAll(".company-card").length;
 
-    document.getElementById("search-results").textContent =
-    `Näytetään ${visibleCount} / ${totalCount} yritystä`;
+    const visiblePending =
+companies.filter(
+    company => company.status === "pending"
+).length;
+
+document.getElementById("search-results").textContent =
+`Näytetään ${visiblePending} / ${companies.length} yritystä`;
+
 
 });
 
