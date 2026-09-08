@@ -435,11 +435,9 @@ company.country;
     card.style.display = "none";
 }
 
-    if (someClass) {
-    element.classList.add(someClass);
-}
-
+    if (company.status) {
     card.classList.add(company.status);
+}
 
     card.innerHTML = `
 <h3>${company.companyName}</h3>
