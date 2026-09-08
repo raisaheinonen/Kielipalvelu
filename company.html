@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yritys</title>
+
+companies.jsscript>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+.info{
+    margin-bottom:10px;
+}
+
+a.website{
+    display:inline-block;
+    margin-top:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="companyContainer"></div>
+
+<script>
+
+const urlParams = new URLSearchParams(window.location.search);
+const companyId = urlParams.get("id");
+
+const company = companies.find(c => c.id === companyId);
+
+if(company){
+
+document.getElementById("companyContainer").innerHTML = `
+<h1>${company.name}</h1>
+
+<div class="info"><strong>Kieli:</strong> ${company.language}</div>
+<div class="info"><strong>Palvelu:</strong> ${company.service}</div>
+<div class="info"><strong>Maa:</strong> ${company.country}</div>
+<div class="info"><strong>Kaupunki:</strong> ${company.city}</div>
+<div class="info"><strong>Osoite:</strong> ${company.address || "-"}</div>
+
+<p>${company.description || ""}</p>
+
+<a class="website"
+href="https://${company.website}"
+target="_blank">
+Avaa verkkosivut
+</a>
+`;
+}
+else{
+
+document.getElementById("companyContainer").innerHTML = `
+<h2>Yritystä ei löytynyt.</h2>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
