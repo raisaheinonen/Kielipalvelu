@@ -499,6 +499,11 @@ document.querySelector('[name="country"]').value === "other"
 
 };
 
+fetch("https://script.google.com/macros/s/AKfycbzErXGg0eRRKyV0xmwDqqSdwhHCz5JsHRw_ytbId0Oo53I7Tg6Job5AKWotIc2nsPZgcw/exec", {
+    method: "POST",
+    body: JSON.stringify(company)
+});
+    
     emailjs.send(
         "service_wgyhhel",
         "template_qvt11uc",
