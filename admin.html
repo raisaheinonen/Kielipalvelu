@@ -435,7 +435,9 @@ company.country;
     card.style.display = "none";
 }
 
-    card.classList.add("company-card");
+    if (someClass) {
+    element.classList.add(someClass);
+}
 
     card.classList.add(company.status);
 
