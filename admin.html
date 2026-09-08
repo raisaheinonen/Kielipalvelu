@@ -209,9 +209,27 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
 
 <script>
 
-fetch("pending-companies.json")
+fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec")
 .then(response => response.json())
-.then(companies => {
+.then(data => {
+
+const headers = data[0];
+
+const companies =
+data.slice(1).map(row => ({
+
+companyName: row[0],
+country: row[1],
+city: row[2],
+service: row[3],
+email: row[4],
+phone: row[5],
+website: row[6],
+description: row[7],
+status: row[8],
+submittedAt: row[9]
+
+}));
 
      let selectedCountry = "";
 let selectedService = "";
