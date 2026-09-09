@@ -393,15 +393,15 @@ pendingCount;
         const countryMatch =
         !selectedCountry ||
         card.dataset.search.includes(
-            card.dataset.status =
-company.status || "pending";
+            card.dataset.search.includes(selectedCountry)
+            
         );
 
         const serviceMatch =
         !selectedService ||
         card.dataset.search.includes(
-            card.dataset.status =
-company.status || "pending";
+            card.dataset.search.includes(selectedService)
+           
         );
 
         if(countryMatch && serviceMatch){
@@ -539,6 +539,9 @@ document.getElementById("show-rejected")
     document.createElement("div");
 
         card.classList.add("company-card");
+
+        card.dataset.status =
+company.status || "pending";
 
     card.dataset.search =
 `${company.companyName}
