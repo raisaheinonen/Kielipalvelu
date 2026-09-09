@@ -352,9 +352,23 @@ const searchInput =
 document.getElementById("search");
 
 
-let pendingCount = companies.length;
-let approvedCount = 0;
-let rejectedCount = 0;
+let pendingCount =
+companies.filter(
+    company =>
+    (company.status || "pending") === "pending"
+).length;
+
+let approvedCount =
+companies.filter(
+    company =>
+    company.status === "hyväksytty"
+).length;
+
+let rejectedCount =
+companies.filter(
+    company =>
+    company.status === "hylätty"
+).length;
 
    
 
@@ -545,12 +559,6 @@ company.status || "pending";
 
         card.dataset.country =
 company.country;
-
-console.log(
-    company.companyName,
-    company.status,
-    card.dataset.status
-);
 
     card.dataset.search =
 `${company.companyName}
