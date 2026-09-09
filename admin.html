@@ -412,6 +412,115 @@ pendingCount;
 
 }
 
+    document.getElementById("show-all")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display = "";
+
+    });
+
+});
+
+document.getElementById("show-pending")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display =
+        card.dataset.status === "pending"
+        ? ""
+        : "none";
+
+    });
+
+});
+
+document.getElementById("show-approved")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display =
+        card.dataset.status === "hyväksytty"
+        ? ""
+        : "none";
+
+    });
+
+});
+
+document.getElementById("show-rejected")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display =
+        card.dataset.status === "hylätty"
+        ? ""
+        : "none";
+
+    });
+
+});
+
+    document.getElementById("show-pending")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display =
+        card.dataset.status === "pending"
+        ? ""
+        : "none";
+
+    });
+
+});
+
+document.getElementById("show-approved")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display =
+        card.dataset.status === "hyväksytty"
+        ? ""
+        : "none";
+
+    });
+
+});
+
+document.getElementById("show-rejected")
+.addEventListener("click", function(){
+
+    document
+    .querySelectorAll(".company-card")
+    .forEach(card => {
+
+        card.style.display =
+        card.dataset.status === "hylätty"
+        ? ""
+        : "none";
+
+    });
+
+});
+
   
 
     companies.forEach(company => {
@@ -426,12 +535,12 @@ pendingCount;
  ${company.service}`.toLowerCase();
 
         card.dataset.status =
-company.status;
+company.status || "pending";
 
     card.dataset.country =
 company.country;
 
-        if(company.status !== "pending"){
+        if((company.status || "pending") !== "pending"){
     card.style.display = "none";
 }
 
@@ -531,6 +640,10 @@ card.classList.add("hyväksytty");
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
 
+    approveBtn.style.display = "none";
+rejectBtn.style.display = "none";
+
+
     approvedCount++;
     pendingCount--;
 
@@ -562,6 +675,9 @@ card.classList.add("hylätty");
 
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
+
+    approveBtn.style.display = "none";
+rejectBtn.style.display = "none";
 
     rejectedCount++;
     pendingCount--;
