@@ -563,7 +563,8 @@ company.country;
 
 <p>
 <strong>Lähetetty:</strong>
-${company.submittedAt || "-"}
+const sentDate =
+new Date(company.submittedAt).toLocaleString("fi-FI");
 </p>
 
 <button class="details-btn">
