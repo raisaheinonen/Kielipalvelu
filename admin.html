@@ -558,8 +558,12 @@ company.country;
     card.classList.add(company.status);
 }
 
- const sentDate =
-new Date(company.submittedAt).toLocaleString("fi-FI");
+ const dateObj = new Date(company.submittedAt);
+
+const sentDate =
+isNaN(dateObj.getTime())
+    ? "-"
+    : dateObj.toLocaleString("fi-FI");
 
 card.innerHTML = `
 <h3>${company.companyName}</h3>
