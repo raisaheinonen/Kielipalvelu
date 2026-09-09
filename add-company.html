@@ -523,15 +523,19 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
         .reset();
 
     })
-    .catch(function(error){
+    fetch(...)
+.then(() => {
 
-        alert(
-            "Lähetys epäonnistui. Yritä uudelleen."
-        );
+    document
+      .getElementById("success-message")
+      .style.display = "block";
 
-        console.error(error);
+})
+.catch(error => {
 
-    });
+    console.error(error);
+
+});
 
 });
 
