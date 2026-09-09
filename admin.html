@@ -444,6 +444,8 @@ document.getElementById("show-pending")
 document.getElementById("show-approved")
 .addEventListener("click", function(){
 
+    console.log("Hyväksytyt nappi painettu");
+
     document
     .querySelectorAll(".company-card")
     .forEach(card => {
@@ -459,6 +461,8 @@ document.getElementById("show-approved")
 
 document.getElementById("show-rejected")
 .addEventListener("click", function(){
+
+    console.log("Hylätyt nappi painettu");
 
     document
     .querySelectorAll(".company-card")
