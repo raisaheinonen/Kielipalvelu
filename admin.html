@@ -543,14 +543,20 @@ document.getElementById("show-rejected")
         card.dataset.status =
 company.status || "pending";
 
+        card.dataset.country =
+company.country;
+
+console.log(
+    company.companyName,
+    company.status,
+    card.dataset.status
+);
+
     card.dataset.search =
 `${company.companyName}
  ${company.country}
  ${company.city}
  ${company.service}`.toLowerCase();
-
-        card.dataset.status =
-company.status || "pending";
 
     card.dataset.country =
 company.country;
