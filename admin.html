@@ -558,14 +558,17 @@ company.country;
     card.classList.add(company.status);
 }
 
-    card.innerHTML = `
+ const sentDate =
+new Date(company.submittedAt).toLocaleString("fi-FI");
+
+card.innerHTML = `
 <h3>${company.companyName}</h3>
 
 <p>
 <strong>Lähetetty:</strong>
-const sentDate =
-new Date(company.submittedAt).toLocaleString("fi-FI");
+${sentDate}
 </p>
+
 
 <button class="details-btn">
     Näytä tiedot
