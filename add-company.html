@@ -502,40 +502,29 @@ document.querySelector('[name="country"]').value === "other"
 fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
     method: "POST",
     body: JSON.stringify(company)
-});
-
-    console.log(company);
-
-    
-    emailjs.send(
-        "service_wgyhhel",
-        "template_qvt11uc",
-        company
-    )
-    .then(function(){
-
-        document
-        .getElementById("success-message")
-        .style.display = "block";
-
-        document
-        .getElementById("company-form")
-        .reset();
-
-    })
-    fetch(...)
+})
 .then(() => {
 
     document
-      .getElementById("success-message")
-      .style.display = "block";
+        .getElementById("success-message")
+        .style.display = "block";
+
+    document
+        .getElementById("company-form")
+        .reset();
 
 })
 .catch(error => {
 
     console.error(error);
 
+    alert(
+        "Lähetys epäonnistui. Yritä uudelleen."
+    );
+
 });
+
+console.log(company);
 
 });
 
