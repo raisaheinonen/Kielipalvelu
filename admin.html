@@ -655,6 +655,22 @@ approveBtn.addEventListener("click", function(){
     card.classList.remove("pending");
 card.classList.add("hyväksytty");
 
+    fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
+
+    method: "POST",
+
+    body: JSON.stringify({
+
+        action: "updateStatus",
+
+        companyName: company.companyName,
+
+        status: "hyväksytty"
+
+    })
+
+});
+
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
 
@@ -690,6 +706,22 @@ rejectBtn.addEventListener("click", function(){
 
     card.classList.remove("pending");
 card.classList.add("hylätty");
+
+    fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
+
+    method: "POST",
+
+    body: JSON.stringify({
+
+        action: "updateStatus",
+
+        companyName: company.companyName,
+
+        status: "hylätty"
+
+    })
+
+});
 
     approveBtn.disabled = true;
     rejectBtn.disabled = true;
