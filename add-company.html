@@ -445,6 +445,45 @@ if (otherLanguageCheckbox && otherLanguageContainer) {
 
 <script>
 
+const map = L.map("map").setView(
+    [39.5696, 2.6502],
+    6
+);
+
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        attribution: "© OpenStreetMap"
+    }
+).addTo(map);
+
+let marker;
+
+map.on("click", function(e){
+
+    const lat = e.latlng.lat;
+    const lng = e.latlng.lng;
+
+    document
+        .getElementById("latitude")
+        .value = lat;
+
+    document
+        .getElementById("longitude")
+        .value = lng;
+
+    if(marker){
+
+        map.removeLayer(marker);
+
+    }
+
+    marker =
+        L.marker([lat, lng])
+        .addTo(map);
+
+});
+
 document
 .getElementById("company-form")
 .addEventListener("submit", function(event){
