@@ -227,7 +227,20 @@ phone: row[5],
 website: row[6],
 description: row[7],
 status: row[8],
-submittedAt: row[9]
+submittedAt: row[9],
+
+serviceArea: row[10],
+address: row[11],
+mapsLink: row[12],
+instagram: row[13],
+facebook: row[14],
+contactPerson: row[15],
+languages: row[16],
+otherLanguage: row[17],
+otherCountry: row[18],
+otherService: row[19],
+latitude: row[20],
+longitude: row[21]
 
 }));
 
@@ -626,6 +639,19 @@ ${sentDate}
 <p><strong>Facebook:</strong> ${company.facebook || "-"}</p>
 
 <p><strong>Kuvaus:</strong> ${company.description || "-"}</p>
+
+<p><strong>Osoite:</strong> ${company.address || "-"}</p>
+
+<p>
+<strong>Google Maps:</strong>
+<a href="${company.mapsLink}" target="_blank
+<p><strong>Yhteyshenkilö:</strong> ${company.contactPerson || "-"}</p>
+
+<p><strong>Kielet:</strong> ${company.languages || "-"}</p>
+
+<p><strong>Latitude:</strong> ${company.latitude || "-"}</p>
+
+<p><strong>Longitude:</strong> ${company.longitude || "-"}</p>
 
 </div>
 
