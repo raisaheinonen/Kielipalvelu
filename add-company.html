@@ -471,6 +471,9 @@ map.on("click", function(e){
     const lat = e.latlng.lat;
     const lng = e.latlng.lng;
 
+    console.log("Kartalta LAT:", lat);
+console.log("Kartalta LNG:", lng);
+
     document
         .getElementById("latitude")
         .value = lat;
@@ -565,14 +568,14 @@ Array.from(
 otherLanguage:
 document.querySelector('[name="otherLanguage"]').value,
 
-submittedAt:
-new Date().toLocaleString("fi-FI"),
-
-    latitude:
+        latitude:
 document.getElementById("latitude").value,
 
 longitude:
 document.getElementById("longitude").value,
+
+submittedAt:
+new Date().toLocaleString("fi-FI"),
 
 
 emailSubject:
@@ -586,7 +589,9 @@ document.querySelector('[name="country"]').value === "other"
 
 };
 
-    console.log(company);
+    
+    console.log("Lomakkeen LAT:", company.latitude);
+console.log("Lomakkeen LNG:", company.longitude);
 
 fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
     method: "POST",
