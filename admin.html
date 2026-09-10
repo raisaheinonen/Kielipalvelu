@@ -644,13 +644,9 @@ ${sentDate}
 
 <p>
 <strong>Google Maps:</strong>
-${
-company.mapsLink
-? `<a href="${company.mapsLinkrtalla
-</a>`
-: "-"
-}
+${company.mapsLink || "-"}
 </p>
+
 
 <p><strong>Yhteyshenkilö:</strong> ${company.contactPerson || "-"}</p>
 
