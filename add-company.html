@@ -457,14 +457,27 @@ const map = L.map("map").setView(
     6
 );
 
+    let marker = L.marker(
+    [39.5696, 2.6502],
+    {
+        draggable: true
+    }
+).addTo(map);
+
+document
+    .getElementById("latitude")
+    .value = 39.5696;
+
+document
+    .getElementById("longitude")
+    .value = 2.6502;
+
 L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
         attribution: "© OpenStreetMap"
     }
 ).addTo(map);
-
-let marker;
 
 map.on("click", function(e){
 
