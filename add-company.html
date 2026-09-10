@@ -469,6 +469,31 @@ const map = L.map("map").setView(
     }
 ).addTo(map);
 
+    marker.on("dragend", function() {
+
+    const position =
+        marker.getLatLng();
+
+    document
+        .getElementById("latitude")
+        .value = position.lat;
+
+    document
+        .getElementById("longitude")
+        .value = position.lng;
+
+    document
+        .getElementById("location-status")
+        .innerHTML =
+        "✅ Sijainti valittu";
+
+    document
+        .getElementById("location-status")
+        .style.color =
+        "#16a34a";
+
+});
+
 document
     .getElementById("latitude")
     .value = 39.5696;
