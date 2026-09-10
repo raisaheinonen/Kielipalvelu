@@ -423,6 +423,12 @@ document
 
     event.preventDefault();
 
+    const submitButton =
+document.querySelector('button[type="submit"]');
+
+submitButton.disabled = true;
+submitButton.textContent = "Lähetetään...";
+
     const company = {
 
     companyName:
@@ -505,6 +511,11 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
 })
 .then(() => {
 
+    submitButton.textContent =
+"Yritys lähetetty";
+
+submitButton.disabled = false;
+
     document
         .getElementById("success-message")
         .style.display = "block";
@@ -515,6 +526,11 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
 
 })
 .catch(error => {
+
+    submitButton.textContent =
+"Lähetä yritys";
+
+submitButton.disabled = false;
 
     console.error(error);
 
