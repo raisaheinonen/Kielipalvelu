@@ -644,12 +644,21 @@ ${sentDate}
 
 <p>
 <strong>Google Maps:</strong>
-<a href="${company.mapsLink}" target="_blank
+${
+company.mapsLink
+? `<a href="${company.mapsLinkrtalla
+</a>`
+: "-"
+}
+</p>
+
 <p><strong>Yhteyshenkilö:</strong> ${company.contactPerson || "-"}</p>
 
 <p><strong>Kielet:</strong> ${company.languages || "-"}</p>
 
 <p><strong>Latitude:</strong> ${company.latitude || "-"}</p>
+
+<p><strong>Longitude:</strong> ${company.longitude || "-"}</p>
 
 <p><strong>Longitude:</strong> ${company.longitude || "-"}</p>
 
