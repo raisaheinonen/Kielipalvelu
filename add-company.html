@@ -57,6 +57,12 @@ button:hover{
     background:#334155;
 }
 </style>
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
 </head>
 
 <body>
@@ -148,6 +154,28 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 <label>Google Maps -linkki (suositeltu)</label>
 <input type="url" name="mapsLink">
 
+<p><strong>TAI</strong></p>
+
+<label>
+📍 Valitse sijainti kartalta
+</label>
+
+<div id="map" style="
+height:400px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:8px;">
+</div>
+
+<input
+type="hidden"
+name="latitude"
+id="latitude">
+
+<input
+type="hidden"
+name="longitude"
+id="longitude">
 
 <label>Koordinaatit (jos tiedossa)</label>
 <input type="text" name="coordinates">
@@ -573,7 +601,7 @@ countrySelect.addEventListener("change", function(){
 emailjs.init("7bM0DoYoPYwQWcnCC");
 </script>
 
-
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 </body>
 </html>
