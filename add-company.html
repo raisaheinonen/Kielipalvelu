@@ -162,6 +162,11 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 Valitse sijainti kartalta
 </label>
 
+    <p id="location-status"
+style="color:#dc2626;font-weight:bold;">
+⚠️ Siirrä nasta yrityksen sijaintiin
+</p>
+
 <div id="map" style="
 height:400px;
 margin-top:10px;
@@ -517,7 +522,15 @@ map.on("click", function(e){
         .getElementById("longitude")
         .value = position.lng;
 
-});
+        document
+    .getElementById("location-status")
+    .innerHTML =
+    "✅ Sijainti valittu";
+
+document
+    .getElementById("location-status")
+    .style.color =
+    "#16a34a";
 
 });
 
