@@ -159,7 +159,7 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 <p><strong>TAI</strong></p>
 
 <label>
-📍 Valitse sijainti kartalta
+Valitse sijainti kartalta
 </label>
 
 <div id="map" style="
@@ -449,6 +449,8 @@ if (otherLanguageCheckbox && otherLanguageContainer) {
 
     
 <script>
+
+    console.log("L:", typeof L);
 
 const map = L.map("map").setView(
     [39.5696, 2.6502],
