@@ -109,6 +109,19 @@ button:hover{
     font-size:1.4rem;
     margin-bottom:20px;
 }
+
+    .checkbox-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:18px 0;
+}
+
+.checkbox-row input{
+    width:18px;
+    height:18px;
+    margin:0;
+}
 </style>
 
 <link
@@ -140,7 +153,7 @@ text-align:left;
 color:black;
 ">
 
-<p>Mitä ilmoitus sisältää?</p>
+<p>Yritysilmoitus sisältää</p>
 
 <p>• Yritys näkyy hakemistossa ja kartalla hyväksynnän jälkeen</p>
 
@@ -416,14 +429,14 @@ required></textarea>
 <input type="file" name="logo" accept="image/*">
     <small>Suositeltu formaatti: PNG tai JPG</small>
 
-<label>
-<input type="checkbox" required>
-Vakuutan antamani tiedot oikeiksi.
+<label class="checkbox-row">
+    <input type="checkbox" required>
+    <span>Vakuutan antamani tiedot oikeiksi.</span>
 </label>
 
-    <label>
-<input type="checkbox" name="interestedPremium">
-Olen kiinnostunut Premium-näkyvyydestä
+<label class="checkbox-row">
+    <input type="checkbox">
+    <span>Olen kiinnostunut Premium-näkyvyydestä</span>
 </label>
 
 <button type="submit">
