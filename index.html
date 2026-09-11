@@ -12,12 +12,32 @@
             background-color:#f8fafc;
         }
 
-        .hero {
-    background:#f6f1e9;
-    color:#111827;
+        .hero{
+    position:relative;
+    min-height:420px;
+
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+    ),
+    url("images/hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
     text-align:center;
-    padding:50px 20px 60px 20px;
+
+    color:white;
+
+    padding:80px 20px;
 }
+``
 
         .hero h1 {
             margin: 0;
@@ -27,6 +47,19 @@
         .hero p {
             font-size: 18px;
         }
+
+        .hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+        .hero p{
+    font-size:1.4rem;
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
 
         .search-box {
             background: white;
@@ -39,6 +72,12 @@
 
         .search-box h2{
             color:#0f172a;
+}
+
+        .search-container{
+    position:relative;
+    margin-top:-60px;
+    z-index:10;
 }
 
 .search-button:hover{
@@ -186,7 +225,7 @@
 </div>
         <h1 id="main-title">Find Your Language</h1>
         <p id="hero-text">
-Find services in your own language anywhere in the world
+Find trusted services in your own language anywhere in the world
 </p>
     </div>
 
@@ -422,15 +461,12 @@ selectCountry:"Select country",
 },
 
 sv:{
-title:"🌍 Språktjänster",
+title:"Find Your Language",
 hero:"Hitta tjänster på ditt eget språk över hela världen",
 search:"Sök tjänster",
 
 selectLanguage:"Servicespråk",
 selectService:"Välj tjänst",
-
-addCompany:"Lägg till företag",
-suggestCompany:"Föreslå företag",
 
 dentists:"Tandläkare",
 legal:"Juridiska tjänster",
