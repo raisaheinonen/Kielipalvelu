@@ -470,7 +470,9 @@ Korosta yrityksesi näkyvyyttä hakemistossa.
 </ul>
 
 <label>
-<input type="checkbox" name="premiumInterest">
+<input
+type="checkbox"
+id="premiumInterest">
  Olen kiinnostunut Premium-näkyvyydestä
 </label>
 
@@ -783,7 +785,10 @@ document.querySelector('[name="companyName"]').value
 document.querySelector('[name="country"]').value === "other"
 ? document.querySelector('[name="otherCountry"]').value
 : document.querySelector('[name="country"]').value
-})`
+})`,
+
+premiumInterest:
+document.getElementById("premiumInterest").checked
 
 };
 
