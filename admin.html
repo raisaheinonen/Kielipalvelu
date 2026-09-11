@@ -659,12 +659,11 @@ ${company.mapsLink || "-"}
 
 <p>
 <strong>Premium-näkyvyys:</strong>
-${company.premiumInterest === "true"
+${String(company.premiumInterest).toLowerCase() === "true"
     ? "Kyllä"
     : "Ei"}
 </p>
 
-<p>
 <p>
 <a
 href="https://www.google.com/maps?q=${company.latitude},${company.longitude}"
