@@ -240,7 +240,8 @@ otherLanguage: row[17],
 otherCountry: row[18],
 otherService: row[19],
 latitude: row[20],
-longitude: row[21]
+longitude: row[21],
+premiumInterest: row[22]
 
 }));
 
@@ -655,6 +656,13 @@ ${company.mapsLink || "-"}
 <p><strong>Latitude:</strong> ${company.latitude || "-"}</p>
 
 <p><strong>Longitude:</strong> ${company.longitude || "-"}</p>
+
+<p>
+<strong>Premium-näkyvyys:</strong>
+${company.premiumInterest === "true"
+    ? "Kyllä"
+    : "Ei"}
+</p>
 
 <p>
 <p>
