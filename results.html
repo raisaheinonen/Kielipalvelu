@@ -505,11 +505,20 @@ button.addEventListener("click", function(){
 
 const lat = parseFloat(this.dataset.lat);
 const lng = parseFloat(this.dataset.lng);
-
-    console.log("Klikattu:", lat, lng);
+const companyId = this.dataset.companyId;
 
 if(!isNaN(lat) && !isNaN(lng)){
-    map.setView([lat, lng], 13);
+
+    map.setView([lat, lng], 15);
+
+    markers.forEach(marker => {
+
+        if(marker.companyId === companyId){
+            marker.openPopup();
+        }
+
+    });
+
 }
 
 });
@@ -583,6 +592,8 @@ ${item.city}, ${item.country}
 ${item.address}
 `
 );
+
+    marker.companyId = item.id;
 
 markers.push(marker);
 
