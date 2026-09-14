@@ -606,9 +606,17 @@ console.log(
     item.lng
 );
 
-const marker =
-L.marker([item.lat, item.lng])
+const premiumIcon = L.divIcon({
+    html: item.premium ? "⭐" : "📍",
+    className: "custom-marker",
+    iconSize: [30, 30]
+});
 
+const marker =
+L.marker(
+    [item.lat, item.lng],
+    { icon: premiumIcon }
+)
 .addTo(map)
 .bindPopup(
 `
