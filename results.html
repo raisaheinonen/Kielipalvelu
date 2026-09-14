@@ -397,7 +397,7 @@ class="result-card ${item.premium ? 'premium' : ''}"
 data-lat="${item.lat}"
 data-lng="${item.lng}"
 style="display:block;"
-onclick="window.location.href='company.html?id=${item.id}'">
+onclick="openModal(companies.find(c => c.id === '${item.id}'))"
 
 ${item.premium ? `
 <div class="premium-badge">
@@ -596,9 +596,39 @@ document
 
     map.fitBounds(group.getBounds(), {
         padding:[100,100]
+
+        
     });
     
     });
+
+    function openModal(company){
+
+document.getElementById("modalBody").innerHTML = `
+
+<h2>${company.name}</h2>
+
+<p><strong>Kaupunki:</strong> ${company.city}</p>
+
+<p><strong>Osoite:</strong> ${company.address || "-"}</p>
+
+<p><strong>Puhelin:</strong> ${company.phone || "-"}</p>
+
+<p>${company.description || ""}</p>
+
+`;
+
+document.getElementById("companyModal").style.display =
+"block";
+
+}
+
+function closeModal(){
+
+document.getElementById("companyModal").style.display =
+"none";
+
+}
     
 </script>
 
