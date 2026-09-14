@@ -470,6 +470,7 @@ ${translations[siteLanguage].showMap}
 <a
 href="https://www.google.com/maps/dir/?
 target="_blank"
+    onclick="trackClick('${item.id}','navigate_click')"
 class="show-map-btn"
 style="margin-left:10px;text-decoration:none;display:inline-block;">
 ${translations[siteLanguage].navigate}
@@ -520,6 +521,7 @@ button.addEventListener("click", function(){
 const lat = parseFloat(this.dataset.lat);
 const lng = parseFloat(this.dataset.lng);
 const companyId = this.dataset.companyId;
+trackClick(companyId,'map_click');
 
 if(!isNaN(lat) && !isNaN(lng)){
 
