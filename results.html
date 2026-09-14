@@ -607,34 +607,6 @@ document
     });
     
     });
-
-    function openModal(company){
-
-document.getElementById("modalBody").innerHTML = `
-
-<h2>${company.name}</h2>
-
-<p><strong>Kaupunki:</strong> ${company.city}</p>
-
-<p><strong>Osoite:</strong> ${company.address || "-"}</p>
-
-<p><strong>Puhelin:</strong> ${company.phone || "-"}</p>
-
-<p>${company.description || ""}</p>
-
-`;
-
-document.getElementById("companyModal").style.display =
-"block";
-
-}
-
-function closeModal(){
-
-document.getElementById("companyModal").style.display =
-"none";
-
-}
     
 </script>
 
