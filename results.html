@@ -478,15 +478,21 @@ function updateVisibleResults(){
             const lat = parseFloat(card.dataset.lat);
             const lng = parseFloat(card.dataset.lng);
 
-            if(bounds.contains([lat,lng])){
+           if (isNaN(lat) || isNaN(lng)) {
+    return;
+}
 
-                card.style.display = "block";
+if(bounds.contains([lat,lng])){
 
-            } else {
+    card.style.display = "block";
 
-                card.style.display = "none";
+} else {
 
-            }
+    card.style.display = "none";
+
+}
+
+}
 
         });
 
