@@ -558,8 +558,15 @@ const markers = [];
 
 matchingServices.forEach(item => {
 
+console.log(
+    item.name,
+    item.lat,
+    item.lng
+);
+
 const marker =
 L.marker([item.lat, item.lng])
+
 .addTo(map)
 .bindPopup(
 `
