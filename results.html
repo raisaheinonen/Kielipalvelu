@@ -433,6 +433,8 @@ ${item.city}, ${item.country}
 ${item.address}
 </p>
 
+${item.premium ? `
+
 <p>
 <strong>Phone:</strong>
 <a
@@ -460,7 +462,7 @@ ${translations[siteLanguage].premiumContacts}
 `}
 
 <button
-class="show-map-btn"
+class="map-focus-btn"
 data-company-id="${item.id}"
 data-lat="${item.lat}"
 data-lng="${item.lng}">
