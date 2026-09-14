@@ -393,10 +393,10 @@ matchingServices.forEach(item => {
 html += `
 
 <div
-class="result-card"> ${item.premium ? 'premium' : ''}"
+class="result-card ${item.premium ? 'premium' : ''}"
 data-lat="${item.lat}"
 data-lng="${item.lng}"
-style="display:block;"
+style="display:block;">
 
 ${item.premium ? `
 <div class="premium-badge">
