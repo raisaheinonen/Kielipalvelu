@@ -434,6 +434,7 @@ ${item.premium ? `
 <a
 href="https://${item.website}"
 target="_blank"
+onclick="trackClick('${item.id}','website_click')"
 style="text-decoration:none;color:#005bbb;">
 ${translations[siteLanguage].website}
 </a>
@@ -624,6 +625,25 @@ document
     });
     
     });
+
+    function trackClick(companyId, eventType){
+
+fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
+
+    method: "POST",
+
+    body: JSON.stringify({
+        action: "trackClick",
+        companyId: companyId,
+        event: eventType
+    })
+
+})
+.then(response => response.text())
+.then(data => console.log("Tracked:", data))
+.catch(error => console.log(error));
+
+}
     
 </script>
 
