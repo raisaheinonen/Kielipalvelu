@@ -480,7 +480,7 @@ ${translations[siteLanguage].premiumContacts}
 `}
 
 <button
-class="show-map-btn"
+class="navigate-btn"
 data-company-id="${item.id}"
 data-lat="${item.lat}"
 data-lng="${item.lng}">
@@ -494,6 +494,7 @@ onclick="trackClick('${item.id}','navigate_click')"
 class="show-map-btn"
 style="margin-left:10px;text-decoration:none;display:inline-block;">
 ${translations[siteLanguage].navigate}
+</a>
 
 </div>
 `;
