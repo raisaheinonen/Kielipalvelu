@@ -476,7 +476,7 @@ ${translations[siteLanguage].premiumContacts}
 `}
 
 <button
-class="map-focus-btn"
+class="show-map-btn"
 data-company-id="${item.id}"
 data-lat="${item.lat}"
 data-lng="${item.lng}">
@@ -484,13 +484,12 @@ ${translations[siteLanguage].showMap}
 </button>
 
 <a
-href="https://www.google.com/maps/dir/?
+href="https://www.google.com/maps/dir/?api=1&destination=${item.lat},${item.lng}"
 target="_blank"
-    onclick="trackClick('${item.id}','navigate_click')"
+onclick="trackClick('${item.id}','navigate_click')"
 class="show-map-btn"
 style="margin-left:10px;text-decoration:none;display:inline-block;">
 ${translations[siteLanguage].navigate}
-</a>
 
 </div>
 `;
