@@ -480,7 +480,7 @@ ${translations[siteLanguage].premiumContacts}
 `}
 
 <button
-class="navigate-btn"
+class="show-map-btn"
 data-company-id="${item.id}"
 data-lat="${item.lat}"
 data-lng="${item.lng}">
@@ -491,7 +491,7 @@ ${translations[siteLanguage].showMap}
 href="https://www.google.com/maps/dir/?api=1&destination=${item.lat},${item.lng}"
 target="_blank"
 onclick="trackClick('${item.id}','navigate_click')"
-class="show-map-btn"
+class="navigate-btn"
 style="margin-left:10px;text-decoration:none;display:inline-block;">
 ${translations[siteLanguage].navigate}
 </a>
