@@ -457,6 +457,7 @@ ${item.premium ? `
 <strong>Phone:</strong>
 <a
 href="tel:${item.phone}"
+onclick="trackClick('${item.id}','phone_click')"
 style="text-decoration:none;color:inherit;"
 >
 ${item.phone}
