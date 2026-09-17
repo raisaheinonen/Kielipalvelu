@@ -213,8 +213,6 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
 .then(response => response.json())
 .then(data => {
 
-const headers = data[0];
-
 const companies =
 data.slice(1).map(row => ({
 
