@@ -142,6 +142,10 @@ h1{
 
 <div id="stats-box">
 
+    <h2>📊 Premium Statistics</h2>
+
+<div id="statistics-container"></div>
+
     <h3>Yhteenveto</h3>
 
     <p>
@@ -908,6 +912,53 @@ searchInput.addEventListener("input", function(){
 });  
 
 });
+
+    function loadStatistics() {
+
+fetch("https://script.google.com/macros/s/AKfxxxxxxxxxx/exec", {
+
+    method: "POST",
+
+    body: JSON.stringify({
+        action: "getStatistics"
+    })
+
+})
+.then(response => response.json())
+.then(data => {
+
+    let html = "";
+
+    data.slice(1).forEach(row => {
+
+        html += `
+        <div style="
+            background:white;
+            padding:15px;
+            margin-bottom:10px;
+            border-radius:12px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.08);
+        ">
+            <strong>${row[1]}</strong><br>
+
+            Website: ${row[2]}<br>
+            Phone: ${row[3]}<br>
+            Map: ${row[4]}<br>
+            Navigate: ${row[5]}<br>
+
+            <strong>Total: ${row[6]}</strong>
+        </div>
+        `;
+
+    });
+
+    document.getElementById("statistics-container").innerHTML = html;
+
+});
+
+}
+
+    loadStatistics();
 
 </script>
 
