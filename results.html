@@ -176,18 +176,30 @@ h2{
     box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
     
+.container{
+    display:flex;
+    height:calc(100vh - 139px);
+    min-height:500px;
+}
+
+.results{
+    width:45%;
+    padding:28px 34px;
+    background:#f8fafc;
+    overflow-y:auto;
+    box-sizing:border-box;
+}
+
 .map{
     width:55%;
     border-left:1px solid #e5e7eb;
-    position:sticky;
-    top:0;
-    height:calc(100vh - 68px);
+    position:relative;
+    height:100%;
 }
-
 
 #map{
     width:100%;
-    height:calc(100vh - 68px);
+    height:100%;
 }
 
     .results-actions{
@@ -350,6 +362,31 @@ h2{
     margin:0;
     font-size:24px;
     color:#0f172a;
+}
+
+    .result-card h2{
+    font-size:24px;
+    margin:18px 0 12px;
+    line-height:1.2;
+}
+
+.result-card p{
+    font-size:15px;
+    line-height:1.5;
+    margin:10px 0;
+    font-weight:400;
+}
+
+.result-card p strong{
+    font-weight:600;
+}
+
+.company-location{
+    color:#64748b;
+    font-size:14px !important;
+    font-weight:600 !important;
+    margin-top:-4px !important;
+    margin-bottom:18px !important;
 }
 
 </style>
