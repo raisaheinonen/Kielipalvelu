@@ -454,6 +454,14 @@ h2{
 
 const map = L.map('map').setView([36.65, -4.65], 8);
 
+    L.tileLayer(
+    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 19
+    }
+).addTo(map);
+
 const params = new URLSearchParams(window.location.search);
 
 const language = params.get('language');
@@ -746,13 +754,6 @@ document.getElementById("dynamic-results").innerHTML = `
 document.getElementById("summary-count").textContent =
 count + " " + translations[siteLanguage].found;
 
-L.tileLayer(
-'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-{
-    attribution: '&copy; OpenStreetMap'
-}
-).addTo(map);
-
 const markers = [];
 
 matchingServices.forEach(item => {
@@ -831,13 +832,16 @@ document
 .getElementById('show-all')
 .addEventListener('click', function(){
 
-    map.fitBounds(group.getBounds(), {
-        padding:[100,100]
+    if(markers.length > 0){
 
-        
-    });
-    
-    });
+        map.fitBounds(group.getBounds(), {
+            padding:[100,100]
+        });
+
+    }
+
+});
+
 
     function trackClick(companyId, eventType){
 
