@@ -454,6 +454,12 @@ h2{
 
     const map = L.map('map').setView([36.65, -4.65], 8);
 
+    console.log(
+    "MAP SIZE:",
+    document.getElementById("map").getBoundingClientRect()
+);
+
+
 const params = new URLSearchParams(window.location.search);
 
 const language = params.get('language');
