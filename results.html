@@ -391,13 +391,16 @@ h2{
 <body>
 
 <div class="topbar"> 
+
     <a id="topbar-title"
        href="index.html"
        style="color:#0f172a;text-decoration:none;">
         🌍 Kielipalvelu
     </a>
 
-    <div class="topbar-filters">
+</div>
+
+<div class="topbar-filters">
 
     <span id="summary-country"></span>
 
@@ -411,28 +414,26 @@ h2{
         📍 Näytä kaikki kartalla
     </button>
 
-    
 </div>
 
 
-    
 <div class="container">
 
-<div class="results">
+    <div class="results">
 
-   <div class="results">
+        <div id="dynamic-results"></div>
 
-    <div id="dynamic-results"></div>
+    </div>
+
+
+    <div class="map">
+
+        <div id="map"></div>
+
+    </div>
 
 </div>
 
-<div class="map">
-
-    <div id="map"></div>
-
-</div>
-
-</div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
