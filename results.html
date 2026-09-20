@@ -19,8 +19,8 @@ body{
 
 .results{
     width:45%;
-    padding:24px;
-    background:#f4f7fb;
+    padding:28px;
+    background:#f8fafc;
     overflow-y:auto;
     box-sizing:border-box;
 }
@@ -61,15 +61,15 @@ body{
     padding:22px;
     margin-bottom:18px;
     border:1px solid #e5e7eb;
-    box-shadow:0 5px 18px rgba(15,23,42,0.07);
+    box-shadow:0 6px 18px rgba(15,23,42,0.06);
     height:fit-content;
     box-sizing:border-box;
     transition:transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-    .result-card p{
-    font-size:15px;
-    line-height:1.4;
+.result-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(15,23,42,0.10);
 }
 
     .search-tags{
@@ -90,22 +90,22 @@ body{
 }
 
 .premium{
-    border:2px solid #e6b800;
+    border:2px solid #d6b35a;
     background:linear-gradient(
         180deg,
-        #fffdf3 0%,
-        #ffffff 45%
+        #fffaf0 0%,
+        #ffffff 55%
     );
     padding-top:28px;
-    box-shadow:0 8px 28px rgba(202,160,0,0.14);
+    box-shadow:0 8px 28px rgba(120,90,30,0.12);
 }
 
 .premium-badge{
     position:absolute;
     top:15px;
     right:15px;
-    background:#fbbf24;
-    color:#0f172a;
+    background:#efe2b8;
+    color:#5c4813;
     padding:7px 13px;
     border-radius:999px;
     font-size:12px;
@@ -119,30 +119,33 @@ h2{
 }
 
 .topbar{
-    background:#f8fafc;
-    color:#0f172a;
-    padding:20px;
-    font-size:24px;
-    font-weight:bold;
-    border-bottom:1px solid #e5e7eb;
+    background:#f5f1eb;
+    color:#111827;
+    padding:24px 32px;
+    font-size:26px;
+    font-weight:700;
+    border-bottom:1px solid #e8e2da;
 }
 
     .topbar-filters{
     display:flex;
     flex-wrap:wrap;
-    gap:12px;
+    gap:10px;
     align-items:center;
-    padding:12px 20px;
+    padding:14px 24px;
     background:white;
     border-bottom:1px solid #e5e7eb;
+    box-shadow:0 4px 12px rgba(0,0,0,0.04);
 }
 
 .topbar-filters span{
     background:#f8fafc;
-    padding:6px 12px;
-    border-radius:999px;
+    border:1px solid #e5e7eb;
+    padding:10px 16px;
+    border-radius:14px;
     font-weight:600;
-    font-size:15px;
+    font-size:14px;
+    color:#334155;
 }
 
 .show-map-btn,
@@ -150,11 +153,11 @@ h2{
     background:#475569;
     color:white;
     border:none;
-    padding:8px 14px;
-    border-radius:12px;
+    padding:11px 16px;
+    border-radius:14px;
     cursor:pointer;
-    font-size:13px;
-    font-weight:bold;
+    font-size:14px;
+    font-weight:600;
     text-decoration:none;
     display:inline-block;
 }
@@ -339,6 +342,16 @@ h2{
     font-size:13px;
 }
 
+    .results-heading{
+    margin-bottom:20px;
+}
+
+.results-heading h1{
+    margin:0;
+    font-size:24px;
+    color:#0f172a;
+}
+
 </style>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -377,7 +390,13 @@ h2{
 
 <div class="results">
 
-<div id="dynamic-results"></div>
+    <div class="results-heading">
+        <h1 id="results-title"></h1>
+    </div>
+
+    <div id="dynamic-results"></div>
+
+</div>
 
 
 </div>
@@ -663,15 +682,6 @@ if(!isNaN(lat) && !isNaN(lng)){
 });
 
 console.log(matchingServices);
-
-document.getElementById("summary-country").textContent =
-country;
-
-document.getElementById("summary-service").textContent =
-service;
-
-document.getElementById("summary-language").textContent =
-language;
 
 const count = matchingServices.length;
 
