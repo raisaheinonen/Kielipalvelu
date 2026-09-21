@@ -860,10 +860,14 @@ ${item.address}
 
     card.classList.add("map-selected");
 
- card.scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-});
+if(window.innerWidth > 900){
+
+    card.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
 
 });
 
