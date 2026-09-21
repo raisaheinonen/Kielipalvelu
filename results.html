@@ -841,6 +841,49 @@ markers.push(marker);
 
 });
 
+    document
+.querySelectorAll(".result-card")
+.forEach(card => {
+
+    card.addEventListener("click", function(event){
+
+        if(
+            event.target.closest("button") ||
+            event.target.closest("a")
+        ){
+            return;
+        }
+
+        const companyId = this.dataset.companyId;
+        const lat = parseFloat(this.dataset.lat);
+        const lng = parseFloat(this.dataset.lng);
+
+        if(isNaN(lat) || isNaN(lng)){
+            return;
+        }
+
+        document
+        .querySelectorAll(".result-card")
+        .forEach(c => {
+            c.classList.remove("map-selected");
+        });
+
+        this.classList.add("map-selected");
+
+        map.setView([lat, lng], 14);
+
+        markers.forEach(marker => {
+
+            if(marker.companyId === companyId){
+                marker.openPopup();
+            }
+
+        });
+
+    });
+
+});
+
 const group = L.featureGroup(markers);
 
 if(markers.length > 0){
