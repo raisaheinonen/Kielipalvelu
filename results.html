@@ -382,6 +382,12 @@ h2{
     margin-bottom:18px !important;
 }
 
+    .result-card.map-selected{
+    border:2px solid #475569;
+    box-shadow:0 10px 30px rgba(71,85,105,0.22);
+    transform:translateY(-2px);
+}
+
 </style>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -565,6 +571,7 @@ html += `
 
 <div
 class="result-card ${item.premium ? 'premium' : ''}"
+data-company-id="${item.id}"
 data-lat="${item.lat}"
 data-lng="${item.lng}"
 style="display:block;">
@@ -804,6 +811,31 @@ ${item.address}
 );
 
     marker.companyId = item.id;
+
+    marker.on("click", function(){
+
+    const card = document.querySelector(
+        `.result-card[data-company-id="${item.id}"]`
+    );
+
+    if(!card){
+        return;
+    }
+
+    document
+        .querySelectorAll(".result-card")
+        .forEach(c => {
+            c.classList.remove("map-selected");
+        });
+
+    card.classList.add("map-selected");
+
+    card.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+});
 
 markers.push(marker);
 
