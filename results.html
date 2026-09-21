@@ -544,6 +544,7 @@ const translations = {
 
 fi:{
     found:"yritystä löytyi",
+    visibleOnMap:"yritystä kartalla",
     results:"Hakutulokset",
     siteName:"🌍 Kielipalvelu",
     showAll:"Näytä kaikki kartalla",
@@ -562,6 +563,7 @@ fi:{
 
 en:{
     found:"companies found",
+    visibleOnMap:"companies on map",
     results:"Results",
     siteName:"🌍 Language Services",
     showAll:"Show all on map",
@@ -579,7 +581,8 @@ en:{
 },
 
 sv:{
-found:"företag hittades",
+    found:"företag hittades",
+    visibleOnMap:"företag på kartan",
 results:"Resultat",
 siteName:"🌍 Språktjänster",
 showAll:"Visa alla på kartan",
@@ -743,6 +746,8 @@ function updateVisibleResults(){
 
     const bounds = map.getBounds();
 
+    let visibleCount = 0;
+
     document
         .querySelectorAll(".result-card")
         .forEach(card => {
@@ -750,21 +755,26 @@ function updateVisibleResults(){
             const lat = parseFloat(card.dataset.lat);
             const lng = parseFloat(card.dataset.lng);
 
-           if (isNaN(lat) || isNaN(lng)) {
-    return;
-}
+            if(isNaN(lat) || isNaN(lng)){
+                return;
+            }
 
-if(bounds.contains([lat,lng])){
+            if(bounds.contains([lat,lng])){
 
-    card.style.display = "block";
+                card.style.display = "block";
 
-} else {
+                visibleCount++;
 
-    card.style.display = "none";
+            } else {
 
-}
+                card.style.display = "none";
+
+            }
 
         });
+
+    document.getElementById("summary-count").textContent =
+        visibleCount + " " + translations[siteLanguage].visibleOnMap;
 
 }
 
