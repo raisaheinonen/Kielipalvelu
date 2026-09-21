@@ -121,6 +121,7 @@ const companies = [
 },
 
     {
+    companyId:"higueron-homes",
     id:"higueron-homes-fi",
     name:"Higuerón Homes",
     language:"Suomi",
@@ -139,6 +140,7 @@ const companies = [
 },
 
     {
+    companyId:"higueron-homes",
     id:"higueron-homes-en",
     name:"Higuerón Homes",
     language:"Englanti",
