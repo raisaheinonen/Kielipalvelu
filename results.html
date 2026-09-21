@@ -832,11 +832,29 @@ L.marker(
 .addTo(map)
 .bindPopup(
 `
-<b>${item.premium ? '⭐ ' : ''}${item.name}</b>
-<br>
-${item.city}, ${item.country}
-<br>
-${item.address}
+<div style="min-width:180px;">
+    <b>${item.premium ? '⭐ ' : ''}${item.name}</b>
+    <br>
+    ${item.city}, ${item.country}
+    <br>
+    ${item.address}
+
+    <br><br>
+
+    <button
+        onclick="showCompanyFromMap('${item.id}')"
+        style="
+            background:#475569;
+            color:white;
+            border:none;
+            padding:9px 14px;
+            border-radius:10px;
+            cursor:pointer;
+            font-weight:600;
+        ">
+        Näytä yritys ↓
+    </button>
+</div>
 `
 );
 
@@ -917,6 +935,31 @@ markers.push(marker);
     });
 
 });
+
+function showCompanyFromMap(companyId){
+
+    const card = document.querySelector(
+        `.result-card[data-company-id="${companyId}"]`
+    );
+
+    if(!card){
+        return;
+    }
+
+    document
+        .querySelectorAll(".result-card")
+        .forEach(c => {
+            c.classList.remove("map-selected");
+        });
+
+    card.classList.add("map-selected");
+
+    card.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+}
 
 const group = L.featureGroup(markers);
 
