@@ -416,6 +416,43 @@ h2{
         scroll-margin-top:20px;
     }
 
+        .company-popup{
+    min-width:180px;
+    font-family:Arial,sans-serif;
+}
+
+.company-popup strong{
+    display:block;
+    font-size:15px;
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.popup-location,
+.popup-address{
+    font-size:13px;
+    line-height:1.4;
+    color:#475569;
+    margin-bottom:5px;
+}
+
+.popup-company-btn{
+    display:block;
+    width:100%;
+    margin:12px 0 0 0;
+    padding:9px 12px;
+    background:#475569;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.popup-company-btn:hover{
+    background:#334155;
+
 }
 
 </style>
@@ -841,28 +878,28 @@ L.marker(
 .addTo(map)
 .bindPopup(
 `
-<div style="min-width:180px;">
-    <b>${item.premium ? '⭐ ' : ''}${item.name}</b>
-    <br>
-    ${item.city}, ${item.country}
-    <br>
-    ${item.address}
+<div class="company-popup">
 
-    <br><br>
+    <strong>
+        ${item.premium ? '⭐ ' : ''}${item.name}
+    </strong>
+
+    <div class="popup-location">
+        ${translations[siteLanguage].location}: 
+        ${item.city}, ${item.country}
+    </div>
+
+    <div class="popup-address">
+        ${translations[siteLanguage].address}: 
+        ${item.address}
+    </div>
 
     <button
-        onclick="showCompanyFromMap('${item.id}')"
-        style="
-            background:#475569;
-            color:white;
-            border:none;
-            padding:9px 14px;
-            border-radius:10px;
-            cursor:pointer;
-            font-weight:600;
-        ">
-        Näytä yritys
+        class="popup-company-btn"
+        onclick="showCompanyFromMap('${item.id}')">
+        ${translations[siteLanguage].showCompany} ↓
     </button>
+
 </div>
 `
 );
@@ -946,6 +983,31 @@ markers.push(marker);
 });
 
 function showCompanyFromMap(companyId){
+
+    const card = document.querySelector(
+        `.result-card[data-company-id="${companyId}"]`
+    );
+
+    if(!card){
+        return;
+    }
+
+    document
+        .querySelectorAll(".result-card")
+        .forEach(c => {
+            c.classList.remove("map-selected");
+        });
+
+    card.classList.add("map-selected");
+
+    card.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+    });
+
+}
+
+    function showCompanyFromMap(companyId){
 
     const card = document.querySelector(
         `.result-card[data-company-id="${companyId}"]`
