@@ -132,6 +132,59 @@ h1{
     margin-bottom:10px;
 }
 
+    .premium-admin{
+    margin-top:20px;
+    margin-bottom:20px;
+    padding:18px;
+    background:#fffaf0;
+    border:2px solid #d6b35a;
+    border-radius:14px;
+}
+
+.premium-admin h4{
+    margin-top:0;
+    margin-bottom:15px;
+    color:#5c4813;
+}
+
+.premium-admin label{
+    display:block;
+    margin-top:12px;
+    margin-bottom:5px;
+}
+
+.premium-admin input{
+    width:100%;
+    max-width:350px;
+    box-sizing:border-box;
+    padding:10px;
+    border:1px solid #d1d5db;
+    border-radius:8px;
+    display:block;
+    background:white;
+}
+
+.premium-activate-btn{
+    margin-top:16px;
+    background:#475569;
+    color:white;
+    border:none;
+    padding:11px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.premium-activate-btn:hover{
+    background:#334155;
+}
+
+.premium-save-message{
+    margin-top:10px;
+    font-size:14px;
+    font-weight:600;
+}
+
 
 </style>
 </head>
@@ -239,7 +292,11 @@ otherCountry: row[18],
 otherService: row[19],
 latitude: row[20],
 longitude: row[21],
-premiumInterest: row[22]
+premiumInterest: row[22],
+premiumStatus: row[23],
+premiumStart: row[24],
+premiumEnd: row[25],
+companyId: row[26]
 
 }));
 
@@ -655,12 +712,64 @@ ${company.mapsLink || "-"}
 
 <p><strong>Longitude:</strong> ${company.longitude || "-"}</p>
 
+<div class="premium-admin">
+
+<h4>★ Premium-hallinta</h4>
+
 <p>
-<strong>Premium-näkyvyys:</strong>
+<strong>Premium-kiinnostus:</strong>
 ${String(company.premiumInterest).toLowerCase() === "true"
     ? "Kyllä"
     : "Ei"}
 </p>
+
+<p>
+<strong>Premium-status:</strong>
+<span class="premium-status-text">
+${company.premiumStatus || "Ei aktiivinen"}
+</span>
+</p>
+
+<label>
+<strong>Company ID</strong>
+</label>
+
+<input
+    type="text"
+    class="premium-company-id"
+    value="${company.companyId || ""}"
+    placeholder="esim. higueron-homes"
+>
+
+<label>
+<strong>Premium alkaa</strong>
+</label>
+
+<input
+    type="date"
+    class="premium-start"
+    value="${company.premiumStart || ""}"
+>
+
+<label>
+<strong>Premium päättyy</strong>
+</label>
+
+<input
+    type="date"
+    class="premium-end"
+    value="${company.premiumEnd || ""}"
+>
+
+<button
+    type="button"
+    class="premium-activate-btn">
+    ★ Aktivoi Premium
+</button>
+
+<div class="premium-save-message"></div>
+
+</div>
 
 <p>
 <a
