@@ -804,6 +804,24 @@ card.querySelector(".details-btn");
 const detailsSection =
 card.querySelector(".details-section");
 
+        const premiumActivateBtn =
+card.querySelector(".premium-activate-btn");
+
+const premiumCompanyId =
+card.querySelector(".premium-company-id");
+
+const premiumStart =
+card.querySelector(".premium-start");
+
+const premiumEnd =
+card.querySelector(".premium-end");
+
+const premiumStatusText =
+card.querySelector(".premium-status-text");
+
+const premiumSaveMessage =
+card.querySelector(".premium-save-message");
+
 
 
     detailsBtn.addEventListener("click", function(){
@@ -819,6 +837,117 @@ card.querySelector(".details-section");
         detailsBtn.textContent = "Näytä tiedot";
 
     }
+
+});
+
+        premiumActivateBtn.addEventListener("click", function(){
+
+    const companyId =
+        premiumCompanyId.value.trim();
+
+    const startDate =
+        premiumStart.value;
+
+    const endDate =
+        premiumEnd.value;
+
+    if(!companyId){
+
+        premiumSaveMessage.textContent =
+            "Anna ensin Company ID.";
+
+        premiumSaveMessage.style.color =
+            "#dc2626";
+
+        return;
+    }
+
+    if(!startDate || !endDate){
+
+        premiumSaveMessage.textContent =
+            "Valitse Premiumin alku- ja loppupäivä.";
+
+        premiumSaveMessage.style.color =
+            "#dc2626";
+
+        return;
+    }
+
+    premiumActivateBtn.disabled = true;
+
+    premiumSaveMessage.textContent =
+        "Tallennetaan...";
+
+    premiumSaveMessage.style.color =
+        "#475569";
+
+
+    fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
+
+        method: "POST",
+
+        body: JSON.stringify({
+
+            action: "updatePremium",
+
+            companyName: company.companyName,
+
+            companyId: companyId,
+
+            premiumStatus: "active",
+
+            premiumStart: startDate,
+
+            premiumEnd: endDate
+
+        })
+
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        if(data.success){
+
+            premiumStatusText.textContent =
+                "Aktiivinen";
+
+            premiumSaveMessage.textContent =
+                "Premium aktivoitu ja tallennettu.";
+
+            premiumSaveMessage.style.color =
+                "#16a34a";
+
+        } else {
+
+            premiumSaveMessage.textContent =
+                data.message || "Tallennus epäonnistui.";
+
+            premiumSaveMessage.style.color =
+                "#dc2626";
+
+        }
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+
+        premiumSaveMessage.textContent =
+            "Tallennuksessa tapahtui virhe.";
+
+        premiumSaveMessage.style.color =
+            "#dc2626";
+
+    })
+
+    .finally(() => {
+
+        premiumActivateBtn.disabled = false;
+
+    });
 
 });
 
