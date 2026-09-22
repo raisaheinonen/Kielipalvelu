@@ -760,6 +760,21 @@ console.log(country);
 
     let activePremiumCompanyIds = [];
 
+async function initializeResults(){
+
+    await loadActivePremiumCompanies();
+
+    companies.forEach(item => {
+
+        if(item.companyId){
+
+            item.premium =
+                activePremiumCompanyIds.includes(item.companyId);
+
+        }
+
+    });
+
 const matchingServices = companies.filter(item =>
 
 item.language === language &&
@@ -1207,6 +1222,10 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
 .catch(error => console.log(error));
 
 }
+
+    }
+
+initializeResults();
     
 </script>
 
