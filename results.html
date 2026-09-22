@@ -541,7 +541,6 @@ document.getElementById("summary-language").textContent =
 
 const translations = {
 
-
 fi:{
     found:"yritystä löytyi",
     visibleOnMap:"yritystä kartalla",
@@ -558,8 +557,33 @@ fi:{
     noResultsHelp:"Kokeile toista kieltä, palvelua tai maata.",
     showCompany:"Näytä yritys",
     location:"Sijainti",
-    address:"Osoite"
+    address:"Osoite",
+    phone:"Puhelin",
+
+    countryNames:{
+        "Espanja":"Espanja",
+        "Ruotsi":"Ruotsi",
+        "Saksa":"Saksa",
+        "Thaimaa":"Thaimaa"
+    },
+
+    languageNames:{
+        "Suomi":"Suomi",
+        "Ruotsi":"Ruotsi",
+        "Englanti":"Englanti",
+        "Saksa":"Saksa",
+        "Espanja":"Espanja"
+    },
+
+    serviceNames:{
+        "Hammaslääkäri":"Hammaslääkäri",
+        "Lääkäri":"Lääkäri",
+        "Lakimies":"Lakimies",
+        "Kiinteistönvälittäjä":"Kiinteistönvälittäjä",
+        "Personal Trainer":"Personal Trainer"
+    }
 },
+
 
 en:{
     found:"companies found",
@@ -575,31 +599,103 @@ en:{
     noResultsTitle:"No results",
     noResultsText:"No companies were found with these search criteria.",
     noResultsHelp:"Try another language, service or country.",
-    showCompany:"View company",
+    showCompany:"Show company",
     location:"Location",
-    address:"Address"
+    address:"Address",
+    phone:"Phone",
+
+    countryNames:{
+        "Espanja":"Spain",
+        "Ruotsi":"Sweden",
+        "Saksa":"Germany",
+        "Thaimaa":"Thailand"
+    },
+
+    languageNames:{
+        "Suomi":"Finnish",
+        "Ruotsi":"Swedish",
+        "Englanti":"English",
+        "Saksa":"German",
+        "Espanja":"Spanish"
+    },
+
+    serviceNames:{
+        "Hammaslääkäri":"Dentist",
+        "Lääkäri":"Doctor",
+        "Lakimies":"Lawyer",
+        "Kiinteistönvälittäjä":"Real Estate Agent",
+        "Personal Trainer":"Personal Trainer"
+    }
 },
+
 
 sv:{
     found:"företag hittades",
     visibleOnMap:"företag på kartan",
-results:"Resultat",
-siteName:"🌍 Språktjänster",
-showAll:"Visa alla på kartan",
-website:"Webbplats",
-showMap:"Visa på karta",
-navigate:"Navigera",
-premiumContacts:"Kontaktuppgifter visas endast för premiumföretag.",
-premium:"Premium",
-noResultsTitle:"Inga resultat",
-noResultsText:"Inga företag hittades med dessa sökkriterier.",
-noResultsHelp:"Prova ett annat språk, en annan tjänst eller ett annat land.",
-showCompany:"Visa företag",
-location:"Plats",
-address:"Adress"
+    results:"Resultat",
+    siteName:"🌍 Språktjänster",
+    showAll:"Visa alla på kartan",
+    website:"Webbplats",
+    showMap:"Visa på karta",
+    navigate:"Navigera",
+    premiumContacts:"Kontaktuppgifter visas endast för premiumföretag.",
+    premium:"Premium",
+    noResultsTitle:"Inga resultat",
+    noResultsText:"Inga företag hittades med dessa sökkriterier.",
+    noResultsHelp:"Prova ett annat språk, en annan tjänst eller ett annat land.",
+    showCompany:"Visa företag",
+    location:"Plats",
+    address:"Adress",
+    phone:"Telefon",
+
+    countryNames:{
+        "Espanja":"Spanien",
+        "Ruotsi":"Sverige",
+        "Saksa":"Tyskland",
+        "Thaimaa":"Thailand"
+    },
+
+    languageNames:{
+        "Suomi":"Finska",
+        "Ruotsi":"Svenska",
+        "Englanti":"Engelska",
+        "Saksa":"Tyska",
+        "Espanja":"Spanska"
+    },
+
+    serviceNames:{
+        "Hammaslääkäri":"Tandläkare",
+        "Lääkäri":"Läkare",
+        "Lakimies":"Jurist",
+        "Kiinteistönvälittäjä":"Fastighetsmäklare",
+        "Personal Trainer":"Personlig tränare"
+    }
 }
 
 };
+
+    function translateSearchValue(type, value){
+
+    const t = translations[siteLanguage];
+
+    if(!t){
+        return value;
+    }
+
+    if(type === "country"){
+        return t.countryNames?.[value] || value;
+    }
+
+    if(type === "language"){
+        return t.languageNames?.[value] || value;
+    }
+
+    if(type === "service"){
+        return t.serviceNames?.[value] || value;
+    }
+
+    return value;
+}
 
 document.getElementById("show-all").textContent =
 translations[siteLanguage].showAll;
