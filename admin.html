@@ -266,6 +266,25 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
 .then(response => response.json())
 .then(data => {
 
+    function formatDateForInput(value){
+
+    if(!value){
+        return "";
+    }
+
+    const date = new Date(value);
+
+    if(isNaN(date.getTime())){
+        return "";
+    }
+
+    const year = date.getUTCFullYear();
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(date.getUTCDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
 const companies =
 data.slice(1).map(row => ({
 
@@ -748,7 +767,7 @@ ${company.premiumStatus || "Ei aktiivinen"}
 <input
     type="date"
     class="premium-start"
-    value="${company.premiumStart || ""}"
+    value="${formatDateForInput(company.premiumStart)}"
 >
 
 <label>
@@ -758,7 +777,7 @@ ${company.premiumStatus || "Ei aktiivinen"}
 <input
     type="date"
     class="premium-end"
-    value="${company.premiumEnd || ""}"
+    value="${formatDateForInput(company.premiumEnd)}"
 >
 
 <button
