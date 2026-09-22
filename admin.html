@@ -201,6 +201,27 @@ h1{
     background:#f1f5f9;
 }
 
+    .premium-status{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    margin-left:6px;
+}
+
+.premium-status.active{
+    background:#dcfce7;
+    color:#166534;
+    border:1px solid #bbf7d0;
+}
+
+.premium-status.inactive{
+    background:#f1f5f9;
+    color:#64748b;
+    border:1px solid #cbd5e1;
+}
+
 
 </style>
 </head>
@@ -760,8 +781,8 @@ ${String(company.premiumInterest).toLowerCase() === "true"
 
 <p>
 <strong>Premium-status:</strong>
-<span class="premium-status-text">
-${company.premiumStatus || "Ei aktiivinen"}
+<span class="premium-status ${company.premiumStatus}">
+    ${company.premiumStatus}
 </span>
 </p>
 
