@@ -436,18 +436,25 @@ h2{
     margin-bottom:5px;
 }
 
-.popup-company-btn{
+.leaflet-popup-content .popup-company-btn{
     display:block;
     width:100%;
-    margin:12px 0 0 0;
-    padding:9px 12px;
+    box-sizing:border-box;
+    margin:12px 0 2px 0;
+    padding:10px 14px;
     background:#475569;
     color:white;
     border:none;
-    border-radius:10px;
+    border-radius:12px;
+    font-family:Arial,sans-serif;
     font-size:13px;
     font-weight:600;
+    text-align:center;
     cursor:pointer;
+}
+
+.leaflet-popup-content .popup-company-btn:hover{
+    background:#334155;
 }
 
 .popup-company-btn:hover{
