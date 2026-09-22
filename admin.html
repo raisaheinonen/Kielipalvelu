@@ -904,7 +904,23 @@ card.querySelector(".premium-save-message");
 
     })
 
-    .then(response => response.json())
+   .then(response => response.text())
+
+.then(text => {
+
+    console.log("Premium vastaus:", text);
+
+    let data;
+
+    try {
+        data = JSON.parse(text);
+    } catch(error) {
+        throw new Error("Apps Script palautti virheellisen vastauksen: " + text);
+    }
+
+    return data;
+
+})
 
     .then(data => {
 
