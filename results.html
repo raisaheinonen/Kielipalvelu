@@ -1050,7 +1050,7 @@ L.marker(
     <button
         class="popup-company-btn"
         onclick="showCompanyFromMap('${item.id}')">
-        ${translations[siteLanguage].showCompany} ↓
+        ${translations[siteLanguage].showCompany}
     </button>
 
 </div>
@@ -1136,31 +1136,6 @@ markers.push(marker);
 });
 
 function showCompanyFromMap(companyId){
-
-    const card = document.querySelector(
-        `.result-card[data-company-id="${companyId}"]`
-    );
-
-    if(!card){
-        return;
-    }
-
-    document
-        .querySelectorAll(".result-card")
-        .forEach(c => {
-            c.classList.remove("map-selected");
-        });
-
-    card.classList.add("map-selected");
-
-    card.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-    });
-
-}
-
-    function showCompanyFromMap(companyId){
 
     const card = document.querySelector(
         `.result-card[data-company-id="${companyId}"]`
