@@ -185,6 +185,22 @@ h1{
     font-weight:600;
 }
 
+    .premium-deactivate-btn{
+    margin-top:16px;
+    margin-left:8px;
+    background:white;
+    color:#475569;
+    border:1px solid #94a3b8;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.premium-deactivate-btn:hover{
+    background:#f1f5f9;
+}
+
 
 </style>
 </head>
@@ -786,6 +802,12 @@ ${company.premiumStatus || "Ei aktiivinen"}
     ★ Aktivoi Premium
 </button>
 
+<button
+    type="button"
+    class="premium-deactivate-btn">
+    Poista Premium käytöstä
+</button>
+
 <div class="premium-save-message"></div>
 
 </div>
@@ -825,6 +847,9 @@ card.querySelector(".details-section");
 
         const premiumActivateBtn =
 card.querySelector(".premium-activate-btn");
+
+const premiumDeactivateBtn =
+card.querySelector(".premium-deactivate-btn");
 
 const premiumCompanyId =
 card.querySelector(".premium-company-id");
@@ -981,6 +1006,122 @@ card.querySelector(".premium-save-message");
     .finally(() => {
 
         premiumActivateBtn.disabled = false;
+
+    });
+
+});
+
+premiumDeactivateBtn.addEventListener("click", function(){
+
+    const companyId =
+        premiumCompanyId.value.trim();
+
+    if(!companyId){
+
+        premiumSaveMessage.textContent =
+            "Company ID puuttuu.";
+
+        premiumSaveMessage.style.color =
+            "#dc2626";
+
+        return;
+    }
+
+    premiumDeactivateBtn.disabled = true;
+
+    premiumSaveMessage.textContent =
+        "Poistetaan Premium käytöstä...";
+
+    premiumSaveMessage.style.color =
+        "#475569";
+
+
+    fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
+
+        method:"POST",
+
+        body:JSON.stringify({
+
+            action:"updatePremium",
+
+            companyName:company.companyName,
+
+            companyId:companyId,
+
+            premiumStatus:"inactive",
+
+            premiumStart:premiumStart.value,
+
+            premiumEnd:premiumEnd.value
+
+        })
+
+    })
+
+    .then(response => response.text())
+
+    .then(text => {
+
+        console.log("Premium deaktivointi vastaus:", text);
+
+        let data;
+
+        try {
+
+            data = JSON.parse(text);
+
+        } catch(error) {
+
+            throw new Error(
+                "Apps Script palautti virheellisen vastauksen: " + text
+            );
+
+        }
+
+        return data;
+
+    })
+
+    .then(data => {
+
+        if(data.success){
+
+            premiumStatusText.textContent =
+                "inactive";
+
+            premiumSaveMessage.textContent =
+                "Premium poistettu käytöstä.";
+
+            premiumSaveMessage.style.color =
+                "#16a34a";
+
+        } else {
+
+            premiumSaveMessage.textContent =
+                data.message || "Tallennus epäonnistui.";
+
+            premiumSaveMessage.style.color =
+                "#dc2626";
+
+        }
+
+    })
+
+    .catch(error => {
+
+        console.error(error);
+
+        premiumSaveMessage.textContent =
+            "Tallennuksessa tapahtui virhe.";
+
+        premiumSaveMessage.style.color =
+            "#dc2626";
+
+    })
+
+    .finally(() => {
+
+        premiumDeactivateBtn.disabled = false;
 
     });
 
