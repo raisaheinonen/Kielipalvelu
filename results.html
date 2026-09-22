@@ -681,6 +681,44 @@ sv:{
 
 };
 
+    async function loadActivePremiumCompanies(){
+
+    try{
+
+        const response = await fetch(
+            "https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec",
+            {
+                method:"POST",
+
+                body:JSON.stringify({
+                    action:"getActivePremiumCompanies"
+                })
+            }
+        );
+
+        const text = await response.text();
+
+        activePremiumCompanyIds =
+            JSON.parse(text);
+
+        console.log(
+            "Active Premium companies:",
+            activePremiumCompanyIds
+        );
+
+    } catch(error){
+
+        console.error(
+            "Premium-tietojen lataus epäonnistui:",
+            error
+        );
+
+        activePremiumCompanyIds = [];
+
+    }
+
+}
+
     function translateSearchValue(type, value){
 
     const t = translations[siteLanguage];
@@ -719,6 +757,8 @@ console.log(companies.length);
 console.log(language);
 console.log(service);
 console.log(country);
+
+    let activePremiumCompanyIds = [];
 
 const matchingServices = companies.filter(item =>
 
