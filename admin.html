@@ -895,9 +895,16 @@ card.querySelector(".premium-save-message");
 
         function updatePremiumButtons(status){
 
+    if(!premiumActivateBtn || !premiumDeactivateBtn){
+        return;
+    }
+
     if(status === "active"){
 
-        premiumStatusText.textContent = "Aktiivinen";
+        if(premiumStatusText){
+            premiumStatusText.textContent =
+                "Aktiivinen";
+        }
 
         premiumActivateBtn.disabled = true;
         premiumActivateBtn.textContent =
@@ -909,7 +916,10 @@ card.querySelector(".premium-save-message");
 
     } else {
 
-        premiumStatusText.textContent = "Ei aktiivinen";
+        if(premiumStatusText){
+            premiumStatusText.textContent =
+                "Ei aktiivinen";
+        }
 
         premiumActivateBtn.disabled = false;
         premiumActivateBtn.textContent =
