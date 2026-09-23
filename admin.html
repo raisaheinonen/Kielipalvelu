@@ -1016,15 +1016,15 @@ card.querySelector(".premium-save-message");
 
     .catch(error => {
 
-        console.error(error);
+    console.error("Premium deaktivoinnin vastausvirhe:", error);
 
-        premiumSaveMessage.textContent =
-            "Tallennuksessa tapahtui virhe.";
+    premiumSaveMessage.textContent =
+        "Premium-muutos lähetettiin. Päivitä sivu varmistaaksesi tallennuksen.";
 
-        premiumSaveMessage.style.color =
-            "#dc2626";
+    premiumSaveMessage.style.color =
+        "#d97706";
 
-    })
+})
 
     .finally(() => {
 
@@ -1134,15 +1134,15 @@ premiumDeactivateBtn.addEventListener("click", function(){
 
     .catch(error => {
 
-        console.error(error);
+    console.error("Premium aktivoinnin vastausvirhe:", error);
 
-        premiumSaveMessage.textContent =
-            "Tallennuksessa tapahtui virhe.";
+    premiumSaveMessage.textContent =
+        "Premium-muutos lähetettiin. Päivitä sivu varmistaaksesi tallennuksen.";
 
-        premiumSaveMessage.style.color =
-            "#dc2626";
+    premiumSaveMessage.style.color =
+        "#d97706";
 
-    })
+})
 
     .finally(() => {
 
