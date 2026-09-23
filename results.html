@@ -681,6 +681,49 @@ sv:{
 
 };
 
+    async function loadPublicData(){
+
+    try{
+
+        const response = await fetch(
+            "https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec",
+            {
+                method:"POST",
+
+                body:JSON.stringify({
+                    action:"getPublicData"
+                })
+            }
+        );
+
+        const text = await response.text();
+
+        const publicData =
+            JSON.parse(text);
+
+        console.log(
+            "Public data:",
+            publicData
+        );
+
+        return publicData;
+
+    } catch(error){
+
+        console.error(
+            "Julkisen yritysdatan lataus epäonnistui:",
+            error
+        );
+
+        return {
+            activePremiumCompanyIds:[],
+            approvedCompanies:[]
+        };
+
+    }
+
+}
+
     async function loadActivePremiumCompanies(){
 
     try{
@@ -802,15 +845,24 @@ console.log(country);
 
 async function initializeResults(){
 
-    await loadActivePremiumCompanies();
+    const publicData =
+        await loadPublicData();
 
-const approvedCompanies =
-    await loadApprovedCompanies();
+    activePremiumCompanyIds =
+        publicData.activePremiumCompanyIds || [];
 
-console.log(
-    "Sheets approved companies:",
-    approvedCompanies
-);
+    const approvedCompanies =
+        publicData.approvedCompanies || [];
+
+    console.log(
+        "Active Premium companies:",
+        activePremiumCompanyIds
+    );
+
+    console.log(
+        "Sheets approved companies:",
+        approvedCompanies
+    );
 
     companies.forEach(item => {
 
