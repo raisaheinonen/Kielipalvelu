@@ -1225,13 +1225,15 @@ card.classList.add("hyväksytty");
 
     body: JSON.stringify({
 
-        action: "updateStatus",
+    action: "updateStatus",
 
-        companyName: company.companyName,
+    companyName: company.companyName,
 
-        status: "hyväksytty"
+    email: company.email,
 
-    })
+    status: "hyväksytty"
+
+})
 
 });
 
@@ -1277,13 +1279,15 @@ card.classList.add("hylätty");
 
     body: JSON.stringify({
 
-        action: "updateStatus",
+    action: "updateStatus",
 
-        companyName: company.companyName,
+    companyName: company.companyName,
 
-        status: "hylätty"
+    email: company.email,
 
-    })
+    status: "hylätty"
+
+})
 
 });
 
