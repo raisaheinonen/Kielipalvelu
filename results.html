@@ -864,6 +864,110 @@ async function initializeResults(){
         approvedCompanies
     );
 
+    const sheetCompanies = [];
+
+approvedCompanies.forEach(company => {
+
+    let languages = [];
+
+    if(Array.isArray(company.languages)){
+
+        languages = company.languages;
+
+    } else if(company.languages){
+
+        languages = String(company.languages)
+            .split(",")
+            .map(lang => lang.trim())
+            .filter(Boolean);
+
+    }
+
+    if(company.otherLanguage){
+
+        const otherLanguage =
+            String(company.otherLanguage).trim();
+
+        if(
+            otherLanguage &&
+            !languages.includes(otherLanguage)
+        ){
+            languages.push(otherLanguage);
+        }
+
+    }
+
+    languages.forEach(languageName => {
+
+        sheetCompanies.push({
+
+            companyId:
+                company.companyId || "",
+
+            id:
+                (company.companyId || company.companyName)
+                + "-"
+                + languageName
+                    .toLowerCase()
+                    .replace(/\s+/g, "-"),
+
+            name:
+                company.companyName,
+
+            language:
+                languageName,
+
+            service:
+                company.service,
+
+            country:
+                company.country,
+
+            city:
+                company.city,
+
+            address:
+                company.address || "",
+
+            description:
+                company.description || "",
+
+            website:
+                company.website || "",
+
+            phone:
+                company.phone || "",
+
+            instagram:
+                company.instagram || "",
+
+            facebook:
+                company.facebook || "",
+
+            lat:
+                parseFloat(company.latitude),
+
+            lng:
+                parseFloat(company.longitude),
+
+            premium:
+                company.companyId
+                    ? activePremiumCompanyIds.includes(
+                        company.companyId
+                    )
+                    : false
+
+        });
+
+    });
+
+});
+
+console.log(
+    "Converted Sheets companies:",
+    sheetCompanies
+);
+
     companies.forEach(item => {
 
         if(item.companyId){
@@ -875,7 +979,17 @@ async function initializeResults(){
 
     });
 
-const matchingServices = companies.filter(item =>
+const allCompanies = [
+    ...companies,
+    ...sheetCompanies
+];
+
+console.log(
+    "All companies:",
+    allCompanies.length
+);
+
+const matchingServices = allCompanies.filter(item =>
 
 item.language === language &&
 item.service === service &&
