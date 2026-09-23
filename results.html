@@ -719,6 +719,46 @@ sv:{
 
 }
 
+    async function loadApprovedCompanies(){
+
+    try{
+
+        const response = await fetch(
+            "https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec",
+            {
+                method:"POST",
+
+                body:JSON.stringify({
+                    action:"getApprovedCompanies"
+                })
+            }
+        );
+
+        const text = await response.text();
+
+        const approvedCompanies =
+            JSON.parse(text);
+
+        console.log(
+            "Approved companies:",
+            approvedCompanies
+        );
+
+        return approvedCompanies;
+
+    } catch(error){
+
+        console.error(
+            "Hyväksyttyjen yritysten lataus epäonnistui:",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
     function translateSearchValue(type, value){
 
     const t = translations[siteLanguage];
@@ -763,6 +803,14 @@ console.log(country);
 async function initializeResults(){
 
     await loadActivePremiumCompanies();
+
+const approvedCompanies =
+    await loadApprovedCompanies();
+
+console.log(
+    "Sheets approved companies:",
+    approvedCompanies
+);
 
     companies.forEach(item => {
 
