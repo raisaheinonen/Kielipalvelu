@@ -222,6 +222,12 @@ h1{
     border:1px solid #cbd5e1;
 }
 
+    .premium-activate-btn:disabled,
+.premium-deactivate-btn:disabled{
+    opacity:0.55;
+    cursor:not-allowed;
+}
+
 
 </style>
 </head>
@@ -887,7 +893,33 @@ card.querySelector(".premium-status-text");
 const premiumSaveMessage =
 card.querySelector(".premium-save-message");
 
+        function updatePremiumButtons(status){
 
+    if(status === "active"){
+
+        premiumActivateBtn.disabled = true;
+        premiumActivateBtn.textContent =
+            "★ Premium aktiivinen";
+
+        premiumDeactivateBtn.disabled = false;
+        premiumDeactivateBtn.textContent =
+            "Poista Premium käytöstä";
+
+    } else {
+
+        premiumActivateBtn.disabled = false;
+        premiumActivateBtn.textContent =
+            "★ Aktivoi Premium";
+
+        premiumDeactivateBtn.disabled = true;
+        premiumDeactivateBtn.textContent =
+            "Premium ei ole aktiivinen";
+
+    }
+
+}
+
+updatePremiumButtons(company.premiumStatus);
 
     detailsBtn.addEventListener("click", function(){
 
@@ -998,6 +1030,10 @@ card.querySelector(".premium-save-message");
 
             premiumSaveMessage.textContent =
                 "Premium aktivoitu ja tallennettu.";
+
+            company.premiumStatus = "active";
+
+updatePremiumButtons("active");
 
             premiumSaveMessage.style.color =
                 "#16a34a";
@@ -1111,14 +1147,18 @@ premiumDeactivateBtn.addEventListener("click", function(){
 
         if(data.success){
 
-            premiumStatusText.textContent =
-                "inactive";
+    premiumStatusText.textContent =
+        "Ei aktiivinen";
 
-            premiumSaveMessage.textContent =
-                "Premium poistettu käytöstä.";
+    company.premiumStatus = "inactive";
 
-            premiumSaveMessage.style.color =
-                "#16a34a";
+    updatePremiumButtons("inactive");
+
+    premiumSaveMessage.textContent =
+        "Premium poistettu käytöstä.";
+
+    premiumSaveMessage.style.color =
+        "#16a34a";
 
         } else {
 
