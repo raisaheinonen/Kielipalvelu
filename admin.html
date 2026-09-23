@@ -897,6 +897,8 @@ card.querySelector(".premium-save-message");
 
     if(status === "active"){
 
+        premiumStatusText.textContent = "Aktiivinen";
+
         premiumActivateBtn.disabled = true;
         premiumActivateBtn.textContent =
             "★ Premium aktiivinen";
@@ -906,6 +908,8 @@ card.querySelector(".premium-save-message");
             "Poista Premium käytöstä";
 
     } else {
+
+        premiumStatusText.textContent = "Ei aktiivinen";
 
         premiumActivateBtn.disabled = false;
         premiumActivateBtn.textContent =
