@@ -899,6 +899,11 @@ approvedCompanies.forEach(company => {
 
     languages.forEach(languageName => {
 
+        console.log(
+    "Sheet language:",
+    languageName
+);
+
         sheetCompanies.push({
 
             companyId:
@@ -915,7 +920,7 @@ approvedCompanies.forEach(company => {
                 company.companyName,
 
             language:
-                languageName,
+    String(languageName).trim(),
 
             service:
                 company.service,
