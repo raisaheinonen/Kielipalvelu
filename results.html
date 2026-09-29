@@ -701,11 +701,6 @@ sv:{
         const publicData =
             JSON.parse(text);
 
-        console.log(
-            "Public data:",
-            publicData
-        );
-
         return publicData;
 
     } catch(error){
@@ -859,11 +854,6 @@ async function initializeResults(){
         activePremiumCompanyIds
     );
 
-    console.log(
-        "Sheets approved companies:",
-        approvedCompanies
-    );
-
     const sheetCompanies = [];
 
 approvedCompanies.forEach(company => {
@@ -899,10 +889,6 @@ approvedCompanies.forEach(company => {
 
     languages.forEach(languageName => {
 
-        console.log(
-    "Sheet language:",
-    languageName
-);
 
         sheetCompanies.push({
 
@@ -968,11 +954,6 @@ approvedCompanies.forEach(company => {
 
 });
 
-console.log(
-    "Converted Sheets companies:",
-    sheetCompanies
-);
-
     companies.forEach(item => {
 
         if(item.companyId){
@@ -988,11 +969,6 @@ const allCompanies = [
     ...companies,
     ...sheetCompanies
 ];
-
-console.log(
-    "All companies:",
-    allCompanies.length
-);
 
 const matchingServices = allCompanies.filter(item =>
 
