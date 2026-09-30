@@ -116,10 +116,39 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
 
 
 <label>Palvelu *</label>
-<input type="text"
-       name="service"
-       placeholder="Esim. Hammaslääkäri"
-       required>
+
+<select name="service" required>
+
+    <option value="">
+        Valitse palvelu
+    </option>
+
+    <option>Hammaslääkäri</option>
+    <option>Lääkäri</option>
+    <option>Lakimies</option>
+    <option>Kiinteistönvälittäjä</option>
+    <option>Personal Trainer</option>
+    <option>Kahvila</option>
+    <option>Ravintola</option>
+    <option>Kampaaja</option>
+    <option>Autovuokraamo</option>
+    <option>Kirjanpitäjä</option>
+    <option>Eläinlääkäri</option>
+    <option>Autokorjaamo</option>
+    <option>Sähköasentaja</option>
+    <option>Putkimies</option>
+    <option>Siivouspalvelu</option>
+    <option>Lastenhoito</option>
+    <option>Valokuvaaja</option>
+    <option>Kauneuspalvelu</option>
+    <option>IT-palvelu</option>
+    <option>Kielikoulu</option>
+
+    <option value="Muu">
+        Muu palvelu
+    </option>
+
+</select>
 
 
 <label>Lisätiedot</label>
@@ -128,6 +157,20 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
     rows="6"
     placeholder="Kerro miksi ehdotat yritystä tai anna lisätietoja.">
 </textarea>
+
+    <label>Sijainti / osoite</label>
+
+<input
+    type="text"
+    name="location"
+    placeholder="Esim. Nørrebrogade 123, Kööpenhamina">
+
+    <label>Millä kielellä yritys palvelee?</label>
+
+<input
+    type="text"
+    name="languages"
+    placeholder="Esim. Suomi, Ruotsi, Englanti">
 
 <label>Oma sähköposti</label>
 <input type="email"
