@@ -381,30 +381,6 @@ noAddressCheckbox.addEventListener(
     }
 );
 
-const noAddressCheckbox =
-    document.getElementById("noAddress");
-
-const locationInput =
-    document.getElementById("location");
-
-noAddressCheckbox.addEventListener(
-    "change",
-    function(){
-
-        if(this.checked){
-
-            locationInput.value = "";
-            locationInput.disabled = true;
-
-        }else{
-
-            locationInput.disabled = false;
-
-        }
-
-    }
-);
-
     const serviceSelect =
     document.querySelector(
         'select[name="service"]'
