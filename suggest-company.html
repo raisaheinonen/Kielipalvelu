@@ -144,9 +144,9 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
     <option>IT-palvelu</option>
     <option>Kielikoulu</option>
 
-    <option value="Muu">
-        Muu palvelu
-    </option>
+    <option value="Muu palvelu">
+    Muu palvelu
+</option>
 
 </select>
 
@@ -256,29 +256,35 @@ document
 
     const data = {
 
-        action:"suggestCompany",
+    action:"suggestCompany",
 
-        companyName:
-            formData.get("companyName"),
+    companyName:
+        formData.get("companyName"),
 
-        website:
-            formData.get("website"),
+    website:
+        formData.get("website"),
 
-        country:
-            formData.get("country"),
+    country:
+        formData.get("country"),
 
-        service:
-    formData.get("service") === "Muu palvelu"
-        ? formData.get("otherService")
-        : formData.get("service"),
+    service:
+        formData.get("service") === "Muu palvelu"
+            ? formData.get("otherService")
+            : formData.get("service"),
 
-        notes:
-            formData.get("notes"),
+    location:
+        formData.get("location"),
 
-        email:
-            formData.get("email")
+    languages:
+        formData.get("languages"),
 
-    };
+    notes:
+        formData.get("notes"),
+
+    email:
+        formData.get("email")
+
+};
 
     try{
 
