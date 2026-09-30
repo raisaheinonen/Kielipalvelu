@@ -131,6 +131,32 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
     <option value="other">Muu</option>
 </select>
 
+    <label>Kaupunki</label>
+<input type="text" name="city">
+
+<label>Toiminta-alue</label>
+<input
+    type="text"
+    name="serviceArea"
+    placeholder="Esim. Kööpenhamina, Koko Tanska">
+
+<label>Osoite (jos tiedossa)</label>
+
+<input
+    type="text"
+    id="address"
+    name="address">
+
+<label class="checkbox-row">
+
+    <input
+        type="checkbox"
+        id="noAddress">
+
+    En tiedä tarkkaa osoitetta
+
+</label>
+
 
 <label>Palvelu *</label>
 
@@ -274,12 +300,6 @@ Turkki
 
 </div>
 
-    <label>Sijainti / osoite (jos tiedossa)</label>
-
-<input
-    type="text"
-    name="location"
-    placeholder="Esim. Nørrebrogade 123, Kööpenhamina">
 
     <label class="checkbox-row">
 
@@ -317,6 +337,30 @@ Tarkistamme tiedot ennen mahdollista julkaisua.
 </form>
 
 <script>
+
+const noAddressCheckbox =
+    document.getElementById("noAddress");
+
+const addressInput =
+    document.getElementById("address");
+
+noAddressCheckbox.addEventListener(
+    "change",
+    function(){
+
+        if(this.checked){
+
+            addressInput.value = "";
+            addressInput.disabled = true;
+
+        }else{
+
+            addressInput.disabled = false;
+
+        }
+
+    }
+);
 
 const noAddressCheckbox =
     document.getElementById("noAddress");
