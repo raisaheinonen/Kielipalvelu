@@ -150,17 +150,26 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
 
 </select>
 
-<div id="otherServiceContainer" style="display:none;">
+<div id="otherServiceContainer"
+     style="
+        display:none;
+        background:#f8fafc;
+        border:1px solid #cbd5e1;
+        padding:15px;
+        border-radius:12px;
+        margin-top:10px;
+     ">
 
-    <label>Muu palvelu</label>
+    <label>
+Valitsit "Muu palvelu".
+Kirjoita tähän palvelun nimi:
+</label>
 
-    <input
-        type="text"
-        id="otherService"
-        name="otherService"
-        placeholder="Kirjoita palvelu">
-
-</div>
+<input
+    type="text"
+    id="otherService"
+    name="otherService"
+    placeholder="Esim. Hieroja">
 
 
 <label>Lisätiedot</label>
