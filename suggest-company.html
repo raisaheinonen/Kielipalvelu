@@ -150,6 +150,18 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
 
 </select>
 
+<div id="otherServiceContainer" style="display:none;">
+
+    <label>Muu palvelu</label>
+
+    <input
+        type="text"
+        id="otherService"
+        name="otherService"
+        placeholder="Kirjoita palvelu">
+
+</div>
+
 
 <label>Lisätiedot</label>
 <textarea
@@ -199,6 +211,37 @@ Tarkistamme tiedot ennen mahdollista julkaisua.
 
 <script>
 
+    const serviceSelect =
+    document.querySelector(
+        'select[name="service"]'
+    );
+
+const otherServiceContainer =
+    document.getElementById(
+        "otherServiceContainer"
+    );
+
+serviceSelect.addEventListener(
+    "change",
+    function(){
+
+        if(
+            this.value === "Muu palvelu"
+        ){
+
+            otherServiceContainer.style.display =
+                "block";
+
+        }else{
+
+            otherServiceContainer.style.display =
+                "none";
+
+        }
+
+    }
+);
+
 document
 .getElementById("suggest-form")
 .addEventListener("submit", async function(event){
@@ -225,7 +268,9 @@ document
             formData.get("country"),
 
         service:
-            formData.get("service"),
+    formData.get("service") === "Muu palvelu"
+        ? formData.get("otherService")
+        : formData.get("service"),
 
         notes:
             formData.get("notes"),
@@ -239,7 +284,7 @@ document
 
         const response =
             await fetch(
-                "OMA_APPS_SCRIPT_URL",
+                "https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec",
                 {
                     method:"POST",
                     body:JSON.stringify(data)
