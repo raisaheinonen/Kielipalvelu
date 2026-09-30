@@ -274,12 +274,22 @@ Turkki
 
 </div>
 
-    <label>Sijainti / osoite</label>
+    <label>Sijainti / osoite (jos tiedossa)</label>
 
 <input
     type="text"
     name="location"
     placeholder="Esim. Nørrebrogade 123, Kööpenhamina">
+
+    <label class="checkbox-row">
+
+    <input
+        type="checkbox"
+        id="noAddress">
+
+    En tiedä tarkkaa osoitetta
+
+</label>
 
 <label>Oma sähköposti</label>
 <input type="email"
@@ -307,6 +317,30 @@ Tarkistamme tiedot ennen mahdollista julkaisua.
 </form>
 
 <script>
+
+const noAddressCheckbox =
+    document.getElementById("noAddress");
+
+const locationInput =
+    document.getElementById("location");
+
+noAddressCheckbox.addEventListener(
+    "change",
+    function(){
+
+        if(this.checked){
+
+            locationInput.value = "";
+            locationInput.disabled = true;
+
+        }else{
+
+            locationInput.disabled = false;
+
+        }
+
+    }
+);
 
     const serviceSelect =
     document.querySelector(
