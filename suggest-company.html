@@ -88,6 +88,15 @@ button:hover{
     margin-bottom:8px;
     font-weight:normal;
 }
+
+    #otherLanguageContainer{
+    margin-top:10px;
+}
+
+#otherLanguageContainer input{
+    width:100%;
+    box-sizing:border-box;
+}
     
     
 </style>
@@ -298,6 +307,26 @@ Puola
 Turkki
 </label>
 
+<label class="checkbox-row">
+
+    <input
+        type="checkbox"
+        id="otherLanguageCheckbox">
+
+    Muu kieli
+
+</label>
+
+<div id="otherLanguageContainer"
+     style="display:none;">
+
+    <input
+        type="text"
+        name="otherLanguage"
+        placeholder="Kirjoita kieli">
+
+</div>
+
 </div>
 
 
@@ -400,6 +429,35 @@ serviceSelect.addEventListener(
         }else{
 
             otherServiceContainer.style.display =
+                "none";
+
+        }
+
+    }
+);
+
+    const otherLanguageCheckbox =
+    document.getElementById(
+        "otherLanguageCheckbox"
+    );
+
+const otherLanguageContainer =
+    document.getElementById(
+        "otherLanguageContainer"
+    );
+
+otherLanguageCheckbox.addEventListener(
+    "change",
+    function(){
+
+        if(this.checked){
+
+            otherLanguageContainer.style.display =
+                "block";
+
+        }else{
+
+            otherLanguageContainer.style.display =
                 "none";
 
         }
