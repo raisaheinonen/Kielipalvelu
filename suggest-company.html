@@ -388,30 +388,6 @@ noAddressCheckbox.addEventListener(
     }
 );
 
-const noAddressCheckbox =
-    document.getElementById("noAddress");
-
-const addressInput =
-    document.getElementById("address");
-
-noAddressCheckbox.addEventListener(
-    "change",
-    function(){
-
-        if(this.checked){
-
-            addressInput.value = "";
-            addressInput.disabled = true;
-
-        }else{
-
-            addressInput.disabled = false;
-
-        }
-
-    }
-);
-
     const serviceSelect =
     document.querySelector(
         'select[name="service"]'
