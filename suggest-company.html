@@ -7,8 +7,8 @@
 
 <style>
 body{
-    max-width:800px;
-    margin:40px auto;
+    background:#f5f1eb;
+    margin:0;
     padding:20px;
     font-family:Arial,sans-serif;
 }
@@ -36,12 +36,13 @@ textarea{
 
 button{
     margin-top:20px;
-    padding:12px 20px;
+    padding:14px 22px;
     background:#475569;
     color:white;
     border:none;
-    border-radius:8px;
+    border-radius:12px;
     cursor:pointer;
+    font-weight:600;
 }
 
 button:hover{
@@ -54,17 +55,38 @@ button:hover{
     gap:10px;
     font-weight:normal;
 }
+
+    .container{
+    max-width:800px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:24px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.08);
+}
+
+    select{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
     
 </style>
 </head>
 
 <body>
 
+    <div class="container">
+
+
 <h1>Ehdota yritystä</h1>
 
 <p>
-Tiedätkö yrityksen, joka puuttuu hakemistosta?
-Lähetä meille vinkki.
+Tunnetko yrityksen, joka tarjoaa palvelua omalla kielelläsi mutta puuttuu vielä hakemistosta?
+
+Lähetä yrityksen tiedot meille tarkistettavaksi.
 </p>
 
 <form id="suggest-form">
@@ -209,6 +231,8 @@ document
 
 
 </script>
+
+</div>
 
 </body>
 </html>
