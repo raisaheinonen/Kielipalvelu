@@ -97,6 +97,13 @@ button:hover{
     width:100%;
     box-sizing:border-box;
 }
+
+    input:disabled{
+    background:#f3f4f6;
+    color:#6b7280;
+    cursor:not-allowed;
+}
+
     
     
 </style>
@@ -356,6 +363,30 @@ Tarkistamme tiedot ennen mahdollista julkaisua.
 </form>
 
 <script>
+
+    const noAddressCheckbox =
+    document.getElementById("noAddress");
+
+const addressInput =
+    document.getElementById("address");
+
+noAddressCheckbox.addEventListener(
+    "change",
+    function(){
+
+        if(this.checked){
+
+            addressInput.value = "";
+            addressInput.disabled = true;
+
+        }else{
+
+            addressInput.disabled = false;
+
+        }
+
+    }
+);
 
 const noAddressCheckbox =
     document.getElementById("noAddress");
