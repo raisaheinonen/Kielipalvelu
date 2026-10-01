@@ -489,7 +489,7 @@ document
         formData.get("location"),
 
     languages:
-        formData.get("languages"),
+    formData.getAll("languages").join(", "),
 
     notes:
         formData.get("notes"),
