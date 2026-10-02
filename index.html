@@ -911,7 +911,96 @@ if (countrySelect && otherCountryContainer) {
 
 }
 
+    document
+.getElementById("feedbackButton")
+.addEventListener("click", async function(){
+
+    const button =
+        this;
+
+    button.disabled = true;
+    button.textContent =
+        "Lähetetään...";
+
+    try{
+
+        const response =
+            await fetch(
+                "SINUN_APPS_SCRIPT_URL",
+                {
+                    method:"POST",
+                    body:JSON.stringify({
+
+                        action:"submitFeedback",
+
+                        message:
+                            document.getElementById(
+                                "feedbackMessage"
+                            ).value,
+
+                        email:
+                            document.getElementById(
+                                "feedbackEmail"
+                            ).value
+
+                    })
+
+                }
+            );
+
+        await response.text();
+
+        document
+            .getElementById(
+                "feedbackSuccess"
+            )
+            .style.display =
+                "block";
+
+        button.textContent =
+            "Lähetetty ✓";
+
+    }catch(error){
+
+        button.disabled =
+            false;
+
+        button.textContent =
+            "Lähetä palaute";
+
+        alert(
+            "Lähetys epäonnistui"
+        );
+
+    }
+
+});
+
 </script>
+
+<hr>
+
+<h2>Anna palautetta</h2>
+
+<textarea
+    id="feedbackMessage"
+    rows="5"
+    placeholder="Kerro kehitysidea tai ilmoita virheestä">
+</textarea>
+
+<input
+    type="email"
+    id="feedbackEmail"
+    placeholder="Sähköposti (valinnainen)">
+
+<button id="feedbackButton">
+    Lähetä palaute
+</button>
+
+<p id="feedbackSuccess"
+   style="display:none;color:green;">
+    Kiitos palautteesta!
+</p>
 
 </body>
 </html>
