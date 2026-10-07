@@ -1088,6 +1088,20 @@ style="margin-left:10px;text-decoration:none;display:inline-block;">
 ${translations[siteLanguage].navigate}
 </a>
 
+<p style="margin-top:15px;">
+
+<a href="#"
+onclick="openReportIssue('${item.name}'); return false;"
+style="
+
+">
+
+Ilmoita virheestä
+
+</a>
+
+</p>
+
 </div>
 `;
 
@@ -1420,7 +1434,66 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
 
     }
 
+    async function openReportIssue(companyName){
+
+    const reason =
+        prompt(
+            `Mikä yrityksen tiedoissa on väärin?\n\nYritys: ${companyName}`
+        );
+
+    if(!reason){
+        return;
+    }
+
+    const details =
+        prompt(
+            "Lisätiedot (valinnainen)"
+        ) || "";
+
+    try{
+
+        await fetch(
+            APPS_SCRIPT_URL,
+            {
+                method:"POST",
+                body:JSON.stringify({
+
+                    action:"reportIssue",
+
+                    companyName:
+                        companyName,
+
+                    reason:
+                        reason,
+
+                    details:
+                        details,
+
+                    email:""
+
+                })
+
+            }
+        );
+
+        alert(
+            "Kiitos ilmoituksesta!"
+        );
+
+    }catch(error){
+
+        console.error(error);
+
+        alert(
+            "Virheilmoituksen lähetys epäonnistui."
+        );
+
+    }
+
+}
+
 initializeResults();
+
     
 </script>
 
