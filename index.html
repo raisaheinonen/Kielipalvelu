@@ -179,21 +179,38 @@
 }
 
 .menu-panel{
-    display:none;
     position:fixed;
-    top:80px;
-    left:20px;
+    top:0;
+    left:-320px;
+
+    width:280px;
+    height:100vh;
+
     background:white;
-    border-radius:16px;
-    box-shadow:0 8px 24px rgba(0,0,0,0.15);
-    padding:15px;
-    z-index:1000;
-    min-width:240px;
+
+    box-shadow:
+        4px 0 20px rgba(0,0,0,0.15);
+
+    padding:25px;
+
+    z-index:9998;
+
+    transition:left 0.3s ease;
+}
+
+.menu-panel.open{
+    left:0;
+}
+
+.menu-panel h3{
+    margin-top:20px;
+    margin-bottom:25px;
+    color:#111827;
 }
 
 .menu-panel a{
     display:block;
-    padding:10px 0;
+    margin-bottom:15px;
     text-decoration:none;
     color:#475569;
     font-weight:600;
@@ -323,6 +340,8 @@
     </style>
 </head>
 
+</head>
+
 <body>
 
 <button id="menu-toggle" class="menu-button">
@@ -331,20 +350,23 @@
 
 <div id="menu-panel" class="menu-panel">
 
+    <h3>Kielipalvelu</h3>
+
     <a href="#"
-       onclick="openPremiumInfo(); return false;">
-        Mitä Premium tarkoittaa?
-    </a
+       onclick="tä Premium tarkoittaa?
+    </a>
+
+    <a href="#"
+       onclick="teystiedot
     </a>
 
 </div>
-   
-    
- <div class="hero">
-        
-        <div class="language-selector">
 
-<select id="site-language">
+<div class="hero">
+
+    <div class="language-selector">
+
+        <select id="site-language">
 
 <option value="en">🇬🇧 English</option>
 <option value="fi">🇫🇮 Suomi</option>
