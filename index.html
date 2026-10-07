@@ -171,6 +171,46 @@
     background:#334155;
 }
 
+        .menu-button{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:12px;
+    background:white;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    font-size:24px;
+    cursor:pointer;
+    z-index:1000;
+}
+
+.menu-panel{
+    display:none;
+    position:fixed;
+    top:80px;
+    left:20px;
+    background:white;
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.15);
+    padding:15px;
+    z-index:1000;
+    min-width:240px;
+}
+
+.menu-panel a{
+    display:block;
+    padding:10px 0;
+    text-decoration:none;
+    color:#475569;
+    font-weight:600;
+}
+
+.menu-panel a:hover{
+    color:#334155;
+}
+
         @media (max-width: 768px){
 
     body{
@@ -292,6 +332,21 @@
 </head>
 
 <body>
+
+    <button id="menu-toggle" class="menu-button">
+☰
+</button>
+
+    <div id="menu-panel" class="menu-panel">
+
+    <a href="#" onclick="openPremiumInfo(); return false;">
+ </a>
+
+    <a href="#" onclick="     Yhteystiedot
+    </a>
+
+</div>
+
 
     <div class="hero">
         
@@ -940,69 +995,55 @@ if (countrySelect && otherCountryContainer) {
 }
 
     document
-.getElementById("feedbackButton")
-.addEventListener("click", async function(){
+.getElementById("menu-toggle")
+.addEventListener("click", function(){
 
-    const button =
-        this;
+    const menu =
+        document.getElementById("menu-panel");
 
-    button.disabled = true;
-    button.textContent =
-        "Lähetetään...";
+    if(menu.style.display === "block"){
 
-    try{
+        menu.style.display = "none";
 
-        const response =
-            await fetch(
-                "SINUN_APPS_SCRIPT_URL",
-                {
-                    method:"POST",
-                    body:JSON.stringify({
+    }else{
 
-                        action:"submitFeedback",
-
-                        message:
-                            document.getElementById(
-                                "feedbackMessage"
-                            ).value,
-
-                        email:
-                            document.getElementById(
-                                "feedbackEmail"
-                            ).value
-
-                    })
-
-                }
-            );
-
-        await response.text();
-
-        document
-            .getElementById(
-                "feedbackSuccess"
-            )
-            .style.display =
-                "block";
-
-        button.textContent =
-            "Lähetetty ✓";
-
-    }catch(error){
-
-        button.disabled =
-            false;
-
-        button.textContent =
-            "Lähetä palaute";
-
-        alert(
-            "Lähetys epäonnistui"
-        );
+        menu.style.display = "block";
 
     }
 
 });
+
+    function openPremiumInfo(){
+
+    alert(
+`PREMIUM-NÄKYVYYS
+
+• Korostettu yrityskortti
+
+• Yrityksen logo näkyvissä
+
+• Yhteystiedot näkyvissä
+
+• Parempi näkyvyys hakutuloksissa
+
+• Kuukausittainen raportti yritysprofiilin kävijöistä ja klikkauksista
+
+• Tulevat Premium-ominaisuudet ensimmäisten joukossa käyttöön`
+    );
+
+}
+
+    function openContactInfo(){
+
+    alert(
+`YHTEYSTIEDOT
+
+Palautteet, virheilmoitukset ja yhteistyö:
+
+info@kielipalvelu.fi`
+    );
+
+}
 
 </script>
 
