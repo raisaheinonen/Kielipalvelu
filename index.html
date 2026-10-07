@@ -1008,22 +1008,14 @@ if (countrySelect && otherCountryContainer) {
 
 }
 
-    document
+   document
 .getElementById("menu-toggle")
 .addEventListener("click", function(){
 
     const menu =
         document.getElementById("menu-panel");
 
-    if(menu.style.display === "block"){
-
-        menu.style.display = "none";
-
-    }else{
-
-        menu.style.display = "block";
-
-    }
+    menu.classList.toggle("open");
 
 });
 
