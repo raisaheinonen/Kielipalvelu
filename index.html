@@ -984,26 +984,6 @@ document.getElementById("site-language").dispatchEvent(new Event("change"));
 
 <script>
 
-const countrySelect =
-document.getElementById("country");
-
-const otherCountryContainer =
-document.getElementById("other-country-container");
-
-if (countrySelect && otherCountryContainer) {
-
-    countrySelect.addEventListener("change", function(){
-
-        if(this.value === "other"){
-            otherCountryContainer.style.display = "block";
-        } else {
-            otherCountryContainer.style.display = "none";
-        }
-
-    });
-
-}
-
    document
 .getElementById("menu-toggle")
 .addEventListener("click", function(){
