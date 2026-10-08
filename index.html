@@ -178,44 +178,6 @@
     z-index:9999;
 }
 
-.menu-panel{
-    position:fixed;
-    top:0;
-    left:-320px;
-
-    width:280px;
-    height:100vh;
-
-    background:white;
-
-    box-shadow:
-        4px 0 20px rgba(0,0,0,0.15);
-
-    padding:25px;
-
-    z-index:9998;
-
-    transition:left 0.3s ease;
-}
-
-.menu-panel.open{
-    left:0;
-}
-
-.menu-panel h3{
-    margin-top:20px;
-    margin-bottom:25px;
-    color:#111827;
-}
-
-.menu-panel a{
-    display:block;
-    margin-bottom:15px;
-    text-decoration:none;
-    color:#475569;
-    font-weight:600;
-}
-
 .menu-panel a:hover{
     color:#334155;
 }
@@ -341,22 +303,6 @@
 </head>
 
 <body>
-
-<div id="menu-panel" class="menu-panel">
-
-    <h3>Kielipalvelu</h3>
-
-    <a href="#"
-   onclick="openPremiumInfo(); return false;">
-   Mitä Premium tarkoittaa?
-</a>
- 
-<a href="#"
-   onclick="openContactInfo(); return false;">
-    Yhteystiedot
-    </a>
-
-</div>
 
 <div class="hero">
 
@@ -980,53 +926,6 @@ translations[lang].selectCountry;
 document.getElementById("site-language").value = "en";
 document.getElementById("site-language").dispatchEvent(new Event("change"));
     
-</script>
-
-<script>
-
-   document
-.getElementById("menu-toggle")
-.addEventListener("click", function(){
-
-    const menu =
-        document.getElementById("menu-panel");
-
-    menu.classList.toggle("open");
-
-});
-
-    function openPremiumInfo(){
-
-    alert(
-`PREMIUM-NÄKYVYYS
-
-• Korostettu yrityskortti
-
-• Yrityksen logo näkyvissä
-
-• Yhteystiedot näkyvissä
-
-• Parempi näkyvyys hakutuloksissa
-
-• Kuukausittainen raportti yritysprofiilin kävijöistä ja klikkauksista
-
-• Tulevat Premium-ominaisuudet ensimmäisten joukossa käyttöön`
-    );
-
-}
-
-    function openContactInfo(){
-
-    alert(
-`YHTEYSTIEDOT
-
-Palautteet, virheilmoitukset ja yhteistyö:
-
-info@kielipalvelu.fi`
-    );
-
-}
-
 </script>
 
 <footer class="footer">
