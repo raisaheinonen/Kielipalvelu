@@ -399,6 +399,22 @@ Tarkistamme tiedot ennen mahdollista julkaisua.
 
 </p>
 
+    <div id="success-actions"
+     style="display:none;margin-top:20px;">
+
+    <a href="index.html"
+       class="search-button">
+        Palaa etusivulle
+    </a>
+
+    <button
+        type="button"
+        onclick="location.reload();">
+        Tee uusi ehdotus
+    </button>
+
+</div>
+
 </form>
 
 <script>
@@ -598,6 +614,11 @@ try{
             )
             .style.display =
                 "block";
+
+            document
+.getElementById("success-actions")
+.style.display =
+"block";
 
         }
 
