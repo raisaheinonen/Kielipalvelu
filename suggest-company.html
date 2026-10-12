@@ -112,6 +112,14 @@ button:hover{
     
     
 </style>
+
+    <link
+rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
 </head>
 
 <body>
@@ -180,6 +188,32 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
 
 
 <label>Palvelu *</label>
+
+    <label>
+Valitse sija*nti kartalta
+</label*
+
+<p id="location-status"
+*tyle="color:#dc2626;font-weight:bo*d;">
+*Siirrä n*sta yrityksen sijaintiin
+</p>
+
+<di* id="map" style="
+height:400px;
+ma*gin-top:*0px;
+border:*px solid #ccc;
+*order-radius:8px;">
+</div>
+
+<input*type="hidden"
+name="latitude"
+id="*atitude">
+
+<input
+type="hidden"
+*ame="longitude"
+id="longitude">
+``*
 
 <select name="service" required>
 
@@ -574,6 +608,110 @@ try{
 }
 
 });
+
+    const map = L*map("map").setView(
+    [39*569*, 2.6502],
+    6
+);
+
+let marker = *.marker(
+    [39*5696, *.6502],
+    {
+        draggable* true
+    }
+).addTo(map);
+
+marker.*n("dragend", function() {
+
+    con*t position*=
+        marker.getLatLng();
+
+   *document
+        .getElementById("*atitude")
+        .value = positio*.lat;
+
+    document
+        .getEl*mentById("longitude")
+        .val*e = position.lng;
+
+    document
+  *     .getElementById("location-sta*us")
+        .innerHTML =
+       *"**Sijainti valittu";
+
+*   document
+        .getElementByI*("location-status")
+        .style*color =
+        "#16a34a";
+
+});
+
+d*cument
+    .getElementById("latitu*e")
+    .value = 39.5696;
+
+*ocument
+    .getElementById("longi*ude")
+    .value = 2.6502;
+
+L.tile*ayer(
+    "https://{s}.tile.openst*eetmap.org/{z}/{x}/{y}.png",
+   *{
+        attribution: "© OpenStre*tMap"
+    }
+).addTo(map);
+
+map.on(**lick", function(e){
+
+    const lat*= e.latlng.lat;
+    const lng = e.*atlng.lng;
+
+    document
+        .*etElementById("latitude")
+        *value = lat;
+
+    document
+       *.getElementById("longitude")
+     *  .value = lng;
+
+    if(marker){
+
+*       map.removeLayer(marker);
+
+ *  }
+
+    marker =
+    L.marker([la*, lng], {
+        draggable: true
+*   })
+    .addTo(map);
+
+    marker*on("dragend", function() {
+
+      * const position =
+            mark*r.getLatLng();
+
+        document
+ *          .getElementById("latitud*")
+            .value = position.l*t;
+
+        document
+            .*etElementById("longitude")
+       *    .value = position.lng;
+
+      * document
+            .getElementB*Id("location-status")
+            *innerHTML =
+            "✅ Sijaint* valittu";
+
+        document
+     *      .getElementById("location-st*tus")
+            .style.color =
+ *          "#16a34a";
+
+    });
+
+});*
 
 
 </script>
