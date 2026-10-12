@@ -610,109 +610,38 @@ try{
 
 });
 
-    const map = L*map("map").setView(
-    [39*569*, 2.6502],
+
+  const map = L.map("map").setView(
+    [39.5696, 2.6502],
     6
 );
 
-let marker = *.marker(
-    [39*5696, *.6502],
+let marker = L.marker(
+    [39.5696, 2.6502],
     {
-        draggable* true
+        draggable:true
     }
 ).addTo(map);
 
-marker.*n("dragend", function() {
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        attribution:"© OpenStreetMap"
+    }
+).addTo(map);
 
-    con*t position*=
-        marker.getLatLng();
+document.getElementById("latitude").value = 39.5696;
+document.getElementById("longitude").value = 2.6502;
 
-   *document
-        .getElementById("*atitude")
-        .value = positio*.lat;
+map.on("click", function(e){
 
-    document
-        .getEl*mentById("longitude")
-        .val*e = position.lng;
+    const lat = e.latlng.lat;
+    const lng = e.latlng.lng;
 
-    document
-  *     .getElementById("location-sta*us")
-        .innerHTML =
-       *"**Sijainti valittu";
-
-*   document
-        .getElementByI*("location-status")
-        .style*color =
-        "#16a34a";
+    document.getElementById("latitude").value = lat;
+    document.getElementById("longitude").value = lng;
 
 });
-
-d*cument
-    .getElementById("latitu*e")
-    .value = 39.5696;
-
-*ocument
-    .getElementById("longi*ude")
-    .value = 2.6502;
-
-L.tile*ayer(
-    "https://{s}.tile.openst*eetmap.org/{z}/{x}/{y}.png",
-   *{
-        attribution: "© OpenStre*tMap"
-    }
-).addTo(map);
-
-map.on(**lick", function(e){
-
-    const lat*= e.latlng.lat;
-    const lng = e.*atlng.lng;
-
-    document
-        .*etElementById("latitude")
-        *value = lat;
-
-    document
-       *.getElementById("longitude")
-     *  .value = lng;
-
-    if(marker){
-
-*       map.removeLayer(marker);
-
- *  }
-
-    marker =
-    L.marker([la*, lng], {
-        draggable: true
-*   })
-    .addTo(map);
-
-    marker*on("dragend", function() {
-
-      * const position =
-            mark*r.getLatLng();
-
-        document
- *          .getElementById("latitud*")
-            .value = position.l*t;
-
-        document
-            .*etElementById("longitude")
-       *    .value = position.lng;
-
-      * document
-            .getElementB*Id("location-status")
-            *innerHTML =
-            "✅ Sijaint* valittu";
-
-        document
-     *      .getElementById("location-st*tus")
-            .style.color =
- *          "#16a34a";
-
-    });
-
-});*
 
 
 </script>
