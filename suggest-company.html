@@ -186,7 +186,30 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
 
 </label>
     
+     <label>
+Valitse sijainti kartalta
+</label>
 
+<p id="location-status"
+style="color:#dc2626;font-weight:bold;">
+*Siirrä nasta yrityksen sijaintiin
+</p>
+
+<div id="map" style="
+height:400px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:8px;">
+</div>
+
+<input type="hidden"
+name="latitude"
+id="latitude">
+
+<input
+type="hidden"
+name="longitude"
+id="longitude">
 
 <label>Palvelu *</label>
 
@@ -223,30 +246,7 @@ Lähetä yrityksen tiedot meille tarkistettavaksi.
 
     </select>
 
-     <label>
-Valitse sijainti kartalta
-</label>
 
-<p id="location-status"
-style="color:#dc2626;font-weight:bold;">
-*Siirrä nasta yrityksen sijaintiin
-</p>
-
-<div id="map" style="
-height:400px;
-margin-top:10px;
-border:1px solid #ccc;
-border-radius:8px;">
-</div>
-
-<input type="hidden"
-name="latitude"
-id="latitude">
-
-<input
-type="hidden"
-name="longitude"
-id="longitude">
 
 <div id="otherServiceContainer"
      style="
