@@ -616,6 +616,7 @@ try{
 
         if(result.success){
 
+
             submitButton.disabled = true;
 
             submitButton.textContent =
@@ -625,11 +626,10 @@ try{
             form.reset();
 
             document
-            .getElementById(
-                "success-message"
-            )
-            .style.display =
-                "block";
+.getElementById("success-modal")
+.style.display =
+"flex";
+
 
             document
 .getElementById("success-actions")
