@@ -129,6 +129,30 @@ button:hover{
     border-radius:16px;
     padding:30px;
 }
+
+        .success-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    z-index:9999;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.success-modal-content{
+    background:white;
+    padding:40px;
+    border-radius:24px;
+    max-width:500px;
+    width:90%;
+    text-align:center;
+}
+
+.success-modal-content h2{
+    margin-top:0;
+}
 </style>
 
 <link
@@ -803,17 +827,17 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
 .then(() => {
 
     submitButton.textContent =
-"Yritys lähetetty";
+    "Yritys lähetetty";
 
-submitButton.disabled = false;
-
-    document
-        .getElementById("success-message")
-        .style.display = "block";
+    submitButton.disabled = false;
 
     document
         .getElementById("company-form")
         .reset();
+
+    document
+        .getElementById("success-modal")
+        .style.display = "flex";
 
 })
 .catch(error => {
@@ -862,6 +886,33 @@ countrySelect.addEventListener("change", function(){
 <script>
 emailjs.init("7bM0DoYoPYwQWcnCC");
 </script>
+
+        </div>
+
+    <div id="success-modal" class="success-modal">
+
+    <div class="success-modal-content">
+
+        <h2>✅ Kiitos!</h2>
+
+        <p>
+            Yritysehdotus on vastaanotettu.
+            Tarkistamme tiedot ennen mahdollista julkaisua.
+        </p>
+
+        <a href="index.html" class="home-button">
+            Palaa etusivulle
+        </a>
+
+        <button
+            type="button"
+            onclick="location.reload();">
+            Tee uusi ehdotus
+        </button>
+
+    </div>
+
+</div>
 
 </body>
 </html>
