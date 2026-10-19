@@ -1456,25 +1456,29 @@ function openReportIssue(companyName){
 
 }
 
-    document
-.getElementById("close-report-btn")
-.addEventListener("click", () => {
+   window.addEventListener("load", () => {
 
     document
-    .getElementById("report-modal")
-    .style.display =
-    "none";
+    .getElementById("close-report-btn")
+    .addEventListener("click", () => {
 
-});
+        document
+        .getElementById("report-modal")
+        .style.display =
+        "none";
 
-document
-.getElementById("close-report-modal")
-.addEventListener("click", () => {
+    });
 
     document
-    .getElementById("report-modal")
-    .style.display =
-    "none";
+    .getElementById("close-report-modal")
+    .addEventListener("click", () => {
+
+        document
+        .getElementById("report-modal")
+        .style.display =
+        "none";
+
+    });
 
 });
 
