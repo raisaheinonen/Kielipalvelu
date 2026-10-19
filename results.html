@@ -690,36 +690,6 @@ sv:{
 
 };
 
-    let currentReportedCompany = "";
-
-function openReportIssue(companyName){
-
-    currentReportedCompany =
-        companyName;
-
-    document
-    .getElementById("report-company-name")
-    .textContent =
-    companyName;
-
-    document
-    .getElementById("report-modal")
-    .style.display =
-    "flex";
-
-}
-
-document
-.getElementById("cancel-report-btn")
-.addEventListener("click", () => {
-
-    document
-    .getElementById("report-modal")
-    .style.display =
-    "none";
-
-});
-
 document
 .getElementById("close-report-modal")
 .addEventListener("click", () => {
@@ -1526,6 +1496,36 @@ fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1
 }
 
 initializeResults();
+
+     let currentReportedCompany = "";
+
+function openReportIssue(companyName){
+
+    currentReportedCompany =
+        companyName;
+
+    document
+    .getElementById("report-company-name")
+    .textContent =
+    companyName;
+
+    document
+    .getElementById("report-modal")
+    .style.display =
+    "flex";
+
+}
+
+document
+.getElementById("cancel-report-btn")
+.addEventListener("click", () => {
+
+    document
+    .getElementById("report-modal")
+    .style.display =
+    "none";
+
+});
 
     
 </script>
