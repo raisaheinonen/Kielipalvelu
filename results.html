@@ -690,6 +690,36 @@ sv:{
 
 };
 
+async function loadPublicData(){
+
+    try{
+
+        const approvedCompanies =
+            await loadApprovedCompanies();
+
+        await loadActivePremiumCompanies();
+
+        return {
+            activePremiumCompanyIds,
+            approvedCompanies
+        };
+
+    }catch(error){
+
+        console.error(
+            "Julkisen yritysdatan lataus epäonnistui:",
+            error
+        );
+
+        return {
+            activePremiumCompanyIds:[],
+            approvedCompanies:[]
+        };
+
+    }
+
+}
+    
     async function loadActivePremiumCompanies(){
 
     try{
