@@ -690,29 +690,6 @@ sv:{
 
 };
 
-        const text = await response.text();
-
-        const publicData =
-            JSON.parse(text);
-
-        return publicData;
-
-    } catch(error){
-
-        console.error(
-            "Julkisen yritysdatan lataus epäonnistui:",
-            error
-        );
-
-        return {
-            activePremiumCompanyIds:[],
-            approvedCompanies:[]
-        };
-
-    }
-
-}
-
     async function loadActivePremiumCompanies(){
 
     try{
