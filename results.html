@@ -1091,15 +1091,12 @@ ${translations[siteLanguage].navigate}
 
 <p style="margin-top:15px;">
 
-<a href="#"
-onclick="openReportIssue('${item.name}'); return false;"
-style="
-
-">
-
-Ilmoita virheestä
-
-</a>
+<button
+    type="button"
+    class="report-error-btn"
+    onclick="openReportIssue('${item.name}')">
+    ⚠️ Ilmoita virheestä
+</button>
 
 </p>
 
