@@ -448,6 +448,13 @@ h2{
     transform:translateY(-2px);
 }
 
+    #report-details{
+    width:100%;
+    min-height:120px;
+    padding:12px;
+    box-sizing:border-box;
+}
+
     @media (max-width: 900px){
 
     .result-card{
@@ -1560,6 +1567,11 @@ function openReportIssue(companyName){
             .getElementById("report-modal")
             .style.display =
             "none";
+
+            document
+.getElementById("report-success-modal")
+.style.display =
+"flex";
 
         }catch(error){
 
