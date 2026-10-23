@@ -1561,7 +1561,10 @@ function openReportIssue(companyName){
                 }
             );
 
-            alert("Kiitos ilmoituksesta!");
+            document
+.getElementById("report-details")
+.value = "";
+
 
             document
             .getElementById("report-modal")
