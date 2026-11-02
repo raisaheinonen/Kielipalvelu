@@ -122,6 +122,18 @@
             right:20px;
 }
 
+        .language-wrapper{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+#language-flag{
+    width:24px;
+    height:auto;
+    border-radius:2px;
+}
+
 #site-language{
     background:white;
     border:1px solid #d1d5db;
@@ -321,6 +333,9 @@
 
     <div class="language-selector">
 
+    <div class="language-wrapper">
+        <img src="flags/fi.svg" id="language-flag" alt="Finnish flag">
+
         <select id="site-language">
 
 <option value="en">GB English</option>
@@ -341,11 +356,11 @@
 <option value="pl">PL Polski</option>
 <option value="tr">TR Türkçe</option>
 
-</select> 
+</select>
+
+    </div>
 
 </div>
-
-    <img src="flags/fi.svg" alt="Suomi" style="width:24px;height:auto;">
     
         <h1 id="main-title">Find Your Language</h1>
         <p id="hero-text">
