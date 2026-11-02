@@ -334,7 +334,7 @@
     <div class="language-selector">
 
     <div class="language-wrapper">
-        <img src="flags/fi.svg" id="language-flag" alt="Finnish flag">
+        <img src="flags/gb.svg" id="language-flag" alt="Language flag">
 
         <select id="site-language">
 
@@ -821,6 +821,29 @@ document
 .addEventListener("change", function(){
 
 const lang = this.value;
+
+const flagMap = {
+    en: "flags/gb.svg",
+    fi: "flags/fi.svg",
+    sv: "flags/se.svg",
+    no: "flags/no.svg",
+    da: "flags/dk.svg",
+    de: "flags/de.svg",
+    fr: "flags/fr.svg",
+    it: "flags/it.svg",
+    es: "flags/es.svg",
+    pt: "flags/pt.svg",
+    nl: "flags/nl.svg",
+    is: "flags/is.svg",
+    et: "flags/ee.svg",
+    lv: "flags/lv.svg",
+    lt: "flags/lt.svg",
+    pl: "flags/pl.svg",
+    tr: "flags/tr.svg"
+};
+
+document.getElementById("language-flag").src =
+flagMap[lang];
 
 if(translations[lang]){
 
