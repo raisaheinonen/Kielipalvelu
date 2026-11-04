@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480">
-  <rect width="640" height="160" fill="#000"/>
-  <rect y="160" width="640" height="160" fill="#DD0000"/>
-  <rect y="320" width="640" height="160" fill="#FFCE00"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="60">
+  <rect width="90" height="20" y="0" fill="#000000"/>
+  <rect width="90" height="20" y="20" fill="#DD0000"/>
+  <rect width="90" height="20" y="40" fill="#FFCE00"/>
 </svg>
 
