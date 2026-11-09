@@ -544,7 +544,41 @@ h2{
 
 .popup-company-btn:hover{
     background:#334155;
+}
 
+#loading-screen{
+  position:fixed;
+  inset:0;
+  background:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.loading-content{
+  text-align:center;
+}
+
+.loading-content p{
+  font-size:18px;
+  font-weight:600;
+  color:#475569;
+}
+
+.loading-globe{
+  font-size:80px;
+  animation:spin 3s linear infinite;
+  margin-bottom:15px;
+}
+
+@keyframes spin{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
 }
 
 </style>
@@ -554,6 +588,13 @@ h2{
 </head>
 
 <body>
+
+    <div id="loading-screen">
+<div class="loading-content">
+<div class="loading-globe">🌍</div>
+<p>Loading companies...</p>
+</div>
+</div>
 
 <div class="topbar"> 
 
