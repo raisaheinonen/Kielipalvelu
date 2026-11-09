@@ -208,19 +208,6 @@
         sans-serif;
 }
 
-        .field-group{
-    display:flex;
-    flex-direction:column;
-    gap:6px;
-}
-
-.field-group label{
-    font-size:13px;
-    font-weight:600;
-    color:#475569;
-    text-align:left;
-}
-
         @media (max-width: 768px){
 
     body{
@@ -384,8 +371,7 @@ Find trusted services in your own language anywhere in the world
 
     <div class="search-box">
 
-        <div class="field-group">
-            <label id="language-label">Asiointikieli</label>
+           
 
         <select id="language">
             <option value="" id="select-language">
@@ -415,9 +401,6 @@ Find trusted services in your own language anywhere in the world
 </select>
 
         </div>
-
-        <div class="field-group">
-    <label id="service-label">Palvelu</label>
 
 <select id="service">
             <option value="" id="select-service">
@@ -451,7 +434,7 @@ Find trusted services in your own language anywhere in the world
 
 </div>
 
-<div id="otherServiceContainer">
+<div id="otherServiceContainer" style="display:none;">
 
 
     <label style="font-weight:normal;">
@@ -464,10 +447,6 @@ Find trusted services in your own language anywhere in the world
            placeholder="Esim. Hieroja">
 
 </div>
-
-
-   <div class="field-group">
-    <label id="country-label">Maa</label>
 
 <select id="country">
 
@@ -499,8 +478,6 @@ Find trusted services in your own language anywhere in the world
     <option value="Australia" id="country-australia">Australia</option>
 
 </select>
-
-       </div>
 
 <button id="search-btn" onclick="goToResults()">
 Search services
