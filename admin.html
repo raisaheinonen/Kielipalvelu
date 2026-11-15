@@ -756,7 +756,18 @@ ${sentDate}
 
 <p><strong>Facebook:</strong> ${company.facebook || "-"}</p>
 
-<p><strong>Kuvaus:</strong> ${company.description || "-"}</p>
+<p>
+<strong>Kuvaus:</strong>
+</p>
+
+<textarea class="edit-description">
+${company.description || ""}
+</textarea>
+
+<button class="save-description-btn">
+💾 Tallenna kuvaus
+</button>
+
 
 <p><strong>Osoite:</strong> ${company.address || "-"}</p>
 
@@ -877,6 +888,12 @@ card.querySelector(".details-btn");
 const detailsSection =
 card.querySelector(".details-section");
 
+const saveDescriptionBtn =
+card.querySelector(".save-description-btn");
+
+const descriptionField =
+card.querySelector(".edit-description");
+
         const premiumActivateBtn =
 card.querySelector(".premium-activate-btn");
 
@@ -955,6 +972,72 @@ updatePremiumButtons(company.premiumStatus);
     }
 
 });
+
+        detailsBtn.addEventListener("click", function(){
+
+    if(detailsSection.style.display === "none"){
+
+        detailsSection.style.display = "block";
+        detailsBtn.textContent = "Piilota tiedot";
+
+    } else {
+
+        detailsSection.style.display = "none";
+        detailsBtn.textContent = "Näytä tiedot";
+
+    }
+
+});
+
+
+saveDescriptionBtn.addEventListener("click", function(){
+
+    fetch("xxxxx", {
+
+        method: "POST",
+
+        body: JSON.stringify({
+
+            action: "updateCompany",
+
+            companyName: company.companyName,
+
+            service: company.service,
+
+            description: descriptionField.value
+
+        })
+
+    })
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        if(data.success){
+
+            alert("Tallennettu.");
+
+            company.description =
+            descriptionField.value;
+
+        } else {
+
+            alert("Tallennus epäonnistui.");
+
+        }
+
+    });
+
+});
+
+
+premiumActivateBtn.addEventListener("click", function(){
+
+    const companyId =
+        premiumCompanyId.value.trim();
+
+    ...
 
         premiumActivateBtn.addEventListener("click", function(){
 
@@ -1213,52 +1296,10 @@ premiumDeactivateBtn.addEventListener("click", function(){
 
         editBtn.addEventListener("click", function(){
 
-    const newDescription =
-    prompt(
-        "Muokkaa kuvausta",
-        company.description || ""
-    );
+    detailsSection.style.display = "block";
 
-    if(newDescription === null){
-        return;
-    }
-
-    fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
-
-        method: "POST",
-
-        body: JSON.stringify({
-
-            action: "updateCompany",
-
-            companyName: company.companyName,
-
-            service: company.service,
-
-            description: newDescription
-
-        })
-
-    })
-    .then(response => response.json())
-    .then(data => {
-
-        if(data.success){
-
-            alert("Kuvaus tallennettu.");
-
-            company.description =
-            newDescription;
-
-        } else {
-
-            alert(
-                "Tallennus epäonnistui."
-            );
-
-        }
-
-    });
+    detailsBtn.textContent =
+    "Piilota tiedot";
 
 });
 
