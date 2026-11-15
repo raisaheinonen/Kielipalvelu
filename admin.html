@@ -856,6 +856,8 @@ Avaa kartalla
 
 <button class="approve-btn">Hyväksy</button>
 
+<button class="edit-btn">✏️ Muokkaa</button>
+
 <button class="reject-btn">Hylkää</button>
 `;
 
@@ -865,6 +867,9 @@ card.querySelector(".approve-btn");
 
 const rejectBtn =
 card.querySelector(".reject-btn");
+
+    const editBtn =
+card.querySelector(".edit-btn");
 
     const detailsBtn =
 card.querySelector(".details-btn");
@@ -1203,6 +1208,25 @@ premiumDeactivateBtn.addEventListener("click", function(){
         premiumDeactivateBtn.disabled = false;
 
     });
+
+});
+
+        editBtn.addEventListener("click", function(){
+
+    const newDescription =
+    prompt(
+        "Muokkaa kuvausta",
+        company.description || ""
+    );
+
+    if(newDescription === null){
+        return;
+    }
+
+    alert(
+        "Uusi kuvaus: " +
+        newDescription
+    );
 
 });
 
