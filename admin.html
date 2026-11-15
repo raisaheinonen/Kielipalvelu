@@ -748,9 +748,21 @@ ${sentDate}
 
 <p><strong>Toiminta-alue:</strong> ${company.serviceArea || "-"}</p> 
 
-<p><strong>Puhelin:</strong> ${company.phone || "-"}</p>
+<label><strong>Puhelin:</strong></label>
 
-<p><strong>Verkkosivu:</strong> ${company.website || "-"}</p>
+<input
+    type="text"
+    class="edit-phone"
+    value="${company.phone || ""}"
+>
+
+<label><strong>Verkkosivu:</strong></label>
+
+<input
+    type="text"
+    class="edit-website"
+    value="${company.website || ""}"
+>
 
 <p><strong>Instagram:</strong> ${company.instagram || "-"}</p>
 
@@ -779,7 +791,13 @@ ${company.mapsLink || "-"}
 
 <p><strong>Yhteyshenkilö:</strong> ${company.contactPerson || "-"}</p>
 
-<p><strong>Kielet:</strong> ${company.languages || "-"}</p>
+<label><strong>Kielet:</strong></label>
+
+<input
+    type="text"
+    class="edit-languages"
+    value="${company.languages || ""}"
+>
 
 <p><strong>Latitude:</strong> ${company.latitude || "-"}</p>
 
