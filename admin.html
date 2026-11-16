@@ -228,6 +228,21 @@ h1{
     cursor:not-allowed;
 }
 
+    #admin-todos{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:15px 0;
+}
+
+.todo-card{
+    background:#fff7ed;
+    border:1px solid #fdba74;
+    border-radius:10px;
+    padding:10px 15px;
+    font-weight:600;
+}
+
 
 </style>
 </head>
@@ -276,6 +291,10 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
     <p id="search-results">
     Näytetään 0 / 0 yritystä
 </p>
+
+<div id="admin-todos">
+
+</div>
 
     <div id="filters">
 
@@ -518,7 +537,30 @@ companies.filter(
     company.status === "hylätty"
 ).length;
 
-   
+const missingWebsiteCount =
+companies.filter(
+    company =>
+    !company.website
+).length;
+
+const missingLogoCount =
+companies.filter(
+    company =>
+    !company.logo
+).length;
+
+const premiumInterestCount =
+companies.filter(
+    company =>
+    String(company.premiumInterest)
+        .toLowerCase() === "true"
+).length;
+
+const missingFinnishDescriptionCount =
+companies.filter(
+    company =>
+    !company.description_fi
+).length;   
 
 
 document.getElementById("all-count").textContent =
@@ -535,6 +577,30 @@ rejectedCount;
 
 document.getElementById("search-results").textContent =
 `Näytetään ${companies.length} / ${companies.length} yritystä`;
+
+document.getElementById("admin-todos").innerHTML = `
+
+<div class="todo-card">
+⚠ Odottaa hyväksyntää (${pendingCount})
+</div>
+
+<div class="todo-card">
+⚠ Ei verkkosivua (${missingWebsiteCount})
+</div>
+
+<div class="todo-card">
+⚠ Ei logoa (${missingLogoCount})
+</div>
+
+<div class="todo-card">
+⚠ Ei suomenkielistä kuvausta (${missingFinnishDescriptionCount})
+</div>
+
+<div class="todo-card">
+⚠ Premium kiinnostunut (${premiumInterestCount})
+</div>
+
+`;
 
 document.getElementById("pending-count").textContent =
 pendingCount;
