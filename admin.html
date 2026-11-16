@@ -763,7 +763,13 @@ ${sentDate}
 
 <p><strong>Sähköposti:</strong> ${company.email}</p>
 
-<p><strong>Toiminta-alue:</strong> ${company.serviceArea || "-"}</p> 
+<label><strong>Toiminta-alue:</strong></label>
+
+<input
+    type="text"
+    class="edit-service-area"
+    value="${company.serviceArea || ""}"
+>
 
 <label><strong>Puhelin:</strong></label>
 
@@ -781,12 +787,31 @@ ${sentDate}
     value="${company.website || ""}"
 >
 
-<p><strong>Instagram:</strong> ${company.instagram || "-"}</p>
+<label><strong>Instagram:</strong></label>
 
-<p><strong>Facebook:</strong> ${company.facebook || "-"}</p>
+<input
+    type="text"
+    class="edit-instagram"
+    value="${company.instagram || ""}"
+>
+
+<label><strong>Facebook:</strong></label>
+
+<input
+    type="text"
+    class="edit-facebook"
+    value="${company.facebook || ""}"
+>
 
 
-<p><strong>Osoite:</strong> ${company.address || "-"}</p>
+<label><strong>Osoite:</strong></label>
+
+<input
+    type="text"
+    class="edit-address"
+    value="${company.address || ""}"
+>
+
 
 <p>
 <strong>Google Maps:</strong>
@@ -794,7 +819,13 @@ ${company.mapsLink || "-"}
 </p>
 
 
-<p><strong>Yhteyshenkilö:</strong> ${company.contactPerson || "-"}</p>
+<label><strong>Yhteyshenkilö:</strong></label>
+
+<input
+    type="text"
+    class="edit-contact-person"
+    value="${company.contactPerson || ""}"
+>
 
 <label><strong>Kielet:</strong></label>
 
@@ -933,6 +964,21 @@ card.querySelector(".edit-description");
 
 const phoneField =
 card.querySelector(".edit-phone");
+
+const serviceAreaField =
+card.querySelector(".edit-service-area");
+
+const addressField =
+card.querySelector(".edit-address");
+
+const instagramField =
+card.querySelector(".edit-instagram");
+
+const facebookField =
+card.querySelector(".edit-facebook");
+
+const contactPersonField =
+card.querySelector(".edit-contact-person");
 
 const websiteField =
 card.querySelector(".edit-website");
@@ -1187,6 +1233,16 @@ saveCompanyBtn.addEventListener("click", function(){
             phone: phoneField.value,
 
             website: websiteField.value,
+
+            serviceArea: serviceAreaField.value,
+
+address: addressField.value,
+
+instagram: instagramField.value,
+
+facebook: facebookField.value,
+
+contactPerson: contactPersonField.value,
 
             languages: languagesField.value,
 
