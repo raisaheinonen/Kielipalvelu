@@ -984,6 +984,67 @@ ${company.description_no || ""}
 `;
     }
 
+if(languages.includes("ruotsi")){
+
+    html += `
+<label><strong>Kuvaus SV:</strong></label>
+<textarea class="edit-description-sv">
+${company.description_sv || ""}
+</textarea>
+`;
+}
+
+            if(languages.includes("tanska")){
+
+    html += `
+<label><strong>Kuvaus DA:</strong></label>
+<textarea class="edit-description-da">
+${company.description_da || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("saksa")){
+
+    html += `
+<label><strong>Kuvaus DE:</strong></label>
+<textarea class="edit-description-de">
+${company.description_de || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("ranska")){
+
+    html += `
+<label><strong>Kuvaus FR:</strong></label>
+<textarea class="edit-description-fr">
+${company.description_fr || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("italia")){
+
+    html += `
+<label><strong>Kuvaus IT:</strong></label>
+<textarea class="edit-description-it">
+${company.description_it || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("portugali")){
+
+    html += `
+<label><strong>Kuvaus PT:</strong></label>
+<textarea class="edit-description-pt">
+${company.description_pt || ""}
+</textarea>
+`;
+}
+
+
     languageDescriptions.innerHTML = html;
 
 }
