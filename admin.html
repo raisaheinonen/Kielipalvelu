@@ -1069,6 +1069,18 @@ card.querySelector(".edit-description-no");
 const descriptionDaField =
 card.querySelector(".edit-description-da");
 
+const descriptionDeField =
+card.querySelector(".edit-description-de");
+
+const descriptionFrField =
+card.querySelector(".edit-description-fr");
+
+const descriptionItField =
+card.querySelector(".edit-description-it");
+
+const descriptionPtField =
+card.querySelector(".edit-description-pt");
+
 const saveCompanyBtn =
 card.querySelector(".save-company-btn");
 
@@ -1172,11 +1184,25 @@ saveCompanyBtn.addEventListener("click", function(){
 
             languages: languagesField.value,
 
-            description_fi: descriptionFiField.value,
+            description_fi: descriptionFiField?.value || "",
 
-            description_en: descriptionEnField.value,
+description_en: descriptionEnField?.value || "",
 
-            description_es: descriptionEsField.value
+description_es: descriptionEsField?.value || "",
+
+description_sv: descriptionSvField?.value || "",
+
+description_no: descriptionNoField?.value || "",
+
+description_da: descriptionDaField?.value || "",
+
+description_de: descriptionDeField?.value || "",
+
+description_fr: descriptionFrField?.value || "",
+
+description_it: descriptionItField?.value || "",
+
+description_pt: descriptionPtField?.value || ""
 
         })
 
