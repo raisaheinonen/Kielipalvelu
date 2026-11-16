@@ -804,6 +804,12 @@ ${company.mapsLink || "-"}
     value="${company.languages || ""}"
 >
 
+<label><strong>Alkuperäinen kuvaus:</strong></label>
+
+<textarea class="edit-description">
+${company.description || ""}
+</textarea>
+
 <div class="language-descriptions">
 
 </div>
@@ -933,6 +939,9 @@ card.querySelector(".edit-website");
 
 const languagesField =
 card.querySelector(".edit-languages");
+
+const descriptionField =
+card.querySelector(".edit-description");
 
 const languageDescriptions =
 card.querySelector(".language-descriptions");
@@ -1184,6 +1193,9 @@ saveCompanyBtn.addEventListener("click", function(){
 
             languages: languagesField.value,
 
+description: descriptionField?.value || "",
+
+
             description_fi: descriptionFiField?.value || "",
 
 description_en: descriptionEnField?.value || "",
@@ -1203,6 +1215,8 @@ description_fr: descriptionFrField?.value || "",
 description_it: descriptionItField?.value || "",
 
 description_pt: descriptionPtField?.value || ""
+
+
 
         })
 
