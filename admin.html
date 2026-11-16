@@ -804,6 +804,10 @@ ${company.mapsLink || "-"}
     value="${company.languages || ""}"
 >
 
+<div class="language-descriptions">
+
+</div>
+
 <label><strong>Kuvaus FI:</strong></label>
 
 <textarea class="edit-description-fi">
@@ -947,6 +951,60 @@ card.querySelector(".edit-website");
 
 const languagesField =
 card.querySelector(".edit-languages");
+
+const languageDescriptions =
+card.querySelector(".language-descriptions");
+
+    const languages =
+(languagesField.value || "").toLowerCase();
+
+        if(languageDescriptions){
+
+    let html = "";
+
+    if(languages.includes("suomi")){
+
+        html += `
+<label><strong>Kuvaus FI:</strong></label>
+<textarea class="edit-description-fi">
+${company.description_fi || ""}
+</textarea>
+`;
+    }
+
+    if(languages.includes("englanti")){
+
+        html += `
+<label><strong>Kuvaus EN:</strong></label>
+<textarea class="edit-description-en">
+${company.description_en || ""}
+</textarea>
+`;
+    }
+
+    if(languages.includes("espanja")){
+
+        html += `
+<label><strong>Kuvaus ES:</strong></label>
+<textarea class="edit-description-es">
+${company.description_es || ""}
+</textarea>
+`;
+    }
+
+    if(languages.includes("norja")){
+
+        html += `
+<label><strong>Kuvaus NO:</strong></label>
+<textarea class="edit-description-no">
+${company.description_no || ""}
+</textarea>
+`;
+    }
+
+    languageDescriptions.innerHTML = html;
+
+}
 
 const descriptionFiField =
 card.querySelector(".edit-description-fi");
