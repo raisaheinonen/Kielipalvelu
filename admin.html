@@ -992,8 +992,6 @@ card.querySelector(".language-descriptions");
     const languages =
 (languagesField.value || "").toLowerCase();
 
-    console.log("KIELET:", languages);
-
         if(languageDescriptions){
 
     let html = "";
@@ -1098,6 +1096,66 @@ ${company.description_pt || ""}
 `;
 }
 
+if(languages.includes("viro")){
+
+    html += `
+<label><strong>Kuvaus ET:</strong></label>
+<textarea class="edit-description-et">
+${company.description_et || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("latvia")){
+
+    html += `
+<label><strong>Kuvaus LV:</strong></label>
+<textarea class="edit-description-lv">
+${company.description_lv || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("liettua")){
+
+    html += `
+<label><strong>Kuvaus LT:</strong></label>
+<textarea class="edit-description-lt">
+${company.description_lt || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("hollanti")){
+
+    html += `
+<label><strong>Kuvaus NL:</strong></label>
+<textarea class="edit-description-nl">
+${company.description_nl || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("puola")){
+
+    html += `
+<label><strong>Kuvaus PL:</strong></label>
+<textarea class="edit-description-pl">
+${company.description_pl || ""}
+</textarea>
+`;
+}
+
+if(languages.includes("turkki")){
+
+    html += `
+<label><strong>Kuvaus TR:</strong></label>
+<textarea class="edit-description-tr">
+${company.description_tr || ""}
+</textarea>
+`;
+}
+
 
     languageDescriptions.innerHTML = html;
 
@@ -1132,6 +1190,24 @@ card.querySelector(".edit-description-it");
 
 const descriptionPtField =
 card.querySelector(".edit-description-pt");
+
+const descriptionEtField =
+card.querySelector(".edit-description-et");
+
+const descriptionLvField =
+card.querySelector(".edit-description-lv");
+
+const descriptionLtField =
+card.querySelector(".edit-description-lt");
+
+const descriptionNlField =
+card.querySelector(".edit-description-nl");
+
+const descriptionPlField =
+card.querySelector(".edit-description-pl");
+
+const descriptionTrField =
+card.querySelector(".edit-description-tr");
 
 const saveCompanyBtn =
 card.querySelector(".save-company-btn");
@@ -1267,7 +1343,19 @@ description_fr: descriptionFrField?.value || "",
 
 description_it: descriptionItField?.value || "",
 
-description_pt: descriptionPtField?.value || ""
+description_pt: descriptionPtField?.value || "",
+
+description_et: descriptionEtField?.value || "",
+
+description_lv: descriptionLvField?.value || "",
+
+description_lt: descriptionLtField?.value || "",
+
+description_nl: descriptionNlField?.value || "",
+
+description_pl: descriptionPlField?.value || "",
+
+description_tr: descriptionTrField?.value || ""
 
 
 
