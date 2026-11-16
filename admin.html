@@ -1009,15 +1009,21 @@ saveDescriptionBtn.addEventListener("click", function(){
 
         body: JSON.stringify({
 
-            action: "updateCompany",
+    action: "updateCompany",
 
-            companyName: company.companyName,
+    companyName: company.companyName,
 
-            service: company.service,
+    service: company.service,
 
-            description: descriptionField.value
+    description: descriptionField.value,
 
-        })
+    phone: phoneField.value,
+
+    website: websiteField.value,
+
+    languages: languagesField.value
+
+})
 
     })
 
