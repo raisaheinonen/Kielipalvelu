@@ -785,18 +785,6 @@ ${sentDate}
 
 <p><strong>Facebook:</strong> ${company.facebook || "-"}</p>
 
-<p>
-<strong>Kuvaus:</strong>
-</p>
-
-<textarea class="edit-description">
-${company.description || ""}
-</textarea>
-
-<button class="save-description-btn">
-💾 Tallenna kuvaus
-</button>
-
 
 <p><strong>Osoite:</strong> ${company.address || "-"}</p>
 
@@ -815,6 +803,28 @@ ${company.mapsLink || "-"}
     class="edit-languages"
     value="${company.languages || ""}"
 >
+
+<label><strong>Kuvaus FI:</strong></label>
+
+<textarea class="edit-description-fi">
+${company.description_fi || ""}
+</textarea>
+
+<label><strong>Kuvaus EN:</strong></label>
+
+<textarea class="edit-description-en">
+${company.description_en || ""}
+</textarea>
+
+<label><strong>Kuvaus ES:</strong></label>
+
+<textarea class="edit-description-es">
+${company.description_es || ""}
+</textarea>
+
+<button class="save-company-btn">
+💾 Tallenna muutokset
+</button>
 
 <p><strong>Latitude:</strong> ${company.latitude || "-"}</p>
 
@@ -938,6 +948,27 @@ card.querySelector(".edit-website");
 const languagesField =
 card.querySelector(".edit-languages");
 
+const descriptionFiField =
+card.querySelector(".edit-description-fi");
+
+const descriptionEnField =
+card.querySelector(".edit-description-en");
+
+const descriptionEsField =
+card.querySelector(".edit-description-es");
+
+const descriptionSvField =
+card.querySelector(".edit-description-sv");
+
+const descriptionNoField =
+card.querySelector(".edit-description-no");
+
+const descriptionDaField =
+card.querySelector(".edit-description-da");
+
+const saveCompanyBtn =
+card.querySelector(".save-company-btn");
+
         const premiumActivateBtn =
 card.querySelector(".premium-activate-btn");
 
@@ -1001,7 +1032,7 @@ card.querySelector(".premium-save-message");
 
 updatePremiumButtons(company.premiumStatus);
 
-    detailsBtn.addEventListener("click", function(){
+   detailsBtn.addEventListener("click", function(){
 
     if(detailsSection.style.display === "none"){
 
@@ -1018,7 +1049,7 @@ updatePremiumButtons(company.premiumStatus);
 });
 
 
-saveDescriptionBtn.addEventListener("click", function(){
+saveCompanyBtn.addEventListener("click", function(){
 
     fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
 
@@ -1026,21 +1057,25 @@ saveDescriptionBtn.addEventListener("click", function(){
 
         body: JSON.stringify({
 
-    action: "updateCompany",
+            action: "updateCompany",
 
-    companyName: company.companyName,
+            companyName: company.companyName,
 
-    service: company.service,
+            service: company.service,
 
-    description: descriptionField.value,
+            phone: phoneField.value,
 
-    phone: phoneField.value,
+            website: websiteField.value,
 
-    website: websiteField.value,
+            languages: languagesField.value,
 
-    languages: languagesField.value
+            description_fi: descriptionFiField.value,
 
-})
+            description_en: descriptionEnField.value,
+
+            description_es: descriptionEsField.value
+
+        })
 
     })
 
@@ -1050,10 +1085,7 @@ saveDescriptionBtn.addEventListener("click", function(){
 
         if(data.success){
 
-            alert("Tallennettu.");
-
-            company.description =
-            descriptionField.value;
+            alert("Muutokset tallennettu.");
 
         } else {
 
@@ -1065,7 +1097,11 @@ saveDescriptionBtn.addEventListener("click", function(){
 
 });
 
-        premiumActivateBtn.addEventListener("click", function(){
+
+premiumActivateBtn.addEventListener("click", function(){
+
+    const companyId =
+        premiumCompanyId.value.trim();
 
     const companyId =
         premiumCompanyId.value.trim();
