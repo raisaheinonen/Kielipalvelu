@@ -258,6 +258,13 @@ h1{
     flex:1;
 }
 
+    .card-summary{
+    font-size:14px;
+    color:#64748b;
+    font-weight:600;
+    margin:8px 0 14px 0;
+}
+
 
 </style>
 </head>
@@ -833,6 +840,19 @@ isNaN(dateObj.getTime())
 
 card.innerHTML = `
 <h3>${company.companyName}</h3>
+
+<p class="card-summary">
+
+${company.service} |
+${company.country} |
+
+${company.status === "hyväksytty"
+    ? "🟢 Hyväksytty"
+    : company.status === "hylätty"
+    ? "🔴 Hylätty"
+    : "🟡 Odottaa"}
+
+</p>
 
 <p>
 <strong>Lähetetty:</strong>
