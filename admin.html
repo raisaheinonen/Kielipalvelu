@@ -788,7 +788,7 @@ pendingCount;
 
 });
 
-    function applyFilters(){
+   function applyFilters(){
 
     document
     .querySelectorAll(".company-card")
@@ -797,21 +797,23 @@ pendingCount;
         const countryMatch =
         !selectedCountry ||
         card.dataset.search.includes(
-            card.dataset.search.includes(selectedCountry)
-            
+            selectedCountry.toLowerCase()
         );
 
         const serviceMatch =
         !selectedService ||
         card.dataset.search.includes(
-            card.dataset.search.includes(selectedService)
-           
+            selectedService.toLowerCase()
         );
 
         if(countryMatch && serviceMatch){
+
             card.style.display = "";
+
         } else {
+
             card.style.display = "none";
+
         }
 
     });
