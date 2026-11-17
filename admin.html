@@ -252,6 +252,11 @@ h1{
 .admin-sidebar{
     width:300px;
     flex-shrink:0;
+
+    position:sticky;
+    top:20px;
+
+    align-self:flex-start;
 }
 
 .admin-content{
@@ -263,6 +268,18 @@ h1{
     color:#64748b;
     font-weight:600;
     margin:8px 0 14px 0;
+}
+
+    .filter-title{
+    margin-top:20px;
+    margin-bottom:10px;
+
+    font-size:13px;
+    font-weight:700;
+
+    color:#64748b;
+
+    letter-spacing:1px;
 }
 
 
@@ -319,6 +336,8 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
 
     <div class="admin-sidebar">
 
+        <h4 class="filter-title">TILA</h4>
+
         <div id="filters">
 
 <button id="show-all">
@@ -339,7 +358,11 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 
 </div>
 
+        <h4 class="filter-title">MAA</h4>
+
         <div id="country-filters"></div>
+
+    <h4 class="filter-title">PALVELU</h4>
 
 <div id="service-filters"></div>
 
