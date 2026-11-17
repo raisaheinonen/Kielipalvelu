@@ -318,6 +318,17 @@ h1{
     margin-bottom:12px;
 }
 
+    .collapsible-filter{
+    cursor:pointer;
+    user-select:none;
+}
+
+    .filter-section{
+
+    overflow:hidden;
+    transition:0.3s ease;
+}
+
 
 </style>
 </head>
@@ -372,9 +383,11 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
 
     <div class="admin-sidebar">
 
-        <h4 class="filter-title">TILA</h4>
+        <h4 class="filter-title collapsible-filter">
+    TILA
+</h4>
 
-        <div id="filters">
+        <div id="filters" class="filter-section">
 
 <button id="show-all">
 Kaikki (<span id="all-count">0</span>)
@@ -394,7 +407,9 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 
 </div>
 
-        <h4 class="filter-title">MAA</h4>
+        <h4 class="filter-title collapsible-filter">
+    MAA
+</h4>
 
 <select id="country-select">
 
@@ -402,9 +417,11 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 
 </select>
 
-<div id="country-filters" style="display:none;"></div>
+<div id="country-filters" class="filter-section">
 
-    <h4 class="filter-title">PALVELU</h4>
+    <h4 class="filter-title collapsible-filter">
+    PALVELU
+</h4>
 
 <select id="service-select">
 
@@ -412,7 +429,7 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 
 </select>
 
-<div id="service-filters" style="display:none;"></div>
+<div id="service-filters" class="filter-section">
 
 </div>
 
@@ -426,6 +443,29 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 
 
 <script>
+
+document
+.querySelectorAll(".collapsible-filter")
+.forEach(title => {
+
+    title.addEventListener("click", function(){
+
+        const section =
+        this.nextElementSibling;
+
+        if(section.style.display === "none"){
+
+            section.style.display = "block";
+
+        } else {
+
+            section.style.display = "none";
+
+        }
+
+    });
+
+});
 
 fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec")
 .then(response => response.json())
