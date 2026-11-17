@@ -308,6 +308,16 @@ h1{
     background:#e2e8f0;
 }
 
+    #country-select,
+#service-select{
+
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #d1d5db;
+    margin-bottom:12px;
+}
+
 
 </style>
 </head>
@@ -386,11 +396,23 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 
         <h4 class="filter-title">MAA</h4>
 
-        <div id="country-filters"></div>
+<select id="country-select">
+
+<option value="">Kaikki maat</option>
+
+</select>
+
+<div id="country-filters" style="display:none;"></div>
 
     <h4 class="filter-title">PALVELU</h4>
 
-<div id="service-filters"></div>
+<select id="service-select">
+
+<option value="">Kaikki palvelut</option>
+
+</select>
+
+<div id="service-filters" style="display:none;"></div>
 
 </div>
 
@@ -498,6 +520,13 @@ const countries =
     )
 )].sort();
 
+    const countrySelect =
+document.getElementById("country-select");
+
+const serviceSelect =
+document.getElementById("service-select");
+
+
     const services =
 [...new Set(
     companies.map(
@@ -552,6 +581,16 @@ countryFilters.appendChild(allCountriesButton);
 
         countryFilters.appendChild(button); 
 
+        const option =
+document.createElement("option");
+
+option.value = country;
+
+option.textContent =
+`${country} (${count})`;
+
+countrySelect.appendChild(option);
+
 });
 
 
@@ -573,13 +612,23 @@ serviceFilters.appendChild(allServicesButton);
 
 services.forEach(service => {
 
-    const button =
-    document.createElement("button");
-
     const count =
     companies.filter(
         company => company.service === service
     ).length;
+
+    const option =
+    document.createElement("option");
+
+    option.value = service;
+
+    option.textContent =
+    `${service} (${count})`;
+
+    serviceSelect.appendChild(option);
+
+    const button =
+    document.createElement("button");
 
     button.textContent =
     `${service} (${count})`;
