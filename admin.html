@@ -255,8 +255,12 @@ h1{
 
     position:sticky;
     top:20px;
-
     align-self:flex-start;
+
+    background:white;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
 }
 
 .admin-content{
@@ -271,15 +275,37 @@ h1{
 }
 
     .filter-title{
-    margin-top:20px;
-    margin-bottom:10px;
+    margin:20px 0 10px;
+    padding-bottom:8px;
+
+    border-bottom:1px solid #e5e7eb;
 
     font-size:13px;
     font-weight:700;
+    letter-spacing:1px;
 
     color:#64748b;
+}
 
-    letter-spacing:1px;
+    #filters button,
+#country-filters button,
+#service-filters button{
+
+    width:100%;
+    text-align:left;
+    margin-bottom:8px;
+    border:none;
+    background:#f8fafc;
+    border-radius:10px;
+    padding:10px 12px;
+    cursor:pointer;
+}
+
+    #filters button:hover,
+#country-filters button:hover,
+#service-filters button:hover{
+
+    background:#e2e8f0;
 }
 
 
