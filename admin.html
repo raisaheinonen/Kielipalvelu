@@ -458,10 +458,15 @@ document
 
             section.style.display = "block";
 
+            this.textContent =
+            this.textContent.replace("▶","▼");
+
         } else {
 
             section.style.display = "none";
 
+            this.textContent =
+            this.textContent.replace("▼","▶");
         }
 
     });
