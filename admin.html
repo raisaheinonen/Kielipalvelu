@@ -411,24 +411,9 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 ▼ MAA
 </h4>
 
-<select id="country-select">
+        <div id="country-filters" class="filter-section">
 
-<option value="">Kaikki maat</option>
-
-</select>
-
-<div id="country-filters" class="filter-section">
-
-
-    <h4 class="filter-title collapsible-filter">
-▼ PALVELU
-</h4>
-
-<select id="service-select">
-
-<option value="">Kaikki palvelut</option>
-
-</select>
+</div>
 
 <div id="service-filters" class="filter-section">
 
@@ -540,12 +525,6 @@ const countries =
     )
 )].sort();
 
-    const countrySelect =
-document.getElementById("country-select");
-
-const serviceSelect =
-document.getElementById("service-select");
-
 
     const services =
 [...new Set(
@@ -609,8 +588,6 @@ option.value = country;
 option.textContent =
 `${country} (${count})`;
 
-countrySelect.appendChild(option);
-
 });
 
 
@@ -644,8 +621,6 @@ services.forEach(service => {
 
     option.textContent =
     `${service} (${count})`;
-
-    serviceSelect.appendChild(option);
 
     const button =
     document.createElement("button");
