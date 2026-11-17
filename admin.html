@@ -444,35 +444,7 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 
 
 <script>
-
-document
-.querySelectorAll(".collapsible-filter")
-.forEach(title => {
-
-    title.addEventListener("click", function(){
-
-        const section =
-        this.nextElementSibling;
-
-        if(section.style.display === "none"){
-
-            section.style.display = "block";
-
-            this.textContent =
-            this.textContent.replace("▶","▼");
-
-        } else {
-
-            section.style.display = "none";
-
-            this.textContent =
-            this.textContent.replace("▼","▶");
-        }
-
-    });
-
-});
-
+    
 fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec")
 .then(response => response.json())
 .then(data => {
