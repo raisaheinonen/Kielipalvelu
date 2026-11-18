@@ -749,23 +749,27 @@ document.getElementById("search-results").textContent =
 
 document.getElementById("admin-todos").innerHTML = `
 
+<div class="todo-card" data-filter="all">
+📋 Näytä kaikki yritykset
+</div>
+
 <div class="todo-card">
 ⚠ Odottaa hyväksyntää (${pendingCount})
 </div>
 
-<div class="todo-card">
+<div class="todo-card" data-filter="missing-website">
 ⚠ Ei verkkosivua (${missingWebsiteCount})
 </div>
 
-<div class="todo-card">
+<div class="todo-card" data-filter="missing-logo">
 ⚠ Ei logoa (${missingLogoCount})
 </div>
 
-<div class="todo-card">
+<div class="todo-card" data-filter="missing-finnish">
 ⚠ Ei suomenkielistä kuvausta (${missingFinnishDescriptionCount})
 </div>
 
-<div class="todo-card">
+<div class="todo-card" data-filter="premium-interest">
 ⚠ Premium kiinnostunut (${premiumInterestCount})
 </div>
 
@@ -812,6 +816,62 @@ document.getElementById("admin-todos").innerHTML = `
 
     document.getElementById("show-all")
 .addEventListener("click", function(){
+
+    document
+.querySelectorAll(".todo-card")
+.forEach(todo => {
+
+    todo.addEventListener("click", function(){
+
+        const filter =
+        this.dataset.filter;
+
+        document
+        .querySelectorAll(".company-card")
+        .forEach(card => {
+
+            let show = false;
+
+            if(filter === "all"){
+    show = true;
+}
+
+            if(
+                filter === "missing-logo"
+            ){
+                show =
+                card.dataset.logo === "no";
+            }
+
+            if(
+                filter === "missing-website"
+            ){
+                show =
+                card.dataset.website === "no";
+            }
+
+            if(
+                filter === "missing-finnish"
+            ){
+                show =
+                card.dataset.finnish === "no";
+            }
+
+            if(
+                filter === "premium-interest"
+            ){
+                show =
+                card.dataset.premiuminterest === "yes";
+            }
+
+            card.style.display =
+            show ? "" : "none";
+
+        });
+
+    });
+
+});
 
     document
     .querySelectorAll(".company-card")
@@ -938,6 +998,21 @@ document.getElementById("show-rejected")
 
         card.dataset.status =
 company.status || "pending";
+
+    card.dataset.logo =
+company.logo ? "yes" : "no";
+
+card.dataset.website =
+company.website ? "yes" : "no";
+
+card.dataset.finnish =
+company.description_fi ? "yes" : "no";
+
+card.dataset.premiuminterest =
+String(company.premiumInterest)
+.toLowerCase() === "true"
+? "yes"
+: "no";
 
         card.dataset.country =
 company.country;
