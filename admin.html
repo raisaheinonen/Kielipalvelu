@@ -229,17 +229,18 @@ h1{
 
     #admin-todos{
     display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin:15px 0;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:20px;
 }
 
 .todo-card{
     background:#fff7ed;
     border:1px solid #fdba74;
     border-radius:10px;
-    padding:10px 15px;
+    padding:10px 12px;
     font-weight:600;
+    cursor:pointer;
 }
 
     .admin-layout{
@@ -395,13 +396,17 @@ Tähän näkymään tulevat uudet yritysehdotukset ennen julkaisua.
     Näytetään 0 / 0 yritystä
 </p>
 
-<div id="admin-todos">
-
 </div>
 
 <div class="admin-layout">
 
     <div class="admin-sidebar">
+
+    <h4 class="filter-title">
+⚠ VAATII HUOMIOTA
+</h4>
+
+<div id="admin-todos"></div>
 
         <h4 class="filter-title collapsible-filter">
 ▼ TILA
