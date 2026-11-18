@@ -390,10 +390,10 @@ Hyväksy uusia yrityksiä, hallinnoi yritystietoja ja ylläpidä palveluhakemist
 <div id="admin-todos"></div>
 
         <h4 class="filter-title collapsible-filter">
-▼ TILA
+<span class="toggle-arrow">▼</span> TILA
 </h4>
 
-        <div id="filters" class="filter-section">
+        <div id="service-filters" class="filter-section" style="display:none;">
 
 <button id="show-all">
 Kaikki (<span id="all-count">0</span>)
@@ -414,15 +414,15 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 </div>
 
         <h4 class="filter-title collapsible-filter">
-▼ MAA
+<span class="toggle-arrow">▼</span> MAA
 </h4>
 
-        <div id="country-filters" class="filter-section">
+       <div id="country-filters" class="filter-section" style="display:none;">
 
 </div>
 
         <h4 class="filter-title collapsible-filter">
-▼ PALVELU
+<span class="toggle-arrow">▼</span> PALVELU
 </h4>
 
 <div id="service-filters" class="filter-section">
@@ -441,6 +441,36 @@ Hylätyt (<span id="rejected-filter-count">0</span>)
 
 
 <script>
+
+document
+.querySelectorAll(".collapsible-filter")
+.forEach(title => {
+
+    title.addEventListener("click", function(){
+
+        const section =
+        this.nextElementSibling;
+
+        const arrow =
+        this.querySelector(".toggle-arrow");
+
+        if(section.style.display === "none"){
+
+            section.style.display = "block";
+
+            arrow.textContent = "▼";
+
+        } else {
+
+            section.style.display = "none";
+
+            arrow.textContent = "▶";
+
+        }
+
+    });
+
+});
     
 fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec")
 .then(response => response.json())
