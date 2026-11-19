@@ -544,7 +544,11 @@ description_nl: row[39],
 description_pl: row[40],
 description_pt: row[41],
 description_tr: row[42],
-logo: row[43]
+logo: row[43],
+
+premiumContactDate: row[44],
+
+premiumFollowupStatus: row[45]
 
 }));
 
@@ -1164,6 +1168,52 @@ ${company.description || ""}
 <div class="premium-admin">
 
 <h4>★ Premium-hallinta</h4>
+
+<label>
+<strong>Yhteydenotto</strong>
+</label>
+
+<input
+    type="date"
+    class="premium-contact-date"
+    value="${formatDateForInput(company.premiumContactDate)}"
+>
+
+<label>
+<strong>Status</strong>
+</label>
+
+<select class="premium-followup-status">
+
+<option value="">
+Valitse
+</option>
+
+<option value="ei ehdotettu">
+Ei ehdotettu
+</option>
+
+<option value="ehdotettu">
+Ehdotettu
+</option>
+
+<option value="odottaa vastausta">
+Odottaa vastausta
+</option>
+
+<option value="kiinnostunut">
+Kiinnostunut
+</option>
+
+<option value="ei kiinnostunut">
+Ei kiinnostunut
+</option>
+
+<option value="premium aktiivinen">
+Premium aktiivinen
+</option>
+
+</select>
 
 <p>
 <strong>Premium-kiinnostus:</strong>
