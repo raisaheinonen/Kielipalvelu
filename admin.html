@@ -1581,6 +1581,12 @@ card.querySelector(".premium-start");
 const premiumEnd =
 card.querySelector(".premium-end");
 
+const premiumContactDateField =
+card.querySelector(".premium-contact-date");
+
+const premiumFollowupStatusField =
+card.querySelector(".premium-followup-status");
+
 const premiumStatusText =
 card.querySelector(".premium-status-text");
 
@@ -1797,6 +1803,13 @@ premiumActivateBtn.addEventListener("click", function(){
             premiumStart: startDate,
 
             premiumEnd: endDate
+
+            premiumContactDate:
+premiumContactDateField.value,
+
+premiumFollowupStatus:
+premiumFollowupStatusField.value,
+
 
         })
 
