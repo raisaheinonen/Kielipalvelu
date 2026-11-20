@@ -381,6 +381,14 @@ select:focus{
     resize:vertical;
 }
 
+    .info-section{
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
 
 </style>
 </head>
@@ -1125,8 +1133,10 @@ ${sentDate}
 
 <p><strong>Sähköposti:</strong> ${company.email}</p>
 
+<div class="info-section">
+
 <hr>
-<h4>Perustiedot</h4>
+<h4>📋 Perustiedot</h4>
 
 <label><strong>Toiminta-alue:</strong></label>
 
@@ -1183,6 +1193,10 @@ ${sentDate}
 ${company.mapsLink || "-"}
 </p>
 
+</div>
+
+<div class="info-section">
+
 <hr>
 <h4>🌐 Yhteystiedot ja kuvaukset</h4>
 
@@ -1222,6 +1236,8 @@ ${company.description || ""}
 <p><strong>Longitude:</strong> ${company.longitude || "-"}</p>
 
 <div class="premium-admin">
+
+</div>
 
 <h4>★ Premium-hallinta</h4>
 
