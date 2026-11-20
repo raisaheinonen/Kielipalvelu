@@ -1451,9 +1451,13 @@ card.querySelector(".language-descriptions");
     const languages =
 (languagesField.value || "").toLowerCase();
 
-        if(languageDescriptions){
+      if(languageDescriptions){
 
     let html = "";
+
+    html += `
+    <h5>🌍 Käännökset</h5>
+    `;
 
     if(languages.includes("suomi")){
 
@@ -1468,7 +1472,7 @@ ${company.description_fi || ""}
     if(languages.includes("englanti")){
 
         html += `
-<label><strong>Kuvaus Engalanti:</strong></label>
+<label><strong>Kuvaus Englanti:</strong></label>
 <textarea class="edit-description-en">
 ${company.description_en || ""}
 </textarea>
