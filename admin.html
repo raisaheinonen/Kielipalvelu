@@ -1207,6 +1207,15 @@ ${sentDate}
 ${company.mapsLink || "-"}
 </p>
 
+<p>
+<a
+href="https://www.google.com/maps?q=${company.latitude},${company.longitude}"
+target="_blank"
+>
+Avaa kartalla
+</a>
+</p>
+
 </div>
 
 <div class="info-section">
@@ -1372,15 +1381,6 @@ ${String(company.premiumInterest).toLowerCase() === "true"
 <div class="premium-save-message"></div>
 
 </div>
-
-<p>
-<a
-href="https://www.google.com/maps?q=${company.latitude},${company.longitude}"
-target="_blank"
->
-Avaa kartalla
-</a>
-</p>
 
 </div>
 
