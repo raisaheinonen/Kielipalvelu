@@ -1185,31 +1185,38 @@ ${company.description || ""}
 
 <select class="premium-followup-status">
 
-<option value="">
+<option value=""
+${!company.premiumFollowupStatus ? "selected" : ""}>
 Valitse
 </option>
 
-<option value="ei ehdotettu">
+<option value="ei ehdotettu"
+${company.premiumFollowupStatus === "ei ehdotettu" ? "selected" : ""}>
 Ei ehdotettu
 </option>
 
-<option value="ehdotettu">
+<option value="ehdotettu"
+${company.premiumFollowupStatus === "ehdotettu" ? "selected" : ""}>
 Ehdotettu
 </option>
 
-<option value="odottaa vastausta">
+<option value="odottaa vastausta"
+${company.premiumFollowupStatus === "odottaa vastausta" ? "selected" : ""}>
 Odottaa vastausta
 </option>
 
-<option value="kiinnostunut">
+<option value="kiinnostunut"
+${company.premiumFollowupStatus === "kiinnostunut" ? "selected" : ""}>
 Kiinnostunut
 </option>
 
-<option value="ei kiinnostunut">
+<option value="ei kiinnostunut"
+${company.premiumFollowupStatus === "ei kiinnostunut" ? "selected" : ""}>
 Ei kiinnostunut
 </option>
 
-<option value="premium aktiivinen">
+<option value="premium aktiivinen"
+${company.premiumFollowupStatus === "premium aktiivinen" ? "selected" : ""}>
 Premium aktiivinen
 </option>
 
