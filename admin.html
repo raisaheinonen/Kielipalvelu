@@ -403,6 +403,15 @@ select:focus{
     cursor:pointer;
 }
 
+  .language-descriptions label{
+    display:block;
+    margin-bottom:6px;
+}
+
+    .language-descriptions textarea{
+    margin-bottom:16px;
+}
+
 
 </style>
 </head>
@@ -1463,6 +1472,7 @@ card.querySelector(".language-descriptions");
 
         html += `
 <label><strong>Kuvaus Suomi:</strong></label>
+
 <textarea class="edit-description-fi">
 ${company.description_fi || ""}
 </textarea>
@@ -1473,6 +1483,7 @@ ${company.description_fi || ""}
 
         html += `
 <label><strong>Kuvaus Englanti:</strong></label>
+
 <textarea class="edit-description-en">
 ${company.description_en || ""}
 </textarea>
@@ -1483,6 +1494,7 @@ ${company.description_en || ""}
 
         html += `
 <label><strong>Kuvaus Espanja:</strong></label>
+
 <textarea class="edit-description-es">
 ${company.description_es || ""}
 </textarea>
@@ -1493,6 +1505,7 @@ ${company.description_es || ""}
 
         html += `
 <label><strong>Kuvaus Norja:</strong></label>
+
 <textarea class="edit-description-no">
 ${company.description_no || ""}
 </textarea>
@@ -1503,6 +1516,7 @@ if(languages.includes("ruotsi")){
 
     html += `
 <label><strong>Kuvaus Ruotsi:</strong></label>
+
 <textarea class="edit-description-sv">
 ${company.description_sv || ""}
 </textarea>
@@ -1513,6 +1527,7 @@ ${company.description_sv || ""}
 
     html += `
 <label><strong>Kuvaus Tanska:</strong></label>
+
 <textarea class="edit-description-da">
 ${company.description_da || ""}
 </textarea>
@@ -1523,6 +1538,7 @@ if(languages.includes("saksa")){
 
     html += `
 <label><strong>Kuvaus Saksa:</strong></label>
+
 <textarea class="edit-description-de">
 ${company.description_de || ""}
 </textarea>
@@ -1533,6 +1549,7 @@ if(languages.includes("ranska")){
 
     html += `
 <label><strong>Kuvaus Ranska:</strong></label>
+
 <textarea class="edit-description-fr">
 ${company.description_fr || ""}
 </textarea>
@@ -1543,6 +1560,7 @@ if(languages.includes("italia")){
 
     html += `
 <label><strong>Kuvaus Italia:</strong></label>
+
 <textarea class="edit-description-it">
 ${company.description_it || ""}
 </textarea>
@@ -1553,6 +1571,7 @@ if(languages.includes("portugali")){
 
     html += `
 <label><strong>Kuvaus Portugali:</strong></label>
+
 <textarea class="edit-description-pt">
 ${company.description_pt || ""}
 </textarea>
@@ -1563,9 +1582,11 @@ if(languages.includes("viro")){
 
     html += `
 <label><strong>Kuvaus Viro:</strong></label>
+
 <textarea class="edit-description-et">
 ${company.description_et || ""}
 </textarea>
+
 `;
 }
 
@@ -1573,6 +1594,7 @@ if(languages.includes("latvia")){
 
     html += `
 <label><strong>Kuvaus Latvia:</strong></label>
+
 <textarea class="edit-description-lv">
 ${company.description_lv || ""}
 </textarea>
@@ -1583,6 +1605,7 @@ if(languages.includes("liettua")){
 
     html += `
 <label><strong>Kuvaus Liettua:</strong></label>
+
 <textarea class="edit-description-lt">
 ${company.description_lt || ""}
 </textarea>
@@ -1593,6 +1616,7 @@ if(languages.includes("hollanti")){
 
     html += `
 <label><strong>Kuvaus Hollanti:</strong></label>
+
 <textarea class="edit-description-nl">
 ${company.description_nl || ""}
 </textarea>
@@ -1603,6 +1627,7 @@ if(languages.includes("puola")){
 
     html += `
 <label><strong>Kuvaus Puola:</strong></label>
+
 <textarea class="edit-description-pl">
 ${company.description_pl || ""}
 </textarea>
@@ -1613,6 +1638,7 @@ if(languages.includes("turkki")){
 
     html += `
 <label><strong>Kuvaus Turkki:</strong></label>
+
 <textarea class="edit-description-tr">
 ${company.description_tr || ""}
 </textarea>
