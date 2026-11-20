@@ -390,6 +390,7 @@ select:focus{
 }
 
 .toggle-translations-btn,
+.toggle-coordinates-btn,
 .save-company-btn{
 
     background:#f8fafc;
@@ -1244,9 +1245,17 @@ ${company.description || ""}
 💾 Tallenna muutokset
 </button>
 
+<button class="toggle-coordinates-btn">
+📍 Näytä koordinaatit
+</button>
+
+<div class="coordinates-content" style="display:none;">
+
 <p><strong>Latitude:</strong> ${company.latitude || "-"}</p>
 
 <p><strong>Longitude:</strong> ${company.longitude || "-"}</p>
+
+</div>
 
 <h4>★ Premium-hallinta</h4>
 
@@ -1654,6 +1663,44 @@ if(toggleTranslationsBtn){
 
                 this.textContent =
                 "🌍 Näytä kielikuvaukset";
+
+            }
+
+        }
+    );
+
+}
+
+        const toggleCoordinatesBtn =
+card.querySelector(".toggle-coordinates-btn");
+
+const coordinatesContent =
+card.querySelector(".coordinates-content");
+
+if(toggleCoordinatesBtn){
+
+    toggleCoordinatesBtn.addEventListener(
+        "click",
+        function(){
+
+            if(
+                coordinatesContent.style.display
+                === "none"
+            ){
+
+                coordinatesContent.style.display =
+                "block";
+
+                this.textContent =
+                "📍 Piilota koordinaatit";
+
+            } else {
+
+                coordinatesContent.style.display =
+                "none";
+
+                this.textContent =
+                "📍 Näytä koordinaatit";
 
             }
 
