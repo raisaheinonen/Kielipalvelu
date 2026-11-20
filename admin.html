@@ -729,6 +729,20 @@ companies.filter(
         .toLowerCase() === "true"
 ).length;
 
+const waitingPremiumReplyCount =
+companies.filter(
+    company =>
+    company.premiumFollowupStatus ===
+    "odottaa vastausta"
+).length;
+
+const premiumInterestedCount =
+companies.filter(
+    company =>
+    company.premiumFollowupStatus ===
+    "kiinnostunut"
+).length;
+
 const missingFinnishDescriptionCount =
 companies.filter(
     company =>
@@ -755,6 +769,16 @@ document.getElementById("admin-todos").innerHTML = `
 
 <div class="todo-card">
 ⚠ Odottaa hyväksyntää (${pendingCount})
+</div>
+
+<div class="todo-card">
+📞 Odottaa premium-vastausta
+(${waitingPremiumReplyCount})
+</div>
+
+<div class="todo-card">
+⭐ Premium kiinnostunut
+(${premiumInterestedCount})
 </div>
 
 <div class="todo-card" data-filter="missing-website">
