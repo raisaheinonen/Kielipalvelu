@@ -1547,8 +1547,61 @@ ${company.description_tr || ""}
 `;
 }
 
+html = `
+<button class="toggle-translations-btn">
+🌍 Näytä kielikuvaukset
+</button>
+
+<div class="translations-content" style="display:none;">
+${html}
+</div>
+`;
+
+
 
     languageDescriptions.innerHTML = html;
+
+}
+
+        const toggleTranslationsBtn =
+languageDescriptions.querySelector(
+".toggle-translations-btn"
+);
+
+const translationsContent =
+languageDescriptions.querySelector(
+".translations-content"
+);
+
+if(toggleTranslationsBtn){
+
+    toggleTranslationsBtn.addEventListener(
+        "click",
+        function(){
+
+            if(
+                translationsContent.style.display
+                === "none"
+            ){
+
+                translationsContent.style.display =
+                "block";
+
+                this.textContent =
+                "🌍 Piilota kielikuvaukset";
+
+            } else {
+
+                translationsContent.style.display =
+                "none";
+
+                this.textContent =
+                "🌍 Näytä kielikuvaukset";
+
+            }
+
+        }
+    );
 
 }
 
