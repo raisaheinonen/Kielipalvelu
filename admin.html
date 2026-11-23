@@ -814,6 +814,11 @@ companies.filter(
         .toLowerCase() === "true"
 ).length;
 
+const premiumActiveCount =
+companies.filter(company =>
+    company.premiumStatus === "active"
+).length;
+
 const waitingPremiumReplyCount =
 companies.filter(
     company =>
@@ -880,6 +885,10 @@ document.getElementById("admin-todos").innerHTML = `
 
 <div class="todo-card" data-filter="premium-interest">
 ⚠ Premium kiinnostunut (${premiumInterestCount})
+</div>
+
+<div class="todo-card" data-filter="premium-active">
+⭐ Premium aktiivinen (${premiumActiveCount})
 </div>
 
 `;
@@ -991,6 +1000,14 @@ if(
 if(
     filter === "premium-interested"
 ){
+
+    if(
+    filter === "premium-active"
+){
+    show =
+    card.dataset.premiumstatus === "active";
+}
+    
     show =
     card.dataset.premiumfollowupstatus === "kiinnostunut";
 }
@@ -1145,6 +1162,9 @@ String(company.premiumInterest)
 
         card.dataset.premiumfollowupstatus =
 company.premiumFollowupStatus || "";
+
+card.dataset.premiumstatus =
+company.premiumStatus || "";
 
         card.dataset.country =
 company.country;
