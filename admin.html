@@ -807,13 +807,6 @@ companies.filter(
     !company.logo
 ).length;
 
-const premiumInterestCount =
-companies.filter(
-    company =>
-    String(company.premiumInterest)
-        .toLowerCase() === "true"
-).length;
-
 const premiumActiveCount =
 companies.filter(company =>
     company.premiumStatus === "active"
@@ -832,6 +825,21 @@ companies.filter(
     company.premiumFollowupStatus ===
     "kiinnostunut"
 ).length;
+
+const expiringPremiumCount =
+companies.filter(company => {
+
+    if (!company.premiumEnd) return false;
+
+    const endDate = new Date(company.premiumEnd);
+    const today = new Date();
+
+    const diffDays =
+    (endDate - today) / (1000 * 60 * 60 * 24);
+
+    return diffDays >= 0 && diffDays <= 30;
+
+}).length;
 
 const missingFinnishDescriptionCount =
 companies.filter(
@@ -862,13 +870,19 @@ document.getElementById("admin-todos").innerHTML = `
 </div>
 
 <div class="todo-card" data-filter="waiting-premium">
-📞 Odottaa premium-vastausta
-(${waitingPremiumReplyCount})
+⭐ Odottaa premium-vastausta (${waitingPremiumReplyCount})
 </div>
 
 <div class="todo-card" data-filter="premium-interested">
-⭐ Premium kiinnostunut
-(${premiumInterestedCount})
+⭐ Premium kiinnostunut (${premiumInterestedCount})
+</div>
+
+<div class="todo-card" data-filter="premium-active">
+⭐ Premium aktiivinen (${premiumActiveCount})
+</div>
+
+<div class="todo-card" data-filter="premium-expiring">
+⭐ Premium päättyy 30 päivän sisällä (${expiringPremiumCount})
 </div>
 
 <div class="todo-card" data-filter="missing-website">
@@ -883,13 +897,6 @@ document.getElementById("admin-todos").innerHTML = `
 ⚠ Ei suomenkielistä kuvausta (${missingFinnishDescriptionCount})
 </div>
 
-<div class="todo-card" data-filter="premium-interest">
-⚠ Premium kiinnostunut (${premiumInterestCount})
-</div>
-
-<div class="todo-card" data-filter="premium-active">
-⭐ Premium aktiivinen (${premiumActiveCount})
-</div>
 
 `;
 
