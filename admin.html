@@ -446,6 +446,28 @@ select:focus{
     margin-top:16px;
 }
 
+    #admin-stats{
+    display:flex;
+    gap:16px;
+    margin:20px 0;
+    flex-wrap:wrap;
+}
+
+.stat-card{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:16px 20px;
+    min-width:160px;
+    text-align:center;
+}
+
+.stat-card strong{
+    font-size:28px;
+    color:#4f5d78;
+}
+
+
 </style>
 </head>
 
@@ -462,6 +484,8 @@ Hyväksy uusia yrityksiä, hallinnoi yritystietoja ja ylläpidä palveluhakemist
     id="search"
     placeholder="Hae yritystä, maata tai palvelua..."
 >
+
+    <div id="admin-stats"></div>
 
 <p id="search-results">
     Näytetään 0 / 0 yritystä
@@ -817,6 +841,9 @@ companies.filter(company =>
     company.premiumStatus === "active"
 ).length;
 
+const totalCompanyCount =
+companies.length;
+
 const waitingPremiumReplyCount =
 companies.filter(
     company =>
@@ -864,6 +891,23 @@ approvedCount;
 
 document.getElementById("rejected-filter-count").textContent =
 rejectedCount;
+
+document.getElementById("admin-stats").innerHTML = `
+<div class="stat-card">
+    <strong>${companies.length}</strong><br>
+    Yrityksiä yhteensä
+</div>
+
+<div class="stat-card">
+    <strong>${pendingCount}</strong><br>
+    Odottaa hyväksyntää
+</div>
+
+<div class="stat-card">
+    <strong>${premiumActiveCount}</strong><br>
+    Premium aktiivinen
+</div>
+`;
 
 document.getElementById("search-results").textContent =
 `Näytetään ${companies.length} / ${companies.length} yritystä`;
