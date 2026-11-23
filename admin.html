@@ -840,16 +840,16 @@ document.getElementById("search-results").textContent =
 
 document.getElementById("admin-todos").innerHTML = `
 
-<div class="todo-card">
+<div class="todo-card" data-filter="pending">
 ⚠ Odottaa hyväksyntää (${pendingCount})
 </div>
 
-<div class="todo-card">
+<div class="todo-card" data-filter="waiting-premium">
 📞 Odottaa premium-vastausta
 (${waitingPremiumReplyCount})
 </div>
 
-<div class="todo-card">
+<div class="todo-card" data-filter="premium-interested">
 ⭐ Premium kiinnostunut
 (${premiumInterestedCount})
 </div>
