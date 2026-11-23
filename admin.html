@@ -433,6 +433,11 @@ select:focus{
     border-radius:8px;
 }
 
+    .todo-card.premium-active{
+    color:#15803d;
+}
+
+
     .premium-section{
     background:#faf8f2;
     border:1px solid #e6dfcf;
@@ -869,15 +874,17 @@ document.getElementById("admin-todos").innerHTML = `
 ⚠ Odottaa hyväksyntää (${pendingCount})
 </div>
 
+${waitingPremiumReplyCount > 0 ? `
 <div class="todo-card" data-filter="waiting-premium">
 ⭐ Odottaa premium-vastausta (${waitingPremiumReplyCount})
 </div>
+` : ""}
 
 <div class="todo-card" data-filter="premium-interested">
 ⭐ Premium kiinnostunut (${premiumInterestedCount})
 </div>
 
-<div class="todo-card" data-filter="premium-active">
+<div class="todo-card premium-active" data-filter="premium-active">
 ⭐ Premium aktiivinen (${premiumActiveCount})
 </div>
 
