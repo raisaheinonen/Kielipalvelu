@@ -957,6 +957,27 @@ document.getElementById("admin-todos").innerHTML = `
                 card.dataset.premiuminterest === "yes";
             }
 
+            if(
+    filter === "pending"
+){
+    show =
+    card.dataset.status === "pending";
+}
+
+if(
+    filter === "waiting-premium"
+){
+    show =
+    card.dataset.premiumfollowupstatus === "odottaa vastausta";
+}
+
+if(
+    filter === "premium-interested"
+){
+    show =
+    card.dataset.premiumfollowupstatus === "kiinnostunut";
+}
+
             card.style.display =
             show ? "" : "none";
 
@@ -1106,6 +1127,9 @@ String(company.premiumInterest)
 .toLowerCase() === "true"
 ? "yes"
 : "no";
+
+        card.dataset.premiumfollowupstatus =
+company.premiumFollowupStatus || "";
 
         card.dataset.country =
 company.country;
