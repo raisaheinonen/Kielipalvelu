@@ -428,6 +428,11 @@ select:focus{
     width:100%;
 }
 
+    .todo-card.active{
+    color:#1d4ed8;
+    font-weight:700;
+}
+
 
 </style>
 </head>
@@ -916,6 +921,14 @@ document.getElementById("admin-todos").innerHTML = `
 .forEach(todo => {
 
     todo.addEventListener("click", function(){
+
+    document
+.querySelectorAll(".todo-card")
+.forEach(card => {
+    card.classList.remove("active");
+});
+
+this.classList.add("active");
 
         const filter =
         this.dataset.filter;
