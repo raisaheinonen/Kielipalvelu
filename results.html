@@ -322,6 +322,13 @@ h2{
     background:#f1f5f9;
 }
 
+    .result-count{
+    background:#4c5d7a !important;
+    color:white !important;
+    border:none !important;
+}
+
+
 
    @media (max-width: 900px){
 
@@ -1264,7 +1271,10 @@ function updateVisibleResults(){
         });
 
     document.getElementById("summary-count").textContent =
+    
         visibleCount + " " + translations[siteLanguage].visibleOnMap;
+
+    document.getElementById("summary-count").classList.add("result-count");
 
 }
 
