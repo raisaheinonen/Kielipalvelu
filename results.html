@@ -1168,14 +1168,15 @@ ${(item.languages || [])
 <p>${item.description}</p>
 
 <p>
-<strong>Address:</strong>
+<strong>${translations[siteLanguage].address}:</strong>
 ${item.address}
 </p>
+
 
 ${item.premium ? `
 
 <p>
-<strong>Phone:</strong>
+<strong>${translations[siteLanguage].phone}:</strong>
 <a
 href="tel:${item.phone}"
 onclick="trackClick('${item.id}','phone_click')"
