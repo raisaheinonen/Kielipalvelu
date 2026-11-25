@@ -140,7 +140,7 @@ h2{
     background:#475569;
     color:white;
     border:none;
-    padding:11px 16px;
+    padding:8px 12px;
     border-radius:14px;
     cursor:pointer;
     font-size:14px;
@@ -478,7 +478,7 @@ h2{
     .company-language-flags{
     display:flex;
     gap:6px;
-    margin:6px 0 10px;
+    margin:0;
     flex-wrap:wrap;
 }
 
@@ -535,6 +535,22 @@ h2{
     overflow:hidden;
     line-height:1.5;
     max-height:3em;
+}
+
+    .company-meta{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
+}
+
+    .company-meta{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:8px;
 }
 
     @media (max-width: 900px){
@@ -1157,6 +1173,8 @@ ${item.name}
 </h2>
 
 
+<div class="company-meta">
+
 <p class="company-location">
 📍 ${item.city}, ${item.country}
 </p>
@@ -1200,6 +1218,8 @@ ${(item.languages || [])
 })
 .join('')}
 </p>
+
+</div>
 
 <p class="company-description">
 ${item.description}
