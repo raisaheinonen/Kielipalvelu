@@ -1046,16 +1046,14 @@ approvedCompanies.forEach(company => {
 
 });
 
-    companies.forEach(item => {
+    sheetCompanies.forEach(item => {
 
-        if(item.companyId){
+    if(item.companyId){
+        item.premium =
+            activePremiumCompanyIds.includes(item.companyId);
+    }
 
-            item.premium =
-                activePremiumCompanyIds.includes(item.companyId);
-
-        }
-
-    });
+});
 
 const allCompanies = [
     ...sheetCompanies
