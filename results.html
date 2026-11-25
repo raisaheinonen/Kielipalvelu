@@ -984,6 +984,7 @@ approvedCompanies.forEach(company => {
 
             language:
     String(languageName).trim(),
+            languages: languages,
 
             service:
                 company.service,
@@ -1110,10 +1111,6 @@ ${item.name}
 
 <p class="company-location">
 📍 ${item.city}, ${item.country}
-</p>
-
-<p class="company-language">
-🗣 ${item.language}
 </p>
 
 <p>${item.description}</p>
