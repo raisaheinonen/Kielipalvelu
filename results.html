@@ -642,13 +642,13 @@ const country = params.get('country');
 const siteLanguage = params.get('lang') || 'fi';
 
 document.getElementById("summary-country").textContent =
-"🌍 " + country;
+country;
 
 document.getElementById("summary-service").textContent =
-"🏠 " + service;
+service;
 
 document.getElementById("summary-language").textContent =
-"🗣️ " + language;
+language;
 
 const translations = {
 
