@@ -454,6 +454,13 @@ h2{
     font-size:12px;
 }
 
+    #change-search-btn{
+    padding:8px 11px;
+    font-size:12px;
+    width:auto;
+}
+
+
 .company-location{
     color:#64748b;
     font-size:14px !important;
@@ -599,6 +606,10 @@ h2{
     <button class="show-map-btn" id="show-all">
         📍 Näytä kaikki kartalla
     </button>
+
+    <button id="change-search-btn">
+Uusi haku
+</button>
 
 </div>
 
@@ -921,6 +932,14 @@ translations[siteLanguage].showAll;
 
 document.getElementById("topbar-title").textContent =
 translations[siteLanguage].siteName;
+
+    document
+.getElementById("change-search-btn")
+.addEventListener("click", () => {
+
+    window.location.href = "index.html";
+
+});
 
     console.log("Translations OK");
     
