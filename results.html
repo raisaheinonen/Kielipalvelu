@@ -528,6 +528,12 @@ h2{
     padding:12px 20px;
     cursor:pointer;
 }
+    .company-description{
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
 
     @media (max-width: 900px){
 
@@ -1193,7 +1199,9 @@ ${(item.languages || [])
 .join('')}
 </p>
 
-<p>${item.description}</p>
+<p class="company-description">
+${item.description}
+</p>
 
 <p>
 <strong>${translations[siteLanguage].address}:</strong>
