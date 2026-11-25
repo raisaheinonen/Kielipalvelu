@@ -454,6 +454,19 @@ h2{
     margin-bottom:18px !important;
 }
 
+    .company-language-flags{
+    display:flex;
+    gap:8px;
+    margin:10px 0 14px;
+    flex-wrap:wrap;
+}
+
+.language-flag{
+    width:24px;
+    height:24px;
+    object-fit:contain;
+}
+
     .result-card.map-selected{
     border:2px solid #475569;
     box-shadow:0 10px 30px rgba(71,85,105,0.22);
@@ -1111,6 +1124,46 @@ ${item.name}
 
 <p class="company-location">
 📍 ${item.city}, ${item.country}
+</p>
+
+<p class="company-language-flags">
+${(item.languages || [])
+.map(lang => {
+    const flags = {
+        "Suomi": "fi",
+        "English": "gb",
+        "Englanti": "gb",
+        "Español": "es",
+        "Espanja": "es",
+        "Svenska": "se",
+        "Ruotsi": "se",
+        "Deutsch": "de",
+        "Saksa": "de",
+        "Français": "fr",
+        "Ranska": "fr",
+        "Italiano": "it",
+        "Italia": "it",
+        "Nederlands": "nl",
+        "Hollanti": "nl",
+        "Dansk": "dk",
+        "Tanska": "dk",
+        "Eesti": "ee",
+        "Viro": "ee",
+        "Latviešu": "lv",
+        "Latvia": "lv",
+        "Lietuvių": "lt",
+        "Liettua": "lt",
+        "Íslenska": "is",
+        "Islanti": "is"
+    };
+
+    const code = flags[lang];
+
+    return code
+        ? `<img src="flags/${code}.svg" alt="${lang}" class="language-flag">`
+        : '';
+})
+.join('')}
 </p>
 
 <p>${item.description}</p>
