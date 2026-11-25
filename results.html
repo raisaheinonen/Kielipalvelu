@@ -420,7 +420,7 @@ h2{
 
     .result-card h2{
     font-size:24px;
-    margin:10px 0 6px;
+    margin:0;
     line-height:1.2;
 }
 
@@ -537,6 +537,20 @@ h2{
     overflow:hidden;
     line-height:1.5;
     max-height:3em;
+}
+
+    .company-header{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin-bottom:8px;
+}
+
+.company-logo{
+    max-width:140px;
+    max-height:60px;
+    object-fit:contain;
+    flex-shrink:0;
 }
 
 
@@ -1143,21 +1157,21 @@ ${item.premium ? `
 </div>
 ` : ""}
 
+<div class="company-header">
+
 ${item.premium && item.logo ? `
 <img
 src="${item.logo}"
 alt="Logo"
-style="
-max-width:140px;
-max-height:60px;
-object-fit:contain;
-margin-bottom:15px;
+class="company-logo"
 ">
 ` : ""}
 
 <h2>
 ${item.name}
 </h2>
+
+</div>
 
 
 <div class="company-meta">
