@@ -325,7 +325,11 @@ h2{
     border:1px solid #cbd5e1 !important;
 }
 
-
+.site-language-flag{
+    width:28px;
+    height:28px;
+    cursor:pointer;
+}
 
 
    @media (max-width: 900px){
@@ -611,6 +615,8 @@ h2{
 
 </div>
 
+    <div id="site-language-indicator"></div>
+
 <div class="topbar-filters">
 
     <span id="summary-country"></span>
@@ -665,6 +671,22 @@ const language = params.get('language');
 const service = params.get('service');
 const country = params.get('country');
 const siteLanguage = params.get('lang') || 'fi';
+    const siteLanguageFlags = {
+    fi:"fi",
+    en:"gb",
+    sv:"se",
+    es:"es",
+    de:"de",
+    fr:"fr",
+    it:"it",
+    nl:"nl",
+    da:"dk",
+    et:"ee",
+    lv:"lv",
+    lt:"lt",
+    pl:"pl",
+    tr:"tr"
+};
 
 document.getElementById("summary-country").textContent =
 country;
@@ -940,6 +962,15 @@ async function loadPublicData(){
 
 document.getElementById("topbar-title").textContent =
 translations[siteLanguage].siteName;
+
+  const langFlag =
+siteLanguageFlags[siteLanguage] || "gb";
+
+document.getElementById("site-language-indicator")
+.innerHTML =
+`<a href="index.html?lang=${siteLanguage}">
+<img src="flags/${langFlag}.svg" class="site-language-flag">
+</a>`;
 
     document
 .getElementById("change-search-btn")
