@@ -221,10 +221,6 @@ h2{
     margin:15px 0 20px 0;
 }
 
-#show-all{
-    width:auto;
-}
-
     .company-card{
     cursor:pointer;
 }
@@ -453,11 +449,6 @@ h2{
     font-size:12px;
 }
 
-#show-all{
-    padding:8px 11px;
-    font-size:12px;
-}
-
    #change-search-btn{
     background:#ffffff;
     border:1px solid #d1d5db;
@@ -630,10 +621,6 @@ h2{
 
     <span id="summary-count"></span>
 
-    <button class="show-map-btn" id="show-all">
-        📍 Näytä kaikki kartalla
-    </button>
-
     <button id="change-search-btn">
 Uusi haku
 </button>
@@ -695,7 +682,6 @@ fi:{
     visibleOnMap:"yritystä kartalla",
     results:"Hakutulokset",
     siteName:"🌍 Kielipalvelu",
-    showAll:"Näytä kaikki kartalla",
     website:"Verkkosivut",
     showMap:"Näytä kartalla",
     navigate:"Navigoi kohteeseen",
@@ -739,7 +725,6 @@ en:{
     visibleOnMap:"companies on map",
     results:"Results",
     siteName:"🌍 Language Services",
-    showAll:"Show all on map",
     website:"Website",
     showMap:"Show on map",
     navigate:"Navigate",
@@ -783,7 +768,6 @@ sv:{
     visibleOnMap:"företag på kartan",
     results:"Resultat",
     siteName:"🌍 Språktjänster",
-    showAll:"Visa alla på kartan",
     website:"Webbplats",
     showMap:"Visa på karta",
     navigate:"Navigera",
@@ -953,9 +937,6 @@ async function loadPublicData(){
 
     return value;
 }
-
-document.getElementById("show-all").textContent =
-translations[siteLanguage].showAll;
 
 document.getElementById("topbar-title").textContent =
 translations[siteLanguage].siteName;
@@ -1579,20 +1560,6 @@ if(markers.length > 0){
     map.on("moveend", updateVisibleResults);
 
 }
-    
-document
-.getElementById('show-all')
-.addEventListener('click', function(){
-
-    if(markers.length > 0){
-
-        map.fitBounds(group.getBounds(), {
-            padding:[100,100]
-        });
-
-    }
-
-});
 
 
     function trackClick(companyId, eventType){
