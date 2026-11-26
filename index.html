@@ -821,6 +821,8 @@ document.getElementById("results").innerHTML = html;
 
 }
 
+localStorage.setItem("siteLanguage", this.value);
+
 document
 .getElementById("site-language")
 .addEventListener("change", function(){
@@ -982,7 +984,9 @@ translations[lang].selectCountry;
 
 });
 
-document.getElementById("site-language").value = "en";
+const savedLanguage = localStorage.getItem("siteLanguage") || "en";
+
+document.getElementById("site-language").value = savedLanguage;
 document.getElementById("site-language").dispatchEvent(new Event("change"));
     
 </script>
