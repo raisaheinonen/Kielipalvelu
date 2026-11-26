@@ -347,7 +347,9 @@ h2{
     flex:none;
     width:100%;
     height:42vh;
-    position:relative;
+    position:sticky;
+    top:0;
+    z-index:10;
     border-left:none;
     border-bottom:1px solid #e5e7eb;
 }
@@ -359,12 +361,13 @@ h2{
 
 
     .results{
-        order:2;
-        flex:none;
-        width:100%;
-        padding:16px;
-        overflow-y:visible;
-    }
+    order:2;
+    flex:none;
+    width:100%;
+    padding:16px;
+    overflow-y:visible;
+    background:#f8fafc;
+}
 
     .topbar-filters{
         padding:10px 16px;
