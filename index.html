@@ -821,13 +821,13 @@ document.getElementById("results").innerHTML = html;
 
 }
 
-localStorage.setItem("siteLanguage", this.value);
-
 document
 .getElementById("site-language")
 .addEventListener("change", function(){
 
 const lang = this.value;
+
+localStorage.setItem("siteLanguage", lang);
 
 const flagMap = {
     en: "flags/gb.svg",
