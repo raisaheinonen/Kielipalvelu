@@ -375,6 +375,17 @@ h2{
     cursor:pointer;
 }
 
+    .language-switcher{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    cursor:pointer;
+}
+    .language-arrow{
+    font-size:12px;
+    color:#64748b;
+}
+
 
    @media (max-width: 900px){
 
@@ -733,13 +744,13 @@ const siteLanguage = params.get('lang') || 'fi';
 };
 
 document.getElementById("summary-country").textContent =
-country;
+"Maa: " + country;
 
 document.getElementById("summary-service").textContent =
-service;
+"Palvelu: " + service;
 
 document.getElementById("summary-language").textContent =
-language;
+"Palvelukieli: " + language;
 
 const translations = {
 
@@ -1019,6 +1030,7 @@ document.getElementById("site-language-indicator")
         src="flags/${langFlag}.svg"
         class="site-language-flag"
         id="current-language-flag">
+        <span class="language-arrow">▾</span>
 
     <div class="language-menu" id="language-menu">
 
