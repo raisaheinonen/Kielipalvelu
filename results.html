@@ -324,68 +324,6 @@ h2{
     border:1px solid #cbd5e1 !important;
 }
 
-.site-language-flag{
-    width:28px;
-    height:28px;
-    cursor:pointer;
-}
-
-    .language-switcher{
-    position:relative;
-}
-
-.language-menu{
-    display:none;
-    position:absolute;
-    top:38px;
-    right:0;
-    background:white;
-    border:1px solid #e5e7eb;
-    border-radius:12px;
-    min-width:150px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.12);
-    z-index:1000;
-}
-
-.language-menu.open{
-    display:block;
-}
-
-.language-menu a{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 12px;
-    text-decoration:none;
-    color:#334155;
-}
-
-.language-menu a:hover{
-    background:#f8fafc;
-}
-
-.menu-flag{
-    width:22px;
-    height:22px;
-}
-
-.site-language-flag{
-    width:32px;
-    height:32px;
-    cursor:pointer;
-}
-
-    .language-switcher{
-    display:flex;
-    align-items:center;
-    gap:4px;
-    cursor:pointer;
-}
-    .language-arrow{
-    font-size:12px;
-    color:#64748b;
-}
-
 
    @media (max-width: 900px){
 
@@ -667,8 +605,6 @@ h2{
        style="color:#0f172a;text-decoration:none;">
         🌍 Kielipalvelu
     </a>
-
-<div id="site-language-indicator"></div>
 
 </div>
 
@@ -1018,52 +954,6 @@ async function loadPublicData(){
 document.getElementById("topbar-title").textContent =
 translations[siteLanguage].siteName;
 
-  const langFlag =
-siteLanguageFlags[siteLanguage] || "gb";
-
-document.getElementById("site-language-indicator")
-.innerHTML = `
-
-<div class="language-switcher">
-
-    <img
-        src="flags/${langFlag}.svg"
-        class="site-language-flag"
-        id="current-language-flag">
-        <span class="language-arrow">▾</span>
-
-    <div class="language-menu" id="language-menu">
-
-        <a href="?language=${language}&service=${service}&country=${country}&lang=fi">
-            <img src="flags/fi.svg" class="menu-flag"> Suomi
-        </a>
-
-        <a href="?language=${language}&service=${service}&country=${country}&lang=en">
-            <img src="flags/gb.svg" class="menu-flag"> English
-        </a>
-
-        <a href="?language=${language}&service=${service}&country=${country}&lang=sv">
-            <img src="flags/se.svg" class="menu-flag"> Svenska
-        </a>
-
-        <a href="?language=${language}&service=${service}&country=${country}&lang=es">
-            <img src="flags/es.svg" class="menu-flag"> Español
-        </a>
-
-    </div>
-
-</div>
-`;
-
-    document
-.getElementById("current-language-flag")
-.addEventListener("click", () => {
-
-    document
-    .getElementById("language-menu")
-    .classList.toggle("open");
-
-});
 
     document
 .getElementById("change-search-btn")
