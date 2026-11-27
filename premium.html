@@ -286,46 +286,6 @@ placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
 <label>Osoite *</label>
 <input type="text" name="address" id="address" required>
 
-<label class="checkbox-row">
-    <input type="checkbox" id="noAddress" name="noPublicAddress">
-    Yrityksellä ei ole julkista osoitetta
-</label>
-
-
-<label>Google Maps -linkki (suositeltu)</label>
-<input type="url" name="mapsLink">
-
-<p><strong>TAI</strong></p>
-
-<label>
-Valitse sijainti kartalta
-</label>
-
-    <p id="location-status"
-style="color:#dc2626;font-weight:bold;">
-⚠️ Siirrä nasta yrityksen sijaintiin
-</p>
-
-<div id="map" style="
-height:400px;
-margin-top:10px;
-border:1px solid #ccc;
-border-radius:8px;">
-</div>
-
-<input
-type="hidden"
-name="latitude"
-id="latitude">
-
-<input
-type="hidden"
-name="longitude"
-id="longitude">
-
-<label>Koordinaatit (jos tiedossa)</label>
-<input type="text" name="coordinates">
-
 <label>Verkkosivu</label>
 <input type="text" id="website" name="website">
 
@@ -333,12 +293,6 @@ id="longitude">
     <input type="checkbox" id="noWebsite" name="noWebsite">
     Yrityksellä ei ole verkkosivua
 </label>
-
-<label>Instagram</label>
-<input type="url" name="instagram">
-
-<label>Facebook</label>
-<input type="url" name="facebook">
 
 
 <label>Sähköposti *</label>
@@ -551,15 +505,18 @@ id="premiumInterest">
 
 
 <button type="submit">
-Lähetä yritys
+Lähetä Premium-kiinnostus
 </button>
 
 </form>
 
 <p id="success-message" style="display:none;color:green;font-weight:bold;">
-Kiitos! Yritysilmoitus vastaanotettu.
+Kiitos!
 
-Tarkistamme tiedot ennen julkaisua. Otamme yhteyttä tarvittaessa sähköpostitse.
+Premium-kiinnostuksesi on vastaanotettu.
+
+Otamme sinuun yhteyttä mahdollisimman pian.
+
 </p>
 
 <script>
