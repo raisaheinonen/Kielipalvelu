@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lisää yritys</title>
+
+<style>
+    body{
+    margin:0;
+    padding:40px 20px;
+    background:#F5F1EA;
+    font-family:Arial,sans-serif;
+    color:#1F2937;
+}
+
+h1{
+    color:#0f172a;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input:not([type="checkbox"]),
+select,
+textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    box-sizing:border-box;
+}
+
+button{
+    background:#475569;
+    color:white;
+    border:none;
+    border-radius:12px;
+    padding:14px 28px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.checkbox-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:12px;
+    margin-bottom:24px;
+    font-weight:normal;
+}
+
+button:hover{
+    background:#365E65;
+}
+
+    .hero{
+    max-width:900px;
+    margin:0 auto 50px auto;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:600px;
+    margin:auto;
+    line-height:1.7;
+    color:#475569;
+}
+
+    .form-card{
+    background:white;
+    max-width:900px;
+    margin:auto;
+    padding:40px;
+    border-radius:24px;
+    box-shadow:
+    0 12px 40px rgba(0,0,0,0.08);
+}
+
+    .intro-text{
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    line-height: 1.8;
+    color: #475569;
+}
+
+  .hero-benefits{
+    margin-top:30px;
+}
+
+.hero-benefits p{
+    margin:12px 0;
+    color:#5B6675;
+    letter-spacing:0.02em;
+}
+
+    .info-card h3{
+    font-size:1.4rem;
+    margin-bottom:20px;
+}
+
+    .checkbox-row{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:18px 0;
+}
+
+.checkbox-row input{
+    width:18px;
+    height:18px;
+    margin:0;
+}
+
+    .premium-box{
+    background:#F8F6F1;
+    border:1px solid #D7D0C5;
+    border-radius:16px;
+    padding:30px;
+}
+
+        .success-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    z-index:9999;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.success-modal-content{
+    background:white;
+    padding:40px;
+    border-radius:24px;
+    max-width:500px;
+    width:90%;
+    text-align:center;
+}
+
+.success-modal-content h2{
+    margin-top:0;
+}
+
+    .home-button{
+    display:inline-block;
+    padding:14px 22px;
+    background:#475569;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    font-weight:600;
+    margin-right:10px;
+
+    border:none;
+    line-height:1.2;
+}
+
+.home-button:hover{
+    background:#334155;
+}
+    
+</style>
+
+<link
+rel="stylesheet"
+href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>Liity hakemistoon</h1>
+
+    
+
+<p style="color:black;font-size:22px;">
+Tuo yrityksesi näkyville asiakkaille, jotka etsivät palveluita omalla kielellään.
+</p>
+
+<div style="
+background:#ffffff;
+border-radius:12px;
+padding:20px;
+margin:30px auto;
+max-width:700px;
+text-align:left;
+color:black;
+">
+
+<p>Maksuton yritysilmoitus sisältää</p>
+
+<p>• Yritys näkyy hakemistossa ja kartalla hyväksynnän jälkeen</p>
+
+<p>• Yrityksen yhteystiedot ja palvelukielet näkyvät asiakkaille</p>
+
+<p>• Yritys löytyy maa-, palvelu- ja kieluhaulla</p>
+
+<p>• Yrityksen sijainti näkyy kartalla</p>
+
+<p>• Ilmoitus on maksuton</p>
+
+</div>
+
+</section>
+
+    <div class="intro-text">
+
+
+        </div>
+
+    <div class="form-card">
+
+<form id="company-form">
+
+<label>Yrityksen nimi *</label>
+<input type="text" name="companyName" required>
+
+<label>Maa *</label>
+
+<select name="country" id="country" required>
+    <option value="">Valitse maa</option>
+
+    <option>Espanja</option> 
+    <option>Ruotsi</option>
+    <option>Saksa</option>
+    <option>Thaimaa</option>
+
+    <option>Portugali</option>
+    <option>Kreikka</option>
+    <option>Kypros</option>
+    <option>Viro</option>
+
+    <option>Norja</option>
+    <option>Tanska</option>
+    <option>Suomi</option>
+
+    <option>Ranska</option>
+    <option>Italia</option>
+    <option>Alankomaat</option>
+
+    <option>Yhdysvallat</option>
+    <option>Kanada</option>
+    <option>Australia</option>
+
+    <option value="other">Muu</option>
+    
+</select>
+
+<div id="other-country-container" style="display:none;">
+
+    <label style="font-weight:normal;">
+Jos valitsit "Muu", kirjoita maan nimi:
+</label>
+
+    <input type="text"
+           id="otherCountry"
+           name="otherCountry"
+           placeholder="Kirjoita maa">
+
+</div>
+   
+
+<label>Kaupunki *</label>
+<input type="text" name="city" required>
+
+<label>Toiminta-alue</label>
+<input type="text" name="serviceArea"
+placeholder="Esim. Fuengirola, Costa del Sol, Phuket, Koko Kreeta">
+
+<label>Osoite *</label>
+<input type="text" name="address" id="address" required>
+
+<label class="checkbox-row">
+    <input type="checkbox" id="noAddress" name="noPublicAddress">
+    Yrityksellä ei ole julkista osoitetta
+</label>
+
+
+<label>Google Maps -linkki (suositeltu)</label>
+<input type="url" name="mapsLink">
+
+<p><strong>TAI</strong></p>
+
+<label>
+Valitse sijainti kartalta
+</label>
+
+    <p id="location-status"
+style="color:#dc2626;font-weight:bold;">
+⚠️ Siirrä nasta yrityksen sijaintiin
+</p>
+
+<div id="map" style="
+height:400px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:8px;">
+</div>
+
+<input
+type="hidden"
+name="latitude"
+id="latitude">
+
+<input
+type="hidden"
+name="longitude"
+id="longitude">
+
+<label>Koordinaatit (jos tiedossa)</label>
+<input type="text" name="coordinates">
+
+<label>Verkkosivu</label>
+<input type="text" id="website" name="website">
+
+<label style="font-weight:normal;">
+    <input type="checkbox" id="noWebsite" name="noWebsite">
+    Yrityksellä ei ole verkkosivua
+</label>
+
+<label>Instagram</label>
+<input type="url" name="instagram">
+
+<label>Facebook</label>
+<input type="url" name="facebook">
+
+
+<label>Sähköposti *</label>
+<input type="email" name="email" required>
+
+<label>Yhteyshenkilön nimi *</label>
+<input type="text" name="contactPerson" required>
+
+<label>Puhelinnumero</label>
+<input type="text" name="phone">
+
+<label>Palvelu *</label>
+<select id="service" name="service" required>
+    <option value="">Valitse palvelu</option>
+
+    <option>Lääkäri</option>
+    <option>Hammaslääkäri</option>
+    <option>Lakimies</option>
+    <option>Kiinteistönvälittäjä</option>
+
+    <option>Personal Trainer</option>
+    <option>Autovuokraamo</option>
+    <option>Kahvila</option>
+    <option>Ravintola</option>
+    <option>Kampaaja</option>
+
+    <option>Kirjanpitäjä</option>
+    <option>Eläinlääkäri</option>
+    <option>Autokorjaamo</option>
+
+    <option>Sähköasentaja</option>
+    <option>Putkimies</option>
+    <option>Siivouspalvelu</option>
+
+    <option>Lastenhoito</option>
+    <option>Valokuvaaja</option>
+    <option>Kauneuspalvelu</option>
+
+    <option>IT-palvelu</option>
+    <option>Kielikoulu</option>
+    <option value="Muu">Muu</option>
+</select>
+
+<div id="otherServiceContainer" style="display:none;">
+
+    <label style="font-weight:normal;">
+        Jos valitsit "Muu", kirjoita palvelu:
+    </label>
+
+    <input type="text"
+           id="otherService"
+           name="otherService"
+           placeholder="Esim. Hieroja, Joogaohjaaja tai Vakuutuspalvelu">
+
+
+
+</div>
+
+<label>Palvelukielet *</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Suomi">
+    Suomi
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Ruotsi">
+    Ruotsi
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Norja">
+    Norja
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Tanska">
+    Tanska
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Englanti">
+    Englanti
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Saksa">
+    Saksa
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Espanja">
+    Espanja
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Portugali">
+    Portugali
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Kreikka">
+    Kreikka
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Italia">
+    Italia
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Ranska">
+    Ranska
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Viro">
+    Viro
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Latvia">
+    Latvia
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Liettua">
+    Liettua
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Hollanti">
+    Hollanti
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Puola">
+    Puola
+</label>
+
+<label>
+    <input type="checkbox" name="languages" value="Turkki">
+    Turkki
+</label>
+    
+<label>
+    <input type="checkbox" id="otherLanguageCheckbox">
+    Muu kieli
+</label>
+
+<div id="otherLanguageContainer" style="display:none;">
+
+    <input type="text"
+           name="otherLanguage"
+           placeholder="Kirjoita kieli">
+
+
+</div>
+
+<label>Yrityksen kuvaus *</label>
+<textarea
+name="description"
+rows="6"
+placeholder="Esim. Suomenkielinen autovuokraamo Costa del Solilla. Palvelemme suomeksi, englanniksi ja espanjaksi."
+required></textarea>
+
+
+<label class="checkbox-row">
+    <input type="checkbox" required>
+    <span>Vakuutan antamani tiedot oikeiksi.</span>
+</label>
+
+<hr>
+
+<hr>
+
+<div style="
+background:#f8f6f1;
+border:1px solid #e5e7eb;
+border-radius:12px;
+padding:20px;
+margin:30px 0;
+text-align:left;
+">
+
+<h3 style="margin-top:0;color:#111827;">
+Premium-näkyvyys
+</h3>
+
+<p style="color:#111827;">
+Korosta yrityksesi näkyvyyttä hakemistossa.
+</p>
+
+<ul style="color:#111827;line-height:1.8;">
+<li>Korostettu näkyvyys hakemistossa</li>
+<li>Yrityksen logo profiilissa</li>
+<li>Suurempi yrityskortti</li>
+<li>Etusivun suositeltujen yritysten osio</li>
+<li>Tulevat Premium-ominaisuudet ensimmäisenä käyttöön</li>
+</ul>
+
+<label>
+<input
+type="checkbox"
+id="premiumInterest">
+ Olen kiinnostunut Premium-näkyvyydestä
+</label>
+
+</div>
+
+
+<button type="submit">
+Lähetä yritys
+</button>
+
+</form>
+
+<p id="success-message" style="display:none;color:green;font-weight:bold;">
+Kiitos! Yritysilmoitus vastaanotettu.
+
+Tarkistamme tiedot ennen julkaisua. Otamme yhteyttä tarvittaessa sähköpostitse.
+</p>
+
+<script>
+
+const noAddressCheckbox =
+document.getElementById("noAddress");
+
+const addressField =
+document.getElementById("address");
+
+if (noAddressCheckbox && addressField) {
+
+    noAddressCheckbox.addEventListener("change", function () {
+
+        if (this.checked) {
+            addressField.required = false;
+            addressField.disabled = true;
+            addressField.value = "";
+            addressField.style.backgroundColor = "#e5e7eb";
+        } else {
+            addressField.required = true;
+            addressField.disabled = false;
+            addressField.style.backgroundColor = "";
+        }
+
+    });
+
+}
+
+const noWebsiteCheckbox =
+document.getElementById("noWebsite");
+
+const websiteField =
+document.getElementById("website");
+
+if (noWebsiteCheckbox && websiteField) {
+
+    noWebsiteCheckbox.addEventListener("change", function () {
+
+        if (this.checked) {
+            websiteField.disabled = true;
+            websiteField.value = "";
+            websiteField.style.backgroundColor = "#e5e7eb";
+        } else {
+            websiteField.disabled = false;
+            websiteField.style.backgroundColor = "";
+        }
+
+    });
+
+}
+
+    const serviceSelect =
+document.getElementById("service");
+
+const otherServiceContainer =
+document.getElementById("otherServiceContainer");
+
+if (serviceSelect && otherServiceContainer) {
+
+    serviceSelect.addEventListener("change", function () {
+
+        if (this.value === "Muu") {
+            otherServiceContainer.style.display = "block";
+        } else {
+            otherServiceContainer.style.display = "none";
+        }
+
+    });
+
+}
+
+const otherLanguageCheckbox =
+document.getElementById("otherLanguageCheckbox");
+
+const otherLanguageContainer =
+document.getElementById("otherLanguageContainer");
+
+if (otherLanguageCheckbox && otherLanguageContainer) {
+
+    otherLanguageCheckbox.addEventListener("change", function () {
+
+        if (this.checked) {
+            otherLanguageContainer.style.display = "block";
+        } else {
+            otherLanguageContainer.style.display = "none";
+        }
+
+    });
+
+}
+
+
+
+</script>
+
+    
+<script>
+
+    console.log("L:", typeof L);
+
+const map = L.map("map").setView(
+    [39.5696, 2.6502],
+    6
+);
+
+    let marker = L.marker(
+    [39.5696, 2.6502],
+    {
+        draggable: true
+    }
+).addTo(map);
+
+    marker.on("dragend", function() {
+
+    const position =
+        marker.getLatLng();
+
+    document
+        .getElementById("latitude")
+        .value = position.lat;
+
+    document
+        .getElementById("longitude")
+        .value = position.lng;
+
+    document
+        .getElementById("location-status")
+        .innerHTML =
+        "✅ Sijainti valittu";
+
+    document
+        .getElementById("location-status")
+        .style.color =
+        "#16a34a";
+
+});
+
+document
+    .getElementById("latitude")
+    .value = 39.5696;
+
+document
+    .getElementById("longitude")
+    .value = 2.6502;
+
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        attribution: "© OpenStreetMap"
+    }
+).addTo(map);
+
+map.on("click", function(e){
+
+    const lat = e.latlng.lat;
+    const lng = e.latlng.lng;
+
+    document
+        .getElementById("latitude")
+        .value = lat;
+
+    document
+        .getElementById("longitude")
+        .value = lng;
+
+    if(marker){
+
+        map.removeLayer(marker);
+
+    }
+
+    marker =
+    L.marker([lat, lng], {
+        draggable: true
+    })
+    .addTo(map);
+
+    marker.on("dragend", function() {
+
+    const position =
+        marker.getLatLng();
+
+    document
+        .getElementById("latitude")
+        .value = position.lat;
+
+    document
+        .getElementById("longitude")
+        .value = position.lng;
+
+        document
+    .getElementById("location-status")
+    .innerHTML =
+    "✅ Sijainti valittu";
+
+document
+    .getElementById("location-status")
+    .style.color =
+    "#16a34a";
+
+});
+
+    });
+
+document
+.getElementById("company-form")
+.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    const submitButton =
+document.querySelector('button[type="submit"]');
+
+submitButton.disabled = true;
+submitButton.textContent = "Lähetetään...";
+
+    const company = {
+
+    companyName:
+    document.querySelector('[name="companyName"]').value,
+
+    country:
+    document.querySelector('[name="country"]').value,
+
+    otherCountry:
+document.querySelector('[name="otherCountry"]').value,
+
+    city:
+    document.querySelector('[name="city"]').value,
+
+    serviceArea:
+    document.querySelector('[name="serviceArea"]').value,
+
+    address:
+    document.querySelector('[name="address"]').value,
+
+    mapsLink:
+    document.querySelector('[name="mapsLink"]').value,
+
+    website:
+    document.querySelector('[name="website"]').value,
+
+    instagram:
+    document.querySelector('[name="instagram"]').value,
+
+    facebook:
+    document.querySelector('[name="facebook"]').value,
+
+    contactPerson:
+    document.querySelector('[name="contactPerson"]').value,
+
+    phone:
+    document.querySelector('[name="phone"]').value,
+
+    service:
+    document.querySelector('[name="service"]').value,
+
+    otherService:
+document.querySelector('[name="otherService"]').value,
+
+    email:
+    document.querySelector('[name="email"]').value,
+
+    description:
+    document.querySelector('[name="description"]').value,
+
+languages:
+Array.from(
+    document.querySelectorAll(
+        'input[name="languages"]:checked'
+    )
+)
+.map(language => language.value)
+.join(", "),
+
+otherLanguage:
+document.querySelector('[name="otherLanguage"]').value,
+
+        latitude:
+document.getElementById("latitude").value,
+
+longitude:
+document.getElementById("longitude").value,
+
+submittedAt:
+new Date().toLocaleString("fi-FI"),
+
+
+emailSubject:
+`Uusi yritysilmoitus - ${
+document.querySelector('[name="companyName"]').value
+} (${
+document.querySelector('[name="country"]').value === "other"
+? document.querySelector('[name="otherCountry"]').value
+: document.querySelector('[name="country"]').value
+})`,
+
+premiumInterest:
+document.getElementById("premiumInterest").checked
+
+};
+
+    
+    console.log("Lomakkeen LAT:", company.latitude);
+console.log("Lomakkeen LNG:", company.longitude);
+
+fetch("https://script.google.com/macros/s/AKfycbwL9rUFjX_pQe5PAk3LrWjE8QyOSG68Z1cuCmv0zLk7d6zyWB7LwIt287BLzT_AvLwEMQ/exec", {
+    method: "POST",
+    body: JSON.stringify(company)
+})
+.then(() => {
+
+    submitButton.textContent =
+    "Yritys lähetetty";
+
+    submitButton.disabled = false;
+
+    document
+        .getElementById("company-form")
+        .reset();
+
+    document
+        .getElementById("success-modal")
+        .style.display = "flex";
+
+})
+.catch(error => {
+
+    submitButton.textContent =
+"Lähetä yritys";
+
+submitButton.disabled = false;
+
+    console.error(error);
+
+    alert(
+        "Lähetys epäonnistui. Yritä uudelleen."
+    );
+
+    });
+
+});
+
+</script>
+
+<script> 
+
+const countrySelect =
+document.getElementById("country");
+
+const otherCountryContainer =
+document.getElementById("other-country-container");
+
+countrySelect.addEventListener("change", function(){
+
+    if(this.value === "other"){
+        otherCountryContainer.style.display = "block";
+    } else {
+        otherCountryContainer.style.display = "none";
+    }
+
+});
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+<script>
+emailjs.init("7bM0DoYoPYwQWcnCC");
+</script>
+
+        </div>
+
+    <div id="success-modal" class="success-modal">
+
+    <div class="success-modal-content">
+
+        <h2>✅ Kiitos!</h2>
+
+        <p>
+    Yritysilmoitus on vastaanotettu.
+    Tarkistamme tiedot ennen julkaisua.
+</p>
+
+        <a href="index.html"
+   class="home-button">
+    Palaa etusivulle
+</a>
+
+        <button
+    type="button"
+    onclick="location.reload();">
+    Lisää toinen yritys
+</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
