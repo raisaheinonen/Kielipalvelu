@@ -684,6 +684,31 @@ if (otherLanguageCheckbox && otherLanguageContainer) {
 
 }
 
+    const listingRadios = document.querySelectorAll('input[name="listingStatus"]');
+const newCompanyFields = document.getElementById("new-company-fields");
+
+function togglePremiumForm() {
+
+    const selected = document.querySelector('input[name="listingStatus"]:checked');
+
+    if (!selected) {
+        newCompanyFields.style.display = "none";
+        return;
+    }
+
+    if (selected.value === "existing") {
+        newCompanyFields.style.display = "none";
+    } else {
+        newCompanyFields.style.display = "block";
+    }
+}
+
+listingRadios.forEach(radio => {
+    radio.addEventListener("change", togglePremiumForm);
+});
+
+togglePremiumForm();
+
 
 
 </script>
