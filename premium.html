@@ -709,6 +709,8 @@ if (otherLanguageCheckbox && otherLanguageContainer) {
     const listingRadios = document.querySelectorAll('input[name="listingStatus"]');
 const newCompanyFields = document.getElementById("new-company-fields");
 
+    const existingCompanyFields = document.getElementById("existing-company-fields");
+
 function togglePremiumForm() {
 
     const selected = document.querySelector('input[name="listingStatus"]:checked');
@@ -718,9 +720,14 @@ function togglePremiumForm() {
         return;
     }
 
-   if (selected.value === "existing") {
+if (selected.value === "existing") {
+
+    existingCompanyFields.style.display = "block";
     newCompanyFields.style.display = "none";
+
 } else {
+
+    existingCompanyFields.style.display = "none";
     newCompanyFields.style.display = "block";
 
     setTimeout(() => {
