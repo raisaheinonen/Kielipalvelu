@@ -722,10 +722,27 @@ function togglePremiumForm() {
 
 if (selected.value === "existing") {
 
+    document.querySelectorAll('#new-company-fields [required]')
+.forEach(field => field.required = false);
+
     existingCompanyFields.style.display = "block";
     newCompanyFields.style.display = "none";
 
 } else {
+
+    document.querySelectorAll('#new-company-fields input, #new-company-fields select, #new-company-fields textarea')
+.forEach(field => {
+    if (
+        field.name === "companyName" ||
+        field.name === "country" ||
+        field.name === "city" ||
+        field.name === "address" ||
+        field.name === "service" ||
+        field.name === "description"
+    ) {
+        field.required = true;
+    }
+});
 
     existingCompanyFields.style.display = "none";
     newCompanyFields.style.display = "block";
