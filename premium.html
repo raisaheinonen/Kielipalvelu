@@ -696,11 +696,15 @@ function togglePremiumForm() {
         return;
     }
 
-    if (selected.value === "existing") {
-        newCompanyFields.style.display = "none";
-    } else {
-        newCompanyFields.style.display = "block";
-    }
+   if (selected.value === "existing") {
+    newCompanyFields.style.display = "none";
+} else {
+    newCompanyFields.style.display = "block";
+
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 200);
+}
 }
 
 listingRadios.forEach(radio => {
