@@ -208,6 +208,20 @@
         sans-serif;
 }
 
+        .search-field{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    flex:1;
+}
+
+.search-label{
+    font-size:12px;
+    font-weight:600;
+    color:#64748b;
+    padding-left:4px;
+}
+
         @media (max-width: 768px){
 
     body{
@@ -451,6 +465,9 @@ Find trusted services in your own language anywhere in the world
 
 </div>
 
+<div class="search-field">
+<span class="search-label">Maa</span>
+
 <select id="country">
 
     <option value="" id="select-country">
@@ -481,6 +498,8 @@ Find trusted services in your own language anywhere in the world
     <option value="Australia" id="country-australia">Australia</option>
 
 </select>
+
+    </div>
 
 <button id="search-btn" onclick="goToResults()">
 Search services
