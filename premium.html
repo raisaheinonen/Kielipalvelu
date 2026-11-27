@@ -256,20 +256,20 @@ Ei, haluan lisätä yritykseni hakemistoon ja hakea Premium-näkyvyyttä
     <div id="existing-company-fields" style="display:none;">
 
 <label>Yrityksen nimi *</label>
-<input type="text" name="existingCompanyName">
+<input type="text" name="companyName">
 
 <label>Sähköposti *</label>
-<input type="email" name="existingEmail">
+<input type="email" name="email"">
 
 <label>Yhteyshenkilön nimi *</label>
-<input type="text" name="existingContactPerson">
+<input type="text" name="contactPerson"">
 
 <label>Puhelinnumero</label>
-<input type="text" name="existingPhone">
+<input type="text" name="phone"">
 
 <label>Lisätietoja</label>
 <textarea
-name="existingNotes"
+name="description"
 rows="4"
 placeholder="Kerro mitä Premium-näkyvyyttä yrityksellesi toivot."></textarea>
 
@@ -868,6 +868,10 @@ submitButton.disabled = true;
 submitButton.textContent = "Lähetetään...";
 
     const company = {
+
+    listingStatus:
+document.querySelector('input[name="listingStatus"]:checked')?.value || "",
+
 
     companyName:
     document.querySelector('[name="companyName"]').value,
