@@ -171,6 +171,19 @@ button:hover{
 .home-button:hover{
     background:#334155;
 }
+
+    .radio-row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:normal;
+    margin-bottom:10px;
+}
+
+.radio-row input[type="radio"]{
+    width:auto;
+    margin:0;
+}
     
 </style>
 
@@ -230,14 +243,14 @@ color:black;
 
 <label>Onko yrityksesi jo Kielipalvelun hakemistossa?</label>
 
-<label style="font-weight:normal;">
+<label class="radio-row">
 <input type="radio" name="listingStatus" value="existing" required>
 Kyllä, yritykseni löytyy jo hakemistosta
 </label>
 
-<label style="font-weight:normal;">
+<label class="radio-row">
 <input type="radio" name="listingStatus" value="new">
-Ei, haluan samalla lisätä yritykseni hakemistoon
+Ei, yritystäni ei vielä löydy hakemistosta
 </label>
 
 <label>Yrityksen nimi *</label>
